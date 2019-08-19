@@ -17,7 +17,11 @@ Route::group(
     ],
     function()
     {
-Route::get('/', function () {
-    return view('welcome');
+        Route::prefix('dashboard')->name('dashboard.')->middleware(['auth'])->group(function () {
+
+
 });
-});
+        Route::get('/', function () {return view('welcome');});
+        Auth::routes();
+
+    });

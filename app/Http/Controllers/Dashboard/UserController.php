@@ -18,6 +18,11 @@ class UserController extends Controller
       public function __construct()
     {
         //create read update delete
+        //role profile
+//        $this->middleware(['permission:update_profile'])->only('update_profile');
+//        $this->middleware(['permission:read_profile'])->only('profile');
+
+        // role user
         $this->middleware(['permission:read_users'])->only('index');
         $this->middleware(['permission:create_users'])->only('create');
         $this->middleware(['permission:update_users'])->only('edit');
@@ -37,7 +42,7 @@ class UserController extends Controller
 
         })->latest()->paginate(5);
         $title = trans('admin.users');
-        return view('dashboard.users.index', compact('title'),compact('users'));
+        return view('dashboard.users.index', compact('title','users'));
     }
 
     /**
@@ -94,78 +99,70 @@ class UserController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+\
      */
-    public function show($id)
+    public function show(User $user)
     {
         //
     }
 
     /**
      * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+
      */
+
     public function edit(User $user)
     {
         $title = trans('admin.edit');
-        return view('dashboard.users.edit', compact('user'), compact('title'));
+        return view('dashboard.users.edit', compact('user','title'));
 
     }
 
     /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+
      */
     public function update(Request $request,  User $user)
     {
         $request->validate([
-            'name' => 'required',
+            'first_name' => 'required',
+            'last_name' => 'required',
             'email' => ['required', Rule::unique('users')->ignore($user->id),],
-//            'image' => 'image',
             'permissions' => 'required|min:1'
         ]);
 
-        $request_data = $request->except(['permissions', 'image']);
-
-//        if ($request->image) {
-//
-//            if ($user->image != 'default.png') {
-//
-//                Storage::disk('public_uploads')->delete('/user_images/' . $user->image);
-//
-//            }//end of inner if
-
-//            Image::make($request->image)
-//                ->resize(300, null, function ($constraint) {
-//                    $constraint->aspectRatio();
-//                })
-//                ->save(public_path('uploads/user_images/' . $request->image->hashName()));
-
-//            $request_data['image'] = $request->image->hashName();
-
-//        }//end of external if
-
         $user->update($request->all());
-//        return dd($user);
         $user->syncPermissions($request->permissions);
         session()->flash('success', __('error.updated_successfully'));
         return redirect()->route('dashboard.users.index');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
+
+    public function destroy(User $user)
     {
-        //
+        $user->delete();
+        session()->flash('success', __('error.deleted_successfully'));
+        return redirect()->route('dashboard.users.index');
+    }
+
+    public function profile()
+    {
+        $title = trans('admin.profile');
+        return view('dashboard.users.profile',  compact('title'));
+
+    }
+    public function update_profile(Request $request ,User $user)
+    {
+        $request->validate([
+            'first_name' => 'required',
+            'last_name' => 'required',
+            'email' => ['required', Rule::unique('users')->ignore(auth()->user()->id),],
+            'permissions' => 'required|min:1'
+        ]);
+
+        auth()->user()->update($request->all());
+        auth()->user()->syncPermissions($request->permissions);
+        session()->flash('success', __('error.updated_successfully'));
+        return redirect('dashboard');
+
     }
 }

@@ -7,12 +7,11 @@
 
         <section class="content-header">
 
-            <h1>@lang('admin.users')</h1>
+            <h1>@lang('admin.profile')</h1>
 
             <ol class="breadcrumb">
                 <li><a href="{{ url('dashboard') }}"><i class="fa fa-dashboard"></i> @lang('admin.dashboard')</a></li>
-                <li><a href="{{ route('dashboard.users.index') }}"> @lang('admin.users')</a></li>
-                <li class="active">@lang('admin.add')</li>
+                <li class="active">@lang('admin.profile')</li>
             </ol>
         </section>
 
@@ -21,44 +20,33 @@
             <div class="box box-primary">
 
                 <div class="box-header">
-                    <h3 class="box-title">@lang('admin.add')</h3>
+                    <h3 class="box-title">@lang('admin.profile')</h3>
                 </div><!-- end of box header -->
 
                 <div class="box-body">
 
                     @include('partials._errors')
 
-                    <form action="{{ route('dashboard.users.store') }}" method="post" enctype="multipart/form-data">
+                    <form action="{{ route('dashboard.users.update_profile', auth()->user()->id) }}" method="post" enctype="multipart/form-data">
 
                         @csrf
                         @method('post')
 
                         <div class="form-group">
                             <label>@lang('admin.first_name')</label>
-                            <input type="text" name="first_name" class="form-control" value="{{ old('first_name') }}">
+                            <input type="text" name="first_name" class="form-control" value="{{  auth()->user()->first_name }}">
                         </div>
 
                         <div class="form-group">
                             <label>@lang('admin.last_name')</label>
-                            <input type="text" name="last_name" class="form-control" value="{{ old('last_name') }}">
+                            <input type="text" name="last_name" class="form-control" value="{{  auth()->user()->last_name }}">
                         </div>
 
                         <div class="form-group">
                             <label>@lang('admin.email')</label>
-                            <input type="email" name="email" class="form-control" value="{{ old('email') }}">
+                            <input type="email" name="email" class="form-control" value="{{  auth()->user()->email }}">
                         </div>
-
-                        <div class="form-group">
-                            <label>@lang('admin.password')</label>
-                            <input type="password" name="password" class="form-control">
-                        </div>
-
-                        <div class="form-group">
-                            <label>@lang('admin.password_confirmation')</label>
-                            <input type="password" name="password_confirmation" class="form-control">
-                        </div>
-
-                        <div class="form-group">
+                                                <div class="form-group">
                             <label>@lang('admin.permissions')</label>
                             <div class="nav-tabs-custom">
 
@@ -80,7 +68,8 @@
                                         <div class="tab-pane {{ $index == 0 ? 'active' : '' }}" id="{{ $model }}">
 
                                             @foreach ($maps as $map)
-                                                <label><input type="checkbox" name="permissions[]" value="{{ $map . '_' . $model }}"> @lang('admin.' . $map)</label>
+                                                {{--create_users--}}
+                                                <label><input type="checkbox" name="permissions[]" {{  auth()->user()->hasPermission($map . '_' . $model) ? 'checked' : '' }} value="{{ $map . '_' . $model }}"> @lang('admin.' . $map)</label>
                                             @endforeach
 
                                         </div>
@@ -94,7 +83,7 @@
                         </div>
 
                         <div class="form-group">
-                            <button type="submit" class="btn btn-primary"><i class="fa fa-plus"></i> @lang('admin.add')</button>
+                            <button type="submit" class="btn btn-primary"><i class="fa fa-edit"></i> @lang('admin.edit')</button>
                         </div>
 
                     </form><!-- end of form -->

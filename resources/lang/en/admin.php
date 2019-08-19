@@ -20,6 +20,7 @@ return [
     'delete'=>'Delete',
     'image'=>'Image',
     'settings'=>'Settings',
+    'profile'=>'Profile',
     'categories'=>'Categories',
     'permissions'=>'Permissions',
     'key'=>'Key',

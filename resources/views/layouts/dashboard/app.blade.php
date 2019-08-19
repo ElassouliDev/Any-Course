@@ -206,7 +206,10 @@
                             <li class="user-footer">
 
 
-                                <a href="{{ route('logout') }}" class="btn btn-default btn-flat" onclick="event.preventDefault();
+                                <a href="{{ route('dashboard.users.profile',auth()->user()->id)}}" class="btn btn-default btn-flat">@lang('admin.profile')</a>
+
+
+    <a href="{{ route('logout') }}" class="btn btn-default btn-flat" onclick="event.preventDefault();
                                                  document.getElementById('logout-form').submit();">@lang('auth.logout')</a>
 
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">

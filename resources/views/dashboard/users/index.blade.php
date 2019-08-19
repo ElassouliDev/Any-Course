@@ -57,7 +57,6 @@
                                 <th>@lang('admin.first_name')</th>
                                 <th>@lang('admin.last_name')</th>
                                 <th>@lang('admin.email')</th>
-                                <th>@lang('admin.image')</th>
                                 <th>@lang('admin.action')</th>
                             </tr>
                             </thead>
@@ -69,7 +68,6 @@
                                     <td>{{ $user->first_name }}</td>
                                     <td>{{ $user->last_name }}</td>
                                     <td>{{ $user->email }}</td>
-                                    <td><img src="{{ $user->image_path }}" style="width: 100px;" class="img-thumbnail" alt=""></td>
                                     <td>
                                         @if (auth()->user()->hasPermission('update_users'))
                                             <a href="{{ route('dashboard.users.edit', $user->id) }}" class="btn btn-info btn-sm"><i class="fa fa-edit"></i> @lang('admin.edit')</a>

@@ -19,7 +19,7 @@ Route::group(
     {
         Route::prefix('dashboard')->name('dashboard.')->middleware(['auth'])->group(function () {
             Route::resource('/', 'Dashboard\DashboardController');
-
+            Route::resource('/users', 'Dashboard\UserController');
 
 });
         Route::get('/', function () {return view('welcome');});

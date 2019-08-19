@@ -18,6 +18,7 @@ Route::group(
     function()
     {
         Route::prefix('dashboard')->name('dashboard.')->middleware(['auth'])->group(function () {
+            Route::resource('/', 'Dashboard\DashboardController');
 
 
 });

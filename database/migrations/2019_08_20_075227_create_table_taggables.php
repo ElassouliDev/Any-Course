@@ -11,6 +11,8 @@ class CreateTableTaggables extends Migration
      *
      * @return void
      */
+    //update commit github
+
     public function up()
     {
         Schema::create('taggables', function (Blueprint $table) {

@@ -4,23 +4,24 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTagsTable extends Migration
+class CreateCoursesTable extends Migration
 {
     /**
      * Run the migrations.
      *
      * @return void
      */
-    //update commit github
-
     public function up()
     {
-        Schema::create('tags', function (Blueprint $table) {
+        Schema::create('courses', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name_en');
-            $table->string('name_ar');
-            $table->softDeletes();
+            $table->string('title');
+            $table->text('description');
             $table->timestamps();
+            $table->unsignedBigInteger('category_id');
+            $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
+            $table->softDeletes();
+
         });
     }
 
@@ -31,6 +32,6 @@ class CreateTagsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tags');
+        Schema::dropIfExists('courses');
     }
 }

@@ -4,22 +4,21 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTagsTable extends Migration
+class CreateCountriesTable extends Migration
 {
     /**
      * Run the migrations.
      *
      * @return void
      */
-    //update commit github
-
     public function up()
     {
-        Schema::create('tags', function (Blueprint $table) {
+        Schema::create('countries', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name_en');
-            $table->string('name_ar');
+            $table->string('name');
+            $table->string('code');
             $table->softDeletes();
+
             $table->timestamps();
         });
     }
@@ -31,6 +30,6 @@ class CreateTagsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tags');
+        Schema::dropIfExists('countries');
     }
 }

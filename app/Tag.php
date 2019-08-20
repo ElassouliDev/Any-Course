@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Tag extends Model
 {
+//update commit github
     use SoftDeletes;
     protected $fillable =['name'];
 //    public function posts()

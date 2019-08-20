@@ -8,6 +8,8 @@ use App\Http\Controllers\Controller;
 
 class TagController extends Controller
 {
+    //update commit github
+
     /**
      * Display a listing of the resource.
      *

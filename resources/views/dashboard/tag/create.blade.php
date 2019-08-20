@@ -2,6 +2,7 @@
 @section('title',$title)
 
 @section('content')
+    {{--    update commit githup--}}
 
     <div class="content-wrapper">
 

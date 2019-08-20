@@ -3,6 +3,6 @@
 @section('content')
 
 
-    INDEX uSERS
+    INDEX uSERSs
 
 @endsection

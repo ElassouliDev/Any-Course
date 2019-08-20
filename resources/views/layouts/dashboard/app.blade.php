@@ -28,7 +28,7 @@
         <link rel="stylesheet" href="{{ asset('dashboard_files/css/font-awesome.min.css') }}">
         <link rel="stylesheet" href="{{ asset('dashboard_files/css/AdminLTE.min.css') }}">
     @endif
-
+    @stack('css')
     <style>
         .mr-2{
             margin-right: 5px;
@@ -328,6 +328,6 @@
     });//end of ready
 
 </script>
-@stack('scripts')
+@stack('js')
 </body>
 </html>

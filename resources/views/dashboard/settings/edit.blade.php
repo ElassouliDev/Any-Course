@@ -46,7 +46,7 @@
 
 
                         <div class="form-group">
-                            <button type="submit" class="btn btn-primary"><i class="fa fa-plus"></i> @lang('admin.update')</button>
+                            <button type="submit" class="btn btn-primary"><i class="fa fa-edit"></i> @lang('admin.update')</button>
                         </div>
 
                     </form><!-- end of form -->

@@ -19,8 +19,8 @@ class UserController extends Controller
     {
         //create read update delete
         //role profile
-//        $this->middleware(['permission:update_profile'])->only('update_profile');
-//        $this->middleware(['permission:read_profile'])->only('profile');
+        $this->middleware(['permission:update_profile'])->only('update_profile');
+        $this->middleware(['permission:read_profile'])->only('profile');
 
         // role user
         $this->middleware(['permission:read_users'])->only('index');
@@ -68,7 +68,6 @@ class UserController extends Controller
             'first_name' => 'required',
             'last_name' => 'required',
             'email' => 'required|unique:users',
-//            'image' => 'image',
             'password' => 'required|confirmed',
             'permissions' => 'required|min:1'
         ]);
@@ -76,17 +75,6 @@ class UserController extends Controller
         $request_data = $request->except(['password', 'password_confirmation', 'permissions', 'image']);
         $request_data['password'] = bcrypt($request->password);
 
-//        if ($request->image) {
-//
-//            Image::make($request->image)
-//                ->resize(300, null, function ($constraint) {
-//                    $constraint->aspectRatio();
-//                })
-//                ->save(public_path('uploads/user_images/' . $request->image->hashName()));
-//
-//            $request_data['image'] = $request->image->hashName();
-//
-//        }//end of if
 
         $user = User::create($request_data);
         $user->attachRole('admin');

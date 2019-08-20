@@ -16,7 +16,7 @@
             <li><a href="{{ url('dashboard') }}"><i class="fa fa-th"></i><span>@lang('admin.dashboard')</span></a></li>
 
 {{--            @if (auth()->user()->hasPermission('read_categories'))--}}
-{{--                <li><a href="{{ route('dashboard.categories.index') }}"><i class="fa fa-th"></i><span>@lang('admin.categories')</span></a></li>--}}
+                <li><a href="{{ route('dashboard.category.index') }}"><i class="fa fa-th"></i><span>@lang('admin.categories')</span></a></li>
 {{--            @endif--}}
 
             @if (auth()->user()->hasPermission('read_settings'))

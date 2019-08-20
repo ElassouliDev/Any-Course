@@ -19,6 +19,10 @@
                 <li><a href="{{ route('dashboard.category.index') }}"><i class="fa fa-th"></i><span>@lang('admin.categories')</span></a></li>
 {{--            @endif--}}
 
+            {{--            @if (auth()->user()->hasPermission('read_categories'))--}}
+                <li><a href="{{ route('dashboard.tag.index') }}"><i class="fa fa-th"></i><span>@lang('admin.tags')</span></a></li>
+{{--            @endif--}}
+
             @if (auth()->user()->hasPermission('read_settings'))
                 <li><a href="{{ route('dashboard.settings.index') }}"><i class="fa fa-th"></i><span>@lang('admin.settings')</span></a></li>
             @endif

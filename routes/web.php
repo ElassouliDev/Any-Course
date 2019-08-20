@@ -21,6 +21,7 @@ Route::group(
             Route::resource('/', 'Dashboard\DashboardController');
             Route::resource('/users', 'Dashboard\UserController');
             Route::resource('/category', 'Dashboard\CategoryController');
+            Route::resource('/tag', 'Dashboard\TagController');
             Route::get('/users/profile/{id}', 'Dashboard\UserController@profile')->name('users.profile');
 
             Route::post('/users/profile/{id}/edit', 'Dashboard\UserController@update_profile')->name('users.update_profile');

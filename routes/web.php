@@ -13,14 +13,17 @@
 Route::group(
     [
         'prefix' => LaravelLocalization::setLocale(),
-        'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]
+        'middleware' => ['localeSessionRedirect', 'localizationRedirect', 'localeViewPath']
     ],
-    function()
-    {
+    function () {
         Route::prefix('dashboard')->name('dashboard.')->middleware(['auth'])->group(function () {
             Route::resource('/', 'Dashboard\DashboardController');
             Route::resource('/users', 'Dashboard\UserController');
             Route::resource('/category', 'Dashboard\CategoryController');
+            // start course route
+            Route::resource('/course', 'Dashboard\CourseController');
+            // end course route
+
             //tag
             Route::resource('/tag', 'Dashboard\TagController');
             //end tag
@@ -31,7 +34,9 @@ Route::group(
 
         });
 
-        Route::get('/', function () {return view('welcome');});
+        Route::get('/', function () {
+            return view('welcome');
+        });
         Auth::routes();
 
     });

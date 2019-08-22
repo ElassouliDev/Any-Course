@@ -1,30 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0b226c64-b40e-40b8-97c2-65fd791ffb0a" name="Default Changelist" comment="add page crud of setting #2">
-      <change afterPath="$PROJECT_DIR$/app/Country.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/TagController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Tag.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2019_08_10_201106_create_courses_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2019_08_11_153136_create_countries_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2019_08_20_075137_create_tags_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2019_08_20_075227_create_table_taggables.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/dashboard/tag/create.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/dashboard/tag/edit.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/dashboard/tag/index.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/dashboard/tag/profile.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/dashboard/tag/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/anyCourse.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/anyCourse.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+    <list default="true" id="0b226c64-b40e-40b8-97c2-65fd791ffb0a" name="Default Changelist" comment="add page crud of category #11">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Category.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Setting.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Setting.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_08_10_195931_create_settings_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_08_10_195931_create_settings_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_08_10_201055_create_categories_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_08_10_201055_create_categories_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/lang/ar/validation.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/ar/validation.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/lang/en/validation.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/en/validation.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/dashboard/_aside.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/dashboard/_aside.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Tag.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Tag.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/laravellocalization.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/laravellocalization.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/lang/en/admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/en/admin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/tag/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/tag/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/tag/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/tag/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/tag/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/tag/index.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -252,7 +236,9 @@
       <updated>1566250304887</updated>
       <workItem from="1566250310843" duration="3801000" />
       <workItem from="1566254598223" duration="547000" />
-      <workItem from="1566280942726" duration="5318000" />
+      <workItem from="1566280942726" duration="6165000" />
+      <workItem from="1566337283591" duration="356000" />
+      <workItem from="1566454297699" duration="2265000" />
     </task>
     <task id="LOCAL-00004" summary="profile super admin #6">
       <created>1566254260160</created>
@@ -282,7 +268,49 @@
       <option name="project" value="LOCAL" />
       <updated>1566287326439</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="add page crud of setting #2">
+      <created>1566288638694</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1566288638694</updated>
+    </task>
+    <task id="LOCAL-00009" summary="add page crud of setting #2">
+      <created>1566288679502</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1566288679502</updated>
+    </task>
+    <task id="LOCAL-00010" summary="add page crud of category #11">
+      <created>1566288705418</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1566288705418</updated>
+    </task>
+    <task id="LOCAL-00011" summary="add page crud of category #11">
+      <created>1566288743910</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1566288743910</updated>
+    </task>
+    <task id="LOCAL-00012" summary="add page crud of tag #10">
+      <created>1566288946639</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1566288946639</updated>
+    </task>
+    <task id="LOCAL-00013" summary="add page crud of tag #10">
+      <created>1566289178701</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1566289178701</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -307,6 +335,7 @@
     <MESSAGE value="Laravel Debugbar" />
     <MESSAGE value="add page crud of setting #2" />
     <MESSAGE value="add page crud of category #11" />
-    <option name="LAST_COMMIT_MESSAGE" value="add page crud of category #11" />
+    <MESSAGE value="add page crud of tag #10" />
+    <option name="LAST_COMMIT_MESSAGE" value="add page crud of tag #10" />
   </component>
 </project>

@@ -1,6 +1,7 @@
 <?php
 return [
     'home'=>'Home',
+    'login'=>'Login',
     'dashboard'=>'Dashboard',
     'users'=>'Users',
     'search'=>'Search',
@@ -11,6 +12,7 @@ return [
     'email'=>'Email',
     'password'=>'Password',
     'password_confirmation'=>'Password Confirmation',
+    'remember_me'=>'Remember me',
     'add'=>'Add',
     'edit'=>'Edit',
     'update'=>'Update',

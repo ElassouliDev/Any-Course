@@ -15,13 +15,18 @@ class CreateCoursesTable extends Migration
     {
         Schema::create('courses', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('title');
-            $table->text('description');
-            $table->timestamps();
+            $table->string('title_ar');
+            $table->string('title_en');
+            $table->text('description_ar');
+            $table->text('description_en');
             $table->unsignedBigInteger('category_id');
-            $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
+            $table->foreign('category_id')->references('id')
+                ->on('categories')->onDelete('cascade');
+            $table->enum('status', ['published', 'In-publish', 'in-progress', 'blocked', 'closed'])->default('in-progress');
+            $table->boolean('is_paid');
+            $table->float('price')->default('0');
             $table->softDeletes();
-
+            $table->timestamps();
         });
     }
 

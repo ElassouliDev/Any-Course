@@ -49,4 +49,10 @@ class User extends Authenticatable
         return ucfirst($value);
 
     }//end of get last name
+
+
+    public function image()
+    {
+        return $this->morphOne(File::class,'fileable');
+    }//end of get image user
 }

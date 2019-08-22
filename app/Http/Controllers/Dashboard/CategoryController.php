@@ -97,7 +97,7 @@ class CategoryController extends Controller
     public function edit(Category $category)
     {
         $title = trans('admin.edit');
-        return view('dashboard.Category.edit', compact('title','category'));
+        return view('dashboard.category.edit', compact('title','category'));
     }
 
     /**

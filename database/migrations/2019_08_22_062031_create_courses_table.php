@@ -20,8 +20,11 @@ class CreateCoursesTable extends Migration
             $table->text('description_ar');
             $table->text('description_en');
             $table->unsignedBigInteger('category_id');
+            $table->unsignedBigInteger('user_id');
             $table->foreign('category_id')->references('id')
                 ->on('categories')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')
+                ->on('users')->onDelete('cascade');
             $table->enum('status', ['published', 'In-publish', 'in-progress', 'blocked', 'closed'])->default('in-progress');
             $table->boolean('is_paid');
             $table->float('price')->default('0');

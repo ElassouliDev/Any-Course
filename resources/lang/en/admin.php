@@ -22,7 +22,7 @@ return [
     'settings'=>'Settings',
     'profile'=>'Profile',
     'categories'=>'Categories',
-    'category'=>'Category',
+    'category'=>'category',
     'permissions'=>'Permissions',
     'key'=>'Key',
     'value'=>'Value',

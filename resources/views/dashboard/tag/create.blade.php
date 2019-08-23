@@ -8,11 +8,11 @@
 
         <section class="content-header">
 
-            <h1>@lang('admin.category')</h1>
+            <h1>@lang('admin.tag')</h1>
 
             <ol class="breadcrumb">
                 <li><a href="{{ url('dashboard') }}"><i class="fa fa-dashboard"></i> @lang('admin.dashboard')</a></li>
-                <li><a href="{{ route('dashboard.category.index') }}"> @lang('admin.category')</a></li>
+                <li><a href="{{ route('dashboard.tag.index') }}"> @lang('admin.tag')</a></li>
                 <li class="active">@lang('admin.add')</li>
             </ol>
         </section>
@@ -29,29 +29,22 @@
 
                     @include('partials._errors')
 
-                    <form action="{{ route('dashboard.category.store') }}" method="post" enctype="multipart/form-data">
+                    <form action="{{ route('dashboard.tag.store') }}" method="post" enctype="multipart/form-data">
 
                         @csrf
                         @method('post')
 
                         <div class="form-group">
-                            <label>@lang('admin.title_en')</label>
-                            <input type="text" name="title_en" class="form-control" value="{{ old('title_en') }}">
+                            <label>@lang('admin.name_en')</label>
+                            <input type="text" name="name_en" class="form-control" value="{{ old('name_en') }}">
                         </div>
 
                         <div class="form-group">
-                            <label>@lang('admin.title_ar')</label>
-                            <input type="text" name="title_ar" class="form-control" value="{{ old('title_ar') }}">
+                            <label>@lang('admin.name_ar')</label>
+                            <input type="text" name="name_ar" class="form-control" value="{{ old('name_ar') }}">
                         </div>
 
-                        <div class="form-group">
-                            <label>@lang('admin.description_ar')</label>
-                            <textarea name="description_ar" class="form-control" >{{ old('description_ar') }}</textarea>
-                        </div>
-    <div class="form-group">
-                            <label>@lang('admin.description_en')</label>
-        <textarea name="description_en" class="form-control" >{{ old('description_en') }}</textarea>
-                        </div>
+
 
                         <div class="form-group">
                             <button type="submit" class="btn btn-primary"><i class="fa fa-plus"></i> @lang('admin.add')</button>

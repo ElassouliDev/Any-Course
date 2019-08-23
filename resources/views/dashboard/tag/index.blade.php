@@ -8,11 +8,11 @@
 
         <section class="content-header">
 
-            <h1>@lang('admin.category')</h1>
+            <h1>@lang('admin.tag')</h1>
 
             <ol class="breadcrumb">
                 <li><a href="{{ url('dashboard') }}"><i class="fa fa-dashboard"></i> @lang('admin.dashboard')</a></li>
-                <li class="active">@lang('admin.category')</li>
+                <li class="active">@lang('admin.tag')</li>
             </ol>
         </section>
 
@@ -22,9 +22,9 @@
 
                 <div class="box-header with-border">
 
-                    <h3 class="box-title" style="margin-bottom: 15px">@lang('admin.category') <small>{{ $categories->total() }}</small></h3>
+                    <h3 class="box-title" style="margin-bottom: 15px">@lang('admin.tag') <small>{{ $tags->total() }}</small></h3>
 
-                    <form action="{{ route('dashboard.category.index') }}" method="get">
+                    <form action="{{ route('dashboard.tag.index') }}" method="get">
 
                         <div class="row">
 
@@ -35,7 +35,7 @@
                             <div class="col-md-4">
                                 <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i> @lang('admin.search')</button>
 {{--                                @if (auth()->user()->hasPermission('create_users'))--}}
-                                    <a href="{{ route('dashboard.category.create') }}" class="btn btn-primary"><i class="fa fa-plus"></i> @lang('admin.add')</a>
+                                    <a href="{{ route('dashboard.tag.create') }}" class="btn btn-primary"><i class="fa fa-plus"></i> @lang('admin.add')</a>
 {{--                                @else--}}
 {{--                                    <a href="#" class="btn btn-primary disabled"><i class="fa fa-plus"></i> @lang('admin.add')</a>--}}
 {{--                                @endif--}}
@@ -48,7 +48,7 @@
 
                 <div class="box-body">
 
-                    @if ($categories->count() > 0)
+                    @if ($tags->count() > 0)
 
                         <table class="table table-hover">
 
@@ -57,25 +57,23 @@
                                 <th>#</th>
 
                                 <th>@lang('admin.title')</th>
-                                <th>@lang('admin.email')</th>
                                 <th>@lang('admin.action')</th>
                             </tr>
                             </thead>
 
                             <tbody>
-                            @foreach ($categories as $index=>$category)
+                            @foreach ($tags as $index=>$tag)
                                 <tr>
                                     <td>{{ $index + 1 }}</td>
-                                    <td>{{ $category['title_'.app()->getLocale()]}}</td>
-                                    <td>{{ $category->title_ar }}</td>
+                                    <td>{{ $tag['name_'.app()->getLocale()]}}</td>
                                     <td>
 {{--                                        @if (auth()->user()->hasPermission('update_users'))--}}
-                                            <a href="{{ route('dashboard.category.edit', $category->id) }}" class="btn btn-info btn-sm"><i class="fa fa-edit"></i> @lang('admin.edit')</a>
+                                            <a href="{{ route('dashboard.tag.edit', $tag->id) }}" class="btn btn-info btn-sm"><i class="fa fa-edit"></i> @lang('admin.edit')</a>
 {{--                                        @else--}}
 {{--                                            <a href="#" class="btn btn-info btn-sm disabled"><i class="fa fa-edit"></i> @lang('admin.edit')</a>--}}
 {{--                                        @endif--}}
 {{--                                        @if (auth()->user()->hasPermission('delete_users'))--}}
-                                            <form action="{{ route('dashboard.category.destroy', $category->id) }}" method="post" style="display: inline-block">
+                                            <form action="{{ route('dashboard.tag.destroy', $tag->id) }}" method="post" style="display: inline-block">
                                                 {{ csrf_field() }}
                                                 {{ method_field('delete') }}
                                                 <button type="submit" class="btn btn-danger delete btn-sm"><i class="fa fa-trash"></i> @lang('admin.delete')</button>
@@ -91,7 +89,7 @@
 
                         </table><!-- end of table -->
 
-                        {{ $categories->appends(request()->query())->links() }}
+                        {{ $tags->appends(request()->query())->links() }}
 
                     @else
 

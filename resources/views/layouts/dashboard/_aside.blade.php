@@ -18,6 +18,9 @@
 {{--            @if (auth()->user()->hasPermission('read_categories'))--}}
                 <li><a href="{{ route('dashboard.category.index') }}"><i class="fa fa-th"></i><span>@lang('admin.categories')</span></a></li>
 {{--            @endif--}}
+            {{--            @if (auth()->user()->hasPermission('read_course'))--}}
+                <li><a href="{{ route('dashboard.course.index') }}"><i class="fa fa-th"></i><span>@lang('admin.course')</span></a></li>
+{{--            @endif--}}
 
             {{--            @if (auth()->user()->hasPermission('read_categories'))--}}
                 <li><a href="{{ route('dashboard.tag.index') }}"><i class="fa fa-th"></i><span>@lang('admin.tags')</span></a></li>

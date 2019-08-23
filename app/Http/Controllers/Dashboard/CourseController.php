@@ -8,6 +8,7 @@ use App\File;
 use App\Http\Requests\CourseRequest;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Storage;
 
 class CourseController extends Controller
 {
@@ -57,13 +58,12 @@ class CourseController extends Controller
 
     }
 
-    function uploadImage($image){
+    function uploadImage($image,$edit=null){
+        if($edit!=null)
+        Storage::has($edit->image->file_path) ? Storage::delete($edit->image->file_path) : '';
 
-        $file = $image->file('image');
-        $file_Ex = $file->getClientOriginalExtension();
-        $filePath = 'storage/';
-        $filePath .= $file->storeAs('image/course', 'image_course' . time() . '.' . $file_Ex);
-        return $filePath;
+        $file = $image->file('image')->store('image/courses');
+        return $file;
 
     }
     /**
@@ -102,23 +102,20 @@ class CourseController extends Controller
     {
         $course->update($courseRequest->all());
           if($courseRequest->hasFile('image')){
-              $image = $course->image();
-              $image->file_path = $this->uploadImage($courseRequest);
-              $image->save();
+              $image = $course->image()->update([
+                  'file_path'=>$this->uploadImage($courseRequest,$course)
+              ]);
+
 
           }
         session()->flash('success', __('error.updated_successfully'));
         return redirect()->route('dashboard.course.index');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function destroy(Course $course)
     {
+        Storage::has($course->image->file_path) ? Storage::delete($course->image->file_path) : '';
         $course->delete();
         session()->flash('success', __('error.deleted_successfully'));
         return redirect()->route('dashboard.course.index');

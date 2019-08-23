@@ -62,6 +62,7 @@
                                 <th>#</th>
 
                                 <th>@lang('admin.title')</th>
+                                <th>@lang('admin.image')</th>
                                 <th>@lang('admin.crated_at')</th>
                                 <th>@lang('admin.action')</th>
                             </tr>
@@ -71,10 +72,9 @@
                             @foreach ($courses as $index=>$course)
                                 <tr>
                                     <td>{{ $index + 1 }}</td>
+                                    <td> {{ $course['title_'.app()->getLocale()]}}</td>
                                     <td><img class="img-fluid" width="50px" height="50px" style="border-radius: 50%"
-                                                src="{{url($course->image->file_path)}}">
-                                        {{ $course['title_'.app()->getLocale()]}}
-                                    </td>
+                                                src="{{url('storage/'.$course->image->file_path)}}"></td>
                                     <td>{{ $course->created_at}}</td>
                                     <td>
                                         {{--                                        @if (auth()->user()->hasPermission('update_users'))--}}

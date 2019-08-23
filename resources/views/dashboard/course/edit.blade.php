@@ -29,7 +29,7 @@
 
                     @include('partials._errors')
 
-                    <form action="{{ route('dashboard.course.update',$course->id) }}" method="post" >
+                    <form action="{{ route('dashboard.course.update',$course->id) }}" method="post" enctype="multipart/form-data">
 
                         @csrf
                         @method('put')
@@ -55,7 +55,7 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label>@lang('admin.course')</label>
+                                    <label>@lang('admin.category')</label>
                                     <select name="category_id" class="form-control">
                                         <option value="-1">-- @lang('admin.SelectCategory')--</option>
 

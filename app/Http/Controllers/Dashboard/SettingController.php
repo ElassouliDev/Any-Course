@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Dashboard;
 
+use App\Http\Requests\SettingRequest;
 use App\Setting;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -24,7 +25,7 @@ class SettingController extends Controller
         $this->middleware(['permission:delete_settings'])->only('destroy');
 
     }//end of constructor
-     
+
     public function index(Request $request)
     {
         $title = trans('admin.settings');
@@ -58,14 +59,10 @@ class SettingController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(SettingRequest $settingRequest)
     {
-        $request->validate([
-            'key'=>'string|required',
-            'value'=>'string|required',
-
-        ]);
-        $setting = Setting::create(request()->all());
+       $settingRequest = $settingRequest->all();
+        $setting = Setting::create($settingRequest);
 
         session()->flash('success', __('error.added_successfully'));
         return redirect()->route('dashboard.settings.index');
@@ -101,14 +98,11 @@ class SettingController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Setting $setting)
+    public function update(SettingRequest $settingRequest, Setting $setting)
     {
-        $request->validate([
-            'key'=>'string|required',
-            'value'=>'string|required',
+        $settingRequest = $settingRequest->all();
 
-        ]);
-      $setting->update(request()->all());
+        $setting->update($settingRequest);
 
         session()->flash('success', __('error.updated_successfully'));
         return redirect()->route('dashboard.settings.index');

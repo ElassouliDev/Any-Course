@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Dashboard;
 
+use App\Http\Requests\UserRequest;
 use App\Role;
 use App\User;
 use Illuminate\Http\Request;
@@ -62,23 +63,17 @@ class UserController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(UserRequest $userRequest)
     {
-        $request->validate([
-            'first_name' => 'required',
-            'last_name' => 'required',
-            'email' => 'required|unique:users',
-            'password' => 'required|confirmed',
-            'permissions' => 'required|min:1'
-        ]);
+        $userRequest= $userRequest->all();
 
-        $request_data = $request->except(['password', 'password_confirmation', 'permissions', 'image']);
-        $request_data['password'] = bcrypt($request->password);
+        $request_data = $userRequest->except(['password', 'password_confirmation', 'permissions']);
+        $request_data['password'] = bcrypt($userRequest->password);
 
 
         $user = User::create($request_data);
         $user->attachRole('admin');
-        $user->syncPermissions($request->permissions);
+        $user->syncPermissions($userRequest->permissions);
 
         session()->flash('success', __('error.added_successfully'));
         return redirect()->route('dashboard.users.index');

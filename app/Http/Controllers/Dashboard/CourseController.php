@@ -46,8 +46,7 @@ class CourseController extends Controller
     {
     $courseData= $courseRequest->all();
     $courseData['user_id']=auth()->id();
-//dd($courseData);
-//         dd($courseRequest->file('image'));
+
         $image = new File();
         $image->file_path = $this->uploadImage($courseRequest);
 

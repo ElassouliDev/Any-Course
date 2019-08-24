@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Dashboard;
 
+use App\Http\Requests\TagRequest;
 use App\Tag;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -48,15 +49,12 @@ class TagController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(TagRequest $tagRequest)
     {
-        $request->validate([
-            'name_en' => 'required|max:255',
-            'name_ar' => 'required|max:255',
+        $tagRequest = $tagRequest->all();
 
-        ]);
 
-        Tag::create($request->all());
+        Tag::create($tagRequest);
 
         session()->flash('success', __('error.added_successfully'));
         return redirect()->route('dashboard.tag.index');
@@ -92,15 +90,12 @@ class TagController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Tag $tag)
+    public function update(TagRequest $tagRequest, Tag $tag)
     {
-        $request->validate([
-            'name_en' => 'required|max:255',
-            'name_ar' => 'required|max:255',
+        $tagRequest = $tagRequest->all();
 
-        ]);
 
-        $tag->update($request->all());
+        $tag->update($tagRequest);
 
         session()->flash('success', __('error.added_successfully'));
         return redirect()->route('dashboard.tag.index');

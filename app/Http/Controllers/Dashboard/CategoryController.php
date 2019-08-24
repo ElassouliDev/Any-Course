@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Dashboard;
 
 use App\Category;
+use App\Http\Requests\CategoryRequest;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -61,17 +62,11 @@ class CategoryController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CategoryRequest $categoryRequest)
     {
-        $request->validate([
-            'title_en' => 'required|max:255',
-            'title_ar' => 'required|max:255',
-            'description_ar' => 'required',
-            'description_en' => 'required',
+        $categoryRequest = $categoryRequest->all();
 
-        ]);
-
-       Category::create($request->all());
+       Category::create($categoryRequest);
 
         session()->flash('success', __('error.added_successfully'));
         return redirect()->route('dashboard.category.index');
@@ -107,17 +102,11 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Category $category)
+    public function update(CategoryRequest $categoryRequest, Category $category)
     {
-        $request->validate([
-            'title_en' => 'required|max:255',
-            'title_ar' => 'required|max:255',
-            'description_ar' => 'required',
-            'description_en' => 'required',
 
-        ]);
-
-        $category->update($request->all());
+    $categoryRequest = $categoryRequest->all();
+        $category->update($categoryRequest);
 
         session()->flash('success', __('error.updated_successfully'));
         return redirect()->route('dashboard.category.index');

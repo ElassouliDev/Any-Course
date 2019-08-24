@@ -56,7 +56,6 @@
                                 <th>#</th>
 
                                 <th>@lang('admin.title')</th>
-                                <th>@lang('admin.email')</th>
                                 <th>@lang('admin.action')</th>
                             </tr>
                             </thead>
@@ -66,7 +65,6 @@
                                 <tr>
                                     <td>{{ $index + 1 }}</td>
                                     <td>{{ $category['title_'.app()->getLocale()]}}</td>
-                                    <td>{{ $category->title_ar }}</td>
                                     <td>
 {{--                                        @if (auth()->user()->hasPermission('update_users'))--}}
                                             <a href="{{ route('dashboard.category.edit', $category->id) }}" class="btn btn-info btn-sm"><i class="fa fa-edit"></i> @lang('admin.edit')</a>

@@ -9,23 +9,15 @@ use App\Http\Controllers\Controller;
 
 class CategoryController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function __construct()
     {
-        //create read update delete
-        //role profile
-        $this->middleware(['permission:update_profile'])->only('update_profile');
-        $this->middleware(['permission:read_profile'])->only('profile');
 
-        // role user
-        $this->middleware(['permission:read_users'])->only('index');
-        $this->middleware(['permission:create_users'])->only('create');
-        $this->middleware(['permission:update_users'])->only('edit');
-        $this->middleware(['permission:delete_users'])->only('destroy');
+                // role category create read update delete
+        $this->middleware(['permission:read_categories'])->only('index');
+        $this->middleware(['permission:create_categories'])->only('create');
+        $this->middleware(['permission:update_categories'])->only('edit');
+        $this->middleware(['permission:delete_categories'])->only('destroy');
 
     }//end of constructor
     public function index(Request $request)
@@ -45,23 +37,15 @@ class CategoryController extends Controller
         return view('dashboard.category.index', compact('title','categories'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function create()
     {
         $title = trans('admin.category');
-        return view('dashboard.category.create', compact('title'));
+        $parents = Category::where('parent',0)->get();
+        return view('dashboard.category.create', compact('title','parents'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+
     public function store(CategoryRequest $categoryRequest)
     {
         $categoryRequest = $categoryRequest->all();
@@ -72,49 +56,32 @@ class CategoryController extends Controller
         return redirect()->route('dashboard.category.index');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
+
+    public function show(Category $category)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function edit(Category $category)
     {
         $title = trans('admin.edit');
-        return view('dashboard.category.edit', compact('title','category'));
+        $parents = Category::where('parent',0)->get();
+
+        return view('dashboard.category.edit', compact('title','category','parents'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function update(CategoryRequest $categoryRequest, Category $category)
     {
 
     $categoryRequest = $categoryRequest->all();
         $category->update($categoryRequest);
-
         session()->flash('success', __('error.updated_successfully'));
-        return redirect()->route('dashboard.category.index');
+    return redirect()->route('dashboard.category.index');
     }
 
-    /**
 
-     */
     public function destroy(Category $category)
     {
        $category->delete();

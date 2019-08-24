@@ -32,26 +32,52 @@
 
                         @csrf
                         @method('post')
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>@lang('admin.parent')</label>
+                                    <select name="parent" class="form-control">
+                                        <option value="0">-- @lang('admin.SelectParent')--</option>
 
+                                        @foreach($parents as $parent)
+                                            <option value="{{$parent->id}}">{{$parent['title_'.app()->getLocale()]}}</option>
+                                        @endforeach
+
+                                    </select>
+
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
                         <div class="form-group">
                             <label>@lang('admin.title_en')</label>
                             <input type="text" name="title_en" class="form-control" value="{{ old('title_en') }}">
                         </div>
-
-                        <div class="form-group">
+                            </div>
+                            <div class="col-md-6">
+                            <div class="form-group">
                             <label>@lang('admin.title_ar')</label>
                             <input type="text" name="title_ar" class="form-control" value="{{ old('title_ar') }}">
                         </div>
-
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
                         <div class="form-group">
-                            <label>@lang('admin.description_ar')</label>
-                            <textarea name="description_ar" class="form-control" >{{ old('description_ar') }}</textarea>
-                        </div>
-    <div class="form-group">
                             <label>@lang('admin.description_en')</label>
-        <textarea name="description_en" class="form-control" >{{ old('description_en') }}</textarea>
-                        </div>
+                            <textarea name="description_en" class="form-control" >{{ old('description_en') }}</textarea>
 
+                        </div>
+                            </div>
+                            <div class="col-md-6">
+                            <div class="form-group">
+                                <label>@lang('admin.description_ar')</label>
+                                <textarea name="description_ar" class="form-control" >{{ old('description_ar') }}</textarea>
+                        </div>
+                            </div>
+                        </div>
                         <div class="form-group">
                             <button type="submit" class="btn btn-primary"><i class="fa fa-plus"></i> @lang('admin.add')</button>
                         </div>

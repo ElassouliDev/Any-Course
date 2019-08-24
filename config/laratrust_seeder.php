@@ -6,6 +6,8 @@ return [
             'settings' => 'c,r,u,d',
             'users' => 'c,r,u,d',
             'profile' => 'r,u',
+            'categories' => 'c,r,u,d',
+            'courses' => 'c,r,u,d',
         ],
         'admin' =>[],
     ],

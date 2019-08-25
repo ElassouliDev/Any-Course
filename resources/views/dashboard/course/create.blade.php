@@ -124,10 +124,10 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>@lang('admin.tag')</label>
-                                    <select class="js-example-basic-multiple form-control" name="states[]" multiple="multiple">
-                                        <option value="AL">Alabama</option>
-
-                                        <option value="WY">Wyoming</option>
+                                    <select class="js-example-basic-multiple form-control" name="tags[]" multiple="multiple">
+                                      @foreach($tags as $tag)
+                                        <option value="{{$tag->id}}">{{$tag['name_'.app()->getLocale()]}}</option>
+                                          @endforeach
                                     </select>
                                 </div>
 

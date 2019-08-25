@@ -16,6 +16,11 @@ class Course extends Model
             return $this->morphOne(File::class,'fileable');
     }//end of get image course
 
+   public function tags()
+    {
+            return $this->morphToMany(Tag::class,'taggable');
+    }//end of get tags course
+
      public function user()
     {
             return $this->belongsTo(User::class);

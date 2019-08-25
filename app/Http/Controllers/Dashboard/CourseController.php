@@ -6,6 +6,7 @@ use App\Category;
 use App\Course;
 use App\File;
 use App\Http\Requests\CourseRequest;
+use App\Tag;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Storage;
@@ -34,8 +35,9 @@ class CourseController extends Controller
         $categories = Category::all();
         $mainCategories = $categories->where('parent', 0);
         $subCategories = $categories->where('parent', '<>', 0);
+        $tags = Tag::all();
         return view('dashboard.course.create',
-            compact('title','mainCategories','subCategories'));
+            compact('title','mainCategories','subCategories','tags'));
     }
 
     /**
@@ -53,6 +55,7 @@ class CourseController extends Controller
         $image->file_path = $this->uploadImage($courseRequest);
 
         $course= Course::create($courseData);
+        $course->tags()->attach($courseRequest->tags);
         $course->image()->save($image);
         session()->flash('success', __('error.added_successfully'));
         return redirect()->route('dashboard.course.index');
@@ -88,8 +91,9 @@ class CourseController extends Controller
     {
         $title=trans('admin.edit');
         $categories=Category::all();
+        $tags = Tag::all();
 
-        return view('dashboard.course.edit',compact('title','course','categories'));
+        return view('dashboard.course.edit',compact('title','course','categories','tags'));
     }
 
     /**
@@ -109,6 +113,8 @@ class CourseController extends Controller
 
 
           }
+//          return dd($courseRequest->tags);
+        $course->tags()->attach($courseRequest->tags);
         session()->flash('success', __('error.updated_successfully'));
         return redirect()->route('dashboard.course.index');
     }

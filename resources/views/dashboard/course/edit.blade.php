@@ -1,6 +1,8 @@
 @extends('layouts.dashboard.app')
 @section('title',$title)
-
+@push('css')
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.9/css/select2.min.css" rel="stylesheet" />
+@endpush
 @section('content')
     {{--    update commit github--}}
 
@@ -119,7 +121,22 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-md-12">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>@lang('admin.tag')</label>
+                                    <select class="js-example-basic-multiple form-control" name="tags[]" multiple="multiple">
+                                        @foreach($tags as $tag)
+                                            <option value="{{$tag->id}}"
+                                            @foreach($course->tags as $coursetag)
+                                           {{$tag->id === $coursetag->id ? 'selected' : ''}}
+                                        @endforeach
+                                            >{{$tag['name_'.app()->getLocale()]}}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+
+                            </div>
+                            <div class="col-md-6">
                                 <div class="form-group">
                                     <label>@lang('admin.image')</label>
                                     <input type="file" class="form-control" name="image">
@@ -143,3 +160,11 @@
     </div><!-- end of content wrapper -->
 
 @endsection
+@push('js')
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.9/js/select2.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('.js-example-basic-multiple').select2();
+        });
+    </script>
+@endpush

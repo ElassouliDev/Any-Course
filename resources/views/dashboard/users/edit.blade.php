@@ -32,6 +32,7 @@
 
                         @csrf
                         @method('put')
+                        <input type="hidden" name="user_id" value="{{ $user->id}}">
 
                         <div class="form-group">
                             <label>@lang('admin.first_name')</label>

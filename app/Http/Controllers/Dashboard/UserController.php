@@ -104,16 +104,9 @@ class UserController extends Controller
     /**
 
      */
-    public function update(Request $request,  User $user)
+    public function update(UserRequest $request,  User $user)
     {
-        $request->validate(
-            [
-                'first_name' => 'required',
-                'last_name' => 'required',
-                'email' => ['required', Rule::unique('users')->ignore($user->id),],
-                'permissions' => 'required|min:1'
-            ]
-        );
+
 
         $user->update($request->all());
         $user->syncPermissions($request->permissions);

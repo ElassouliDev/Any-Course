@@ -122,7 +122,6 @@
                 "bLengthChange": false,
                 "dom":  "searching",
                 "deferRender": true,
-                "order": [[4, "desc"]]
 
 
             });

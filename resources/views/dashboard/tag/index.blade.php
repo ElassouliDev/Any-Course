@@ -1,6 +1,9 @@
 @extends('layouts.dashboard.app')
 
 @section('title',$title)
+@push('css')
+    <link href="//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" type="text/css">
+@endpush()
 @section('content')
     {{--    update commit github--}}
 
@@ -29,7 +32,8 @@
                         <div class="row">
 
                             <div class="col-md-4">
-                                <input type="text" name="search" class="form-control" placeholder="@lang('admin.search')" value="{{ request()->search }}">
+                                <input type="search" name="search" class="form-control search"
+                                       placeholder="@lang('admin.search')" aria-controls="datatable">
                             </div>
 
                             <div class="col-md-4">
@@ -50,7 +54,7 @@
 
                     @if ($tags->count() > 0)
 
-                        <table class="table table-hover">
+                        <table  id='datatable' c class="table table-hover">
 
                             <thead>
                             <tr>
@@ -108,3 +112,26 @@
 
 
 @endsection
+@push('js')
+    <script src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <script >
+        $(document).ready( function () {
+            var table= $('#datatable').DataTable({
+                "bLengthChange": false,
+                "dom":  "searching",
+                "deferRender": true,
+
+
+            });
+            $('.search').on('keyup change , change', function () {
+                word = $(this).val();
+
+                table.search(word)
+                    .draw(false);
+
+            });
+        } );
+
+
+    </script>
+    @endpu

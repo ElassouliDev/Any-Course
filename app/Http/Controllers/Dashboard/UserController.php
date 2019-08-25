@@ -18,12 +18,12 @@ class UserController extends Controller
      */
       public function __construct()
     {
-        //create read update delete
+
         //role profile
         $this->middleware(['permission:update_profile'])->only('update_profile');
         $this->middleware(['permission:read_profile'])->only('profile');
 
-        // role user
+        // role user create read update delete
         $this->middleware(['permission:read_users'])->only('index');
         $this->middleware(['permission:create_users'])->only('create');
         $this->middleware(['permission:update_users'])->only('edit');
@@ -60,14 +60,14 @@ class UserController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  App\Http\Requests\UserRequest  $userRequest
      * @return \Illuminate\Http\Response
      */
     public function store(UserRequest $userRequest)
     {
-        $userRequest= $userRequest->all();
+        $request_data= $userRequest->except(['password', 'password_confirmation', 'permissions']);
 
-        $request_data = $userRequest->except(['password', 'password_confirmation', 'permissions']);
+//        $request_data = $userRequest->except(['password', 'password_confirmation', 'permissions']);
         $request_data['password'] = bcrypt($userRequest->password);
 
 
@@ -82,7 +82,7 @@ class UserController extends Controller
     /**
      * Display the specified resource.
      *
-\
+     *
      */
     public function show(User $user)
     {
@@ -106,12 +106,14 @@ class UserController extends Controller
      */
     public function update(Request $request,  User $user)
     {
-        $request->validate([
-            'first_name' => 'required',
-            'last_name' => 'required',
-            'email' => ['required', Rule::unique('users')->ignore($user->id),],
-            'permissions' => 'required|min:1'
-        ]);
+        $request->validate(
+            [
+                'first_name' => 'required',
+                'last_name' => 'required',
+                'email' => ['required', Rule::unique('users')->ignore($user->id),],
+                'permissions' => 'required|min:1'
+            ]
+        );
 
         $user->update($request->all());
         $user->syncPermissions($request->permissions);

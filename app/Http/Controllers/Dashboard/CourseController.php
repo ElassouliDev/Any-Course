@@ -31,9 +31,11 @@ class CourseController extends Controller
      */
     public function create()
     {   $title= trans('admin.create');
-        $categories=Category::all();
+        $categories = Category::all();
+        $mainCategories = $categories->where('parent', 0);
+        $subCategories = $categories->where('parent', '<>', 0);
         return view('dashboard.course.create',
-            compact('title','categories'));
+            compact('title','mainCategories','subCategories'));
     }
 
     /**

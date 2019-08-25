@@ -58,9 +58,17 @@
                                     <select name="category_id" class="form-control">
                                         <option value="-1">-- @lang('admin.SelectCategory')--</option>
 
-                                        @foreach($categories as $category)
-                                            <option value="{{$category->id}}">{{$category['title_'.app()->getLocale()]}}</option>
+                                        @foreach($mainCategories as $category)
+                                            <option value="{{ $category->id }}" disabled="disabled">{{ $category['title_'.app()->getLocale()] }}</option>
+                                            @foreach($subCategories as $subCategory)
+                                                @if($subCategory->parent == $category->id)
+                                                    <option value="{{ $subCategory->id }}">
+                                                        -- {{$subCategory['title_'.app()->getLocale()]}}
+                                                    </option>
+                                                @endif
+                                            @endforeach
                                         @endforeach
+
 
                                     </select>
 

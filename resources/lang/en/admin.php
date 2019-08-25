@@ -24,6 +24,8 @@ return [
     'delete'=>'Delete',
     'image'=>'Image',
 
+    'lessons'=>'Lessons',
+    'lesson'=>'Lesson',
     'users'=>'Users',
     'user'=>'User',
     'tags'=>'Tags',

@@ -1,6 +1,9 @@
 @extends('layouts.dashboard.app')
 
 @section('title',$title)
+@push('css')
+    <link href="//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" type="text/css">
+@endpush()
 @section('content')
     {{--    update commit github--}}
 
@@ -31,8 +34,8 @@
                         <div class="row">
 
                             <div class="col-md-4">
-                                <input type="text" name="search" class="form-control"
-                                       placeholder="@lang('admin.search')" value="{{ request()->search }}">
+                                <input type="search" name="search" class="form-control search"
+                                       placeholder="@lang('admin.search')" aria-controls="datatable">
                             </div>
 
                             <div class="col-md-4">
@@ -55,7 +58,7 @@
 
                     @if ($courses->count() > 0)
 
-                        <table class="table table-hover">
+                        <table id='datatable' class="table table-hover">
 
                             <thead>
                             <tr>
@@ -74,7 +77,7 @@
                                     <td>{{ $index + 1 }}</td>
                                     <td> {{ $course['title_'.app()->getLocale()]}}</td>
                                     <td><img class="img-fluid" width="50px" height="50px" style="border-radius: 50%"
-                                                src="{{url('storage/'.$course->image->file_path)}}"></td>
+                                             src="{{url('storage/'.$course->image->file_path)}}"></td>
                                     <td>{{ $course->created_at}}</td>
                                     <td>
                                         {{--                                        @if (auth()->user()->hasPermission('update_users'))--}}
@@ -122,3 +125,27 @@
 
 
 @endsection
+@push('js')
+    <script src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <script >
+        $(document).ready( function () {
+            var table= $('#datatable').DataTable({
+                "bLengthChange": false,
+                "dom":  "searching",
+                "deferRender": true,
+                "order": [[4, "desc"]]
+
+
+            });
+            $('.search').on('keyup change , change', function () {
+                word = $(this).val();
+
+                table.search(word)
+                    .draw(false);
+
+            });
+        } );
+
+
+    </script>
+@endpush

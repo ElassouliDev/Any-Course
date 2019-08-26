@@ -16,23 +16,27 @@
             <li><a href="{{ url('dashboard') }}"><i class="fa fa-th"></i><span>@lang('admin.dashboard')</span></a></li>
 
 {{--            @if (auth()->user()->hasPermission('read_categories'))--}}
-                <li><a href="{{ route('dashboard.category.index') }}"><i class="fa fa-th"></i><span>@lang('admin.categories')</span></a></li>
+                <li><a href="{{ route('dashboard.category.index') }}"><i class="fa fa-th-list"></i><span>@lang('admin.categories')</span></a></li>
 {{--            @endif--}}
-            {{--            @if (auth()->user()->hasPermission('read_course'))--}}
-                <li><a href="{{ route('dashboard.course.index') }}"><i class="fa fa-th"></i><span>@lang('admin.courses')</span></a></li>
+            {{--            @if (auth()->user()->hasPermission('read_courses'))--}}
+                <li><a href="{{ route('dashboard.course.index') }}"><i class="fa fa-list-alt"></i><span>@lang('admin.courses')</span></a></li>
 {{--            @endif--}}
 
-            {{--            @if (auth()->user()->hasPermission('read_categories'))--}}
-                <li><a href="{{ route('dashboard.tag.index') }}"><i class="fa fa-th"></i><span>@lang('admin.tags')</span></a></li>
+            {{--            @if (auth()->user()->hasPermission('read_lessons'))--}}
+                <li><a href="{{ route('dashboard.lesson.index') }}"><i class="fa fa-list-ol"></i><span>@lang('admin.lessons')</span></a></li>
+{{--            @endif--}}
+
+            {{--            @if (auth()->user()->hasPermission('read_tagsphp'))--}}
+                <li><a href="{{ route('dashboard.tag.index') }}"><i class="fa fa-tag"></i><span>@lang('admin.tags')</span></a></li>
 {{--            @endif--}}
 
             @if (auth()->user()->hasPermission('read_settings'))
-                <li><a href="{{ route('dashboard.settings.index') }}"><i class="fa fa-th"></i><span>@lang('admin.settings')</span></a></li>
+                <li><a href="{{ route('dashboard.settings.index') }}"><i class="fa fa-opencart"></i><span>@lang('admin.settings')</span></a></li>
             @endif
 
 
             @if (auth()->user()->hasPermission('read_users'))
-                <li><a href="{{ route('dashboard.users.index') }}"><i class="fa fa-th"></i><span>@lang('admin.users')</span></a></li>
+                <li><a href="{{ route('dashboard.users.index') }}"><i class="fa fa-users"></i><span>@lang('admin.users')</span></a></li>
             @endif
 
             {{--<li><a href="{{ route('dashboard.categories.index') }}"><i class="fa fa-book"></i><span>@lang('admin.categories')</span></a></li>--}}

@@ -8,11 +8,11 @@
 
         <section class="content-header">
 
-            <h1>@lang('admin.course')</h1>
+            <h1>@lang('admin.lesson')</h1>
 
             <ol class="breadcrumb">
                 <li><a href="{{ url('dashboard') }}"><i class="fa fa-dashboard"></i> @lang('admin.dashboard')</a></li>
-                <li class="active">@lang('admin.course')</li>
+                <li class="active">@lang('admin.lesson')</li>
             </ol>
         </section>
 
@@ -22,24 +22,24 @@
 
                 <div class="box-header with-border">
 
-                    <h3 class="box-title" style="margin-bottom: 15px">@lang('admin.course')
-                        <small>{{ $courses->total() }}</small>
+                    <h3 class="box-title" style="margin-bottom: 15px">@lang('admin.lesson')
+{{--                        <small>{{ $lessons->total() }}</small>--}}
                     </h3>
 
-                    <form action="{{ route('dashboard.course.index') }}" method="get">
+                    <form action="{{ route('dashboard.lesson.index') }}" method="get">
 
                         <div class="row">
 
                             <div class="col-md-4">
                                 <input type="text" name="search" class="form-control"
-                                       placeholder="@lang('admin.search')" value="{{ request()->search }}">
+                                       placeholder="@lang('admin.search')" >
                             </div>
 
                             <div class="col-md-4">
                                 <button type="submit" class="btn btn-primary"><i
                                             class="fa fa-search"></i> @lang('admin.search')</button>
-                                {{--                                @if (auth()->user()->hasPermission('create_users'))--}}
-                                <a href="{{ route('dashboard.course.create') }}" class="btn btn-primary"><i
+                                {{--                                @if (auth()->user()->hasPermission('create_lessons'))--}}
+                                <a href="{{ route('dashboard.lesson.create') }}" class="btn btn-primary"><i
                                             class="fa fa-plus"></i> @lang('admin.add')</a>
                                 {{--                                @else--}}
                                 {{--                                    <a href="#" class="btn btn-primary disabled"><i class="fa fa-plus"></i> @lang('admin.add')</a>--}}
@@ -53,7 +53,7 @@
 
                 <div class="box-body">
 
-                    @if ($courses->count() > 0)
+                    @if ($lessons->count() > 0)
 
                         <table class="table table-hover">
 
@@ -62,34 +62,27 @@
                                 <th>#</th>
 
                                 <th>@lang('admin.title')</th>
-                                <th>@lang('admin.image')</th>
                                 <th>@lang('admin.crated_at')</th>
                                 <th>@lang('admin.action')</th>
                             </tr>
                             </thead>
 
                             <tbody>
-                            @foreach ($courses as $index=>$course)
+                            @foreach ($lessons as $index=>$lesson)
                                 <tr>
                                     <td>{{ $index + 1 }}</td>
-                                    <td> {{ $course['title_'.app()->getLocale()]}}</td>
-                                    @if(isset($course->image->file_path))
-                                    <td><img class="img-fluid" width="50px" height="50px" style="border-radius: 50%"
-                                                src="{{url('storage/'.$course->image->file_path)}}"></td>
-                                    @else
-                                        <td>   No Image </td>
-                                    @endif
-                                        <td>{{ $course->created_at}}</td>
+                                    <td> {{ $lesson['title_'.app()->getLocale()]}}</td>
+                                    <td>{{ $lesson->created_at}}</td>
                                     <td>
-                                        {{--                                        @if (auth()->user()->hasPermission('update_users'))--}}
-                                        <a href="{{ route('dashboard.course.edit', $course->id) }}"
+                                        {{--                                        @if (auth()->user()->hasPermission('update_lessons'))--}}
+                                        <a href="{{ route('dashboard.lesson.edit', $lesson->id) }}"
                                            class="btn btn-info btn-sm"><i class="fa fa-edit"></i> @lang('admin.edit')
                                         </a>
                                         {{--                                        @else--}}
                                         {{--                                            <a href="#" class="btn btn-info btn-sm disabled"><i class="fa fa-edit"></i> @lang('admin.edit')</a>--}}
                                         {{--                                        @endif--}}
-                                        {{--                                        @if (auth()->user()->hasPermission('delete_users'))--}}
-                                        <form action="{{ route('dashboard.course.destroy', $course->id) }}"
+                                        {{--                                        @if (auth()->user()->hasPermission('delete_lessons'))--}}
+                                        <form action="{{ route('dashboard.lesson.destroy', $lesson->id) }}"
                                               method="post" style="display: inline-block">
                                             {{ csrf_field() }}
                                             {{ method_field('delete') }}
@@ -107,7 +100,7 @@
 
                         </table><!-- end of table -->
 
-                        {{ $courses->appends(request()->query())->links() }}
+                        {{ $lessons->appends(request()->query())->links() }}
 
                     @else
 

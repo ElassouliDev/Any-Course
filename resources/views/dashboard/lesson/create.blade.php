@@ -76,7 +76,7 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>@lang('admin.course')</label>
-                                    <select name="course_id" class="form-control">
+                                    <select name="course_id" class="js-example-basic-single form-control" >
                                         <option value="-1">-- @lang('admin.SelectCourse')--</option>
 
                                         @foreach($courses as $course)
@@ -113,7 +113,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.9/js/select2.min.js"></script>
     <script>
         $(document).ready(function() {
-            $('.js-example-basic-multiple').select2();
+            $('.js-example-basic-single').select2();
         });
     </script>
 @endpush

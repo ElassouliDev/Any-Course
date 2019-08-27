@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Dashboard;
 
 use App\Course;
 use App\DataTables\LessonDataTable;
+use App\File;
 use App\Http\Requests\LessonRequest;
 use App\Lesson;
 use App\User;
@@ -45,9 +46,10 @@ class LessonController extends Controller
 //        return dd($request);
         $request['user_id'] = auth()->id();
        $lesson = Lesson::create($request->all());
-        $lesson->file()->save([
-            'file_path'=>$request->file_path,
-        ]);
+       $file = new File() ;
+       $file->file_path = $request->file_path;
+
+        $lesson->file()->save($file);
         session()->flash('success', __('error.added_successfully'));
         return redirect()->route('dashboard.lesson.index');
     }
@@ -89,8 +91,12 @@ class LessonController extends Controller
     {
 
         $lesson->update($request->all());
+        $file = new File() ;
+        $file->file_path = $request->file_path;
 
-
+        $file = $lesson->file;
+        $file->file_path=$request->file_path;
+        $file->update();
         session()->flash('success', __('error.updated_successfully'));
         return redirect()->route('dashboard.lesson.index');
     }

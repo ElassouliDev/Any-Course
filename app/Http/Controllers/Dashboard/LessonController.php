@@ -92,8 +92,6 @@ class LessonController extends Controller
 
         $lesson->update($request->all());
         $file = new File() ;
-        $file->file_path = $request->file_path;
-
         $file = $lesson->file;
         $file->file_path=$request->file_path;
         $file->update();

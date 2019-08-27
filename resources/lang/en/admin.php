@@ -50,5 +50,8 @@ return [
 
     'confirm_delete'=>'Confirm Delete',
     'no_data_found'=>'No Data Found',
+    'crated_at'=>'Crated At',
+    'SelectCourse'=>'Select the course',
+    'selectPaid'=>'Select the paid',
 
 ];

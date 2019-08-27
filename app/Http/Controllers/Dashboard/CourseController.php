@@ -51,12 +51,17 @@ class CourseController extends Controller
     $courseData= $courseRequest->all();
     $courseData['user_id']=auth()->id();
 
-        $image = new File();
-        $image->file_path = $this->uploadImage($courseRequest);
 
         $course= Course::create($courseData);
         $course->tags()->attach($courseRequest->tags);
-        $course->image()->save($image);
+        if($courseRequest->file('image'))
+        {
+            $image = new File();
+            $image->file_path = $this->uploadImage($courseRequest);
+            $course->image()->save($image);
+        }
+
+
         session()->flash('success', __('error.added_successfully'));
         return redirect()->route('dashboard.course.index');
 

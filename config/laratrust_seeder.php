@@ -8,6 +8,7 @@ return [
             'profile' => 'r,u',
             'categories' => 'c,r,u,d',
             'courses' => 'c,r,u,d',
+            'lessons' => 'c,r,u,d',
         ],
         'admin' =>[],
     ],

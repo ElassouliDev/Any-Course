@@ -24,6 +24,10 @@ Route::group(
             Route::resource('/course', 'Dashboard\CourseController');
             // end course route
 
+            // start lesson route
+            Route::resource('/lesson', 'Dashboard\LessonController');
+            // end lesson route
+
             //tag
             Route::resource('/tag', 'Dashboard\TagController');
             //end tag

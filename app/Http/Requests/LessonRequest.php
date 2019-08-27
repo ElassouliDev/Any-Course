@@ -29,6 +29,7 @@ class LessonRequest extends FormRequest
             'description_ar' => 'string|required',
             'description_en' => 'string|required',
             'course_id' => 'required',
+            'file_path' => 'required',
         ];
     }
 }

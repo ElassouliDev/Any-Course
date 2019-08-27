@@ -35,5 +35,6 @@ class UserRequest extends FormRequest
             unset($rules['password']);
         }
         return $rules ;
+
     }
 }

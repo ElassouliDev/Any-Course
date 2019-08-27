@@ -75,6 +75,14 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
+                                    <label>@lang('admin.file_path')</label>
+                                  <input type="url" name="file_path" class="form-control">
+
+                                </div>
+
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
                                     <label>@lang('admin.course')</label>
                                     <select name="course_id" class="js-example-basic-single form-control" >
                                         <option value="-1">-- @lang('admin.SelectCourse')--</option>

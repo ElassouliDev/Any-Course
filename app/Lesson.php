@@ -9,4 +9,11 @@ class Lesson extends Model
 {
     use SoftDeletes;
     protected $fillable = ['title_ar','title_en','description_ar','description_en','course_id','user_id'];
+
+    public function course(){
+        return $this->belongsTo(Course::class);
+    }
+    public function file(){
+        return $this->morphOne(File::class,'fileable');
+    }
 }

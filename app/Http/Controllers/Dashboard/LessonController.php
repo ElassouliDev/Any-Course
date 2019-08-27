@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Dashboard;
 
 use App\Course;
+use App\DataTables\LessonDataTable;
 use App\Http\Requests\LessonRequest;
 use App\Lesson;
 use App\User;
@@ -16,20 +17,9 @@ class LessonController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+    public function index(LessonDataTable $lesson)
     {
-        $title = trans('admin.lesson');
-        $lessons = Lesson::where(function ($q) use ($request) {
-
-            return $q->when($request->search, function ($query) use ($request) {
-
-                return $query->where('title_'.app()->getLocale(), 'like', '%' . $request->search . '%');
-
-
-            });
-
-        })->latest()->paginate(5);
-        return view('dashboard.lesson.index',compact('title','lessons'));
+        return $lesson->render('dashboard.lesson.index', ['title' => trans('admin.Admin')]);
     }
 
     /**
@@ -52,8 +42,12 @@ class LessonController extends Controller
      */
     public function store(LessonRequest $request)
     {
+//        return dd($request);
         $request['user_id'] = auth()->id();
-        Lesson::create($request->all());
+       $lesson = Lesson::create($request->all());
+        $lesson->file()->save([
+            'file_path'=>$request->file_path,
+        ]);
         session()->flash('success', __('error.added_successfully'));
         return redirect()->route('dashboard.lesson.index');
     }
@@ -93,7 +87,10 @@ class LessonController extends Controller
      */
     public function update(LessonRequest $request, Lesson $lesson)
     {
+
         $lesson->update($request->all());
+
+
         session()->flash('success', __('error.updated_successfully'));
         return redirect()->route('dashboard.lesson.index');
     }

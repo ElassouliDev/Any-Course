@@ -25,4 +25,11 @@ class Course extends Model
     {
             return $this->belongsTo(User::class);
     }//end of get user that have a course
+
+    public function lessons(){
+        return $this->hasMany(Lesson::class);
+    } // end of get lessons that have a course
+    public function category(){
+        return $this->belongsTo(Category::class);
+    } // end of get category that have a course
 }

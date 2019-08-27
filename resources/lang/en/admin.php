@@ -53,5 +53,6 @@ return [
     'crated_at'=>'Crated At',
     'SelectCourse'=>'Select the course',
     'selectPaid'=>'Select the paid',
+    'file_path'=>'File Path',
 
 ];

@@ -10,4 +10,8 @@ class Category extends Model
     use SoftDeletes;
 
     protected $fillable = ['title_en','title_ar','description_en','description_ar','parent'];
+
+    public function course(){
+        return $this->hasMany(Course::class);
+    } // end of get course that have a course
 }

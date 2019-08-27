@@ -51,62 +51,10 @@
 
                 </div><!-- end of box header -->
 
-                <div class="box-body">
+                <div class="box-body portlet-body table-responsive">
 
-                    @if ($lessons->count() > 0)
+                    {!! $dataTable->table(["class"=> "table table-striped table-bordered table-hover table-checkable no-footer"],true) !!}
 
-                        <table class="table table-hover">
-
-                            <thead>
-                            <tr>
-                                <th>#</th>
-
-                                <th>@lang('admin.title')</th>
-                                <th>@lang('admin.crated_at')</th>
-                                <th>@lang('admin.action')</th>
-                            </tr>
-                            </thead>
-
-                            <tbody>
-                            @foreach ($lessons as $index=>$lesson)
-                                <tr>
-                                    <td>{{ $index + 1 }}</td>
-                                    <td> {{ $lesson['title_'.app()->getLocale()]}}</td>
-                                    <td>{{ $lesson->created_at}}</td>
-                                    <td>
-                                        {{--                                        @if (auth()->user()->hasPermission('update_lessons'))--}}
-                                        <a href="{{ route('dashboard.lesson.edit', $lesson->id) }}"
-                                           class="btn btn-info btn-sm"><i class="fa fa-edit"></i> @lang('admin.edit')
-                                        </a>
-                                        {{--                                        @else--}}
-                                        {{--                                            <a href="#" class="btn btn-info btn-sm disabled"><i class="fa fa-edit"></i> @lang('admin.edit')</a>--}}
-                                        {{--                                        @endif--}}
-                                        {{--                                        @if (auth()->user()->hasPermission('delete_lessons'))--}}
-                                        <form action="{{ route('dashboard.lesson.destroy', $lesson->id) }}"
-                                              method="post" style="display: inline-block">
-                                            {{ csrf_field() }}
-                                            {{ method_field('delete') }}
-                                            <button type="submit" class="btn btn-danger delete btn-sm"><i
-                                                        class="fa fa-trash"></i> @lang('admin.delete')</button>
-                                        </form><!-- end of form -->
-                                        {{--                                        @else--}}
-                                        {{--                                            <button class="btn btn-danger btn-sm disabled"><i class="fa fa-trash"></i> @lang('admin.delete')</button>--}}
-                                        {{--                                        @endif--}}
-                                    </td>
-                                </tr>
-
-                            @endforeach
-                            </tbody>
-
-                        </table><!-- end of table -->
-
-                        {{ $lessons->appends(request()->query())->links() }}
-
-                    @else
-
-                        <h2>@lang('admin.no_data_found')</h2>
-
-                    @endif
 
                 </div><!-- end of box body -->
 
@@ -119,3 +67,6 @@
 
 
 @endsection
+@push('js')
+    {!! $dataTable->scripts() !!}
+@endpush

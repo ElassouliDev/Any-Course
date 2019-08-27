@@ -125,8 +125,7 @@
                 "dom":  "searching",
                 "deferRender": true,
 
-
-            });
+           });
             $('.search').on('keyup change , change', function () {
                 word = $(this).val();
 

@@ -6,6 +6,7 @@ use App\Lesson;
 use App\User;
 use Yajra\DataTables\Services\DataTable;
 
+
 class LessonDataTable extends DataTable
 {
     /**

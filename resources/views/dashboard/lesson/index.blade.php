@@ -56,6 +56,8 @@
                     {!! $dataTable->table(["class"=> "table table-striped table-bordered table-hover table-checkable no-footer"],true) !!}
 
 
+
+
                 </div><!-- end of box body -->
 
 

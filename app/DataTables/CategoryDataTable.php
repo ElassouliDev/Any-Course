@@ -119,6 +119,10 @@ class CategoryDataTable extends DataTable
 
 
             [
+                'name'=>'id',
+                'data'=>'id',
+                'title'=>'#',
+            ],     [
                 'name'=>'title_'.app()->getLocale(),
                 'data'=>'title_'.app()->getLocale(),
                 'title'=>trans('admin.title_'.app()->getLocale()),
@@ -127,6 +131,10 @@ class CategoryDataTable extends DataTable
                 'name'=>'description_'.app()->getLocale(),
                 'data'=>'description_'.app()->getLocale(),
                 'title'=>trans('admin.description_'.app()->getLocale()),
+            ],      [
+                'name'=>'parent',
+                'data'=>'parent',
+                'title'=>trans('admin.parent'),
             ],
             [
                 'name' => 'actions',

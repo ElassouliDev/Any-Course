@@ -116,7 +116,7 @@
     <script src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
     <script >
         $(document).ready( function () {
-            var table= $('#datatable').DataTable({
+            var table= $('#datatables').DataTable({
                 "bLengthChange": false,
                 "dom":  "searching",
                 "deferRender": true,

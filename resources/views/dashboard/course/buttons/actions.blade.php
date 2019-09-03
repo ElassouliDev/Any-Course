@@ -11,7 +11,9 @@
 										<a href="{{ route('dashboard.course.edit',$id)}}"><i class="fa fa-pencil-square-o"></i> {{trans('admin.edit')}}</a>
 								</li>
 								<li class="divider"> </li>
-
+                            <li>
+                                <a href="{{ route('dashboard.category.show',$id)}}"><i class="fa fa-eye"></i> {{trans('admin.show')}}</a>
+                            </li>
 								<li>
 										<a data-toggle="modal" data-target="#delete_record{{$id}}" href="#">
 						<i class="fa fa-trash"></i> {{trans('admin.delete')}}</a>

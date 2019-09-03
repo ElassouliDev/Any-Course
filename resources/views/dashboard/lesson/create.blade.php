@@ -57,24 +57,6 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label>@lang('admin.description_ar')</label>
-                                    <textarea rows="6" name="description_ar"
-                                              class="form-control">{{ old('description_ar') }}</textarea>
-                                </div>
-
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label>@lang('admin.description_en')</label>
-                                    <textarea rows="6" name="description_en"
-                                              class="form-control">{{ old('description_en') }}</textarea>
-                                </div>
-
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
                                     <label>@lang('admin.file_path')</label>
                                   <input type="url" name="file_path" class="form-control">
 

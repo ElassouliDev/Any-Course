@@ -26,8 +26,6 @@ class LessonRequest extends FormRequest
         return [
             'title_ar' => 'string|required',
             'title_en' => 'string|required',
-            'description_ar' => 'string|required',
-            'description_en' => 'string|required',
             'course_id' => 'required',
             'file_path' => 'required',
         ];

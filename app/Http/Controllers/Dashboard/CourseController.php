@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Dashboard;
 
 use App\Category;
 use App\Course;
+use App\DataTables\CourseDataTable;
 use App\File;
 use App\Http\Requests\CourseRequest;
 use App\Tag;
@@ -18,11 +19,13 @@ class CourseController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(CourseDataTable $course)
     {
         $title=trans('admin.index');
         $courses = Course::latest()->paginate(10);
-        return view('dashboard.course.index',compact('title','courses'));
+//        return view('dashboard.course.index',compact('title','courses'));
+        return $course->render('dashboard.course.index', ['title' => trans('admin.courses')]);
+
     }
 
     /**

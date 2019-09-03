@@ -3,7 +3,7 @@
 @section('title',$title)
 @push('css')
     <link href="//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" type="text/css">
-@endpush()
+@endpush
 @section('content')
     {{--    update commit github--}}
 
@@ -134,4 +134,4 @@
 
 
     </script>
-    @endpu
+    @endpush

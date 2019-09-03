@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Dashboard;
 
 use App\Category;
+use App\DataTables\CategoryDataTable;
 use App\Http\Requests\CategoryRequest;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -20,21 +21,13 @@ class CategoryController extends Controller
         $this->middleware(['permission:delete_categories'])->only('destroy');
 
     }//end of constructor
-    public function index(Request $request)
+    public function index(CategoryDataTable $category)
     {
 
-        $categories = Category::where(function ($q) use ($request) {
 
-            return $q->when($request->search, function ($query) use ($request) {
-
-                return $query->where('title_en', 'like', '%' . $request->search . '%')
-                    ->orWhere('description_en', 'like', '%' . $request->search . '%');
-
-            });
-
-        })->latest()->paginate(5);
         $title = trans('admin.category');
-        return view('dashboard.category.index', compact('title','categories'));
+        return $category->render('dashboard.category.index', ['title' => trans('admin.categories')]);
+
     }
 
 

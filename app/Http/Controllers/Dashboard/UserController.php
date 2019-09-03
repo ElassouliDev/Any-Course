@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Dashboard;
 
+use App\DataTables\UserDataTable;
 use App\Http\Requests\UserRequest;
 use App\Role;
 use App\User;
@@ -30,20 +31,10 @@ class UserController extends Controller
         $this->middleware(['permission:delete_users'])->only('destroy');
 
     }//end of constructor
-    public function index(Request $request)
+    public function index(UserDataTable $user)
     {
-        $users = User::whereRoleIs('admin')->where(function ($q) use ($request) {
-
-            return $q->when($request->search, function ($query) use ($request) {
-
-                return $query->where('name', 'like', '%' . $request->search . '%')
-                    ->orWhere('email', 'like', '%' . $request->search . '%');
-
-            });
-
-        })->latest()->paginate(5);
         $title = trans('admin.users');
-        return view('dashboard.users.index', compact('title','users'));
+        return $user->render('dashboard.users.index', ['title' => trans('admin.users')]);
     }
 
     /**

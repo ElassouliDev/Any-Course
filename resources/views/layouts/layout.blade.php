@@ -28,6 +28,8 @@
     <link href="{{asset('course_assets/css/style.css')}}" rel="stylesheet" type="text/css"/>
     <!--end::Base Styles -->
     <link rel="shortcut icon" href="{{url('course_assets/img/logo/logo.png')}}"/>
+
+    @stack('css')
 </head>
 <!-- end::Head -->
 <!-- end::Body -->
@@ -918,7 +920,7 @@
     </div>
     <!-- end:: Body -->
     <!-- begin::Footer -->
-    <footer class="m-grid__item		m-footer ">
+{{--    <footer class="m-grid__item		m-footer ">
         <div class="m-container m-container--fluid m-container--full-height m-page__container">
             <div class="m-stack m-stack--flex-tablet-and-mobile m-stack--ver m-stack--desktop">
                 <div class="m-stack__item m-stack__item--left m-stack__item--middle m-stack__item--last">
@@ -956,15 +958,23 @@
                 </div>
             </div>
         </div>
-    </footer>
+    </footer>--}}
     <!-- end::Footer -->
 </div>
 <!-- end:: Page -->
+
+
+
 <!-- begin::Scroll Top -->
+
+
 <div class="m-scroll-top m-scroll-top--skin-top" data-toggle="m-scroll-top" data-scroll-offset="500"
      data-scroll-speed="300">
     <i class="la la-arrow-up"></i>
 </div>
+
+
+
 <!-- end::Scroll Top -->            <!-- begin::Quick Nav -->
     {{--<ul class="m-nav-sticky" style="margin-top: 30px;">--}}
     <!--

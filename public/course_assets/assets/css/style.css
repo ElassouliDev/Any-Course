@@ -1,0 +1,20 @@
+/* Start Navigation Css */
+.navbar {
+    border-radius: 0;
+    margin-bottom: 0;
+    vertical-align: middle;
+    padding: 15px;
+}
+.navbar-brand {
+    text-align: center;
+    vertical-align: middle;
+    padding: 5px;
+    margin-right: 20px;
+}
+.navbar-brand img {
+    display: inline;
+    width: 54px;
+    height: 100%;
+}
+
+/* End Navigation Css */

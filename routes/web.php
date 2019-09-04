@@ -38,6 +38,8 @@ Route::group(
 
         });
         Route::get('/course','View\CourseController@course_list');
+        Route::get('/course/{course_id}','View\CourseController@course_details');
+        Route::get('/lessons/{course_id}','View\LessonsController@lessons_list');
         Route::get('/','View\CourseController@course_list');
 
         Auth::routes();

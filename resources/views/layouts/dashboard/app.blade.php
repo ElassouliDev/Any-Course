@@ -332,5 +332,6 @@
 
 </script>
 @stack('js')
+@yield('javascript')
 </body>
 </html>

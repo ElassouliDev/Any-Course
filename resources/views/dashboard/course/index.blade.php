@@ -22,9 +22,9 @@
 
                 <div class="box-header with-border">
 
-                    <h3 class="box-title" style="margin-bottom: 15px">@lang('admin.user')
+                    <h3 class="box-title" style="margin-bottom: 15px">@lang('admin.courses')
                         {{--                        <small>{{ $course->total() }}</small>--}}
-                    </h3>
+                    </h3/>
 
                     <form action="{{ route('dashboard.course.index') }}" method="get">
 
@@ -38,12 +38,12 @@
                             <div class="col-md-4">
                                 <button type="submit" class="btn btn-primary"><i
                                         class="fa fa-search"></i> @lang('admin.search')</button>
-                                {{--                                @if (auth()->user()->hasPermission('create_course'))--}}
+                                                                @if (auth()->user()->hasPermission('create_courses'))
                                 <a href="{{ route('dashboard.course.create') }}" class="btn btn-primary"><i
                                         class="fa fa-plus"></i> @lang('admin.add')</a>
-                                {{--                                @else--}}
-                                {{--                                    <a href="#" class="btn btn-primary disabled"><i class="fa fa-plus"></i> @lang('admin.add')</a>--}}
-                                {{--                                @endif--}}
+                                                                @else
+                                                                    <a href="#" class="btn btn-primary disabled"><i class="fa fa-plus"></i> @lang('admin.add')</a>
+                                                                @endif
                             </div>
 
                         </div>

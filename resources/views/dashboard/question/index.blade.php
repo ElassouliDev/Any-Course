@@ -74,17 +74,15 @@
     </style>
 @endpush()
 @section('content')
-    {{--    update commit github--}}
-
     <div class="content-wrapper">
 
         <section class="content-header">
 
-            <h1>@lang('admin.lesson')</h1>
+            <h1>@lang('admin.question')</h1>
 
             <ol class="breadcrumb">
                 <li><a href="{{ url('dashboard') }}"><i class="fa fa-dashboard"></i> @lang('admin.dashboard')</a></li>
-                <li class="active">@lang('admin.lesson')</li>
+                <li class="active">@lang('admin.question')</li>
             </ol>
         </section>
 
@@ -150,7 +148,7 @@
                               <div class="col-md-4">
                                   <button type="submit" class="btn btn-primary"><i
                                               class="fa fa-search"></i> @lang('admin.search')</button>
-                                                                  @if (auth()->user()->hasPermission('create_question'))
+                                                                  @if (auth()->user()->hasPermission('create_questions'))
                                   <a href="{{ route('dashboard.question.create') }}" class="btn btn-primary"><i
                                               class="fa fa-plus"></i> @lang('admin.add')</a>
                                                                   @else

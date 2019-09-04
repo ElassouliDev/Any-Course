@@ -767,153 +767,7 @@
                     @if(!auth()->user())
                 </div>
             @endif
-            {{-- <div class="m-content">
-                 <div class="m-portlet">
-                     <div class="m-portlet__head">
-                         <div class="m-portlet__head-caption">
-                             <div class="m-portlet__head-title">
-                                 <h3 class="m-portlet__head-text">
-                                     Latest Courses
-                                 </h3>
-                             </div>
-                         </div>
-                     </div>
-                     <div class="row">
-                         <div class="col-md-4">
-                             <div class="card card-course">
-                                 <img class="card-img-top" height="240" src="{{url('course_assets/img/courses/1555505500524_JavaScriptGrow.png')}}" alt="Card image" style="width:100%">
-                                 <div class="card-body">
-                                     <h4 class="card-title"><b>Javascript</b></h4>
-                                     <p class="card-text description">Lorem ipsum dolor sit amet.</p>
-                                     <a href="#" class="btn btn-primary">View Course</a>
-                                     <span class="pull-right"><b><s>20.22$</s>  <i><strong>$ 11.89</strong></i></b></span>
-                                 </div>
-                             </div>
-                         </div>
-                         <div class="col-md-4">
-                             <div class="card card-course">
-                                 <img class="card-img-top" height="240" src="{{url('course_assets/img/courses/1555506865369_js.jpg')}}" alt="Card image" style="width:100%">
-                                 <div class="card-body">
-                                     <h4 class="card-title"><b>Javascript</b></h4>
-                                     <p class="card-text description">Lorem ipsum dolor sit amet.</p>
-                                     <a href="#" class="btn btn-primary">View Course</a>
-                                     <span class="pull-right"><b><s>20.22$</s>  <i><strong>$ 11.89</strong></i></b></span>
-                                 </div>
-                             </div>
-                         </div>
-                         <div class="col-md-4">
-                             <div class="card card-course">
-                                 <img class="card-img-top" height="240" src="{{url('course_assets/img/courses/1555507315862_JavaScriptGrow.png')}}" alt="Card image" style="width:100%">
-                                 <div class="card-body">
-                                     <h4 class="card-title"><b>Javascript</b></h4>
-                                     <p class="card-text description">Lorem ipsum dolor sit amet.</p>
-                                     <a href="#" class="btn btn-primary">View Course</a>
-                                     <span class="pull-right"><b><s>20.22$</s>  <i><strong>$ 11.89</strong></i></b></span>
-                                 </div>
-                             </div>
-                         </div>
-                         <div class="col-md-4">
-                             <div class="card card-course">
-                                 <img class="card-img-top" height="240" src="{{url('course_assets/img/courses/1555506865369_js.jpg')}}" alt="Card image" style="width:100%">
-                                 <div class="card-body">
-                                     <h4 class="card-title"><b>Javascript</b></h4>
-                                     <p class="card-text description">Lorem ipsum dolor sit amet.</p>
-                                     <a href="#" class="btn btn-primary">View Course</a>
-                                     <span class="pull-right"><b><s>20.22$</s>  <i><strong>$ 11.89</strong></i></b></span>
-                                 </div>
-                             </div>
-                         </div>
-                         <div class="col-md-4">
-                             <div class="card card-course">
-                                 <img class="card-img-top" height="240" src="{{url('course_assets/img/courses/1555505500524_JavaScriptGrow.png')}}" alt="Card image" style="width:100%">
-                                 <div class="card-body">
-                                     <h4 class="card-title"><b>Javascript</b></h4>
-                                     <p class="card-text description">Lorem ipsum dolor sit amet.</p>
-                                     <a href="#" class="btn btn-primary">View Course</a>
-                                     <span class="pull-right"><b><s>20.22$</s>  <i><strong>$ 11.89</strong></i></b></span>
-                                 </div>
-                             </div>
-                         </div>
-                         <div class="col-md-4">
-                             <div class="card card-course">
-                                 <img class="card-img-top" height="240" src="{{url('course_assets/img/courses/1555506865369_js.jpg')}}" alt="Card image" style="width:100%">
-                                 <div class="card-body">
-                                     <h4 class="card-title"><b>Javascript</b></h4>
-                                     <p class="card-text description">Lorem ipsum dolor sit amet.</p>
-                                     <a href="#" class="btn btn-primary">View Course</a>
-                                     <span class="pull-right"><b><s>20.22$</s>  <i><strong>$ 11.89</strong></i></b></span>
-                                 </div>
-                             </div>
-                         </div>
-                         <div class="col-md-4">
-                             <div class="card card-course">
-                                 <img class="card-img-top" height="240" src="{{url('course_assets/img/courses/1555507315862_JavaScriptGrow.png')}}" alt="Card image" style="width:100%">
-                                 <div class="card-body">
-                                     <h4 class="card-title"><b>Javascript</b></h4>
-                                     <p class="card-text description">Lorem ipsum dolor sit amet.</p>
-                                     <a href="#" class="btn btn-primary">View Course</a>
-                                     <span class="pull-right"><b><s>20.22$</s>  <i><strong>$ 11.89</strong></i></b></span>
-                                 </div>
-                             </div>
-                         </div>
-                         <div class="col-md-4">
-                             <div class="card card-course">
-                                 <img class="card-img-top" height="240" src="{{url('course_assets/img/courses/1555506865369_js.jpg')}}" alt="Card image" style="width:100%">
-                                 <div class="card-body">
-                                     <h4 class="card-title"><b>Javascript</b></h4>
-                                     <p class="card-text description">Lorem ipsum dolor sit amet.</p>
-                                     <a href="#" class="btn btn-primary">View Course</a>
-                                     <span class="pull-right"><b><s>20.22$</s>  <i><strong>$ 11.89</strong></i></b></span>
-                                 </div>
-                             </div>
-                         </div>
-                         <div class="col-md-4">
-                             <div class="card card-course">
-                                 <img class="card-img-top" height="240" src="{{url('course_assets/img/courses/1555505500524_JavaScriptGrow.png')}}" alt="Card image" style="width:100%">
-                                 <div class="card-body">
-                                     <h4 class="card-title"><b>Javascript</b></h4>
-                                     <p class="card-text description">Lorem ipsum dolor sit amet.</p>
-                                     <a href="#" class="btn btn-primary">View Course</a>
-                                     <span class="pull-right"><b><s>20.22$</s>  <i><strong>$ 11.89</strong></i></b></span>
-                                 </div>
-                             </div>
-                         </div>
-                         <div class="col-md-4">
-                             <div class="card card-course">
-                                 <img class="card-img-top" height="240" src="{{url('course_assets/img/courses/1555506865369_js.jpg')}}" alt="Card image" style="width:100%">
-                                 <div class="card-body">
-                                     <h4 class="card-title"><b>Javascript</b></h4>
-                                     <p class="card-text description">Lorem ipsum dolor sit amet.</p>
-                                     <a href="#" class="btn btn-primary">View Course</a>
-                                     <span class="pull-right"><b><s>20.22$</s>  <i><strong>$ 11.89</strong></i></b></span>
-                                 </div>
-                             </div>
-                         </div>
-                         <div class="col-md-4">
-                             <div class="card card-course">
-                                 <img class="card-img-top" height="240" src="{{url('course_assets/img/courses/1555507315862_JavaScriptGrow.png')}}" alt="Card image" style="width:100%">
-                                 <div class="card-body">
-                                     <h4 class="card-title"><b>Javascript</b></h4>
-                                     <p class="card-text description">Lorem ipsum dolor sit amet.</p>
-                                     <a href="#" class="btn btn-primary">View Course</a>
-                                     <span class="pull-right"><b><s>20.22$</s>  <i><strong>$ 11.89</strong></i></b></span>
-                                 </div>
-                             </div>
-                         </div>
-                         <div class="col-md-4">
-                             <div class="card card-course">
-                                 <img class="card-img-top" height="240" src="{{url('course_assets/img/courses/1555506865369_js.jpg')}}" alt="Card image" style="width:100%">
-                                 <div class="card-body">
-                                     <h4 class="card-title"><b>Javascript</b></h4>
-                                     <p class="card-text description">Lorem ipsum dolor sit amet.</p>
-                                     <a href="#" class="btn btn-primary">View Course</a>
-                                     <span class="pull-right"><b><s>20.22$</s>  <i><strong>$ 11.89</strong></i></b></span>
-                                 </div>
-                             </div>
-                         </div>
-                     </div>
-                 </div>
-             </div>--}}
+
 
 
         </div>
@@ -976,8 +830,9 @@
 
 
 <!-- end::Scroll Top -->            <!-- begin::Quick Nav -->
-    {{--<ul class="m-nav-sticky" style="margin-top: 30px;">--}}
-    <!--
+<ul class="m-nav-sticky" style="margin-top: 30px;">
+
+    {{--
     <li class="m-nav-sticky__item" data-toggle="m-tooltip" title="Showcase" data-placement="left">
         <a href="">
             <i class="la la-eye"></i>
@@ -988,7 +843,7 @@
             <i class="la la-comments-o"></i>
         </a>
     </li>
-    -->
+
     <li class="m-nav-sticky__item" data-toggle="m-tooltip" title="Purchase" data-placement="left">
         <a href="https://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes"
            target="_blank">
@@ -1005,7 +860,7 @@
             <i class="la la-life-ring"></i>
         </a>
     </li>
-</ul>
+</ul>--}}
 <!-- begin::Quick Nav -->
 <!--begin::Base Scripts -->
 <script src="{{asset('course_assets/vendors/vendors.bundle.js')}}" type="text/javascript"></script>

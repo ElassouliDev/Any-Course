@@ -16,8 +16,8 @@ class CourseController extends Controller
 
     function course_details($course_id)
     {
-        $course_details = \App\Course::find($course_id);
-        return view('courses.course_details', compact('course_details'));
+        $course = \App\Course::find($course_id);
+        return view('courses.course_details', compact('course'));
     }
 
 }

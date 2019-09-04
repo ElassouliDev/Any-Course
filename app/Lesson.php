@@ -17,4 +17,10 @@ class Lesson extends Model
     public function file(){
         return $this->morphOne(File::class,'fileable');
     }
+
+    public function student_watch_lesson(){
+        return $this->belongsToMany(User::class,'lesson_student');
+    } // end of get student course that have a course
+
+
 }

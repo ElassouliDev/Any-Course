@@ -3,7 +3,7 @@
 
 @section('content')
 
-    <div class="col-md-3 left-side">
+    <div class="col-md-3 left-side" style="min-height:760px ">
 
         <div class="heading-side">
             <i class="fa fa-caret-left fa-lg"></i>
@@ -16,21 +16,21 @@
         <div class="divider"></div>
         <ul class="nav nav-tabs">
            @foreach($lessons as $lesson)
-            <li class="active" style="float: none">
-                <a data-toggle="tab" href="#home">
+            <li class="@if($lesson->id == $lesson_watching->id)active @endif" style="float: none">
+                <a  href="@if($lesson->id != $lesson_watching->id){{route('course_lesson',['course_id'=>$lesson->course_id,'lesson_id'=>$lesson->id])}}@else # @endif">
                     <div class="radio">
                         <label>
                             <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1"
-                                   checked>
+                                   @if($lesson->id == $lesson_watching->id)checked @endif   >
                             {{++$loop->index}}
                             .{{$lesson['title_'.app()->getLocale()]}}
                         </label>
+
                         <i class="fa fa-star text-light" style="color: white"></i>
                         <i class="fa fa-hourglass-start" style="color: white"></i>
                     </div>
                 </a>
             </li>
-
             @endforeach
             {{--<li><a data-toggle="tab" href="#menu1">--}}
                     {{--<div class="radio">--}}
@@ -151,7 +151,7 @@
     <div class="col-md-9">
         <div class="show-videos">
             <div class="tab-content">
-                <div id="home" class="tab-pane fade in active">
+            {{--    <div id="home" class="tab-pane fade in active">
                     <h3 class="text-center">First Lesson</h3>
                     <a href="#"><span class="back">Feed back</span></a>
                     <div class="video text-center">
@@ -160,18 +160,18 @@
                                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                                 allowfullscreen></iframe>
                     </div>
-                </div>
-                <div id="menu1" class="tab-pane fade">
-                    <h3 class="text-center">Second Lesson</h3>
+                </div>--}}
+                <div id="menu1" class="tab-pane fade in active ">
+                    <h3 class="text-center">{{$lesson_watching['title_'.app()->getLocale()]}}</h3>
                     <a href="#"><span class="back">Feed back</span></a>
                     <div class="video text-center">
-                        <iframe width="560" height="420" src="https://www.youtube.com/embed/HdSaxRtNxAM"
+                        <iframe width="560" height="420" src="{{$lesson_watching->file->file_path}}"
                                 frameborder="0"
                                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                                 allowfullscreen></iframe>
                     </div>
                 </div>
-                <div id="menu3" class="tab-pane fade">
+               {{-- <div id="menu3" class="tab-pane fade">
                     <h3 class="text-center">Third Lesson</h3>
                     <a href="#"><span class="back">Feed back</span></a>
                     <div class="video text-center">
@@ -280,7 +280,7 @@
                                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                                 allowfullscreen></iframe>
                     </div>
-                </div>
+                </div>--}}
             </div>
         </div>
     </div>

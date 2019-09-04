@@ -37,9 +37,10 @@ Route::group(
             Route::resource('/settings', 'Dashboard\SettingController');
 
         });
+        Route::post('/course_enroll/{course_id}','Student\CourseController@enroll_and_in_enroll_course')->name('student.course_enroll');
         Route::get('/course','View\CourseController@course_list');
         Route::get('/course/{course_id}','View\CourseController@course_details');
-        Route::get('/lessons/{course_id}','View\LessonsController@lessons_list');
+        Route::get('/lessons/{course_id}/{lesson_id?}','View\LessonsController@lessons_list')->name('course_lesson');
         Route::get('/','View\CourseController@course_list');
 
         Auth::routes();

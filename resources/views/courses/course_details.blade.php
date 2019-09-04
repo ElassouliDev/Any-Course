@@ -48,7 +48,7 @@
             <div class="m-portlet">
                 <div class="m-portlet__head">
                     <div class="m-portlet__head-caption">
-                        <div class="m-portlet__head-title w-100" >
+                        <div class="m-portlet__head-title w-100">
                             <div class="m-portlet__head-text">
                                 <div class="row">
                                     <div class="col-lg-7 col-md-7 col-sm-12">
@@ -56,8 +56,8 @@
                                         <h3>{{$course['title_'.app()->getLocale()]}}</h3>
                                         <p class="lead">
                                             {{$course['description_'.app()->getLocale()]}}
-                                          {{--  Learn Android App Development with Android 7 Nougat by
-                                            building real apps including Uber, Whatsapp and Instagram !--}}
+                                            {{--  Learn Android App Development with Android 7 Nougat by
+                                              building real apps including Uber, Whatsapp and Instagram !--}}
                                         </p>
                                         <div>
                                                             <span>
@@ -79,22 +79,36 @@
                                         <div class="card card-detail text-center">
                                             <a href="show_course.html" class="img-preview">
                                                 <img class="card-img-top" height="240"
-                                                     src="{{url('storage/'.$course->image->file_path)}}" alt="Card image"
+                                                     src="{{url('storage/'.$course->image->file_path)}}"
+                                                     alt="Card image"
                                                      style="width:100%">
                                                 <i class="fa fa-play"></i>
                                                 <span>Preview this course</span>
                                             </a>
                                             <div class="card-body">
-                                                <h4 class="card-title"><b>{{$course->category['title_'.app()->getLocale()]}}</b></h4>
+                                                <h4 class="card-title">
+                                                    <b>{{$course->category['title_'.app()->getLocale()]}}</b></h4>
                                                 <p class="card-text description">{{$course->category['description_'.app()->getLocale()]}}</p>
-                                          {{--      @if($course->is_paid)
-                                                    <span class="pull-right"><b>--}}{{--<s>20.22$</s>  --}}{{--<i><strong>$ {{$course->price}}</strong></i></b></span>
-                                                @else
-                                                    <span class="pull-right text-success pt-2"><strong>free</strong></span>
+                                                {{--      @if($course->is_paid)
+                                                          <span class="pull-right"><b>--}}{{--<s>20.22$</s>  --}}{{--<i><strong>$ {{$course->price}}</strong></i></b></span>
+                                                      @else
+                                                          <span class="pull-right text-success pt-2"><strong>free</strong></span>
 
-                                                @endif--}}
-                                                <button class="btn btn-lg btn-danger">@lang('admin.follow')Follow</button>
-                                                <button class="btn btn-lg btn-default">Buy Now</button>
+                                                      @endif--}}
+
+
+                                                <form method="post"
+                                                      action="{{route('student.course_enroll',$course->id)}}">
+                                                    @csrf
+                                                    @if($course->is_enroll)
+                                                        <button class="btn btn-lg btn-primary">@lang('course.enroll')</button>
+                                                    @else
+                                                        <button class="btn btn-lg btn-danger">@lang('course.In-enroll')</button>
+                                                        <a  href="{{route('course_lesson',$course->id)}}" class="btn btn-lg btn-info">@lang('course.watch_course')</a>
+
+                                                    @endif
+                                                </form>
+                                                {{--<button class="btn btn-lg btn-default">Buy Now</button>--}}
 
                                                 <h5 class="course_inc">This Course includes:</h5>
                                                 <ul class="nav flex-column course_inc_ul">

@@ -1,7 +1,7 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Yehia Elassouli
- * Date: 9/4/2019
- * Time: 8:59 PM
- */
+return [
+    'follow' => 'follow',
+    'watch_course' => 'watch course',
+    'enroll' => 'enroll',
+    'In-enroll' => 'In-enroll',
+];

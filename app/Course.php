@@ -32,4 +32,13 @@ class Course extends Model
     public function category(){
         return $this->belongsTo(Category::class);
     } // end of get category that have a course
+    public function student_course(){
+        return $this->belongsToMany(Course::class,'course_student');
+    } // end of get student course that have a course
+
+   /* public function student_watch_lesson(){
+            return $this->belongsToMany(Course::class,'lesson_student');
+        } // end of get student course that have a course*/
+
+
 }

@@ -2,12 +2,12 @@
 
 namespace App\DataTables;
 
-use App\Lesson;
+use App\Question;
 use App\User;
 use Yajra\DataTables\Services\DataTable;
 
 
-class LessonDataTable extends DataTable
+class QuestionDataTable extends DataTable
 {
     /**
      * Build DataTable class.
@@ -19,9 +19,9 @@ class LessonDataTable extends DataTable
     {
         return datatables($query)
             ->addColumn('actions', 'dashboard.lesson.buttons.actions')
-            ->editColumn('course_id', function($row){
-                return $row->course['title_'.app()->getLocale()];
-    })
+//            ->editColumn('lesson_id', function($row){
+//                return $row->course['title_'.app()->getLocale()];
+//    })
             ->rawColumns(['actions']);
     }
 
@@ -34,7 +34,7 @@ class LessonDataTable extends DataTable
     public function query()
     {
 //        return $model->newQuery()->select('id', 'add-your-columns-here', 'created_at', 'updated_at');
-        return Lesson::query()->orderBy('id','desc');
+        return Question::query()->orderBy('id','desc');
 
     }
 
@@ -126,10 +126,10 @@ class LessonDataTable extends DataTable
                 'data'=>'title_'.app()->getLocale(),
                 'title'=>trans('admin.title_'.app()->getLocale()),
             ],
-      [
-                'name'=>'course_id',
-                'data'=>'course_id',
-                'title'=>trans('admin.course'),
+  [
+                'name'=>'lesson_id',
+                'data'=>'lesson_id',
+                'title'=>trans('admin.lesson_id'),
             ],
             [
                 'name' => 'actions',

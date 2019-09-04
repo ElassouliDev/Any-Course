@@ -53,7 +53,7 @@
                             <div class="nav-tabs-custom">
 
                                 @php
-                                    $models = ['users', 'categories', 'settings','profile'];
+                                    $models = ['users', 'categories', 'settings','profile','questions','lessons'];
                                     $maps = ['create', 'read', 'update', 'delete'];
                                 @endphp
 

@@ -25,6 +25,9 @@
             {{--            @if (auth()->user()->hasPermission('read_lessons'))--}}
                 <li><a href="{{ route('dashboard.lesson.index') }}"><i class="fa fa-list-ol"></i><span>@lang('admin.lessons')</span></a></li>
 {{--            @endif--}}
+            {{--            @if (auth()->user()->hasPermission('read_questions'))--}}
+                <li><a href="{{ route('dashboard.question.index') }}"><i class="fa fa-list-ol"></i><span>@lang('admin.question')</span></a></li>
+{{--            @endif--}}
 
             {{--            @if (auth()->user()->hasPermission('read_tagsphp'))--}}
                 <li><a href="{{ route('dashboard.tag.index') }}"><i class="fa fa-tag"></i><span>@lang('admin.tags')</span></a></li>

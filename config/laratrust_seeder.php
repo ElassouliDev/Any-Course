@@ -9,6 +9,7 @@ return [
             'categories' => 'c,r,u,d',
             'courses' => 'c,r,u,d',
             'lessons' => 'c,r,u,d',
+            'questions' => 'c,r,u,d',
         ],
         'admin' =>[],
     ],

@@ -3,24 +3,25 @@
 namespace App\Http\Controllers\Dashboard;
 
 use App\Course;
-use App\DataTables\LessonDataTable;
+use App\DataTables\QuestionDataTable;
 use App\File;
-use App\Http\Requests\LessonRequest;
+use App\Http\Requests\QuestionRequest;
 use App\Lesson;
+use App\Question;
 use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class LessonController extends Controller
+class QuestionController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(LessonDataTable $lesson)
+    public function index(QuestionDataTable $question)
     {
-        return $lesson->render('dashboard.lesson.index', ['title' => trans('admin.Admin')]);
+        return $question->render('dashboard.question.index', ['title' => trans('admin.question')]);
     }
 
     /**
@@ -31,8 +32,8 @@ class LessonController extends Controller
     public function create()
     {
         $title = trans('admin.add');
-       $courses = Course::where('user_id',auth()->id())->get();
-        return view('dashboard.lesson.create',compact('title','courses'));
+        $lessons = Lesson::all();
+        return view('dashboard.question.create',compact('title','lessons'));
     }
 
     /**
@@ -41,16 +42,13 @@ class LessonController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(LessonRequest $request)
+    public function store(QuestionRequest $request)
     {
+//        return dd($request);
         $request['user_id'] = auth()->id();
-       $lesson = Lesson::create($request->all());
-       $file = new File() ;
-       $file->file_path = $request->file_path;
-
-        $lesson->file()->save($file);
+       $Question = Question::create($request->all());
         session()->flash('success', __('error.added_successfully'));
-        return redirect()->route('dashboard.lesson.index');
+        return redirect()->route('dashboard.question.index');
     }
 
     /**
@@ -70,13 +68,12 @@ class LessonController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Lesson $lesson)
+    public function edit(Question $question)
     {
         $title = trans('admin.edit');
-        $user = User::where('id',$lesson->user_id)->first();
-        $courses = Course::where('user_id',$user->id)->get();
 
-        return view('dashboard.lesson.edit',compact('title','lesson','courses'));
+
+        return view('dashboard.Question.edit',compact('title','question'));
     }
 
     /**
@@ -86,16 +83,12 @@ class LessonController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(LessonRequest $request, Lesson $lesson)
+    public function update(QuestionRequest $request, Question $question)
     {
 
-        $lesson->update($request->all());
-        $file = new File() ;
-        $file = $lesson->file;
-        $file->file_path=$request->file_path;
-        $file->update();
+        $question->update($request->all());
         session()->flash('success', __('error.updated_successfully'));
-        return redirect()->route('dashboard.lesson.index');
+        return redirect()->route('dashboard.question.index');
     }
 
     /**
@@ -104,10 +97,10 @@ class LessonController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Lesson $lesson)
+    public function destroy(Question $question)
     {
-        $lesson->delete();
+        $question->delete();
         session()->flash('success',__('error.deleted_successfully'));
-        return redirect()->route('dashboard.lesson.index');
+        return redirect()->route('dashboard.question.index');
     }
 }

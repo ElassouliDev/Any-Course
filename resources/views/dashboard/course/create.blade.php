@@ -58,7 +58,7 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>@lang('admin.category')</label>
-                                    <select name="category_id" class="form-control">
+                                    <select name="category_id"  required value='{{old('category_id')}}' class="form-control">
                                         <option value="-1">-- @lang('admin.SelectCategory')--</option>
 
                                         @foreach($mainCategories as $category)
@@ -83,7 +83,7 @@
                                     <label>@lang('admin.isPaid')</label>
                                     <div class="row">
                                         <div class="col-md-8">
-                                            <select class="form-control" name="is_paid">
+                                            <select class="form-control" required value='{{old('is_paid')}}' name="is_paid">
                                                 <option value="-1">-- @lang('admin.selectPaid')--</option>
                                                 <option value="0">@lang('admin.free')</option>
                                                 <option value="1">@lang('admin.paid')</option>
@@ -107,7 +107,7 @@
                                 <div class="form-group">
                                     <label>@lang('admin.description_ar')</label>
                                     <textarea rows="6" name="description_ar"
-                                              class="form-control">{{ old('description_ar') }}</textarea>
+                                              class="form-control" required>{{ old('description_ar') }}</textarea>
                                 </div>
 
                             </div>
@@ -115,7 +115,7 @@
                                 <div class="form-group">
                                     <label>@lang('admin.description_en')</label>
                                     <textarea rows="6" name="description_en"
-                                              class="form-control">{{ old('description_en') }}</textarea>
+                                              class="form-control" required>{{ old('description_en') }}</textarea>
                                 </div>
 
                             </div>
@@ -124,7 +124,7 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>@lang('admin.tag')</label>
-                                    <select class="js-example-basic-multiple form-control" name="tags[]" multiple="multiple">
+                                    <select required value='{{old('tags')}}' class="js-example-basic-multiple form-control" name="tags[]" multiple="multiple">
                                       @foreach($tags as $tag)
                                         <option value="{{$tag->id}}">{{$tag['name_'.app()->getLocale()]}}</option>
                                           @endforeach
@@ -133,7 +133,7 @@
 
                             </div>
                             <div class="col-md-6">
-                                <div class="form-group">
+                                <div class="form-group" required>
                                     <label>@lang('admin.image')</label>
                                     <input type="file" class="form-control" name="image">
                                 </div>

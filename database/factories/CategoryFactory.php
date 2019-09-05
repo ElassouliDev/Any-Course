@@ -11,5 +11,6 @@ $factory->define(\App\Category::class, function (Faker $faker) {
         'title_ar' => $faker->word . 'ar',
         'description_ar' => $faker->sentence . ' ar',
         'description_en' => $faker->sentence . ' en',
+        'parent' => \App\Category::where('parent',0)->inRandomOrder()->first()
     ];
 });

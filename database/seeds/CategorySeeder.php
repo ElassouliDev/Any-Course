@@ -11,7 +11,42 @@ class CategorySeeder extends Seeder
      */
     public function run()
     {
-        factory(\App\Category::class,50)->create();
+
+
+        $new = [
+            [
+                'description_ar' => 'وصف االكاتيجوري بالعربي',
+                'description_en' => 'category description',
+                'title_en' => 'ويب2'
+                , 'title_ar' => 'web2',                                                           ],
+            [
+                'description_ar' => 'وصف االكاتيجوري بالعربي',
+                'description_en' => 'category description',
+                'title_en' => 'ويب2'
+                , 'title_ar' => 'web2',                                                           ],
+            [
+                'description_ar' => 'وصف االكاتيجوري بالعربي',
+                'description_en' => 'category description',
+                'title_en' => 'ويب2'
+                , 'title_ar' => 'web2',                                                           ],
+            [
+                'description_ar' => 'وصف االكاتيجوري بالعربي',
+                'description_en' => 'category description',
+                'title_en' => 'ويب2'
+                , 'title_ar' => 'web2',                                                           ], [
+                'description_ar' => 'وصف االكاتيجوري بالعربي',
+                'description_en' => 'category description',
+                'title_en' => 'ويب2'
+                , 'title_ar' => 'web2',                                                           ], [
+                'description_ar' => 'وصف االكاتيجوري بالعربي',
+                'description_en' => 'category description',
+                'title_en' => 'ويب2'
+                , 'title_ar' => 'web2',],
+
+
+        ];
+        \App\Category::insert($new);
+        factory(\App\Category::class, 50)->create();
     }
 }
 

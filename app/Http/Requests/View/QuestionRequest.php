@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\View;
 
 use Illuminate\Foundation\Http\FormRequest;
 
@@ -26,6 +26,7 @@ class QuestionRequest extends FormRequest
         return [
             'title' => 'string|required',
             'content' => 'string|required',
+            'lesson_id' => 'required|numeric',
         ];
     }
 }

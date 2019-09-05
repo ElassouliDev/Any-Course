@@ -868,7 +868,8 @@
 <!--end::Base Scripts -->
 <!--begin::Page Snippets -->
 <script src="{{asset('course_assets/js/dashboard.js')}}" type="text/javascript"></script>
-<!--end::Page Snippets -->
+        @stack('js')
+    <!--end::Page Snippets -->
 </body>
 <!-- end::Body -->
 </html>

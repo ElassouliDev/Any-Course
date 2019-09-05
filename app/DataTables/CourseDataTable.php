@@ -21,6 +21,14 @@ class CourseDataTable extends DataTable
             ->addColumn('actions', 'dashboard.course.buttons.actions')
             ->editColumn('category_id', function($row){
                 return $row->category['title_'.app()->getLocale()];
+            })   ->editColumn('is_paid', function($row){
+                if ($row->is_paid===0){
+
+                    return trans('admin.free');
+                }else{
+
+                    return $row->is_paid;
+                }
             })
             ->rawColumns(['actions']);
     }

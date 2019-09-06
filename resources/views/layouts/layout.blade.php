@@ -20,6 +20,7 @@
         });
     </script>
     <link rel="stylesheet" href="{{ asset('dashboard_files/css/font-awesome-rtl.min.css') }}">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
 
     <!--end::Web font -->
     <!--begin::Base Styles -->
@@ -868,6 +869,8 @@
 <!--end::Base Scripts -->
 <!--begin::Page Snippets -->
 <script src="{{asset('course_assets/js/dashboard.js')}}" type="text/javascript"></script>
+<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+
         @stack('js')
     <!--end::Page Snippets -->
 </body>

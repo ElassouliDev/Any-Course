@@ -36,6 +36,7 @@ Route::group(
             Route::post('/users/profile/{id}/edit', 'Dashboard\UserController@update_profile')->name('users.update_profile');
             Route::resource('/settings', 'Dashboard\SettingController');
             Route::resource('/question', 'Dashboard\QuestionController');
+            Route::resource('/exam', 'Dashboard\ExamController');
 
         });
         Route::post('/course_enroll/{course_id}','Student\CourseController@enroll_and_in_enroll_course')->name('student.course_enroll');

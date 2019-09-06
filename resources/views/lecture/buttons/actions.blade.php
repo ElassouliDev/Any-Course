@@ -8,7 +8,7 @@
 						</a>
 						<ul class="dropdown-menu pull-right">
 								<li>
-										<a href="{{ route('dashboard.question.edit',$id)}}"><i class="fa fa-pencil-square-o"></i> {{trans('admin.edit')}}</a>
+										<a href="{{ route('dashboard.category.edit',$id)}}"><i class="fa fa-pencil-square-o"></i> {{trans('admin.edit')}}</a>
 								</li>
 								<li class="divider"> </li>
 
@@ -30,7 +30,7 @@
 										<i class="fa fa-exclamation-triangle"></i> {{trans('admin.ask_del')}} {{trans('admin.id')}} ({{$id}}) ؟
 								</div>
 								<div class="modal-footer">
-									<form method="post" action="{{route('dashboard.question.destroy', $id)}}">
+									<form method="post" action="{{route('dashboard.category.destroy', $id)}}">
                                         @csrf
                                         @method('delete')
                                         <input type="submit" class="btn btn-danger" value="{{trans('admin.approval')}}">

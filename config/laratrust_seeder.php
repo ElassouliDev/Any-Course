@@ -10,6 +10,7 @@ return [
             'courses' => 'c,r,u,d',
             'lessons' => 'c,r,u,d',
             'questions' => 'c,r,u,d',
+            'exams' => 'c,r,u,d',
         ],
         'admin' =>[],
     ],

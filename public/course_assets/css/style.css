@@ -1,0 +1,170 @@
+.m-brand__logo-wrapper {
+    width: 200px;
+    font-size: 20px;
+    text-decoration: none !important;
+    color: #eee !important;
+    padding-top: .3rem;
+}
+
+.m-portlet__body {
+    padding: 1rem 0 0 1rem !important;
+    /* padding-top: 1rem ; */
+}
+
+.nav-pills {
+    display: block !important;
+}
+/* .nav-pills .nav-link.active, .show>.nav-pills .nav-link {
+    width: 100%;
+} */
+
+.nav.nav-pills .nav-item, .nav.nav-tabs .nav-item {
+    margin-left: 0 !important;
+}
+
+.tab-content {
+    /* padding: 2rem; */
+    border: 1px solid #dbe2e8;
+}
+
+.card-course {
+    margin-top: 20px;
+    transition: all .3s ease-in-out;
+}
+.card-course:hover {
+    box-shadow: 3px 5px 12px 8px #eee;
+    margin: -1px;
+}
+.card .percantage{
+    color: green;
+    font-size: 16px;
+    font-weight: 800;
+}
+.m-portlet__head-text{
+    position: relative;
+    padding: 10px;
+}
+.card-detail{
+    position: absolute;
+    top: -23%;
+    left: 10%;
+    font-size: 13px;
+    width: 85%;
+}
+.fa-mobile {
+    font-size: 18px !important;
+}
+.card-detail ul>li{
+    text-align: left;
+}
+.img-preview {
+    position: relative;
+    transition: .3s ease-in-out;
+    text-decoration: none !important;
+    color: #eee
+}
+
+.img-preview i{
+    position: absolute;
+    top: 50%;
+    left: 45%;
+    color: #fff;
+    font-size: 40px;
+    transform: translate(-50%,50%);
+    transform: scale(1);
+    transition: .3s ease-in-out;
+}
+.img-preview span{
+    position: absolute;
+    bottom: 3%;
+    left: 48%;
+    font-size: 14px;
+    transform: translate(-50%,50%);
+}
+.img-preview:hover i{
+    transform: scale(1.5);
+}
+.course_inc{
+    margin-top: 30px;
+    font-size: 15px;
+    text-align: left;
+}
+.course_inc_ul>li {
+    font-size: 13px;
+    margin-bottom: 10px;
+}
+course_inc_ul>li:last-child{
+    margin-bottom: 0px;
+}
+
+.whatLearn ,.course_content{
+    margin-top: 20px;
+    margin-left: 6%;
+    margin-bottom: 20px;
+    padding: 20px;
+}
+.whatLearn ul>li{
+    margin-bottom: 20px;
+}
+.course_content span:first-child{
+    margin-right: 15px;
+}
+.clear{
+    clear: both;
+}
+
+#accordion .card-link{
+    color: #505763;
+    font-size: 15px;
+}
+
+#accordion .collapse .card-body{
+    padding: 0;
+}
+#accordion .collapse .card-body .lecture-item-1-1{
+    border-bottom: 1px solid #e8e9eb;
+    padding: 10px 20px;
+}
+#accordion .collapse a{
+    text-decoration: none !important;
+    color: #007791;
+}
+#accordion .collapse a:hover{
+    color: #003845;
+}
+#accordion .collapse a::before{
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    content: "\f04b";
+    margin-right: 10px;
+}
+#accordion .collapse a.file::before{
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    content: "\f15b";
+    margin-right: 10px;
+}
+
+@media (max-width: 768px){
+    .card-detail{
+        position: unset;
+        width: 100%;
+        margin-top: 20px;
+    }
+    .whatLearn ,.course_content{
+        margin-left: 0;
+    }
+    #accordion .card-link{
+        font-size: 12px;
+    }
+    #accordion .collapse {
+        font-size: 10px;
+    }
+
+}

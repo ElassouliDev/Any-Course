@@ -1,0 +1,103 @@
+body{
+    background: #191818;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* start section left-side*/
+
+.left-side{
+    background: #223b4a;
+    position: relative;
+    padding: 10px;
+}
+.left-side .navbar-form input{
+    
+    width: 225px;
+}
+.left-side .navbar-form i{
+    position: absolute;
+    top: 77px;
+    left: 226px;
+    color: #999;
+}
+.form-control{
+    background: #191818;
+    border: 1px solid #191818;  
+    border-radius: 0;
+
+}
+.left-side .heading-side{
+    margin-left: 30px;
+    margin-top: 15px;
+}
+
+.left-side .heading-side h5{
+    
+    margin-bottom: 0;
+    color: #fff;
+    font-weight: 600;
+}
+.left-side .heading-side p{
+    
+    margin-bottom: 0;
+    color: #fff;
+    font-weight: 600;
+}
+
+.left-side .heading-side i{
+    color: #06f;
+    font-size: 24px;
+    position: absolute;
+    left: 20px;
+}
+
+.left-side .concept {
+    display: inline-block;
+    width: 100%;
+    color: #fff;
+    background:#191818;
+    border: 1px solid #423939;
+    margin: 15px 0;
+    position: relative;
+    padding: 5px 10px;
+    
+}
+.left-side .concept i{
+    position: absolute;
+    top: 12px;
+    right: 30px;
+}
+.left-side .concept p{
+    font-size: 18px;
+}
+
+/*start form radio*/
+
+.radio label{
+    color: #999;
+    letter-spacing: .5px;
+    margin-bottom: 10px;
+}
+/**/
+
+
+/*start show-videos*/
+
+.show-videos{
+    margin-top: 30px;
+}
+.show-videos p{
+    color: #fff;
+    font-weight: normal;
+    
+}
+
+.show-videos .video iframe{
+    width: 80%;
+}
+
+.back{
+    position: absolute;
+    right: 112px;
+    top: 32px;
+}

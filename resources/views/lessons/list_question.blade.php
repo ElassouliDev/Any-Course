@@ -4,21 +4,32 @@
 @section('content')
     <div class="container ">
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#new" >@lang('course.new_question')</button>
+        @if (count($questions) > 0)
+            @foreach ($questions as $question)
+                <div class="row bg-light pt-2 px-1">
+                    <div class="col-md-12 border border-bottom">
+                        <img class="img-fluid img-rounded" src="{{isset($question->user->image()->file_path) ? url('storage/'.$question->user->image()->file_path) : url('storage\image\user.jpeg')}}"
+                             style="width: 50px;height: 50px; border-radius: 50%">
+                        <span class=""> {{$question->user->full_name()}}</span>
+                    </div>
+                    <div class="divider"></div>
+                    <div class="col-md-12 lead ">
+                        {!! $question->content !!}
+                    </div>
+                    <div class="divider"></div>
+                </div>
 
+            @endforeach
+            @else
+            <div class="row bg-light pt-2 px-1">
 
-        <div class="row bg-light pt-2 px-1">
-            <div class="col-md-12 border border-bottom">
-                <img class="img-fluid img-rounded" src="{{url('storage\image\user.jpeg')}}"
-                     style="width: 50px;height: 50px; border-radius: 50%">
-                <span class=""> yehia elassouli</span>
+                <div class="divider"></div>
+                <div class="col-md-12 lead ">
+                NO DATA
+                </div>
             </div>
-             <div class="divider"></div>
-            <div class="col-md-12 lead ">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium, alias aliquid at aut doloremque
-                fuga fugiat,
-                illum in modi nesciunt perspiciatis unde ut! Aspernatur aut commodi consectetur iste perferendis quos.
-            </div>
-        </div>
+        @endif
+
     </div>
 {{--    <div class="modal-body" id="new">
         <h5>@lang('course.new_question')</h5>

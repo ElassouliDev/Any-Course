@@ -8,17 +8,17 @@
     >
         <ul class="m-menu__nav  m-menu__nav--dropdown-submenu-arrow ">
             <li class="m-menu__item  m-menu__item--active" aria-haspopup="true" >
-                <a  href="index.html" class="m-menu__link ">
+                <a  href="{{url('/')}}" class="m-menu__link ">
                     <i class="m-menu__link-icon flaticon-line-graph"></i>
                     <span class="m-menu__link-title">
 										<span class="m-menu__link-wrap">
 											<span class="m-menu__link-text">
-												Home
+												@lang('course.home')
 											</span>
 											<span class="m-menu__link-badge">
-												<span class="m-badge m-badge--danger">
-													2
-												</span>
+{{--												<span class="m-badge m-badge--danger">--}}
+{{--													2--}}
+{{--												</span>--}}
 											</span>
 										</span>
 									</span>
@@ -97,13 +97,19 @@
 									</span>
                 </a>
             </li>
+
+
             <li class="m-menu__item">
-                <a  href="#" class="m-menu__link">
+                <a  href="{{ route('logout') }}" class="m-menu__link" onclick="event.preventDefault();
+                                                 document.getElementById('logout-form').submit();">
                     <i class="m-menu__link-icon flaticon-logout"></i>
                     <span class="m-menu__link-text">
-										Logout
+									@lang('auth.logout')
 									</span>
                 </a>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    @csrf
+                </form>
             </li>
         </ul>
     </div>

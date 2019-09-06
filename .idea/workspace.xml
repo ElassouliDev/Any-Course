@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0b226c64-b40e-40b8-97c2-65fd791ffb0a" name="Default Changelist" comment="[]">
+    <list default="true" id="0b226c64-b40e-40b8-97c2-65fd791ffb0a" name="Default Changelist" comment="[X] add create course for lecture">
       <change afterPath="$PROJECT_DIR$/app/Comment.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/DataTables/ExamDataTable.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/Exam.php" afterDir="false" />
@@ -13,13 +13,15 @@
       <change afterPath="$PROJECT_DIR$/resources/views/dashboard/exam/edit.blade.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/resources/views/dashboard/exam/index.blade.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/resources/views/dashboard/exam/show.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/lecture/buttons/actions.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/DataTables/Lecture/CourseDataTable.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/DataTables/Lecture/CourseDataTable.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/laratrust_seeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/laratrust_seeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/question/buttons/actions.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/question/buttons/actions.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Question.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Question.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/lang/en/course.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/en/course.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/aside.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/aside.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/dashboard/_aside.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/dashboard/_aside.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/layout.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/lessons/lessons.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/lessons/lessons.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/lessons/list_question.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/lessons/list_question.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -45,7 +47,23 @@
     <option name="HIDDEN_KINDS">
       <set />
     </option>
-    <expand />
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="@localhost" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="AnyCourse: schema" type="ebfa3cd1:MariaImplModel$Schema" />
+      </path>
+    </expand>
     <select />
   </component>
   <component name="Git.Settings">
@@ -155,12 +173,6 @@
       <path value="$PROJECT_DIR$/vendor/maatwebsite/excel" />
       <path value="$PROJECT_DIR$/vendor/laravelcollective/html" />
     </include_path>
-  </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="981" />
-    <option name="height" value="768" />
   </component>
   <component name="ProjectId" id="1Pf1OJABYnKpNXQPWL67d0H29uw" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -380,7 +392,14 @@
       <option name="project" value="LOCAL" />
       <updated>1567674631958</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="[X] add create course for lecture">
+      <created>1567783775335</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1567783775335</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TodoView">
@@ -424,6 +443,7 @@
     <MESSAGE value="update course controller" />
     <MESSAGE value="[X]create watch course details view &#10;[X]create table for watching lessons for student&#10;[X]create table for course for student student&#10;[X]create lang file for course" />
     <MESSAGE value="add page crud of question #7" />
-    <option name="LAST_COMMIT_MESSAGE" value="add page crud of question #7" />
+    <MESSAGE value="[X] add create course for lecture" />
+    <option name="LAST_COMMIT_MESSAGE" value="[X] add create course for lecture" />
   </component>
 </project>

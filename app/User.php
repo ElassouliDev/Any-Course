@@ -50,7 +50,9 @@ class User extends Authenticatable
 
     }//end of get last name
 
-
+    function full_name(){
+    return $this->first_name.' '.$this->last_name;
+    } // end of get full name (first name and last name)
     public function image()
     {
         return $this->morphOne(File::class,'fileable');
@@ -64,5 +66,7 @@ class User extends Authenticatable
         return $this->belongsToMany(Lesson::class,'lesson_student');
     } // end of get student course that have a course
 
-
+    function question(){
+        return $this->hasMany(Question::class);
+    }//end of get  lesson questions
 }

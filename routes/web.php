@@ -41,10 +41,10 @@ Route::group(
         });
         Route::post('/course_enroll/{course_id}','Student\CourseController@enroll_and_in_enroll_course')->name('student.course_enroll');
         Route::get('/course','View\CourseController@course_list');
-        Route::get('/course/{course_id}','View\CourseController@course_details')->name('course_details');
-        Route::get('/lessons/{course_id}/{lesson_id?}','View\LessonsController@lessons_list')->name('course_lesson');
+        Route::get('/course/{course_id}','View\CourseController@course_details')->name('course_details'); //course details
+        Route::get('/lessons/{course_id}/{lesson_id?}','View\LessonsController@lessons_list')->name('course_lesson'); //lessons list
         Route::get('/','View\CourseController@course_list');
-        Route::get('lesson/{lesson_id}/question','Student\QuestionController@lesson_question');
+        Route::get('lesson/{lesson_id}/question','Student\QuestionController@lesson_question')->name('list_question');
         Route::post('lesson/question','Student\QuestionController@store')->name('new_question');
 
 

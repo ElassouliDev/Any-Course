@@ -26,7 +26,10 @@
                 <li><a href="{{ route('dashboard.lesson.index') }}"><i class="fa fa-list-ol"></i><span>@lang('admin.lessons')</span></a></li>
 {{--            @endif--}}
             {{--            @if (auth()->user()->hasPermission('read_questions'))--}}
-                <li><a href="{{ route('dashboard.question.index') }}"><i class="fa fa-list-ol"></i><span>@lang('admin.question')</span></a></li>
+                <li><a href="{{ route('dashboard.question.index') }}"><i class="fa  fa-question-circle-o"></i><span>@lang('admin.questions')</span></a></li>
+{{--            @endif--}}
+            {{--            @if (auth()->user()->hasPermission('read_questions'))--}}
+                <li><a href="{{ route('dashboard.exam.index') }}"><i class="fa   fa-exclamation-triangle"></i><span>@lang('admin.exams')</span></a></li>
 {{--            @endif--}}
 
             {{--            @if (auth()->user()->hasPermission('read_tagsphp'))--}}

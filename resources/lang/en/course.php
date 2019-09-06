@@ -1,5 +1,6 @@
 <?php
 return [
+    'home' => 'Home',
     'follow' => 'follow',
     'watch_course' => 'watch course',
     'enroll' => 'enroll',

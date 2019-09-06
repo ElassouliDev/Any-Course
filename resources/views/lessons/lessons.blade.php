@@ -163,7 +163,7 @@
                 </div>--}}
                 <div id="menu1" class="tab-pane fade in active ">
                     <h3 class="text-center">{{$lesson_watching['title_'.app()->getLocale()]}}</h3>
-                    <a href="#"><span class="back">Feed back</span></a>
+                    <a href="{{route('list_question',$lesson_watching->id)}}"><span class="back">Feed back</span></a>
                     <div class="video text-center">
                         <iframe width="560" height="420" src="{{$lesson_watching->file->file_path}}"
                                 frameborder="0"

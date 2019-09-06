@@ -14,4 +14,7 @@ class Category extends Model
     public function course(){
         return $this->hasMany(Course::class);
     } // end of get course that have a course
+     public function subCategories(){
+        return $this->hasMany(Category::class,'parent','id');
+    } // end of get course that have a course
 }

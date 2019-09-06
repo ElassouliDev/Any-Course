@@ -7,7 +7,7 @@
 
         <div class="heading-side">
             <i class="fa fa-caret-left fa-lg"></i>
-            <h5>Lesson 1 :</h5>
+            <h5>@lang('course.lesson') 1 :</h5>
             <p class="my-3" style="margin-top: 15px;"> Why Responsive
             <p>
 
@@ -15,23 +15,39 @@
         </div>
         <div class="divider"></div>
         <ul class="nav nav-tabs">
-           @foreach($lessons as $lesson)
-            <li class="@if($lesson->id == $lesson_watching->id)active @endif" style="float: none">
-                <a  href="@if($lesson->id != $lesson_watching->id){{route('course_lesson',['course_id'=>$lesson->course_id,'lesson_id'=>$lesson->id])}}@else # @endif">
-                    <div class="radio">
-                        <label>
-                            <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1"
-                                   @if($lesson->id == $lesson_watching->id)checked @endif   >
-                            {{++$loop->index}}
-                            .{{$lesson['title_'.app()->getLocale()]}}
-                        </label>
+            @if (count($lessons) > 0)
+                @foreach($lessons as $lesson)
+                    <li class="@if($lesson->id == $lesson_watching->id)active @endif" style="float: none">
+                        <a  href="@if($lesson->id != $lesson_watching->id){{route('course_lesson',['course_id'=>$lesson->course_id,'lesson_id'=>$lesson->id])}}@else # @endif">
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1"
+                                           @if($lesson->id == $lesson_watching->id)checked @endif   >
+                                    {{++$loop->index}}
+                                    .{{$lesson['title_'.app()->getLocale()]}}
+                                </label>
 
-                        <i class="fa fa-star text-light" style="color: white"></i>
-                        <i class="fa fa-hourglass-start" style="color: white"></i>
-                    </div>
-                </a>
-            </li>
-            @endforeach
+                                <i class="fa fa-star text-light" style="color: white"></i>
+                                <i class="fa fa-hourglass-start" style="color: white"></i>
+                            </div>
+                        </a>
+                    </li>
+                @endforeach
+                @else
+                <li  style="float: none">
+
+                        <div class="radio">
+                            <label>
+
+                             @lang('course.no_lessons')
+                            </label>
+
+                        </div>
+                    </a>
+                </li>
+
+            @endif
+
             {{--<li><a data-toggle="tab" href="#menu1">--}}
                     {{--<div class="radio">--}}
                         {{--<label>--}}
@@ -153,7 +169,7 @@
             <div class="tab-content">
             {{--    <div id="home" class="tab-pane fade in active">
                     <h3 class="text-center">First Lesson</h3>
-                    <a href="#"><span class="back">Feed back</span></a>
+                    <a href="#"><span class="back">@lang('course.feed_back')</span></a>
                     <div class="video text-center">
                         <iframe width="560" height="420" src="https://www.youtube.com/embed/HdSaxRtNxAM"
                                 frameborder="0"
@@ -161,19 +177,42 @@
                                 allowfullscreen></iframe>
                     </div>
                 </div>--}}
-                <div id="menu1" class="tab-pane fade in active ">
-                    <h3 class="text-center">{{$lesson_watching['title_'.app()->getLocale()]}}</h3>
-                    <a href="{{route('list_question',$lesson_watching->id)}}"><span class="back">Feed back</span></a>
-                    <div class="video text-center">
-                        <iframe width="560" height="420" src="{{$lesson_watching->file->file_path}}"
-                                frameborder="0"
-                                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                                allowfullscreen></iframe>
+                @if (count($lesson_watching) >0)
+                    <div id="menu1" class="tab-pane fade in active ">
+                        <h3 class="text-center">{{$lesson_watching['title_'.app()->getLocale()]}}</h3>
+                        <a href="{{route('list_question',$lesson_watching->id)}}"><span class="back">@lang('course.feed_back')</span></a>
+                        <div class="video text-center">
+                            <iframe width="560" height="420" src="{{$lesson_watching->file->file_path}}"
+                                    frameborder="0"
+                                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen></iframe>
+                        </div>
+                    </div>        <div id="menu1" class="tab-pane fade in active ">
+                        <h3 class="text-center">{{$lesson_watching['title_'.app()->getLocale()]}}</h3>
+                        <a href="{{route('list_question',$lesson_watching->id)}}"><span class="back">@lang('course.feed_back')</span></a>
+                        <div class="video text-center">
+                            <iframe width="560" height="420" src="{{$lesson_watching->file->file_path}}"
+                                    frameborder="0"
+                                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen></iframe>
+                        </div>
                     </div>
-                </div>
+                    @else
+                    <div id="menu1" class="tab-pane fade in active ">
+                        <h3 class="text-center">@lang('course.soon')</h3>
+                        <a href="#"><span class="back">@lang('course.feed_back')</span></a>
+                        <div class="video text-center">
+{{--                            <iframe width="560" height="420" src="#"--}}
+{{--                                    frameborder="0"--}}
+{{--                                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"--}}
+{{--                                    allowfullscreen></iframe>--}}
+                        </div>
+                    </div>
+                @endif
+
                {{-- <div id="menu3" class="tab-pane fade">
                     <h3 class="text-center">Third Lesson</h3>
-                    <a href="#"><span class="back">Feed back</span></a>
+                    <a href="#"><span class="back">@lang('course.feed_back')</span></a>
                     <div class="video text-center">
                         <iframe width="560" height="420" src="https://www.youtube.com/embed/HdSaxRtNxAM"
                                 frameborder="0"
@@ -183,7 +222,7 @@
                 </div>
                 <div id="menu4" class="tab-pane fade">
                     <h3 class="text-center">Fourth Lesson</h3>
-                    <a href="#"><span class="back">Feed back</span></a>
+                    <a href="#"><span class="back">@lang('course.feed_back')</span></a>
                     <div class="video text-center">
                         <iframe width="560" height="420" src="https://www.youtube.com/embed/HdSaxRtNxAM"
                                 frameborder="0"
@@ -193,7 +232,7 @@
                 </div>
                 <div id="menu5" class="tab-pane fade">
                     <h3 class="text-center">First Lesson</h3>
-                    <a href="#"><span class="back">Feed back</span></a>
+                    <a href="#"><span class="back">@lang('course.feed_back')</span></a>
                     <div class="video text-center">
                         <iframe width="560" height="420" src="https://www.youtube.com/embed/HdSaxRtNxAM"
                                 frameborder="0"
@@ -203,7 +242,7 @@
                 </div>
                 <div id="menu6" class="tab-pane fade">
                     <h3 class="text-center">First Lesson</h3>
-                    <a href="#"><span class="back">Feed back</span></a>
+                    <a href="#"><span class="back">@lang('course.feed_back')</span></a>
                     <div class="video text-center">
                         <iframe width="560" height="420" src="https://www.youtube.com/embed/HdSaxRtNxAM"
                                 frameborder="0"
@@ -213,7 +252,7 @@
                 </div>
                 <div id="menu7" class="tab-pane fade">
                     <h3 class="text-center">First Lesson</h3>
-                    <a href="#"><span class="back">Feed back</span></a>
+                    <a href="#"><span class="back">@lang('course.feed_back')</span></a>
                     <div class="video text-center">
                         <iframe width="560" height="420" src="https://www.youtube.com/embed/HdSaxRtNxAM"
                                 frameborder="0"
@@ -223,7 +262,7 @@
                 </div>
                 <div id="menu8" class="tab-pane fade">
                     <h3 class="text-center">First Lesson</h3>
-                    <a href="#"><span class="back">Feed back</span></a>
+                    <a href="#"><span class="back">@lang('course.feed_back')</span></a>
                     <div class="video text-center">
                         <iframe width="560" height="420" src="https://www.youtube.com/embed/HdSaxRtNxAM"
                                 frameborder="0"
@@ -233,7 +272,7 @@
                 </div>
                 <div id="menu9" class="tab-pane fade">
                     <h3 class="text-center">First Lesson</h3>
-                    <a href="#"><span class="back">Feed back</span></a>
+                    <a href="#"><span class="back">@lang('course.feed_back')</span></a>
                     <div class="video text-center">
                         <iframe width="560" height="420" src="https://www.youtube.com/embed/HdSaxRtNxAM"
                                 frameborder="0"
@@ -243,7 +282,7 @@
                 </div>
                 <div id="menu10" class="tab-pane fade">
                     <h3 class="text-center">First Lesson</h3>
-                    <a href="#"><span class="back">Feed back</span></a>
+                    <a href="#"><span class="back">@lang('course.feed_back')</span></a>
                     <div class="video text-center">
                         <iframe width="560" height="420" src="https://www.youtube.com/embed/HdSaxRtNxAM"
                                 frameborder="0"
@@ -253,7 +292,7 @@
                 </div>
                 <div id="menu11" class="tab-pane fade">
                     <h3 class="text-center">First Lesson</h3>
-                    <a href="#"><span class="back">Feed back</span></a>
+                    <a href="#"><span class="back">@lang('course.feed_back')</span></a>
                     <div class="video text-center">
                         <iframe width="560" height="420" src="https://www.youtube.com/embed/HdSaxRtNxAM"
                                 frameborder="0"
@@ -263,7 +302,7 @@
                 </div>
                 <div id="menu12" class="tab-pane fade">
                     <h3 class="text-center">First Lesson</h3>
-                    <a href="#"><span class="back">Feed back</span></a>
+                    <a href="#"><span class="back">@lang('course.feed_back')</span></a>
                     <div class="video text-center">
                         <iframe width="560" height="420" src="https://www.youtube.com/embed/HdSaxRtNxAM"
                                 frameborder="0"
@@ -273,7 +312,7 @@
                 </div>
                 <div id="menu13" class="tab-pane fade">
                     <h3 class="text-center">First Lesson</h3>
-                    <a href="#"><span class="back">Feed back</span></a>
+                    <a href="#"><span class="back">@lang('course.feed_back')</span></a>
                     <div class="video text-center">
                         <iframe width="560" height="420" src="https://www.youtube.com/embed/HdSaxRtNxAM"
                                 frameborder="0"

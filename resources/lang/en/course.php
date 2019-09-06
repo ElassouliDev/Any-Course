@@ -6,5 +6,9 @@ return [
     'enroll' => 'enroll',
     'In-enroll' => 'In-enroll',
     'LatestCourses' => 'Latest Courses',
+    'no_lessons' => 'Lessons will be added soon',
+    'soon'=>'Soon',
+    'lesson'=>'Lesson',
+    'feed_back'=>'Feed back',
 
 ];

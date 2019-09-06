@@ -830,9 +830,9 @@
 
 
 <!-- end::Scroll Top -->            <!-- begin::Quick Nav -->
-<ul class="m-nav-sticky" style="margin-top: 30px;">
+{{--<ul class="m-nav-sticky" style="margin-top: 30px;">
 
-    {{--
+    --}}{{--
     <li class="m-nav-sticky__item" data-toggle="m-tooltip" title="Showcase" data-placement="left">
         <a href="">
             <i class="la la-eye"></i>

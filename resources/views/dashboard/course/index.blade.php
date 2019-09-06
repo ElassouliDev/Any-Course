@@ -24,7 +24,7 @@
 
                     <h3 class="box-title" style="margin-bottom: 15px">@lang('admin.courses')
                         {{--                        <small>{{ $course->total() }}</small>--}}
-                    </h3/>
+                    </h3>
 
                     <form action="{{ route('dashboard.course.index') }}" method="get">
 

@@ -46,6 +46,13 @@ Route::group(
         Route::get('lesson/{lesson_id}/question','Student\QuestionController@lesson_question');
         Route::post('lesson/question','Student\QuestionController@store')->name('new_question');
 
+
+
+        ////////////////////////// lecture
+        Route::get('lecture/course','Lecture\CourseController@index')->name('course_lecture');
+        Route::post('lecture/course','Lecture\CourseController@store');
+
+        ////// end lecture
         Auth::routes();
 
     });

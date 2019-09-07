@@ -16,6 +16,7 @@ class CommentController extends Controller
 
     function store(Request $request)
     {
+
         $lesson = Lesson::find($request->lesson_id);
         $comment = new Comment() ;
         $comment->content = $request['content'];

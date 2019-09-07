@@ -28,6 +28,9 @@
             {{--            @if (auth()->user()->hasPermission('read_questions'))--}}
                 <li><a href="{{ route('dashboard.question.index') }}"><i class="fa  fa-question-circle-o"></i><span>@lang('admin.questions')</span></a></li>
 {{--            @endif--}}
+            {{--            @if (auth()->user()->hasPermission('read_comments'))--}}
+                <li><a href="{{ route('dashboard.comment.index') }}"><i class="fa  fa-question-circle-o"></i><span>@lang('admin.comments')</span></a></li>
+{{--            @endif--}}
             {{--            @if (auth()->user()->hasPermission('read_questions'))--}}
                 <li><a href="{{ route('dashboard.exam.index') }}"><i class="fa   fa-exclamation-triangle"></i><span>@lang('admin.exams')</span></a></li>
 {{--            @endif--}}

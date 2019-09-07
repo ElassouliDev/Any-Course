@@ -37,6 +37,7 @@ Route::group(
             Route::resource('/settings', 'Dashboard\SettingController');
             Route::resource('/question', 'Dashboard\QuestionController');
             Route::resource('/exam', 'Dashboard\ExamController');
+            Route::resource('/comment', 'Dashboard\CommentController');
 
         });
         Route::post('/course_enroll/{course_id}','Student\CourseController@enroll_and_in_enroll_course')->name('student.course_enroll');
@@ -45,6 +46,7 @@ Route::group(
         Route::get('/lessons/{course_id}/{lesson_id?}','View\LessonsController@lessons_list')->name('course_lesson'); //lessons list
         Route::get('/','View\CourseController@course_list');
         Route::get('lesson/{lesson_id}/question','Student\QuestionController@lesson_question')->name('list_question');
+        Route::post('lesson/question/comment','Student\CommentController@store_question')->name('new_comment_question');
         Route::post('lesson/question','Student\QuestionController@store')->name('new_question');
         Route::post('lesson/comment','Student\CommentController@store')->name('new_comment');
 

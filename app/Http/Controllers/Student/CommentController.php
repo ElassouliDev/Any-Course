@@ -24,9 +24,18 @@ class CommentController extends Controller
         $lesson->comment()->save($comment);
 
     }
+
     function delete(Comment $comment)
     {
       $comment->delete();
+
+    }
+    function store_question(Request $request){
+        $question = Question::find($request->question_id);
+        $comment = new Comment() ;
+        $comment->content = $request['content'];
+        $comment->user_id = \auth()->id();
+        $question->comment()->save($comment);
 
     }
 }

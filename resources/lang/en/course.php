@@ -13,5 +13,6 @@ return [
     'new_question'=>'New question',
     'content'=>'Content',
     'title'=>'Title',
+    'lesson_course'=>'Lesson questions',
 
 ];

@@ -2,29 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0b226c64-b40e-40b8-97c2-65fd791ffb0a" name="Default Changelist" comment="[X] add create course for lecture">
-      <change afterPath="$PROJECT_DIR$/app/DataTables/CommentDataTable.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/DataTables/ExamDataTable.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/Exam.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/CommentController.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/ExamController.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/database/migrations/2019_09_05_201347_create_exams_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/dashboard/comment/buttons/actions.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/dashboard/comment/create.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/dashboard/comment/edit.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/dashboard/comment/index.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/dashboard/comment/show.blade.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/resources/views/dashboard/exam/buttons/actions.blade.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/resources/views/dashboard/exam/create.blade.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/resources/views/dashboard/exam/edit.blade.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/resources/views/dashboard/exam/index.blade.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/resources/views/dashboard/exam/show.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Student/CommentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Student/CommentController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Question.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Question.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/lang/en/course.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/en/course.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/dashboard/_aside.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/dashboard/_aside.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/lessons/list_question.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/lessons/list_question.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/lessons/lessons.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/lessons/lessons.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -281,7 +269,7 @@
       <workItem from="1567664420510" duration="10255000" />
       <workItem from="1567676984834" duration="37000" />
       <workItem from="1567746928742" duration="240000" />
-      <workItem from="1567874714176" duration="7888000" />
+      <workItem from="1567874714176" duration="8450000" />
     </task>
     <task id="LOCAL-00004" summary="profile super admin #6">
       <created>1566254260160</created>
@@ -430,7 +418,14 @@
       <option name="project" value="LOCAL" />
       <updated>1567879627773</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="add page crud of question #7&#10;- [x] add re comment to question">
+      <created>1567883128634</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1567883128634</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TodoView">
@@ -479,6 +474,7 @@
     <MESSAGE value="[X] fix lessons for empty course" />
     <MESSAGE value="add a comment to the lesson #24&#10;&#10;- [x] add a comment  to the lesson page&#10;- [x] list comment  to the lesson page" />
     <MESSAGE value="add a comment to the lesson #24" />
-    <option name="LAST_COMMIT_MESSAGE" value="add a comment to the lesson #24" />
+    <MESSAGE value="add page crud of question #7&#10;- [x] add re comment to question" />
+    <option name="LAST_COMMIT_MESSAGE" value="add page crud of question #7&#10;- [x] add re comment to question" />
   </component>
 </project>

@@ -191,7 +191,7 @@
 
 
                     </div>
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#new" >@lang('course.new_question')</button>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#new" >@lang('course.new_comment')</button>
 
             <div class="container" style="background-color: #f2f3f8; margin-top: 50px">
                 @foreach ($lesson->comment as $comment)

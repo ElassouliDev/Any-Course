@@ -4,6 +4,8 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title> @yield('title')-{{ config('app.name', 'AnyCourse') }} </title>
 
@@ -65,7 +67,7 @@
 
 <!-- <script src="js/script.js"></script> -->
 
-<script>
+{{--<script>
     $(document).ready(function () {
         $("li").focusin(function () {
             $(this).find('input').prop('checked', true);
@@ -77,6 +79,7 @@
             }
         });
     });
-</script>
+</script>--}}
+@stack('js')
 </body>
 </html>

@@ -100,7 +100,7 @@
                                                 <form method="post"
                                                       action="{{route('student.course_enroll',$course->id)}}">
                                                     @csrf
-                                                    @if($course->is_enroll)
+                                                    @if($course->is_enroll == 0)
                                                         <button class="btn btn-lg btn-primary">@lang('course.enroll')</button>
                                                     @else
                                                         <button class="btn btn-lg btn-danger">@lang('course.In-enroll')</button>

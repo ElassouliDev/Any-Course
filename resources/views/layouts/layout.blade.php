@@ -9,6 +9,8 @@
     <meta name="description" content="Latest updates and statistic charts">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
     <!--begin::Web font -->
     <script src="{{asset('course_assets/js/webfontloader.js')}}"></script>
     <script>
@@ -29,6 +31,7 @@
     <link href="{{asset('course_assets/css/style.css')}}" rel="stylesheet" type="text/css"/>
     <!--end::Base Styles -->
     <link rel="shortcut icon" href="{{url('course_assets/img/logo/logo.png')}}"/>
+    <link href="{{ asset('resources/assets/css/custom.css') }}" rel="stylesheet" type="text/css">
 
     @stack('css')
 </head>
@@ -874,7 +877,20 @@
 <!--begin::Page Snippets -->
 <script src="{{asset('course_assets/js/dashboard.js')}}" type="text/javascript"></script>
 <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+<script src="{{ asset('sweetalert/2.1.0/sweetalert.min.js') }}"></script>
 
+{{--<script src="{{ asset('/brisk-selectOptions/js/brisk-selectOptions.js') }}"></script>
+<script src="{{ asset('/brisk-form/js/brisk-form.js') }}"></script>
+<script src="{{ asset('/brisk-datatable/js/brisk-datatable.js') }}"></script>--}}
+
+
+
+{{--        <script src="{{asset('js/app.js')}}"></script>--}}
+<script src="{{ asset('resources/assets/js/globals.js') }}"></script>
+<script src="{{ asset('resources/assets/js/lists.js') }}"></script>
+<script src="{{ asset('resources/assets/js/notifications.js') }}"></script>
+<script src="{{ asset('resources/assets/js/http.js') }}"></script>
+<script src="{{ asset('resources/assets/js/editable.js') }}"></script>
         @stack('js')
     <!--end::Page Snippets -->
 </body>

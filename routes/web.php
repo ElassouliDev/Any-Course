@@ -56,7 +56,15 @@ Route::group(
         Route::get('lecture/course','Lecture\CourseController@index')->name('course_lecture.index');
         Route::post('lecture/course','Lecture\CourseController@store')->name('course_lecture.store');
         Route::get('lecture/course/{course_id}','Lecture\CourseController@show')->name('course_lecture.show');
+        Route::get('lecture/course/{course_id}/student','Lecture\StudentController@showCourseStudent')->name('course.student.show');
+        Route::get('lecture/courses/student','Lecture\StudentController@showCoursesStudents')->name('course.student.show');
 
+
+        /////////////////////////// student
+        Route::post('lesson/watch/','Student\CourseController@student_watch_lesson')->name('student.lesson.watch');
+        Route::post('lesson/complete/','Student\CourseController@complete_watch_lesson')->name('student.lesson.complete');
+
+        /// end student
         ////// end lecture
         Auth::routes();
 

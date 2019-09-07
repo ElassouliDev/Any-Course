@@ -19,6 +19,7 @@ class LessonsController extends Controller
 
             $lesson_watching = $lessons->where('id', $lesson_id)->first();
         }
+
         return view('lessons.lessons', compact('lessons', 'lesson_watching'));
 
     }

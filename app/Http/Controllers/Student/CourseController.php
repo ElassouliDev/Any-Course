@@ -16,15 +16,22 @@ class CourseController extends Controller
     }
 
 
-    function student_watch_lesson($lesson_id)
+    function student_watch_lesson(Request $request)
     {
-        Auth::user()->student_watch_lesson()->attach($lesson_id);
 
+        $lesson = Auth::user()->student_watch_lesson()->where('lesson_student.lesson_id', $request->lesson_id)->first();
+        if (empty($lesson))
+            Auth::user()->student_watch_lesson()->attach($request->lesson_id);
+
+
+        return response(['status'=>true]);
     }
 
-    function complete_watch_lesson($course_id)
+    function complete_watch_lesson(Request $request)
     {
-        Auth::user()->student_watch_lesson()->toggle($course_id);
+        Auth::user()->student_watch_lesson()->syncWithoutDetaching([$request->lesson_id => ['is_completed' => true]]);
+
+        return response(['status'=>true]);
 
     }
 }

@@ -13,6 +13,11 @@
             </li>
             <li class="divider"></li>
             <li>
+                <a href="{{ route('course.student.show',$id)}}"><i
+                            class="fa fa-user"></i> {{trans('admin.student')}}</a>
+            </li>
+            <li class="divider"></li>
+            <li>
                 <a href="{{ route('course_lecture.show',$id)}}"><i
                             class="fa fa-pencil-square-o"></i> {{trans('admin.edit')}}</a>
             </li>

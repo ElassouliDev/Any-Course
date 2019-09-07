@@ -28,7 +28,7 @@
                 @foreach($courses_latest as  $course)
                     <div class="col-md-4">
                         <div class="card card-course">
-                            <img class="card-img-top" height="240" src="{{url('storage/'.$course->image->file_path)}}"
+                            <img class="card-img-top" height="240" src="{{url('storage/'.($course->image->file_path ??'storage/user.jpeg'))}}"
                                  alt="Card image" style="width:100%">
                             <div class="card-body">
                                 <h4 class="card-title"><b>{{$course['title_'.app()->getLocale()]}}</b></h4>
@@ -65,7 +65,7 @@
                 @foreach($courses_all as  $course)
                     <div class="col-md-4">
                         <div class="card card-course">
-                            <img class="card-img-top" height="240" src="{{url('storage/'.$course->image->file_path)}}"
+                            <img class="card-img-top" height="240" src="{{url('storage/'.($course->image->file_path ??'storage/user.jpeg'))}}"
                                  alt="Card image" style="width:100%">
                             <div class="card-body">
                                 <h4 class="card-title"><b>{{$course['title_'.app()->getLocale()]}}</b></h4>

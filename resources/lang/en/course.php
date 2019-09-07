@@ -10,5 +10,8 @@ return [
     'soon'=>'Soon',
     'lesson'=>'Lesson',
     'feed_back'=>'Feed back',
+    'new_question'=>'New question',
+    'content'=>'Content',
+    'title'=>'Title',
 
 ];

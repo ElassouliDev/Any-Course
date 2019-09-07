@@ -6,6 +6,7 @@
       <change afterPath="$PROJECT_DIR$/app/DataTables/ExamDataTable.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/Exam.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/ExamController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Student/CommentController.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/database/migrations/2019_09_05_201347_create_exams_table.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/database/migrations/2019_09_05_204313_create_comments_table.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/resources/views/dashboard/exam/buttons/actions.blade.php" afterDir="false" />
@@ -14,8 +15,11 @@
       <change afterPath="$PROJECT_DIR$/resources/views/dashboard/exam/index.blade.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/resources/views/dashboard/exam/show.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Lesson.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Lesson.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/lang/en/course.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/en/course.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/lessons/lessons.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/lessons/lessons.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -177,7 +181,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="SearchEverywhereHistoryKey" value="lesson&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/resources/views/lessons/lessons.blade.php&#10;Q&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/resources/views/lessons/list_question.blade.php&#10;tagF&#9;null&#9;null&#10;tag&#9;null&#9;null&#10;web&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/routes/web.php&#10;Ques&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/app/Http/Controllers/Student/QuestionController.php&#10;ques&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/database/migrations/2019_09_04_183623_create_questions_table.php&#10;cours&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/resources/views/courses/all_courses.blade.php&#10;User&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/app/User.php&#10;course&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/app/Course.php&#10;less&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/resources/views/lessons/lessons.blade.php&#10;admin&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/resources/lang/ar/admin.php&#10;we&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/routes/web.php&#10;Course&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/app/Course.php&#10;Cour&#9;null&#9;null&#10;emmet&#9;ACTION&#9;Emmet&#10;lay&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/resources/views/layouts/layout.blade.php&#10;.env&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/.env&#10;les&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/app/Http/Controllers/Dashboard/LessonController.php&#10;cou&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/app/Http/Controllers/Dashboard/CourseController.php&#10;session&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/config/session.php&#10;config&#9;null&#9;null&#10;r&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/app/Http/Requests/UserRequest.php&#10;index&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/resources/views/dashboard/course/index.blade.php&#10;file&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/app/File.php&#10;categ&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/database/migrations/2019_08_10_201055_create_categories_table.php&#10;seeder&#9;null&#9;null&#10;see&#9;null&#9;null" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/lecture" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Http/Controllers/Student" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
@@ -187,16 +191,16 @@
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\anycourse\resources\views" />
+      <recent name="C:\xampp\htdocs\anycourse\resources\views\courses" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/Http/Controllers/Student" />
       <recent name="$PROJECT_DIR$/resources/views/lecture" />
       <recent name="C:\xampp\htdocs\anycourse\public\storage\image" />
       <recent name="C:\xampp\htdocs\anycourse\resources\views\lessons" />
       <recent name="C:\xampp\htdocs\anycourse\app\Http\Controllers\Student" />
-      <recent name="C:\xampp\htdocs\anycourse\resources\lang\en" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\anycourse\resources\views" />
-      <recent name="C:\xampp\htdocs\anycourse\resources\views\courses" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -272,6 +276,7 @@
       <workItem from="1567664420510" duration="10255000" />
       <workItem from="1567676984834" duration="37000" />
       <workItem from="1567746928742" duration="240000" />
+      <workItem from="1567874714176" duration="4600000" />
     </task>
     <task id="LOCAL-00004" summary="profile super admin #6">
       <created>1566254260160</created>
@@ -399,7 +404,14 @@
       <option name="project" value="LOCAL" />
       <updated>1567787337465</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="[X] fix lessons for empty course">
+      <created>1567788124041</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1567788124041</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TodoView">
@@ -445,6 +457,7 @@
     <MESSAGE value="add page crud of question #7" />
     <MESSAGE value="[X] add create course for lecture" />
     <MESSAGE value="[X] add list questions" />
-    <option name="LAST_COMMIT_MESSAGE" value="[X] add list questions" />
+    <MESSAGE value="[X] fix lessons for empty course" />
+    <option name="LAST_COMMIT_MESSAGE" value="[X] fix lessons for empty course" />
   </component>
 </project>

@@ -46,6 +46,7 @@ Route::group(
         Route::get('/','View\CourseController@course_list');
         Route::get('lesson/{lesson_id}/question','Student\QuestionController@lesson_question')->name('list_question');
         Route::post('lesson/question','Student\QuestionController@store')->name('new_question');
+        Route::post('lesson/comment','Student\CommentController@store')->name('new_comment');
 
 
 

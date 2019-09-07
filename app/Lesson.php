@@ -21,6 +21,9 @@ class Lesson extends Model
     public function student_watch_lesson(){
         return $this->belongsToMany(User::class,'lesson_student');
     } // end of get student course that have a course
-
+    public function comment()
+    {
+        return $this->morphMany(Comment::class,'commentable');
+    }//end of get comment lesson
 
 }

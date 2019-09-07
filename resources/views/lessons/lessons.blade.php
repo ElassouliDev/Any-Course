@@ -187,141 +187,115 @@
                                     allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                                     allowfullscreen></iframe>
                         </div>
-                    </div>        <div id="menu1" class="tab-pane fade in active ">
-                        <h3 class="text-center">{{$lesson_watching['title_'.app()->getLocale()]}}</h3>
-                        <a href="{{route('list_question',$lesson_watching->id)}}"><span class="back">@lang('course.feed_back')</span></a>
-                        <div class="video text-center">
-                            <iframe width="560" height="420" src="{{$lesson_watching->file->file_path}}"
-                                    frameborder="0"
-                                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                                    allowfullscreen></iframe>
-                        </div>
                     </div>
+
+
+                    </div>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#new" >@lang('course.new_question')</button>
+
+            <div class="container" style="background-color: #f2f3f8; margin-top: 50px">
+                @foreach ($lesson->comment as $comment)
+
+
+            <div class="row bg-light pt-2 px-1">
+                <div class="col-md-12 border border-bottom">
+                    <img class="img-fluid img-rounded" src="{{isset($comment->user->image()->file_path) ? url('storage/'.$comment->user->image()->file_path) : url('storage\image\user.jpeg')}}"
+                         style="width: 50px;height: 50px; border-radius: 50%">
+                    <span class=""> {{$comment->user->first_name.' '.$comment->user->last_name}}</span>
+                </div>
+                <div class="divider"></div>
+                <div class="col-md-12 lead ">
+                    {{$comment->content}}
+                </div>
+                <div class="divider"></div>
+            </div>
+                @endforeach
+
+            </div>
+        </div>
                     @else
                     <div id="menu1" class="tab-pane fade in active ">
                         <h3 class="text-center">@lang('course.soon')</h3>
                         <a href="#"><span class="back">@lang('course.feed_back')</span></a>
                         <div class="video text-center">
-{{--                            <iframe width="560" height="420" src="#"--}}
-{{--                                    frameborder="0"--}}
-{{--                                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"--}}
-{{--                                    allowfullscreen></iframe>--}}
                         </div>
                     </div>
                 @endif
+        <div class="modal fade" id="new" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">@lang('course.new_comment')</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form method="post" action="{{route('new_comment')}}">
+                            @csrf
+                            <div class="form-group">
+                                <label for="content" class="col-form-label">@lang('course.content'):</label>
+                                <textarea class="form-control"  rows="4" name="content" id="content" required></textarea>
+                                <input type="hidden" name='lesson_id' value="{{$lesson->id}}">
 
-               {{-- <div id="menu3" class="tab-pane fade">
-                    <h3 class="text-center">Third Lesson</h3>
-                    <a href="#"><span class="back">@lang('course.feed_back')</span></a>
-                    <div class="video text-center">
-                        <iframe width="560" height="420" src="https://www.youtube.com/embed/HdSaxRtNxAM"
-                                frameborder="0"
-                                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                                allowfullscreen></iframe>
+                            </div>
+                            <div class="form-group">
+                                <button type="reset" class="btn btn-secondary" data-dismiss="modal">@lang('admin.cancel')</button>
+                                <button type="submit" class="btn btn-primary">@lang('admin.add')</button>
+                            </div>
+                        </form>
+
                     </div>
+
                 </div>
-                <div id="menu4" class="tab-pane fade">
-                    <h3 class="text-center">Fourth Lesson</h3>
-                    <a href="#"><span class="back">@lang('course.feed_back')</span></a>
-                    <div class="video text-center">
-                        <iframe width="560" height="420" src="https://www.youtube.com/embed/HdSaxRtNxAM"
-                                frameborder="0"
-                                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                                allowfullscreen></iframe>
-                    </div>
-                </div>
-                <div id="menu5" class="tab-pane fade">
-                    <h3 class="text-center">First Lesson</h3>
-                    <a href="#"><span class="back">@lang('course.feed_back')</span></a>
-                    <div class="video text-center">
-                        <iframe width="560" height="420" src="https://www.youtube.com/embed/HdSaxRtNxAM"
-                                frameborder="0"
-                                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                                allowfullscreen></iframe>
-                    </div>
-                </div>
-                <div id="menu6" class="tab-pane fade">
-                    <h3 class="text-center">First Lesson</h3>
-                    <a href="#"><span class="back">@lang('course.feed_back')</span></a>
-                    <div class="video text-center">
-                        <iframe width="560" height="420" src="https://www.youtube.com/embed/HdSaxRtNxAM"
-                                frameborder="0"
-                                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                                allowfullscreen></iframe>
-                    </div>
-                </div>
-                <div id="menu7" class="tab-pane fade">
-                    <h3 class="text-center">First Lesson</h3>
-                    <a href="#"><span class="back">@lang('course.feed_back')</span></a>
-                    <div class="video text-center">
-                        <iframe width="560" height="420" src="https://www.youtube.com/embed/HdSaxRtNxAM"
-                                frameborder="0"
-                                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                                allowfullscreen></iframe>
-                    </div>
-                </div>
-                <div id="menu8" class="tab-pane fade">
-                    <h3 class="text-center">First Lesson</h3>
-                    <a href="#"><span class="back">@lang('course.feed_back')</span></a>
-                    <div class="video text-center">
-                        <iframe width="560" height="420" src="https://www.youtube.com/embed/HdSaxRtNxAM"
-                                frameborder="0"
-                                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                                allowfullscreen></iframe>
-                    </div>
-                </div>
-                <div id="menu9" class="tab-pane fade">
-                    <h3 class="text-center">First Lesson</h3>
-                    <a href="#"><span class="back">@lang('course.feed_back')</span></a>
-                    <div class="video text-center">
-                        <iframe width="560" height="420" src="https://www.youtube.com/embed/HdSaxRtNxAM"
-                                frameborder="0"
-                                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                                allowfullscreen></iframe>
-                    </div>
-                </div>
-                <div id="menu10" class="tab-pane fade">
-                    <h3 class="text-center">First Lesson</h3>
-                    <a href="#"><span class="back">@lang('course.feed_back')</span></a>
-                    <div class="video text-center">
-                        <iframe width="560" height="420" src="https://www.youtube.com/embed/HdSaxRtNxAM"
-                                frameborder="0"
-                                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                                allowfullscreen></iframe>
-                    </div>
-                </div>
-                <div id="menu11" class="tab-pane fade">
-                    <h3 class="text-center">First Lesson</h3>
-                    <a href="#"><span class="back">@lang('course.feed_back')</span></a>
-                    <div class="video text-center">
-                        <iframe width="560" height="420" src="https://www.youtube.com/embed/HdSaxRtNxAM"
-                                frameborder="0"
-                                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                                allowfullscreen></iframe>
-                    </div>
-                </div>
-                <div id="menu12" class="tab-pane fade">
-                    <h3 class="text-center">First Lesson</h3>
-                    <a href="#"><span class="back">@lang('course.feed_back')</span></a>
-                    <div class="video text-center">
-                        <iframe width="560" height="420" src="https://www.youtube.com/embed/HdSaxRtNxAM"
-                                frameborder="0"
-                                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                                allowfullscreen></iframe>
-                    </div>
-                </div>
-                <div id="menu13" class="tab-pane fade">
-                    <h3 class="text-center">First Lesson</h3>
-                    <a href="#"><span class="back">@lang('course.feed_back')</span></a>
-                    <div class="video text-center">
-                        <iframe width="560" height="420" src="https://www.youtube.com/embed/HdSaxRtNxAM"
-                                frameborder="0"
-                                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                                allowfullscreen></iframe>
-                    </div>
-                </div>--}}
+            </div>
+        </div>
+
+
+{{--                <div id="menu13" class="tab-pane fade">--}}
+{{--                    <h3 class="text-center">First Lesson</h3>--}}
+{{--                    <a href="#"><span class="back">@lang('course.feed_back')</span></a>--}}
+{{--                    <div class="video text-center">--}}
+{{--                        <iframe width="560" height="420" src="https://www.youtube.com/embed/HdSaxRtNxAM"--}}
+{{--                                frameborder="0"--}}
+{{--                                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"--}}
+{{--                                allowfullscreen></iframe>--}}
+{{--                    </div>--}}
+{{--                </div>---}}
             </div>
         </div>
     </div>
 
 @stop
+@push('js')
+    <script>
+        $(document).on('submit', '#new form', function (event) {
+
+            event.preventDefault();
+            var $this = $(this);
+            // notifications.loading.show();
+
+            var url = $(this).attr('action'),
+                request = $.ajax({
+                    url: url,
+                    method: "post",
+                    data: new FormData(this),
+                    dataType: "json",
+                    cache: false,
+                    contentType: false,
+                    processData: false
+                });
+            request.done(function (response) {
+                $this.find('[type="reset"]').click();
+                $('#new').modal('hide');
+                /*http.success(response, true);
+                $('.checkAll').prop("checked", false);
+
+                $('#dataTable').DataTable().ajax.reload();*/
+            });
+            request.fail(function (response, exception) {
+                http.fail(JSON.parse(response.responseText), true);
+            });
+        });
+    </script>
+@endpush

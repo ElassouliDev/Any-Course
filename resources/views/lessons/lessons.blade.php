@@ -1,5 +1,36 @@
 @extends('layouts.layout_lessons')
-
+@push('css')
+    <style>
+        .thumbnail {
+            padding:0px;
+        }
+        .panel {
+            position:relative;
+        }
+        .panel>.panel-heading:after,.panel>.panel-heading:before{
+            position:absolute;
+            top:11px;left:-16px;
+            right:100%;
+            width:0;
+            height:0;
+            display:block;
+            content:" ";
+            border-color:transparent;
+            border-style:solid solid outset;
+            pointer-events:none;
+        }
+        .panel>.panel-heading:after{
+            border-width:7px;
+            border-right-color:#f7f7f7;
+            margin-top:1px;
+            margin-left:2px;
+        }
+        .panel>.panel-heading:before{
+            border-right-color:#ddd;
+            border-width:8px;
+        }
+    </style>
+    @endpush
 
 @section('content')
 
@@ -192,35 +223,40 @@
 
                     </div>
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#new" >@lang('course.new_comment')</button>
-
-            <div class="container" style="background-color: #f2f3f8; margin-top: 50px">
+            <div class="container" style=" margin-top: 50px">
                 @foreach ($lesson->comment as $comment)
 
+                <div class="row">
+                    <div class="col-sm-1">
+                        <div class="thumbnail">
+                            <img class="img-responsive user-photo"src="{{isset($comment->user->image()->file_path) ? url('storage/'.$comment->user->image()->file_path) :'https://ssl.gstatic.com/accounts/ui/avatar_2x.png'}}" >
+                        </div><!-- /thumbnail -->
+                    </div><!-- /col-sm-1 -->
 
-            <div class="row bg-light pt-2 px-1">
-                <div class="col-md-12 border border-bottom">
-                    <img class="img-fluid img-rounded" src="{{isset($comment->user->image()->file_path) ? url('storage/'.$comment->user->image()->file_path) : url('storage\image\user.jpeg')}}"
-                         style="width: 50px;height: 50px; border-radius: 50%">
-                    <span class=""> {{$comment->user->first_name.' '.$comment->user->last_name}}</span>
+                    <div class="col-sm-5">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <strong>{{$comment->user->first_name.' '.$comment->user->last_name}}</strong> <span class="text-muted">commented 5 days ago</span>
+                            </div>
+                            <div class="panel-body">
+                                {{$comment->content}}
+                            </div><!-- /panel-body -->
+                        </div><!-- /panel panel-default -->
+                    </div><!-- /col-sm-5 -->
+
                 </div>
-                <div class="divider"></div>
-                <div class="col-md-12 lead ">
-                    {{$comment->content}}
-                </div>
-                <div class="divider"></div>
-            </div>
                 @endforeach
-
-            </div>
-        </div>
                     @else
-                    <div id="menu1" class="tab-pane fade in active ">
-                        <h3 class="text-center">@lang('course.soon')</h3>
-                        <a href="#"><span class="back">@lang('course.feed_back')</span></a>
-                        <div class="video text-center">
+                        <div id="menu1" class="tab-pane fade in active ">
+                            <h3 class="text-center">@lang('course.soon')</h3>
+                            <a href="#"><span class="back">@lang('course.feed_back')</span></a>
+                            <div class="video text-center">
+                            </div>
                         </div>
-                    </div>
-                @endif
+                    @endif
+            </div>
+
+
         <div class="modal fade" id="new" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">

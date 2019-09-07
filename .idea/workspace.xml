@@ -269,7 +269,7 @@
       <workItem from="1567664420510" duration="10255000" />
       <workItem from="1567676984834" duration="37000" />
       <workItem from="1567746928742" duration="240000" />
-      <workItem from="1567874714176" duration="8450000" />
+      <workItem from="1567874714176" duration="8910000" />
     </task>
     <task id="LOCAL-00004" summary="profile super admin #6">
       <created>1566254260160</created>
@@ -425,7 +425,14 @@
       <option name="project" value="LOCAL" />
       <updated>1567883128634</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="add a comment to the lesson #24">
+      <created>1567883519301</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1567883519301</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TodoView">
@@ -473,8 +480,8 @@
     <MESSAGE value="[X] add list questions" />
     <MESSAGE value="[X] fix lessons for empty course" />
     <MESSAGE value="add a comment to the lesson #24&#10;&#10;- [x] add a comment  to the lesson page&#10;- [x] list comment  to the lesson page" />
-    <MESSAGE value="add a comment to the lesson #24" />
     <MESSAGE value="add page crud of question #7&#10;- [x] add re comment to question" />
-    <option name="LAST_COMMIT_MESSAGE" value="add page crud of question #7&#10;- [x] add re comment to question" />
+    <MESSAGE value="add a comment to the lesson #24" />
+    <option name="LAST_COMMIT_MESSAGE" value="add a comment to the lesson #24" />
   </component>
 </project>

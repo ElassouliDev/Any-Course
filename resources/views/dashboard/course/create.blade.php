@@ -125,9 +125,9 @@
                                 <div class="form-group">
                                     <label>@lang('admin.tag')</label>
                                     <select required value='{{old('tags')}}' class="js-example-basic-multiple form-control" name="tags[]" multiple="multiple">
-                                      @foreach($tags as $tag)
-                                        <option value="{{$tag->id}}">{{$tag['name_'.app()->getLocale()]}}</option>
-                                          @endforeach
+                                        @foreach($tags as $tag)
+                                            <option value="{{$tag->id}}">{{$tag['name_'.app()->getLocale()]}}</option>
+                                        @endforeach
                                     </select>
                                 </div>
 

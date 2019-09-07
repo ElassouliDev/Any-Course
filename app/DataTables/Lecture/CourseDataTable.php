@@ -18,7 +18,7 @@ class CourseDataTable extends DataTable
     public function dataTable($query)
     {
         return datatables($query)
-            ->addColumn('actions', 'lecture.buttons.actions')
+            ->addColumn('actions', 'lecture.course.buttons.actions')
             ->editColumn('category_id', function($row){
                 return $row->category['title_'.app()->getLocale()];
             })   ->editColumn('is_paid', function($row){

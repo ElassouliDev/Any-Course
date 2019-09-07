@@ -51,8 +51,9 @@ Route::group(
 
 
         ////////////////////////// lecture
-        Route::get('lecture/course','Lecture\CourseController@index')->name('course_lecture');
-        Route::post('lecture/course','Lecture\CourseController@store');
+        Route::get('lecture/course','Lecture\CourseController@index')->name('course_lecture.index');
+        Route::post('lecture/course','Lecture\CourseController@store')->name('course_lecture.store');
+        Route::get('lecture/course/{course_id}','Lecture\CourseController@show')->name('course_lecture.show');
 
         ////// end lecture
         Auth::routes();

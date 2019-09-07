@@ -5,4 +5,5 @@ return [
     'enroll' => 'إشتراك',
     'In-enroll' => 'إلغاء الإشتراك',
     'LatestCourses' => 'الكورسات الجديدة',
+    'allCourses' => 'إستعراض الكورسات',
 ];

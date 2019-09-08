@@ -7,16 +7,15 @@
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 
     {{--<!-- Bootstrap 3.3.7 -->--}}
-    <link rel="stylesheet" href="{{ asset('dashboard_files/css/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('dashboard_files/css/ionicons.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('dashboard_files/css/skin-blue.min.css') }}">
+
+    <link rel="stylesheet" href="{{ mix('css/dashboard.css') }}">
 
     @if (app()->getLocale() == 'ar')
+        <link rel="stylesheet" href="{{ mix('css/dashboard-rtl.css') }}">
+
         <link rel="stylesheet" href="{{ asset('dashboard_files/css/font-awesome-rtl.min.css') }}">
-        <link rel="stylesheet" href="{{ asset('dashboard_files/css/AdminLTE-rtl.min.css') }}">
         <link href="https://fonts.googleapis.com/css?family=Cairo:400,700" rel="stylesheet">
-        <link rel="stylesheet" href="{{ asset('dashboard_files/css/bootstrap-rtl.min.css') }}">
-        <link rel="stylesheet" href="{{ asset('dashboard_files/css/rtl.css') }}">
+
 
         <style>
             body, h1, h2, h3, h4, h5, h6 {
@@ -26,7 +25,8 @@
     @else
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
         <link rel="stylesheet" href="{{ asset('dashboard_files/css/font-awesome.min.css') }}">
-        <link rel="stylesheet" href="{{ asset('dashboard_files/css/AdminLTE.min.css') }}">
+        <link rel="stylesheet" href="{{ mix('css/dashboard-ltr.css') }}">
+
     @endif
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
 
@@ -211,7 +211,7 @@
                                 <a href="{{ route('dashboard.users.profile',auth()->user()->id)}}" class="btn btn-default btn-flat">@lang('admin.profile')</a>
 
 
-    <a href="{{ route('logout') }}" class="btn btn-default btn-flat" onclick="event.preventDefault();
+                                <a href="{{ route('logout') }}" class="btn btn-default btn-flat" onclick="event.preventDefault();
                                                  document.getElementById('logout-form').submit();">@lang('auth.logout')</a>
 
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -332,6 +332,5 @@
 
 </script>
 @stack('js')
-@yield('javascript')
 </body>
 </html>

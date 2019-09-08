@@ -82,10 +82,10 @@
                 </div>
             </li>
             <li class="m-menu__item">
-                <a  href="settings.html" class="m-menu__link">
+                <a  href="{{route('course_lecture.index')}}" class="m-menu__link">
                     <i class="m-menu__link-icon flaticon-settings"></i>
                     <span class="m-menu__link-text">
-										Settings
+										@lang('course.course_management')
 									</span>
                 </a>
             </li>

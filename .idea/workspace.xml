@@ -1,18 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0b226c64-b40e-40b8-97c2-65fd791ffb0a" name="Default Changelist" comment="[X] add create course for lecture">
-      <change afterPath="$PROJECT_DIR$/app/DataTables/ExamDataTable.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Exam.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/ExamController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2019_09_05_201347_create_exams_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/dashboard/exam/buttons/actions.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/dashboard/exam/create.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/dashboard/exam/edit.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/dashboard/exam/index.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/dashboard/exam/show.blade.php" afterDir="false" />
+    <list default="true" id="0b226c64-b40e-40b8-97c2-65fd791ffb0a" name="Default Changelist" comment="[X] add create course for lecture with ajax&#10;[X] show course information">
+      <change afterPath="$PROJECT_DIR$/app/DataTables/Lecture/StudentDataTable.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/DataTables/Lecture/StudentsCoursesDataTable.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Lecture/StudentController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/resources/assets/css/custom.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/resources/assets/js/editable.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/resources/assets/js/globals.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/resources/assets/js/http.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/resources/assets/js/lists.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/resources/assets/js/notifications.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/sweetalert/2.1.0/sweetalert.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/lecture/student/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Student/CourseController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Student/CourseController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/View/CourseController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/View/CourseController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/View/LessonsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/View/LessonsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/courses/all_courses.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/courses/all_courses.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/courses/course_details.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/courses/course_details.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/layout.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/layout_lessons.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/layout_lessons.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/lecture/course/buttons/actions.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/lecture/course/buttons/actions.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/lessons/lessons.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/lessons/lessons.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -22,9 +33,6 @@
   </component>
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
-    <execution>
-      <executable />
-    </execution>
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -37,30 +45,164 @@
     <option name="HIDDEN_KINDS">
       <set />
     </option>
-    <expand>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="@localhost" type="feb32156:DbDataSourceImpl" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="AnyCourse: schema" type="ebfa3cd1:MariaImplModel$Schema" />
-      </path>
-    </expand>
+    <expand />
     <select />
+  </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="88611432">
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="env" value="3" />
+          <entry key="php" value="1724" />
+          <entry key="txt" value="40" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="Blade" value="374" />
+          <entry key="PHP" value="1350" />
+          <entry key="PLAIN_TEXT" value="43" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.open.time.72" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="env" value="1" />
+          <entry key="js" value="2" />
+          <entry key="php" value="25" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="Blade" value="9" />
+          <entry key="JavaScript" value="2" />
+          <entry key="PHP" value="16" />
+          <entry key="PLAIN_TEXT" value="1" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
+  <component name="FileEditorManager">
+    <splitter split-orientation="horizontal" split-proportion="0.83463883">
+      <split-first>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/Http/Controllers/View/CourseController.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="393">
+                  <caret line="28" selection-start-line="28" selection-end-line="28" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Student/CourseController.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="-15">
+                  <caret line="9" column="1" lean-forward="true" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/Http/Controllers/View/LessonsController.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="357">
+                  <caret line="22" selection-start-line="22" selection-end-line="22" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/resources/views/lessons/lessons.blade.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="127">
+                  <caret line="284" column="122" selection-start-line="284" selection-start-column="122" selection-end-line="284" selection-end-column="122" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/resources/views/layouts/app.blade.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="119">
+                  <caret line="7" column="34" selection-start-line="7" selection-end-line="8" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/routes/web.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="280">
+                  <caret line="60" column="34" selection-start-line="60" selection-start-column="34" selection-end-line="60" selection-end-column="34" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>file_path</find>
+      <find>post</find>
+      <find>count</find>
+      <find>lesson</find>
+      <find>meta</find>
+      <find>onStateChange</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="PUSH_TAGS">
       <GitPushTagMode />
     </option>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/.env" />
+        <option value="$PROJECT_DIR$/resources/views/lecture/course/buttons/actions.blade.php" />
+        <option value="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" />
+        <option value="$PROJECT_DIR$/resources/views/lecture/student/index.blade.php" />
+        <option value="$PROJECT_DIR$/app/DataTables/Lecture/StudentDataTable.php" />
+        <option value="$PROJECT_DIR$/app/Course.php" />
+        <option value="$PROJECT_DIR$/app/DataTables/Lecture/StudentsCoursesDataTable.php" />
+        <option value="$PROJECT_DIR$/app/User.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Lecture/StudentController.php" />
+        <option value="$PROJECT_DIR$/resources/views/courses/all_courses.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/View/CourseController.php" />
+        <option value="$PROJECT_DIR$/resources/views/courses/course_details.blade.php" />
+        <option value="$PROJECT_DIR$/routes/web.php" />
+        <option value="$PROJECT_DIR$/resources/views/layouts/layout.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/layouts/layout_lessons.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Student/CourseController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/View/LessonsController.php" />
+        <option value="$PROJECT_DIR$/resources/views/lessons/lessons.blade.php" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="NodePackageJsonFileManager">
+    <packageJsonPaths>
+      <path value="$PROJECT_DIR$/package.json" />
+    </packageJsonPaths>
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -164,17 +306,112 @@
       <path value="$PROJECT_DIR$/vendor/laravelcollective/html" />
     </include_path>
   </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="135" />
+    <option name="y" value="155" />
+    <option name="width" value="981" />
+    <option name="height" value="672" />
+  </component>
   <component name="ProjectId" id="1Pf1OJABYnKpNXQPWL67d0H29uw" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="anycourse" type="b2602c69:ProjectViewProjectNode" />
+              <item name="anycourse" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="anycourse" type="b2602c69:ProjectViewProjectNode" />
+              <item name="anycourse" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="anycourse" type="b2602c69:ProjectViewProjectNode" />
+              <item name="anycourse" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Http" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="anycourse" type="b2602c69:ProjectViewProjectNode" />
+              <item name="anycourse" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Http" type="462c0819:PsiDirectoryNode" />
+              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="anycourse" type="b2602c69:ProjectViewProjectNode" />
+              <item name="anycourse" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Http" type="462c0819:PsiDirectoryNode" />
+              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
+              <item name="Student" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="anycourse" type="b2602c69:ProjectViewProjectNode" />
+              <item name="anycourse" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="anycourse" type="b2602c69:ProjectViewProjectNode" />
+              <item name="anycourse" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="anycourse" type="b2602c69:ProjectViewProjectNode" />
+              <item name="anycourse" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="anycourse" type="b2602c69:ProjectViewProjectNode" />
+              <item name="anycourse" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="anycourse" type="b2602c69:ProjectViewProjectNode" />
+              <item name="anycourse" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="anycourse" type="b2602c69:ProjectViewProjectNode" />
+              <item name="anycourse" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="anycourse" type="b2602c69:ProjectViewProjectNode" />
+              <item name="anycourse" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="lessons" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DatabaseDriversLRU" value="mariadb" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="SearchEverywhereHistoryKey" value="lesson&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/resources/views/lessons/lessons.blade.php&#10;Q&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/resources/views/lessons/list_question.blade.php&#10;tagF&#9;null&#9;null&#10;tag&#9;null&#9;null&#10;web&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/routes/web.php&#10;Ques&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/app/Http/Controllers/Student/QuestionController.php&#10;ques&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/database/migrations/2019_09_04_183623_create_questions_table.php&#10;cours&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/resources/views/courses/all_courses.blade.php&#10;User&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/app/User.php&#10;course&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/app/Course.php&#10;less&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/resources/views/lessons/lessons.blade.php&#10;admin&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/resources/lang/ar/admin.php&#10;we&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/routes/web.php&#10;Course&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/app/Course.php&#10;Cour&#9;null&#9;null&#10;emmet&#9;ACTION&#9;Emmet&#10;lay&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/resources/views/layouts/layout.blade.php&#10;.env&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/.env&#10;les&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/app/Http/Controllers/Dashboard/LessonController.php&#10;cou&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/app/Http/Controllers/Dashboard/CourseController.php&#10;session&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/config/session.php&#10;config&#9;null&#9;null&#10;r&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/app/Http/Requests/UserRequest.php&#10;index&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/resources/views/dashboard/course/index.blade.php&#10;file&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/app/File.php&#10;categ&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/database/migrations/2019_08_10_201055_create_categories_table.php&#10;seeder&#9;null&#9;null&#10;see&#9;null&#9;null" />
+    <property name="SearchEverywhereHistoryKey" value="app&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/resources/views/layouts/app.blade.php&#10;layout&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/resources/views/layouts/layout.blade.php&#10;wep&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/routes/web.php&#10;api.php&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/routes/api.php&#10;.env&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/.env&#10;lesson&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/resources/views/lessons/lessons.blade.php&#10;Q&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/resources/views/lessons/list_question.blade.php&#10;tagF&#9;null&#9;null&#10;tag&#9;null&#9;null&#10;web&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/routes/web.php&#10;Ques&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/app/Http/Controllers/Student/QuestionController.php&#10;ques&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/database/migrations/2019_09_04_183623_create_questions_table.php&#10;cours&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/resources/views/courses/all_courses.blade.php&#10;User&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/app/User.php&#10;course&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/app/Course.php&#10;less&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/resources/views/lessons/lessons.blade.php&#10;admin&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/resources/lang/ar/admin.php&#10;we&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/routes/web.php&#10;Course&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/app/Course.php&#10;Cour&#9;null&#9;null&#10;emmet&#9;ACTION&#9;Emmet&#10;lay&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/resources/views/layouts/layout.blade.php&#10;les&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/app/Http/Controllers/Dashboard/LessonController.php&#10;cou&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/app/Http/Controllers/Dashboard/CourseController.php&#10;session&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/config/session.php&#10;config&#9;null&#9;null&#10;r&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/app/Http/Requests/UserRequest.php&#10;index&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/resources/views/dashboard/course/index.blade.php&#10;file&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/app/File.php&#10;categ&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/database/migrations/2019_08_10_201055_create_categories_table.php&#10;seeder&#9;null&#9;null&#10;see&#9;null&#9;null" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/dashboard" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Beauty Network" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
@@ -184,16 +421,17 @@
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\anycourse\app\DataTables\Lecture" />
+      <recent name="C:\xampp\htdocs\anycourse\resources\views\lecture\student" />
+      <recent name="C:\xampp\htdocs\anycourse\app\Http\Controllers\Lecture" />
+      <recent name="$PROJECT_DIR$/resources/views/lecture" />
+      <recent name="C:\xampp\htdocs\anycourse\public\storage\image" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\anycourse\resources\views\lecture" />
       <recent name="C:\xampp\htdocs\anycourse\resources\views" />
       <recent name="C:\xampp\htdocs\anycourse\resources\views\courses" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/resources/views/dashboard" />
-      <recent name="$PROJECT_DIR$/app/DataTables" />
-      <recent name="$PROJECT_DIR$/app/Http/Controllers/Dashboard" />
-      <recent name="$PROJECT_DIR$/app/Http/Controllers/Student" />
-      <recent name="$PROJECT_DIR$/resources/views/lecture" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -269,7 +507,7 @@
       <workItem from="1567664420510" duration="10255000" />
       <workItem from="1567676984834" duration="37000" />
       <workItem from="1567746928742" duration="240000" />
-      <workItem from="1567874714176" duration="8910000" />
+      <workItem from="1567833756427" duration="21516000" />
     </task>
     <task id="LOCAL-00004" summary="profile super admin #6">
       <created>1566254260160</created>
@@ -397,43 +635,18 @@
       <option name="project" value="LOCAL" />
       <updated>1567787337465</updated>
     </task>
-    <task id="LOCAL-00022" summary="[X] fix lessons for empty course">
-      <created>1567788124041</created>
+    <task id="LOCAL-00022" summary="[X] add create course for lecture with ajax&#10;[X] show course information">
+      <created>1567805324535</created>
       <option name="number" value="00022" />
       <option name="presentableId" value="LOCAL-00022" />
       <option name="project" value="LOCAL" />
-      <updated>1567788124041</updated>
+      <updated>1567805324536</updated>
     </task>
-    <task id="LOCAL-00023" summary="add a comment to the lesson #24&#10;&#10;- [x] add a comment  to the lesson page&#10;- [x] list comment  to the lesson page">
-      <created>1567879510340</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1567879510340</updated>
-    </task>
-    <task id="LOCAL-00024" summary="add a comment to the lesson #24">
-      <created>1567879627773</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1567879627773</updated>
-    </task>
-    <task id="LOCAL-00025" summary="add page crud of question #7&#10;- [x] add re comment to question">
-      <created>1567883128634</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1567883128634</updated>
-    </task>
-    <task id="LOCAL-00026" summary="add a comment to the lesson #24">
-      <created>1567883519301</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1567883519301</updated>
-    </task>
-    <option name="localTasksCounter" value="27" />
+    <option name="localTasksCounter" value="23" />
     <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="21664000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -444,6 +657,58 @@
       <is-autoscroll-to-source value="true" />
     </todo-panel>
   </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13086233" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="npm" order="2" side_tool="true" />
+      <window_info id="Favorites" order="3" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3276923" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49924356" weight="0.3276923" />
+      <window_info anchor="bottom" id="LuaCheck" order="7" sideWeight="0.49924356" weight="0.3276923" />
+      <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.4977307" weight="0.32923076" />
+      <window_info anchor="bottom" id="Database Changes" order="10" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.45007566" side_tool="true" visible="true" weight="0.06" />
+      <window_info anchor="bottom" id="Terminal" order="12" sideWeight="0.5499244" visible="true" weight="0.06" />
+      <window_info anchor="bottom" id="Command Line Tools Console" order="13" weight="0.0" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" weight="0.32980332" />
+    </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.3184569" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="npm" order="2" side_tool="true" />
+      <window_info id="Favorites" order="3" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3276923" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.3276923" />
+      <window_info anchor="bottom" id="LuaCheck" order="7" weight="0.32923076" />
+      <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="bottom" id="Database Changes" order="10" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.44553706" side_tool="true" weight="0.43384615" />
+      <window_info anchor="bottom" id="Terminal" order="12" sideWeight="0.5544629" visible="true" weight="0.14615385" />
+      <window_info anchor="bottom" id="Command Line Tools Console" order="13" weight="0.0" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" weight="0.32980332" />
+    </layout-to-restore>
+  </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
@@ -453,12 +718,21 @@
         <entry key="MAIN">
           <value>
             <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
               <option name="COLUMN_ORDER" />
             </State>
           </value>
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="profile super admin #6" />
@@ -478,10 +752,220 @@
     <MESSAGE value="add page crud of question #7" />
     <MESSAGE value="[X] add create course for lecture" />
     <MESSAGE value="[X] add list questions" />
-    <MESSAGE value="[X] fix lessons for empty course" />
-    <MESSAGE value="add a comment to the lesson #24&#10;&#10;- [x] add a comment  to the lesson page&#10;- [x] list comment  to the lesson page" />
-    <MESSAGE value="add page crud of question #7&#10;- [x] add re comment to question" />
-    <MESSAGE value="add a comment to the lesson #24" />
-    <option name="LAST_COMMIT_MESSAGE" value="add a comment to the lesson #24" />
+    <MESSAGE value="[X] add create course for lecture with ajax&#10;[X] show course information" />
+    <option name="LAST_COMMIT_MESSAGE" value="[X] add create course for lecture with ajax&#10;[X] show course information" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Dashboard/CourseController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1207">
+          <caret line="79" column="5" selection-start-line="72" selection-start-column="3" selection-end-line="79" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/dashboard/course/create.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2499">
+          <caret line="147" column="37" selection-start-line="147" selection-start-column="37" selection-end-line="147" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/resources/assets/js/http.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="15" selection-start-line="20" selection-start-column="15" selection-end-line="20" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Lecture/CourseController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="325">
+          <caret line="42" column="85" selection-start-line="42" selection-start-column="85" selection-end-line="42" selection-end-column="85" />
+          <folding>
+            <element signature="e#48#65#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Providers/AppServiceProvider.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="17" column="20" lean-forward="true" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/yajra/laravel-datatables-oracle/src/helper.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/DataTables/UserDataTable.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="119" column="16" selection-start-line="119" selection-start-column="16" selection-end-line="119" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/lecture/course/buttons/actions.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="54" selection-start-line="20" selection-start-column="50" selection-end-line="20" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Course.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="19" column="5" lean-forward="true" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/lecture/course/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3596">
+          <caret line="326" selection-start-line="326" selection-end-line="326" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.env">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/DataTables/Lecture/StudentDataTable.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="44" column="43" selection-start-line="44" selection-start-column="43" selection-end-line="44" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/lecture/student/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="366">
+          <caret line="237" column="16" selection-start-line="237" selection-start-column="16" selection-end-line="237" selection-end-column="16" />
+          <folding>
+            <element signature="e#508#865#0#HTML" />
+            <element signature="e#878#1717#0#HTML" />
+            <element signature="e#1730#2839#0#HTML" />
+            <element signature="e#3074#14509#0#Blade" />
+            <element signature="e#14552#17441#0#Blade" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/DataTables/Lecture/CourseDataTable.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/DataTables/Lecture/StudentsCoursesDataTable.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="33" column="5" lean-forward="true" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="213">
+          <caret line="59" lean-forward="true" selection-start-line="59" selection-end-line="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Lecture/StudentController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="31" column="55" lean-forward="true" selection-start-line="31" selection-start-column="55" selection-end-line="31" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/courses/all_courses.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="30" column="126" selection-start-line="30" selection-start-column="126" selection-end-line="30" selection-end-column="126" />
+          <folding>
+            <element signature="e#1713#1731#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/courses/course_details.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="102" column="79" selection-start-line="102" selection-start-column="79" selection-end-line="102" selection-end-column="79" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/api.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/resources/assets/js/globals.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="62" column="8" selection-start-line="61" selection-start-column="2" selection-end-line="74" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/resources/assets/js/lists.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="60" column="34" selection-start-line="60" selection-start-column="34" selection-end-line="60" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/layout.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/layout_lessons.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-587">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/View/CourseController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="393">
+          <caret line="28" selection-start-line="28" selection-end-line="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Student/CourseController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-15">
+          <caret line="9" column="1" lean-forward="true" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/app.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="34" selection-start-line="7" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/View/LessonsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="22" selection-start-line="22" selection-end-line="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/lessons/lessons.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="127">
+          <caret line="284" column="122" selection-start-line="284" selection-start-column="122" selection-end-line="284" selection-end-column="122" />
+        </state>
+      </provider>
+    </entry>
   </component>
 </project>

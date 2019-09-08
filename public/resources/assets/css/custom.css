@@ -1,0 +1,26 @@
+@font-face {
+    font-family: 'STC';
+    src: url('../../../assets/fonts/stc.otf');
+    unicode-range: U+0-2f, U+40-10FFFF;
+}
+
+body{
+    font-family: 'STC';
+}  
+
+a{
+    cursor: pointer;
+}
+
+#growls{
+    top: auto!important;
+    bottom: 10px!important;
+}
+
+.swal-text{
+    text-align: center!important;
+}
+
+.m-l-10{
+    margin-left: 10px;
+}

@@ -57,7 +57,8 @@ Route::group(
         Route::post('lecture/course','Lecture\CourseController@store')->name('course_lecture.store');
         Route::get('lecture/course/{course_id}','Lecture\CourseController@show')->name('course_lecture.show');
         Route::get('lecture/course/{course_id}/student','Lecture\StudentController@showCourseStudent')->name('course.student.show');
-        Route::get('lecture/courses/student','Lecture\StudentController@showCoursesStudents')->name('course.student.show');
+        Route::get('lecture/course/{lesson_id}/exam','Lecture\ExamController@index')->name('course.student.show');
+        Route::resource('lecture/course/{lesson_id}/exam', 'Lecture\ExamController');
 
 
         /////////////////////////// student

@@ -116,19 +116,23 @@
                                     allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                                     allowfullscreen
                             ></iframe>
-                          {{--  <iframe   width="560" height="420" src="{{$lesson_watching->file->file_path}}"
-                                    frameborder="0"
-                                    style="border: solid 4px #37474F"
-                                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                                    allowfullscreen></iframe>--}}
                         </div>
                     </div>
-
+                @else
+                    <div id="menu1" class="tab-pane fade in active ">
+                        <h3 class="text-center">@lang('course.soon')</h3>
+                        <a href="#"><span class="back">@lang('course.feed_back')</span></a>
+                        <div class="video text-center">
+                        </div>
+                    </div>
+                @endif
 
             </div>
-            <button type="button" class="btn btn-primary" data-toggle="modal"
-                    data-target="#new">@lang('course.new_comment')</button>
+
             <div class="container" style=" margin-top: 50px">
+                @if (isset($lesson->comment)&& !empty($lesson->comment))
+                    <button type="button" class="btn btn-primary" data-toggle="modal"
+                            data-target="#new">@lang('course.new_comment')</button>
                 @foreach ($lesson->comment as $comment)
 
                     <div class="row">
@@ -153,14 +157,8 @@
 
                     </div>
                 @endforeach
-                @else
-                    <div id="menu1" class="tab-pane fade in active ">
-                        <h3 class="text-center">@lang('course.soon')</h3>
-                        <a href="#"><span class="back">@lang('course.feed_back')</span></a>
-                        <div class="video text-center">
-                        </div>
-                    </div>
-                @endif
+                    @endif
+
             </div>
 
 
@@ -181,7 +179,7 @@
                                     <label for="content" class="col-form-label">@lang('course.content'):</label>
                                     <textarea class="form-control" rows="4" name="content" id="content"
                                               required></textarea>
-                                    <input type="hidden" name='lesson_id' value="{{$lesson->id}}">
+                                    <input type="hidden" name='lesson_id' value="{{isset($lesson->id) ? $lesson->id : ''}}">
 
                                 </div>
                                 <div class="form-group">
@@ -300,14 +298,14 @@
 
         function completeWatchVideo() {
 
-            var posted_data = "lesson_id={{$lesson_watching->id}}&_token=" + $("meta[name='csrf-token']").attr("content");
+            var posted_data = "lesson_id={{isset($lesson_watching->id)?$lesson_watching->id:''}}&_token=" + $("meta[name='csrf-token']").attr("content");
             BASE_URL= "{{route('student.lesson.complete')}}";
             $.post(BASE_URL, posted_data,
                 function (response, status) {
                 })
         }
         function WatchVideo() {
-            var posted_data = "lesson_id={{$lesson_watching->id}}&_token=" + $("meta[name='csrf-token']").attr("content");
+            var posted_data = "lesson_id={{isset($lesson_watching->id)?$lesson_watching->id:''}}&_token=" + $("meta[name='csrf-token']").attr("content");
             BASE_URL= "{{route('student.lesson.watch')}}";
             $.post(BASE_URL, posted_data,
                 function (response, status) {

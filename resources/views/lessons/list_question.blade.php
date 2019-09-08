@@ -279,7 +279,7 @@
                         <li>
                             <div class="comment-main-level">
                                 <!-- Avatar -->
-                                <div class="comment-avatar"><img src="{{isset($question->user->image()->file_path) ? url('storage/'.$question->user->image()->file_path) : url('storage\image\user.jpeg')}}" alt=""></div>
+                                <div class="comment-avatar"><img src="{{isset($question->user->image()->file_path) ? url('storage/'.$question->user->image()->file_path) : 'https://ssl.gstatic.com/accounts/ui/avatar_2x.png'}}" alt=""></div>
                                 <!-- Contenedor del Comentario -->
                                 <div class="comment-box">
                                     <div class="comment-head">
@@ -298,7 +298,7 @@
 
                                 <li>
                                     <!-- Avatar -->
-                                    <div class="comment-avatar"><img src="{{isset($comment->user->image()->file_path) ? url('storage/'.$comment->user->image()->file_path) : url('storage\image\user.jpeg')}}" alt=""></div>
+                                    <div class="comment-avatar"><img src="{{isset($comment->user->image()->file_path) ? url('storage/'.$comment->user->image()->file_path) : 'https://ssl.gstatic.com/accounts/ui/avatar_2x.png'}}" alt=""></div>
                                     <!-- Contenedor del Comentario -->
                                     <div class="comment-box">
                                         <div class="comment-head">

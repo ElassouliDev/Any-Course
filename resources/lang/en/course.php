@@ -14,5 +14,10 @@ return [
     'content'=>'Content',
     'title'=>'Title',
     'lesson_course'=>'Lesson questions',
+    'course_management'=>'Course Management',
+    'question_en'=>'Question english',
+    'question_ar'=>'Question arabic',
+    'answers_ar'=>'Answers arabic',
+    'answers_en'=>'Answers english',
 
 ];

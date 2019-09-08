@@ -16,10 +16,6 @@
                 <a href="{{ route('course.student.show',$id)}}"><i
                             class="fa fa-user"></i> {{trans('admin.student')}}</a>
             </li>
-            <li>
-                <a href="{{ route('exam.index',$id)}}"><i
-                            class="fa fa-user"></i> {{trans('admin.add_exam')}}</a>
-            </li>
             <li class="divider"></li>
             <li>
                 <a href="{{ route('course_lecture.show',$id)}}"><i

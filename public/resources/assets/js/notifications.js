@@ -8,7 +8,7 @@ var notifications = {
 
         options = $.extend(true, {}, defaults, options);
 
-        $.growl(options);
+        // $.growl(options);
     },
     loading: {
         show:   function(options){

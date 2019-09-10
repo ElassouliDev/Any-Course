@@ -1,3 +1,4 @@
+/*
 var GLOBALS = {
     options: {
     }
@@ -184,4 +185,4 @@ $(function() {
             resource: BASE_URL + "/Expenses/types/list" 
         });
     });
-});
+});*/

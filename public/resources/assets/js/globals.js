@@ -87,6 +87,7 @@ Array.prototype.slice.call(document.querySelectorAll('.js-switch')).forEach(func
 });
 
 
+/*
 $(function () {
     $.fn.datepicker.defaults.language = 'ar';
 
@@ -107,6 +108,7 @@ $(function () {
         });
     });
 });
+*/
 
 
 $('[data-action="branch-change"]').change(function () {

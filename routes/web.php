@@ -64,8 +64,14 @@ Route::group(
         /////////////////////////// student
         Route::post('lesson/watch/','Student\CourseController@student_watch_lesson')->name('student.lesson.watch');
         Route::post('lesson/complete/','Student\CourseController@complete_watch_lesson')->name('student.lesson.complete');
-
+        Route::get('student/course/','Student\CourseController@getEnrolledCoursesByUser')->name('student.courses.enrolled');
         /// end student
+
+        ////////////////////////////start setting user
+        ///
+        Route::get('setting/','Student\SettingController@index')->name('student.setting');
+        Route::put('setting/update_info','Student\SettingController@updateUserInformation')->name('student.updateInfo');
+
         ////// end lecture
         Auth::routes();
 

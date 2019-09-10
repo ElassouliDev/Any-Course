@@ -8,6 +8,18 @@ use Illuminate\Support\Facades\Auth;
 
 class CourseController extends Controller
 {
+
+
+
+
+
+    function getEnrolledCoursesByUser()
+    {
+        $courses = Auth::user()->student_course()->paginate(27);
+        return view('student.course_enrolled',compact('courses'));
+
+    }
+
     function enroll_and_in_enroll_course($course_id)
     {
         Auth::user()->student_course()->toggle($course_id);

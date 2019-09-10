@@ -1,21 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0b226c64-b40e-40b8-97c2-65fd791ffb0a" name="Default Changelist" comment="[X] add sweet alert library &#10;[X] update user information &#10;[X] view course that enrrolled by user">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Student/SettingController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/student/course_enrolled.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/student/settings.blade.php" afterDir="false" />
+    <list default="true" id="0b226c64-b40e-40b8-97c2-65fd791ffb0a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Student/CourseController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Student/CourseController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/mix-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/mix-manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/resources/assets/js/globals.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/resources/assets/js/globals.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/resources/assets/js/lists.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/resources/assets/js/lists.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/resources/assets/js/notifications.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/resources/assets/js/notifications.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/aside.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/aside.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -497,7 +484,7 @@
       <workItem from="1567746928742" duration="240000" />
       <workItem from="1567874714176" duration="8910000" />
       <workItem from="1568096462138" duration="94000" />
-      <workItem from="1568125127448" duration="15420000" />
+      <workItem from="1568125127448" duration="15674000" />
     </task>
     <task id="LOCAL-00004" summary="profile super admin #6">
       <created>1566254260160</created>
@@ -660,11 +647,18 @@
       <option name="project" value="LOCAL" />
       <updated>1567883519301</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="[X] add sweet alert library&#10;[X] update user information&#10;[X] view course that enrrolled by user">
+      <created>1568144507653</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1568144507653</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15514000" />
+    <option name="totallyTimeSpent" value="15768000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -749,7 +743,8 @@
     <MESSAGE value="add a comment to the lesson #24&#10;&#10;- [x] add a comment  to the lesson page&#10;- [x] list comment  to the lesson page" />
     <MESSAGE value="add page crud of question #7&#10;- [x] add re comment to question" />
     <MESSAGE value="add a comment to the lesson #24" />
-    <option name="LAST_COMMIT_MESSAGE" value="add a comment to the lesson #24" />
+    <MESSAGE value="[X] add sweet alert library&#10;[X] update user information&#10;[X] view course that enrrolled by user" />
+    <option name="LAST_COMMIT_MESSAGE" value="[X] add sweet alert library&#10;[X] update user information&#10;[X] view course that enrrolled by user" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/vendor/monolog/monolog/src/Monolog/Processor/WebProcessor.php">

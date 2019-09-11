@@ -14,9 +14,11 @@
             </div>
             <div class="row px-5 py-2 pb-5">
                 @foreach($courses as  $course)
+
                     <div class="col-md-4">
                         <div class="card card-course">
-                            <img class="card-img-top" height="240" src="{{url('storage/'.($course->image->file_path ??'storage/user.jpeg'))}}"
+                            <img class="card-img-top" height="240"
+                                 src="{{url('storage/'.($course->image->file_path ??'storage/user.jpeg'))}}"
                                  alt="Card image" style="width:100%">
                             <div class="card-body">
                                 <h4 class="card-title"><b>{{$course['title_'.app()->getLocale()]}}</b></h4>
@@ -28,9 +30,9 @@
                         </div>
                     </div>
 
-
                 @endforeach
-                    {{ $courses->links() }}
+
+                {{ $courses->links() }}
 
             </div>
         </div>

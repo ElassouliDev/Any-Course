@@ -40,7 +40,7 @@ Route::group(
             Route::resource('/comment', 'Dashboard\CommentController');
 
         });
-        Route::post('/course_enroll/{course_id}','Student\CourseController@enroll_and_in_enroll_course')->name('student.course_enroll');
+        Route::post('/course_enroll/{course_id}','Student\CourseController@enroll_and_in_enroll_course')->name('user.course_enroll');
         Route::get('/course','View\CourseController@course_list');
         Route::get('/course/{course_id}','View\CourseController@course_details')->name('course_details'); //course details
         Route::get('/lessons/{course_id}/{lesson_id?}','View\LessonsController@lessons_list')->name('course_lesson'); //lessons list
@@ -56,21 +56,27 @@ Route::group(
         Route::get('lecture/course','Lecture\CourseController@index')->name('course_lecture.index');
         Route::post('lecture/course','Lecture\CourseController@store')->name('course_lecture.store');
         Route::get('lecture/course/{course_id}','Lecture\CourseController@show')->name('course_lecture.show');
-        Route::get('lecture/course/{course_id}/student','Lecture\StudentController@showCourseStudent')->name('course.student.show');
-        Route::get('lecture/course/{lesson_id}/exam','Lecture\ExamController@index')->name('course.student.show');
+        Route::get('lecture/course/{course_id}/user','Lecture\StudentController@showCourseStudent')->name('course.user.show');
+        Route::get('lecture/course/{lesson_id}/exam','Lecture\ExamController@index')->name('course.user.show');
         Route::resource('lecture/course/{lesson_id}/exam', 'Lecture\ExamController');
 
 
-        /////////////////////////// student
-        Route::post('lesson/watch/','Student\CourseController@student_watch_lesson')->name('student.lesson.watch');
-        Route::post('lesson/complete/','Student\CourseController@complete_watch_lesson')->name('student.lesson.complete');
-        Route::get('student/course/','Student\CourseController@getEnrolledCoursesByUser')->name('student.courses.enrolled');
-        /// end student
+        /////////////////////////// user
+        Route::post('lesson/watch/','Student\CourseController@student_watch_lesson')->name('user.lesson.watch');
+        Route::post('lesson/complete/','Student\CourseController@complete_watch_lesson')->name('user.lesson.complete');
+        Route::get('user/course/','Student\CourseController@getEnrolledCoursesByUser')->name('user.courses.enrolled');
+        /// end user
 
         ////////////////////////////start setting user
         ///
-        Route::get('setting/','Student\SettingController@index')->name('student.setting');
-        Route::put('setting/update_info','Student\SettingController@updateUserInformation')->name('student.updateInfo');
+        Route::get('setting/','Student\SettingController@index')->name('user.setting');
+        Route::put('setting/update_info','Student\SettingController@updateUserInformation')->name('user.updateInfo');
+
+
+        Route::get('user/login','View\AuthController@getLoginPage')->name('user.login');
+        Route::post('user/login','View\AuthController@login');
+        Route::get('user/register','View\AuthController@getRegisterPage')->name('user.register');
+        Route::post('user/register','View\AuthController@register');
 
         ////// end lecture
         Auth::routes();

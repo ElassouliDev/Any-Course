@@ -34,11 +34,11 @@ class Course extends Model
     } // end of get category that have a course
     public function student_course(){
         return $this->belongsToMany(Course::class,'course_student');
-    } // end of get student course that have a course
+    } // end of get user course that have a course
 
    /* public function student_watch_lesson(){
             return $this->belongsToMany(Course::class,'lesson_student');
-        } // end of get student course that have a course*/
+        } // end of get user course that have a course*/
 
 
 }

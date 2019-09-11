@@ -82,7 +82,7 @@
                 </div>
             </li>
             <li class="m-menu__item">
-                <a href="{{route('student.courses.enrolled')}}" class="m-menu__link">
+                <a href="{{route('user.courses.enrolled')}}" class="m-menu__link">
                     <i class="m-menu__link-icon flaticon-settings"></i>
                     <span class="m-menu__link-text">
 										@lang('course.course_enrolled')
@@ -107,7 +107,7 @@
             </li>
 
             <li class="m-menu__item">
-                <a href="{{route('student.setting')}}" class="m-menu__link">
+                <a href="{{route('user.setting')}}" class="m-menu__link">
                     <i class="m-menu__link-icon flaticon-settings"></i>
                     <span class="m-menu__link-text">
 										@lang('course.setting')

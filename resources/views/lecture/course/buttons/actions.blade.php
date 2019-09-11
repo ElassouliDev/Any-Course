@@ -13,8 +13,8 @@
             </li>
             <li class="divider"></li>
             <li>
-                <a href="{{ route('course.student.show',$id)}}"><i
-                            class="fa fa-user"></i> {{trans('admin.student')}}</a>
+                <a href="{{ route('user',$id)}}"><i
+                            class="fa fa-user"></i> {{trans('user')}}</a>
             </li>
             <li>
                 <a href="{{ route('exam.index',$id)}}"><i

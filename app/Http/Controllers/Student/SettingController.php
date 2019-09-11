@@ -16,7 +16,7 @@ class SettingController extends Controller
 
     function index()
     {
-        return view('student.settings');
+        return view('user.settings');
     }
 
     /*function updateInfo($course_id)

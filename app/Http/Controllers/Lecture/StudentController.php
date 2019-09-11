@@ -19,7 +19,7 @@ class StudentController extends Controller
     {
 
         $title = trans('admin.courses');
-        return $studens->render('lecture.student.index', compact('title'));
+        return $studens->render('lecture.user.index', compact('title'));
 
     }
 
@@ -38,7 +38,7 @@ class StudentController extends Controller
 //                }])->get();
                 /*dd($user);
         $title = trans('admin.courses');
-        return $studens->render('lecture.student.index', compact('title'));*/
+        return $studens->render('lecture.user.index', compact('title'));*/
 
                 dd(1);
     }

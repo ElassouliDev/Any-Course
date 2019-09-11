@@ -16,7 +16,7 @@ class CourseController extends Controller
     function getEnrolledCoursesByUser()
     {
         $courses = Auth::user()->student_course()->paginate(27);
-        return view('student.course_enrolled',compact('courses'));
+        return view('user.course_enrolled',compact('courses'));
 
     }
 

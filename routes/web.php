@@ -81,4 +81,7 @@ Route::group(
         ////// end lecture
         Auth::routes();
 
-    });
+        ///Deploy
+        Route::get('deploy','Deploy@callCloudwaysAPI');
+
+            });

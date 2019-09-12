@@ -15,29 +15,29 @@
         <ul class="sidebar-menu" data-widget="tree">
             <li><a href="{{ url('dashboard') }}"><i class="fa fa-th"></i><span>@lang('admin.dashboard')</span></a></li>
 
-{{--            @if (auth()->user()->hasPermission('read_categories'))--}}
+            @if (auth()->user()->hasPermission('read_categories'))
                 <li><a href="{{ route('dashboard.category.index') }}"><i class="fa fa-th-list"></i><span>@lang('admin.categories')</span></a></li>
-{{--            @endif--}}
-            {{--            @if (auth()->user()->hasPermission('read_courses'))--}}
+            @endif
+                        @if (auth()->user()->hasPermission('read_courses'))
                 <li><a href="{{ route('dashboard.course.index') }}"><i class="fa fa-list-alt"></i><span>@lang('admin.courses')</span></a></li>
-{{--            @endif--}}
+            @endif
 
-            {{--            @if (auth()->user()->hasPermission('read_lessons'))--}}
+                        @if (auth()->user()->hasPermission('read_lessons'))
                 <li><a href="{{ route('dashboard.lesson.index') }}"><i class="fa fa-list-ol"></i><span>@lang('admin.lessons')</span></a></li>
-{{--            @endif--}}
-            {{--            @if (auth()->user()->hasPermission('read_questions'))--}}
+            @endif
+                        @if (auth()->user()->hasPermission('read_questions'))
                 <li><a href="{{ route('dashboard.question.index') }}"><i class="fa  fa-question-circle-o"></i><span>@lang('admin.questions')</span></a></li>
-{{--            @endif--}}
-            {{--            @if (auth()->user()->hasPermission('read_comments'))--}}
+            @endif
+                        @if (auth()->user()->hasPermission('read_comments'))
                 <li><a href="{{ route('dashboard.comment.index') }}"><i class="fa  fa-question-circle-o"></i><span>@lang('admin.comments')</span></a></li>
-{{--            @endif--}}
-            {{--            @if (auth()->user()->hasPermission('read_questions'))--}}
+            @endif
+                        @if (auth()->user()->hasPermission('read_questions'))
                 <li><a href="{{ route('dashboard.exam.index') }}"><i class="fa   fa-exclamation-triangle"></i><span>@lang('admin.exams')</span></a></li>
-{{--            @endif--}}
+            @endif
 
-            {{--            @if (auth()->user()->hasPermission('read_tagsphp'))--}}
+                        @if (auth()->user()->hasPermission('read_tags'))
                 <li><a href="{{ route('dashboard.tag.index') }}"><i class="fa fa-tag"></i><span>@lang('admin.tags')</span></a></li>
-{{--            @endif--}}
+            @endif
 
             @if (auth()->user()->hasPermission('read_settings'))
                 <li><a href="{{ route('dashboard.settings.index') }}"><i class="fa fa-opencart"></i><span>@lang('admin.settings')</span></a></li>

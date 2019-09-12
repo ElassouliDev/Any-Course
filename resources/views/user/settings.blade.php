@@ -49,7 +49,7 @@
                 <div class="col-xl-9">
                     <div class="tab-content">
                         <div class="tab-pane active" id="m_tabs_3_1" role="tabpanel">
-                            <form method="post" action="{{route('user')}}"
+                            <form method="post" action="{{route('user.updateInfo')}}"
                                   class="m-form m-form--fit m-form--label-align-right m-form--group-seperator-dashed"
                                   enctype="multipart/form-data">
                                 @csrf

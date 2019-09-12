@@ -299,7 +299,7 @@
         function completeWatchVideo() {
 
             var posted_data = "lesson_id={{isset($lesson_watching->id)?$lesson_watching->id:''}}&_token=" + $("meta[name='csrf-token']").attr("content");
-            BASE_URL= "{{route('user')}}";
+            BASE_URL= "{{route('student.lesson.complete')}}";
             $.post(BASE_URL, posted_data,
                 function (response, status) {
                 })

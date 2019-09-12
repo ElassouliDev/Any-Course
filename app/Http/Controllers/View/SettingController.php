@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Student;
+namespace App\Http\Controllers\View;
 
 use App\File;
 use App\User;
@@ -43,8 +43,10 @@ class SettingController extends Controller
                 auth()->user()->update($request->all());
                 if ($request->has('image')) {
                     $new_path = $this->uploadImage($request, auth()->user());
-                    if (!auth()->user()->image) {
-                        auth()->user()->image->file_path = $new_path;
+                    if (!empty(auth()->user()->image)) {
+
+                        auth()->user()->image()->update(['file_path'=>$new_path]);
+
                     } else {
                         auth()->user()->image()->save(new File(['file_path' => $new_path]));
                     }
@@ -69,8 +71,9 @@ class SettingController extends Controller
      */
     function uploadImage($image, $edit = null)
     {
-        if ($edit != null)
-            Storage::has($edit->image->file_path) ? Storage::delete($edit->image->file_path) : '';
+      /*  if ($edit != null)
+            Storage::has($edit->image->file_path) ? Storage::delete($edit->image->file_path) : '';*/
+//        dd(2);
 
         $file = $image->file('image')->store('image/user');
         return $file;

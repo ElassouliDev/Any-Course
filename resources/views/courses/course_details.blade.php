@@ -98,7 +98,7 @@
 
 
                                                 <form method="post"
-                                                      action="{{route('user',$course->id)}}">
+                                                      action="{{route('user.course_enroll',$course->id)}}">
                                                     @csrf
                                                     @if($course->is_enroll == 0)
                                                         <button class="btn btn-lg btn-primary">@lang('course.enroll')</button>

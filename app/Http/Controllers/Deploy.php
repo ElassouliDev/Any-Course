@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-const API_KEY = "YOUR API KEY HERE";
+const API_KEY = "aXbFgk6erexPQUfkXTtqbYOFRiT6Nk";
 const API_URL = "https://api.cloudways.com/api/v1";
 const EMAIL = "YOUR EMAIL GOES HERE";
 class Deploy extends Controller

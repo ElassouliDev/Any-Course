@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 const API_KEY = "aXbFgk6erexPQUfkXTtqbYOFRiT6Nk";
-const API_URL = "https://api.cloudways.com/api/v1";
-const EMAIL = "YOUR EMAIL GOES HERE";
+const API_URL = "http://phplaravel-322091-987223.cloudwaysapps.com/";
+const EMAIL = "dev.aliwaell@gmail.com";
 class Deploy extends Controller
 {
 
@@ -55,10 +55,10 @@ class Deploy extends Controller
             ]);
         $accessToken = $tokenResponse->access_token;
         $gitPullResponse = callCloudWaysAPI('POST', '/git/pull', $accessToken, [
-            'server_id' => $_GET['server_id'],
-            'app_id' => $_GET['app_id'],
-            'git_url' => $_GET['git_url'],
-            'branch_name' => $_GET['branch_name']
+            'server_id' => '322091',
+            'app_id' => '987223',
+            'git_url' => 'https://github.com/gsglaravel/anycourse.git',
+            'branch_name' => 'master'
             /* Uncomment it if you want to use deploy path, Also add the new parameter in your link
             'deploy_path' => $_GET['deploy_path']
             */

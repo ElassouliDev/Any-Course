@@ -124,7 +124,7 @@ class ExamDataTable extends DataTable
             [
                 'name'=>'title',
                 'data'=>'title_'.app()->getLocale(),
-                'title'=>trans('admin.title_'.app()->getLocale()),
+                'title'=>trans('admin.title'),
             ],
   [
                 'name'=>'course_id',

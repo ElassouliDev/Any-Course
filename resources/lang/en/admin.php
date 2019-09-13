@@ -61,5 +61,9 @@ return [
     'file_path'=>'File Path',
     'lecture'=>'Lecture',
     'student'=>'Student',
+    'exam'=>'Exam',
+    'exams'=>'Exams',
+    'question'=>'Question',
+    'questions'=>'Questions',
 
 ];

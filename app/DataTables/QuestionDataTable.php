@@ -124,12 +124,12 @@ class QuestionDataTable extends DataTable
             [
                 'name'=>'title_'.app()->getLocale(),
                 'data'=>'title_'.app()->getLocale(),
-                'title'=>trans('admin.title_'.app()->getLocale()),
+                'title'=>trans('admin.title'),
             ],
   [
                 'name'=>'lesson_id',
                 'data'=>'lesson_id',
-                'title'=>trans('admin.lesson_id'),
+                'title'=>trans('admin.lesson'),
             ],
             [
                 'name' => 'actions',

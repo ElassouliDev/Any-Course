@@ -132,13 +132,9 @@ class CourseDataTable extends DataTable
             [
                 'name'=>'title_'.app()->getLocale(),
                 'data'=>'title_'.app()->getLocale(),
-                'title'=>trans('admin.title_'.app()->getLocale()),
+                'title'=>trans('admin.title'),
             ],
-            [
-                'name'=>'description_'.app()->getLocale(),
-                'data'=>'description_'.app()->getLocale(),
-                'title'=>trans('admin.description_'.app()->getLocale()),
-            ],
+
             [
                 'name'=>'status',
                 'data'=>'status',
@@ -152,7 +148,7 @@ class CourseDataTable extends DataTable
             [
                 'name'=>'category_id',
                 'data'=>'category_id',
-                'title'=>trans('admin.category_id'),
+                'title'=>trans('admin.category'),
             ],
             [
                 'name' => 'actions',

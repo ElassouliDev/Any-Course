@@ -126,9 +126,9 @@ class ExamDataTable extends DataTable
                 'title' => trans('admin.title'),
             ],
             [
-                'name' => 'lesson_id',
-                'data' => 'lesson_id',
-                'title' => trans('admin.lesson_id'),
+                'name' => 'course_id',
+                'data' => 'course_id',
+                'title' => trans('admin.course'),
             ],
 
             /*[

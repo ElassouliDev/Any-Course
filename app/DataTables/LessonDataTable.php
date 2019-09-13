@@ -124,7 +124,7 @@ class LessonDataTable extends DataTable
             [
                 'name'=>'title_'.app()->getLocale(),
                 'data'=>'title_'.app()->getLocale(),
-                'title'=>trans('admin.title_'.app()->getLocale()),
+                'title'=>trans('admin.title'),
             ],
       [
                 'name'=>'course_id',

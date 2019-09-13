@@ -32,8 +32,8 @@ class ExamController extends Controller
     public function create()
     {
         $title = trans('admin.add');
-        $lessons = Lesson::all();
-        return view('dashboard.exam.create',compact('title','lessons'));
+        $courses = Course::where('user_id',auth()->user()->id)->get();
+        return view('dashboard.exam.create',compact('title','courses'));
     }
 
     /**

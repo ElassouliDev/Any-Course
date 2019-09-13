@@ -123,13 +123,13 @@ class ExamDataTable extends DataTable
 
             [
                 'name'=>'title',
-                'data'=>'title',
-                'title'=>trans('admin.title'),
+                'data'=>'title_'.app()->getLocale(),
+                'title'=>trans('admin.title_'.app()->getLocale()),
             ],
   [
-                'name'=>'lesson_id',
-                'data'=>'lesson_id',
-                'title'=>trans('admin.lesson_id'),
+                'name'=>'course_id',
+                'data'=>'course_id',
+                'title'=>trans('admin.course'),
             ],
             [
                 'name' => 'actions',

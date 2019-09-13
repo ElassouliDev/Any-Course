@@ -6,4 +6,9 @@ return [
     'In-enroll' => 'إلغاء الإشتراك',
     'LatestCourses' => 'الكورسات الجديدة',
     'allCourses' => 'إستعراض الكورسات',
+    'in-progress'=>'مستمر',
+    'closed'=>'مغلق',
+    'published'=>'منتهي',
+    'In-publish'=>'منتهي',
+
 ];

@@ -48,11 +48,18 @@ return [
     'no'=>'No',
     'yes'=>'Yes',
 
+    'show'=>'Show',
+    'free'=>'Free',
+    'actions'=>'Actions',
+    'add_exam'=>'Add Exam',
+
     'confirm_delete'=>'Confirm Delete',
     'no_data_found'=>'No Data Found',
     'crated_at'=>'Crated At',
     'SelectCourse'=>'Select the course',
     'selectPaid'=>'Select the paid',
     'file_path'=>'File Path',
+    'lecture'=>'Lecture',
+    'student'=>'Student',
 
 ];

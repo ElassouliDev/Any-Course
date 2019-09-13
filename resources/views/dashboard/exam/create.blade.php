@@ -55,33 +55,15 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label>@lang('admin.content_ar')</label>
-                                    <textarea  name="content_ar" class="form-control">{{ old('content_ar') }}</textarea>
-                                </div>
-
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label>@lang('admin.content_en')</label>
-                                    <textarea type="text" name="content_en" class="form-control">{{ old('content_en') }}</textarea>
-
-                                </div>
-
-                            </div>
-                        </div>
-                        <div class="row">
 
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label>@lang('admin.exam_id')</label>
-                                    <select name="exam_id" class="js-example-basic-single form-control">
-                                        <option value="-1">-- @lang('admin.Selectexam')--</option>
+                                    <label>@lang('admin.course')</label>
+                                    <select name="course_id" class="js-example-basic-single form-control">
+                                        <option value="-1">-- @lang('admin.Selectlesson')--</option>
 
-                                        @foreach($exams as $exam)
-                                            <option value="{{ $exam->id }}" >{{ $exam['title_'.app()->getLocale()] }}</option>
-
+                                        @foreach($courses as $course)
+                                            <option value="{{ $course->id }}" >{{ $course['title_'.app()->getLocale()] }}</option>
                                         @endforeach
 
 

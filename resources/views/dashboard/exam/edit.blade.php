@@ -55,28 +55,21 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label>@lang('admin.file_path')</label>
-                                    <input type="url" name="file_path" class="form-control" value="{{$exam->file->file_path}}">
 
-                                </div>
 
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>@lang('admin.course')</label>
                                     <select name="course_id" class="js-example-basic-single form-control">
-                                        <option value="-1">-- @lang('admin.SelectCourse')--</option>
+                                        <option value="-1">-- @lang('admin.Selectlesson')--</option>
 
                                         @foreach($courses as $course)
-                                            <option value="{{ $course->id }}" {{$exam->course_id === $course->id ? 'selected':''}}>{{ $course['title_'.app()->getLocale()] }}</option>
-
+                                            <option value="{{ $course->id }}" >{{ $course['title_'.app()->getLocale()] }}</option>
                                         @endforeach
 
 
                                     </select>
-
                                 </div>
 
                             </div>

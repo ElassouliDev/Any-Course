@@ -17,8 +17,8 @@ class CreateExamsTable extends Migration
             $table->bigIncrements('id');
             $table->string('title_en');
             $table->string('title_ar');
-            $table->unsignedBigInteger('lesson_id');
-            $table->foreign('lesson_id')->references('id')->on('lessons')->onDelete('cascade');
+            $table->unsignedBigInteger('course_id');
+            $table->foreign('course_id')->references('id')->on('courses')->onDelete('cascade');
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();

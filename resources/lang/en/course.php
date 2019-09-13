@@ -19,5 +19,9 @@ return [
     'question_ar'=>'Question arabic',
     'answers_ar'=>'Answers arabic',
     'answers_en'=>'Answers english',
+    'setting'=>'Settings',
+    'in-progress'=>'In progress',
+    'lecture_course'=>'Lecture course',
+    'exam_lesson'=>'Exam lesson',
 
 ];

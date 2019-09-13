@@ -22,7 +22,8 @@
             }
         </style>
     @else
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+        <link rel="stylesheet"
+              href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
         <link rel="stylesheet" href="{{ asset('dashboard_files/css/font-awesome.min.css') }}">
         <link rel="stylesheet" href="{{ asset('dashboard_files/css/AdminLTE.min.css') }}">
     @endif
@@ -42,7 +43,7 @@
     <div class="login-box-body">
         <p class="login-box-msg">Sign in to start your session</p>
 
-        <form action="{{ route('login') }}" method="post">
+        <form action="{{ route('dashboard.login') }}" method="post">
             {{ csrf_field() }}
             {{ method_field('post') }}
 
@@ -59,7 +60,8 @@
             </div>
 
             <div class="form-group">
-                <label style="font-weight: normal;"><input type="checkbox" name="remember"> @lang('admin.remember_me')</label>
+                <label style="font-weight: normal;"><input type="checkbox" name="remember"> @lang('admin.remember_me')
+                </label>
             </div>
 
             <button type="submit" class="btn btn-primary btn-block btn-flat">@lang('admin.login')</button>

@@ -74,7 +74,6 @@
 
                     <div class="radio">
                         <label>
-
                             @lang('course.no_lessons')
                         </label>
 

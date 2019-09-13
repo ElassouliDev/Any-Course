@@ -56,27 +56,29 @@ Route::group(
         Route::get('lecture/course','Lecture\CourseController@index')->name('course_lecture.index');
         Route::post('lecture/course','Lecture\CourseController@store')->name('course_lecture.store');
         Route::get('lecture/course/{course_id}','Lecture\CourseController@show')->name('course_lecture.show');
-        Route::get('lecture/course/{course_id}/user','Lecture\StudentController@showCourseStudent')->name('course.user.show');
-        Route::get('lecture/course/{lesson_id}/exam','Lecture\ExamController@index')->name('course.user.show');
+        Route::get('lecture/course/{course_id}/edit','Lecture\CourseController@edit')->name('course_lecture.edit');
+        Route::put('lecture/course/update','Lecture\CourseController@update')->name('course_lecture.update');
+        Route::get('lecture/courses/student','Lecture\StudentController@showCoursesStudents')->name('course.student.show');
+        Route::get('lecture/course/{lesson_id}/exam','Lecture\ExamController@index')->name('course.exam.show');
         Route::resource('lecture/course/{lesson_id}/exam', 'Lecture\ExamController');
 
 
-        /////////////////////////// user
+        /////////////////////////// student
         Route::post('lesson/watch/','Student\CourseController@student_watch_lesson')->name('student.lesson.watch');
         Route::post('lesson/complete/','Student\CourseController@complete_watch_lesson')->name('student.lesson.complete');
-        Route::get('user/course/','Student\CourseController@getEnrolledCoursesByUser')->name('user.courses.enrolled');
-        /// end user
+        Route::get('student/course/','Student\CourseController@getEnrolledCoursesByUser')->name('student.courses.enrolled');
+        /// end student
 
         ////////////////////////////start setting user
         ///
         Route::get('setting/','View\SettingController@index')->name('user.setting');
         Route::put('setting/update_info','View\SettingController@updateUserInformation')->name('user.updateInfo');
+        Route::put('setting/update_password','View\SettingController@updateUserPassword')->name('user.updatePassword');
 
 
-        Route::get('user/login','View\AuthController@getLoginPage')->name('user.login');
-        Route::post('user/login','View\AuthController@login');
-        Route::get('user/register','View\AuthController@getRegisterPage')->name('user.register');
-        Route::post('user/register','View\AuthController@register');
+        Route::get('dashboard/login','Dashboard\AuthController@getLoginPage')->name('dashboard.login');
+        Route::post('dashboard/login','Dashboard\AuthController@login');
+
 
         ////// end lecture
         Auth::routes();

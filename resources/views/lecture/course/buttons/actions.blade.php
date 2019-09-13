@@ -8,13 +8,13 @@
         </a>
         <ul class="dropdown-menu pull-right">
             <li>
-                <a href="#" data-link="{{ route('course_lecture.show',$id)}}"  data-action="show"><i
+                <a href="#" data-link="{{route('course_lecture.show',$id)}}"  data-action="show"><i
                             class="fa fa-eye"></i> {{trans('admin.show')}}</a>
             </li>
             <li class="divider"></li>
             <li>
-                <a href="{{ route('user',$id)}}"><i
-                            class="fa fa-user"></i> {{trans('user')}}</a>
+                <a href="{{route('course.student.show',$id)}}"><i
+                            class="fa fa-user"></i> {{trans('admin.student')}}</a>
             </li>
             <li>
                 <a href="{{ route('exam.index',$id)}}"><i
@@ -22,7 +22,7 @@
             </li>
             <li class="divider"></li>
             <li>
-                <a href="{{ route('course_lecture.show',$id)}}"><i
+                <a href="#" data-link="{{ route('course_lecture.edit',$id)}}" data-action="show"><i
                             class="fa fa-pencil-square-o"></i> {{trans('admin.edit')}}</a>
             </li>
             <li class="divider"></li>

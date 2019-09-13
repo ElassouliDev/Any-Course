@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 
@@ -19,12 +20,7 @@ class SettingController extends Controller
         return view('user.settings');
     }
 
-    /*function updateInfo($course_id)
-    {
-        Auth::user()->student_course()->toggle($course_id);
-        return back();
 
-    }*/
 
     public function updateUserInformation(Request $request)
     {
@@ -63,6 +59,40 @@ class SettingController extends Controller
         }
 
     }
+    public function updateUserPassword(Request $request)
+    {
+
+
+        try {
+            $rules = [
+                'current_password' => ['required'],
+                'new_password' => ['required', 'string', 'min:8', 'confirmed', 'different:current_password'],
+            ];
+            $validate = Validator::make($request->all(), $rules);
+            if ($validate->fails()) {
+                return response(['status' => false, 'errors' => $validate->messages()], 403);
+            } else {
+                if (!Hash::check($request['current_password'], auth()->user()->password)) {
+                    return response(['status' => false, 'message' => trans('messages.password_not_correct')], 403);
+
+                } else {
+                    $user = User::find(auth()->user()->id);
+                    $user->password = bcrypt($request['new_password']);
+                    $user->save();
+                    return response(['status' => true, 'message' => trans('messages.change_password_done')]);
+
+
+                }
+
+
+            }
+        } catch (\Exception $e) {
+            DB::rollback();
+            return response(['status' => false, 'message' => $e->getMessage()], 403);
+
+        }
+
+    }
 
     /***
      * @param $image
@@ -80,11 +110,5 @@ class SettingController extends Controller
 
     }
 
-    function complete_watch_lesson(Request $request)
-    {
-        Auth::user()->student_watch_lesson()->syncWithoutDetaching([$request->lesson_id => ['is_completed' => true]]);
 
-        return response(['status' => true]);
-
-    }
 }

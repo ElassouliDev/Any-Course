@@ -3,8 +3,11 @@
 @push('css')
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.9/css/select2.min.css" rel="stylesheet"/>
     <style>
-       form .select2-container--default.select2-container--disabled,
-       form .select2.select2-container.select2-container--default.select2-container--focus{
+        table#dataTableBuilder,
+        span.select2.select2-container.select2-container--default,
+        span.select2.select2-container.select2-container--default.select2-container--above,
+        span.select2-container--default.select2-container--disabled,
+        span.select2.select2-container.select2-container--default.select2-container--focus{
             width: 100% !important;
         }
     </style>
@@ -74,7 +77,7 @@
 
 
 
-    <div class="modal fade slide-up " id="new" role="dialog" aria-hidden="false">
+    <div class="modal fade slide-up new" id="new" role="dialog" aria-hidden="false">
         <div class="modal-dialog modal-lg">
             <div class="modal-content-wrapper">
                 <div class="modal-content">
@@ -266,10 +269,10 @@
 
 
         //////////////// ------------------------------  create  course
-        $(document).on('submit', '#new form', function (event) {
+        $(document).on('submit', 'form', function (event) {
             event.preventDefault();
             var $this = $(this);
-            // notifications.loading.show();
+            notifications.loading.show();
 
             var url = $(this).attr('action'),
                 request = $.ajax({
@@ -283,17 +286,18 @@
                 });
             request.done(function (response) {
                 $this.find('[type="reset"]').click();
-                $('#new').modal('hide');
-                // http.success(response, true);
-
+                $('.new').modal('hide');
+                http.success(response, true);
                 $('#dataTableBuilder').DataTable().ajax.reload();
             });
             request.fail(function (response, exception) {
-                // http.fail(JSON.parse(response.responseText), true);
+                 http.fail(JSON.parse(response.responseText), true);
             });
         });
         $(document).on('click', '[data-action="show"]', function () {
-            // notifications.loading.show();
+            notifications.loading.show();
+            $('#show').remove();
+            $('.modal-backdrop.fade.show').remove();
 
             var url = $(this).attr('data-link'),
                 request = $.ajax({

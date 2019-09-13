@@ -25,7 +25,7 @@
     <!-- Normalize CSS -->
 
 
-    <title>MyEdu</title>
+    <title>Any Course</title>
 </head>
 <body>
 <!-- Start Navigation -->
@@ -35,7 +35,7 @@
         <div class="navbar-header">
             <a class="navbar-brand" href="{{url('/')}}">
                 <img alt="Brand" src="{{asset('course_assets/assets/images/logo.png')}}">
-                MyEdu
+                Any Course
             </a>
         </div><!-- /.navbar-header -->
     </div><!-- /.container -->
@@ -46,64 +46,71 @@
 
     <div class="row">
         <div class="col-12">
+
             <div class="panel panel-default">
+
                 <div class="panel-body">
                     <!-- Nav tabs -->
 
                     <ul class="nav nav-tabs" role="tablist">
-                        <li role="presentation" @if($action == 'register')class="active" @endif><a href="#signup"
-                                                                                                   aria-controls="signup"
-                                                                                                   role="tab"
-                                                                                                   data-toggle="tab">Sign
+                        <li role="presentation"
+                            @if(($action == 'register' && old('action') != 'login') || old('action') == 'register')class="active" @endif>
+                            <a href="#signup"
+                               aria-controls="signup"
+                               role="tab"
+                               data-toggle="tab">Sign
                                 Up</a></li>
-                        <li role="presentation" @if($action == 'login')class="active" @endif><a href="#signin"
-                                                                                                aria-controls="signin"
-                                                                                                role="tab"
-                                                                                                data-toggle="tab">Sign
+                        <li role="presentation"
+                            @if(($action == 'login' && old('action') != 'register') || old('action') == 'login')class="active" @endif>
+                            <a href="#signin"
+                               aria-controls="signin"
+                               role="tab"
+                               data-toggle="tab">Sign
                                 In</a></li>
                     </ul>
+                @include('partials._errors')
 
-                    <!-- Tab panes -->
+                <!-- Tab panes -->
                     <div class="tab-content">
+
+
                         <!-- Sign Up -->
-                        <div role="tabpanel" class="tab-pane fade @if($action == 'register') in active @endif"
+                        <div role="tabpanel"
+                             class="tab-pane fade @if(($action == 'register'&& old('action') != 'login') || old('action') == 'register') in active @endif"
                              id="signup">
                             <h3 class="card-title text-center">Create Account</h3>
-                            <form method="post" action="{{route('user.register')}}" class="form-signin text-left">
+                            <form method="post" action="{{route('register')}}" class="form-signin text-left">
                                 {{ csrf_field() }}
+
+                                <input type="hidden" name="action" value="register">
                                 <div class="row">
                                     <div class="form-group col-sm-6">
-                                        <label for="firstName">@lang('admin.first_name')</label>
-                                        <input type="text" id="first_name" class="form-control" placeholder="First Name"
-                                               required autofocus>
+                                        <label for="first_name">@lang('admin.first_name')</label>
+                                        <input type="text" id="first_name" name="first_name" class="form-control"
+                                               placeholder="First Name"
+                                               required autofocus value="{{old('first_name')}}">
                                     </div>
                                     <div class="form-group col-sm-6">
-                                        <label for="lastName">@lang('admin.last_name')</label>
-                                        <input type="text" id="last_name" class="form-control" placeholder="Last Name"
-                                               required>
+                                        <label for="last_name">@lang('admin.last_name')</label>
+                                        <input type="text" id="last_name" name="last_name" class="form-control"
+                                               placeholder="Last Name"
+                                               required value="{{old('last_name')}}">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="inputEmail">@lang('admin.email')</label>
                                     <input type="email" name="email" id="inputEmail" class="form-control"
                                            placeholder="Email address"
-                                           required>
-
+                                           required value="{{old('email')}}">
                                 </div>
-                                {{--  <div class="form-group">
-                                      <label for="phone">Phone</label>
-                                      <input type="text" id="phone" class="form-control" placeholder="Phone" required>
-                                  </div>--}}
-                                {{--<div class="form-group">
-                                    <label for="dob">Date Of Birth</label>
-                                    <input type="date" id="dob" class="form-control" placeholder="Date Of Birth"
-                                           required>
-                                </div>--}}
+
                                 <div class="form-group">
-                                    <label for="phone">Create As</label>
-                                    <select name="" id="" class="form-control">
-                                        <option value="student">Student</option>
-                                        <option value="doctor">Doctor</option>
+                                    <label for="role">Create As</label>
+                                    <select name="role" id="role" class="form-control">
+                                        @foreach($roles as $role)
+                                            <option value="{{$role->name}} "{{old('role')==$role->name?'selected':''}}>@lang('admin.'.$role->name)</option>
+                                        @endforeach
+                                        {{--<option value="Lecture">Lecture</option>--}}
                                     </select>
                                 </div>
                                 <div class="form-group">
@@ -141,10 +148,14 @@
 
                         </div>
                         <!-- Sing In  -->
-                        <div role="tabpanel" class="tab-pane fade @if($action == 'login') in active @endif" id="signin">
+                        <div role="tabpanel"
+                             class="tab-pane fade @if(($action == 'login'&& old('action') != 'register') || old('action')=='login') in active @endif"
+                             id="signin">
                             <h3 class="card-title text-center">Sign in to your account</h3>
-                            <form method="post" action="{{route('user.login')}}" class="form-signin text-left">
+                            <form method="post" action="{{route('login')}}" class="form-signin text-left">
                                 @csrf
+                                <input type="hidden" name="action" value="login">
+
                                 <div class="form-group">
                                     <label for="inputEmail">Email </label>
                                     <input type="email" id="inputEmail" name="email" class="form-control"
@@ -202,6 +213,7 @@
 <script src="{{ asset('resources/assets/js/http.js') }}"></script>
 <script src="{{ asset('resources/assets/js/editable.js') }}"></script>
 <!-- Bootstrap 3.4  -->
+{{--
 <script type="text/javascript">
     $(document).on('submit', ' form', function (event) {
         event.preventDefault();
@@ -235,6 +247,7 @@
 
 
 </script>
+--}}
 
 
 </body>

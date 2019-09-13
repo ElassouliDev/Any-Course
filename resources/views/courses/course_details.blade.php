@@ -77,14 +77,20 @@
                                     </div>
                                     <div class="col-lg-5 col-md-5 col-sm-12">
                                         <div class="card card-detail text-center">
-                                            <a href="show_course.html" class="img-preview">
+
+                                            <a href="{{(($course->is_enroll==1)?route('course_lesson',$course->id):'#')}}" class="img-preview">
                                                 <img class="card-img-top" height="240"
                                                      src="{{url('storage/'.$course->image->file_path)}}"
                                                      alt="Card image"
                                                      style="width:100%">
-                                                <i class="fa fa-play"></i>
-                                                <span>Preview this course</span>
+
+                                                @if($course->is_enroll == 1)
+                                                    <i class="fa fa-play"></i>
+                                                    <span>Preview this course</span>
+                                                @endif
+
                                             </a>
+
                                             <div class="card-body">
                                                 <h4 class="card-title">
                                                     <b>{{$course->category['title_'.app()->getLocale()]}}</b></h4>
@@ -104,7 +110,8 @@
                                                         <button class="btn btn-lg btn-primary">@lang('course.enroll')</button>
                                                     @else
                                                         <button class="btn btn-lg btn-danger">@lang('course.In-enroll')</button>
-                                                        <a  href="{{route('course_lesson',$course->id)}}" class="btn btn-lg btn-info">@lang('course.watch_course')</a>
+                                                        <a href="{{route('course_lesson',$course->id)}}"
+                                                           class="btn btn-lg btn-info">@lang('course.watch_course')</a>
 
                                                     @endif
                                                 </form>

@@ -284,7 +284,7 @@
                                 <div class="comment-box">
                                     <div class="comment-head">
                                         <h6 class="comment-name by-author"><a href="#">{{$question->user->full_name()}}</a></h6>
-                                        <span>hace 20 minutos</span>
+                                        <span>{{Carbon\Carbon::parse($question->created_at)->diffForHumans()}}</span>
                                         <i class="fa fa-reply"></i>
                                         <i class="fa fa-heart"></i>
                                     </div>
@@ -303,7 +303,7 @@
                                     <div class="comment-box">
                                         <div class="comment-head">
                                             <h6 class="comment-name"><a href="#">{{$comment->user->first_name.' '.$comment->user->last_name}}</a></h6>
-                                            <span>hace 10 minutos</span>
+                                            <span>{{Carbon\Carbon::parse($comment->created_at)->diffForHumans()}}</span>
                                             <i class="fa fa-reply"></i>
                                             <i class="fa fa-heart"></i>
                                         </div>

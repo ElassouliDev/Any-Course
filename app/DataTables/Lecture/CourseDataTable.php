@@ -148,7 +148,7 @@ class CourseDataTable extends DataTable
             [
                 'name'=>'category_id',
                 'data'=>'category_id',
-                'title'=>trans('admin.category_id'),
+                'title'=>trans('admin.category'),
             ],
             [
                 'name' => 'actions',

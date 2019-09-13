@@ -146,7 +146,7 @@
                             <div class="panel panel-default">
                                 <div class="panel-heading">
                                     <strong>{{$comment->user->first_name.' '.$comment->user->last_name}}</strong> <span
-                                            class="text-muted">commented 5 days ago</span>
+                                            class="text-muted">{{Carbon\Carbon::parse($comment->created_at)->diffForHumans()}}</span>
                                 </div>
                                 <div class="panel-body">
                                     {{$comment->content}}

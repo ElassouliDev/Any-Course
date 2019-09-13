@@ -65,5 +65,6 @@ return [
     'exams'=>'Exams',
     'question'=>'Question',
     'questions'=>'Questions',
+    'paid'=>'Paid',
 
 ];

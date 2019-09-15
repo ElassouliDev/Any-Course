@@ -67,8 +67,14 @@
                                     .{{$lesson['title_'.app()->getLocale()]}}
                                 </label>
 
-                                <i class="fa fa-star text-light" style="color: white"></i>
-                                <i class="fa fa-hourglass-start" style="color: white"></i>
+                                @if(!empty($lesson->student_watch_lesson) && $lesson->student_watch_lesson->count()>0 )
+                                    {{--{{dd($lesson->student_watch_lesson->first()->is_completed)}}--}}
+                                    @if($lesson->student_watch_lesson->first()->is_completed == 1)
+                                        <i class="fa fa-star text-light" style="color: white"></i>
+                                    @else
+                                        <i class="fa fa-hourglass-start" style="color: white"></i>
+                                    @endif
+                                @endif
                             </div>
                         </a>
                     </li>
@@ -136,31 +142,32 @@
                 @if (isset($lesson->comment)&& !empty($lesson->comment))
                     <button type="button" class="btn btn-primary" data-toggle="modal"
                             data-target="#new">@lang('course.new_comment')</button>
-                @foreach ($lesson->comment as $comment)
+                    @foreach ($lesson->comment as $comment)
 
-                    <div class="row">
-                        <div class="col-sm-1">
-                            <div class="thumbnail">
-                                <img class="img-responsive user-photo"
-                                     src="{{isset($comment->user->image['file_path']) ? url('storage/'.$comment->user->image['file_path']) :'https://ssl.gstatic.com/accounts/ui/avatar_2x.png'}}">
-                            </div><!-- /thumbnail -->
-                        </div><!-- /col-sm-1 -->
+                        <div class="row">
+                            <div class="col-sm-1">
+                                <div class="thumbnail">
+                                    <img class="img-responsive user-photo"
+                                         src="{{isset($comment->user->image['file_path']) ? url('storage/'.$comment->user->image['file_path']) :'https://ssl.gstatic.com/accounts/ui/avatar_2x.png'}}">
+                                </div><!-- /thumbnail -->
+                            </div><!-- /col-sm-1 -->
 
-                        <div class="col-sm-5">
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <strong>{{$comment->user->first_name.' '.$comment->user->last_name}}</strong> <span
-                                            class="text-muted">{{Carbon\Carbon::parse($comment->created_at)->diffForHumans()}}</span>
-                                </div>
-                                <div class="panel-body">
-                                    {{$comment->content}}
-                                </div><!-- /panel-body -->
-                            </div><!-- /panel panel-default -->
-                        </div><!-- /col-sm-5 -->
+                            <div class="col-sm-5">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <strong>{{$comment->user->first_name.' '.$comment->user->last_name}}</strong>
+                                        <span
+                                                class="text-muted">{{Carbon\Carbon::parse($comment->created_at)->diffForHumans()}}</span>
+                                    </div>
+                                    <div class="panel-body">
+                                        {{$comment->content}}
+                                    </div><!-- /panel-body -->
+                                </div><!-- /panel panel-default -->
+                            </div><!-- /col-sm-5 -->
 
-                    </div>
-                @endforeach
-                    @endif
+                        </div>
+                    @endforeach
+                @endif
 
             </div>
 
@@ -182,7 +189,8 @@
                                     <label for="content" class="col-form-label">@lang('course.content'):</label>
                                     <textarea class="form-control" rows="4" name="content" id="content"
                                               required></textarea>
-                                    <input type="hidden" name='lesson_id' value="{{isset($lesson->id) ? $lesson->id : ''}}">
+                                    <input type="hidden" name='lesson_id'
+                                           value="{{isset($lesson->id) ? $lesson->id : ''}}">
 
                                 </div>
                                 <div class="form-group">
@@ -302,14 +310,15 @@
         function completeWatchVideo() {
 
             var posted_data = "lesson_id={{isset($lesson_watching->id)?$lesson_watching->id:''}}&_token=" + $("meta[name='csrf-token']").attr("content");
-            BASE_URL= "{{route('student.lesson.complete')}}";
+            BASE_URL = "{{route('student.lesson.complete')}}";
             $.post(BASE_URL, posted_data,
                 function (response, status) {
                 })
         }
+
         function WatchVideo() {
             var posted_data = "lesson_id={{isset($lesson_watching->id)?$lesson_watching->id:''}}&_token=" + $("meta[name='csrf-token']").attr("content");
-            BASE_URL= "{{route('student.lesson.watch')}}";
+            BASE_URL = "{{route('student.lesson.watch')}}";
             $.post(BASE_URL, posted_data,
                 function (response, status) {
 

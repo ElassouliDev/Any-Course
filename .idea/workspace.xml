@@ -1,27 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0b226c64-b40e-40b8-97c2-65fd791ffb0a" name="Default Changelist" comment="solve problem">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/AuthController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/lecture/course/edit.blade.php" afterDir="false" />
+    <list default="true" id="0b226c64-b40e-40b8-97c2-65fd791ffb0a" name="Default Changelist" comment="[X]update login page for admin&#10;[X]update login page for student and lecture&#10;[X]add register page for student and lecture&#10;[X]create update password for all user &#10;[X]update course information for lecture">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Lecture/CourseController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Lecture/CourseController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/View/AuthController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/View/SettingController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/View/SettingController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/laravellocalization.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/laravellocalization.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/user/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/user/login.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/courses/course_details.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/courses/course_details.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/aside.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/aside.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/lecture/course/buttons/actions.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/lecture/course/buttons/actions.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/lecture/course/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/lecture/course/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/lecture/course/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/lecture/course/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/View/LessonsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/View/LessonsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Lesson.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Lesson.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/lessons/lessons.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/lessons/lessons.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/user/settings.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/settings.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -52,14 +36,16 @@
         <counts>
           <entry key="project.closed" value="4" />
           <entry key="project.open.time.1" value="1" />
+          <entry key="project.open.time.12" value="1" />
           <entry key="project.open.time.167" value="1" />
           <entry key="project.open.time.2" value="2" />
           <entry key="project.open.time.3" value="1" />
           <entry key="project.open.time.53" value="1" />
+          <entry key="project.open.time.62" value="1" />
           <entry key="project.open.time.70" value="1" />
           <entry key="project.open.time.82" value="1" />
           <entry key="project.open.time.90" value="1" />
-          <entry key="project.opened" value="9" />
+          <entry key="project.opened" value="11" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -68,31 +54,31 @@
           <entry key="html" value="4" />
           <entry key="js" value="6" />
           <entry key="json" value="2" />
-          <entry key="php" value="95" />
+          <entry key="php" value="100" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key=".env file" value="1" />
-          <entry key="Blade" value="44" />
+          <entry key="Blade" value="45" />
           <entry key="HTML" value="4" />
           <entry key="JSON" value="2" />
           <entry key="JavaScript" value="6" />
-          <entry key="PHP" value="51" />
+          <entry key="PHP" value="55" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="7" />
-          <entry key="php" value="4711" />
-          <entry key="txt" value="217" />
+          <entry key="php" value="5017" />
+          <entry key="txt" value="389" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Blade" value="2451" />
-          <entry key="PHP" value="2260" />
-          <entry key="PLAIN_TEXT" value="224" />
+          <entry key="Blade" value="2594" />
+          <entry key="PHP" value="2423" />
+          <entry key="PLAIN_TEXT" value="396" />
         </counts>
       </usages-collector>
     </session>
@@ -100,46 +86,56 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/lang/ar/error.php">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Lecture/CourseController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="31" selection-start-line="5" selection-start-column="31" selection-end-line="5" selection-end-column="31" />
+            <state relative-caret-position="232">
+              <caret line="84" column="71" selection-start-line="84" selection-start-column="71" selection-end-line="84" selection-end-column="71" />
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/lessons/lessons.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="302">
+              <caret line="71" column="40" lean-forward="true" selection-start-line="71" selection-start-column="40" selection-end-line="71" selection-end-column="92" />
+              <folding>
+                <element signature="e#52#973#0#HTML" />
+                <element signature="e#2610#2630#0#HTML" expanded="true" />
+                <element signature="e#2751#2771#0#HTML" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Student/CourseController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="618">
+              <caret line="44" selection-start-line="44" selection-end-line="44" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/View/CourseController.php">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Lecture/CourseController.php">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/View/LessonsController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="289">
-              <caret line="81" column="24" selection-start-line="81" selection-start-column="24" selection-end-line="81" selection-end-column="24" />
+              <caret line="21" column="6" selection-start-line="21" selection-start-column="6" selection-end-line="21" selection-end-column="6" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Requests/CourseRequest.php">
+        <entry file="file://$PROJECT_DIR$/app/Lesson.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="568">
-              <caret line="38" selection-start-line="38" selection-end-line="38" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/lecture/course/show.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="25" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/lecture/course/index.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="300" selection-start-line="300" selection-end-line="300" />
+            <state relative-caret-position="183">
+              <caret line="20" column="40" selection-start-line="20" selection-start-column="20" selection-end-line="20" selection-end-column="40" />
             </state>
           </provider>
         </entry>
@@ -147,7 +143,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/lecture/course/edit.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
+            <state relative-caret-position="544">
               <caret line="32" column="42" selection-start-line="32" selection-start-column="42" selection-end-line="32" selection-end-column="42" />
             </state>
           </provider>
@@ -156,8 +152,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/web.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="224">
-              <caret line="59" column="35" selection-start-line="59" selection-start-column="35" selection-end-line="59" selection-end-column="35" />
+            <state relative-caret-position="302">
+              <caret line="66" column="33" selection-start-line="66" selection-start-column="28" selection-end-line="66" selection-end-column="33" />
             </state>
           </provider>
         </entry>
@@ -165,7 +161,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/laravellocalization.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
+            <state relative-caret-position="5117">
               <caret line="301" column="37" selection-start-line="301" selection-start-column="37" selection-end-line="301" selection-end-column="37" />
             </state>
           </provider>
@@ -174,7 +170,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/app.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
+            <state relative-caret-position="1445">
               <caret line="85" column="49" selection-start-line="85" selection-start-column="49" selection-end-line="85" selection-end-column="49" />
             </state>
           </provider>
@@ -235,10 +231,8 @@
         <option value="$PROJECT_DIR$/resources/views/auth/student/login.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/student/settings.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Student/SettingController.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Student/CourseController.php" />
         <option value="$PROJECT_DIR$/resources/views/layouts/aside.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/courses/course_details.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/lessons/lessons.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/lecture/course/update.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/lecture/course/buttons/actions.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" />
@@ -257,6 +251,10 @@
         <option value="$PROJECT_DIR$/resources/views/lecture/course/show.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/lecture/course/index.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Lecture/CourseController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Student/CourseController.php" />
+        <option value="$PROJECT_DIR$/app/Lesson.php" />
+        <option value="$PROJECT_DIR$/resources/views/lessons/lessons.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/View/LessonsController.php" />
       </list>
     </option>
   </component>
@@ -379,9 +377,8 @@
     </include_path>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-41" />
-    <option name="y" value="217" />
-    <option name="width" value="981" />
+    <option name="x" value="683" />
+    <option name="width" value="683" />
     <option name="height" value="768" />
   </component>
   <component name="ProjectId" id="1Pf1OJABYnKpNXQPWL67d0H29uw" />
@@ -425,45 +422,33 @@
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="Http" type="462c0819:PsiDirectoryNode" />
               <item name="Controllers" type="462c0819:PsiDirectoryNode" />
-              <item name="Lecture" type="462c0819:PsiDirectoryNode" />
+              <item name="Student" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="anycourse" type="b2602c69:ProjectViewProjectNode" />
               <item name="anycourse" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Http" type="462c0819:PsiDirectoryNode" />
+              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
+              <item name="View" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="anycourse" type="b2602c69:ProjectViewProjectNode" />
               <item name="anycourse" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="anycourse" type="b2602c69:ProjectViewProjectNode" />
-              <item name="anycourse" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="anycourse" type="b2602c69:ProjectViewProjectNode" />
               <item name="anycourse" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="auth" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="anycourse" type="b2602c69:ProjectViewProjectNode" />
               <item name="anycourse" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="lecture" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="anycourse" type="b2602c69:ProjectViewProjectNode" />
-              <item name="anycourse" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="lecture" type="462c0819:PsiDirectoryNode" />
-              <item name="course" type="462c0819:PsiDirectoryNode" />
+              <item name="lessons" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -475,9 +460,9 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DatabaseDriversLRU" value="mariadb" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="SearchEverywhereHistoryKey" value="localeSessionRedirect&#9;null&#9;null&#10;LaravelLocalization&#9;null&#9;null&#10;web&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/routes/web.php&#10;error&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/resources/lang/ar/error.php&#10;resources&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/public/resources&#10;setting&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/resources/views/user/settings.blade.php&#10;SettingController&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/app/Http/Controllers/View/SettingController.php&#10;Logi&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/app/Http/Controllers/Auth/LoginController.php&#10;User&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/app/User.php&#10;auth&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/app/Http/Controllers/View/AuthController.php&#10;login&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/resources/views/auth/login.blade.php&#10;login.&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/resources/views/auth/user/login.blade.php&#10;Lecture\CourseController&#9;null&#9;null&#10;courses_&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/database/migrations/2019_08_22_062031_create_courses_table.php&#10;asid&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/resources/views/layouts/aside.blade.php&#10;settings&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/resources/views/student/settings.blade.php&#10;lay&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/resources/views/layouts/layout.blade.php&#10;resour&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/public/resources&#10;http&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/public/resources/assets/js/http.js&#10;we&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/routes/web.php&#10;.env&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/.env&#10;reg&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/resources/views/auth/register.blade.php&#10;layout&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/resources/views/layouts/layout.blade.php&#10;Res&#9;null&#9;null&#10;CourseController&#9;null&#9;null&#10;notification.js&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/public/resources/assets/js/notifications.js&#10;lists&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/public/resources/assets/js/lists.js&#10;global.js&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/public/resources/assets/js/globals.js&#10;lesson&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/resources/views/lessons/lessons.blade.php&#10;Q&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/resources/views/lessons/list_question.blade.php&#10;tagF&#9;null&#9;null&#10;tag&#9;null&#9;null&#10;Ques&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/app/Http/Controllers/Student/QuestionController.php&#10;ques&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/database/migrations/2019_09_04_183623_create_questions_table.php&#10;cours&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/resources/views/courses/all_courses.blade.php&#10;course&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/app/Course.php&#10;less&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/resources/views/lessons/lessons.blade.php&#10;admin&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/resources/lang/ar/admin.php&#10;Course&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/app/Course.php&#10;Cour&#9;null&#9;null&#10;emmet&#9;ACTION&#9;Emmet&#10;les&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/app/Http/Controllers/Dashboard/LessonController.php&#10;cou&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/app/Http/Controllers/Dashboard/CourseController.php&#10;session&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/config/session.php&#10;config&#9;null&#9;null&#10;r&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/app/Http/Requests/UserRequest.php&#10;index&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/resources/views/dashboard/course/index.blade.php&#10;file&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/app/File.php&#10;categ&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/database/migrations/2019_08_10_201055_create_categories_table.php&#10;seeder&#9;null&#9;null" />
+    <property name="SearchEverywhereHistoryKey" value="web&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/routes/web.php&#10;less&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/resources/views/lessons/lessons.blade.php&#10;localeSessionRedirect&#9;null&#9;null&#10;LaravelLocalization&#9;null&#9;null&#10;error&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/resources/lang/ar/error.php&#10;resources&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/public/resources&#10;setting&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/resources/views/user/settings.blade.php&#10;SettingController&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/app/Http/Controllers/View/SettingController.php&#10;Logi&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/app/Http/Controllers/Auth/LoginController.php&#10;User&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/app/User.php&#10;auth&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/app/Http/Controllers/View/AuthController.php&#10;login&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/resources/views/auth/login.blade.php&#10;login.&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/resources/views/auth/user/login.blade.php&#10;Lecture\CourseController&#9;null&#9;null&#10;courses_&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/database/migrations/2019_08_22_062031_create_courses_table.php&#10;asid&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/resources/views/layouts/aside.blade.php&#10;settings&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/resources/views/student/settings.blade.php&#10;lay&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/resources/views/layouts/layout.blade.php&#10;resour&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/public/resources&#10;http&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/public/resources/assets/js/http.js&#10;we&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/routes/web.php&#10;.env&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/.env&#10;reg&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/resources/views/auth/register.blade.php&#10;layout&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/resources/views/layouts/layout.blade.php&#10;Res&#9;null&#9;null&#10;CourseController&#9;null&#9;null&#10;notification.js&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/public/resources/assets/js/notifications.js&#10;lists&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/public/resources/assets/js/lists.js&#10;global.js&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/public/resources/assets/js/globals.js&#10;lesson&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/resources/views/lessons/lessons.blade.php&#10;Q&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/resources/views/lessons/list_question.blade.php&#10;tagF&#9;null&#9;null&#10;tag&#9;null&#9;null&#10;Ques&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/app/Http/Controllers/Student/QuestionController.php&#10;ques&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/database/migrations/2019_09_04_183623_create_questions_table.php&#10;cours&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/resources/views/courses/all_courses.blade.php&#10;course&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/app/Course.php&#10;admin&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/resources/lang/ar/admin.php&#10;Course&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/app/Course.php&#10;Cour&#9;null&#9;null&#10;emmet&#9;ACTION&#9;Emmet&#10;les&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/app/Http/Controllers/Dashboard/LessonController.php&#10;cou&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/app/Http/Controllers/Dashboard/CourseController.php&#10;session&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/config/session.php&#10;config&#9;null&#9;null&#10;r&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/app/Http/Requests/UserRequest.php&#10;index&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/resources/views/dashboard/course/index.blade.php&#10;file&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/app/File.php&#10;categ&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/database/migrations/2019_08_10_201055_create_categories_table.php&#10;seeder&#9;null&#9;null" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Beauty Network" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
@@ -487,13 +472,6 @@
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\anycourse\resources\views\lecture\course" />
-      <recent name="C:\xampp\htdocs\anycourse\app\Http\Controllers\View" />
-      <recent name="C:\xampp\htdocs\anycourse\resources\views\auth\student" />
-      <recent name="C:\xampp\htdocs\anycourse\resources\views\student" />
-      <recent name="C:\xampp\htdocs\anycourse\app\Http\Controllers\Student" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\anycourse\app\Http\Controllers\Dashboard" />
       <recent name="C:\xampp\htdocs\anycourse\resources\views\user" />
@@ -501,6 +479,136 @@
       <recent name="C:\xampp\htdocs\anycourse\resources\views" />
       <recent name="C:\xampp\htdocs\anycourse\resources\views\courses" />
     </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\anycourse\resources\views\lecture\course" />
+      <recent name="C:\xampp\htdocs\anycourse\app\Http\Controllers\View" />
+      <recent name="C:\xampp\htdocs\anycourse\resources\views\auth\student" />
+      <recent name="C:\xampp\htdocs\anycourse\resources\views\student" />
+      <recent name="C:\xampp\htdocs\anycourse\app\Http\Controllers\Student" />
+    </key>
+  </component>
+  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
+    <UpdatedFiles>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Updated from server" />
+        <option name="myStatusName" value="Changed on server" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="CHANGED_ON_SERVER" />
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Updated" />
+          <option name="myStatusName" value="Changed" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="UPDATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/DataTables/Lecture/ExamDataTable.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/Exam.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/Http/Controllers/Deploy.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/Http/Controllers/Lecture/ExamController.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/resources/assets/js/http.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/resources/lang/ar/course.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/resources/views/layouts/layout.blade.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/resources/views/lecture/course/index.blade.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/resources/views/lecture/exam/buttons/actions.blade.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/resources/views/lecture/exam/index.blade.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/resources/views/lessons/lessons.blade.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/resources/views/lessons/list_question.blade.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/routes/web.php</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Created" />
+          <option name="myStatusName" value="Created" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="CREATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/Http/Requests/View/ExamRequest.php</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Deleted" />
+          <option name="myStatusName" value="Deleted" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="true" />
+          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Restored" />
+          <option name="myStatusName" value="Will be restored" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="RESTORED" />
+        </FILE-GROUP>
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Modified" />
+        <option name="myStatusName" value="Modified" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MODIFIED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Skipped" />
+        <option name="myStatusName" value="Skipped" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SKIPPED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with conflicts" />
+        <option name="myStatusName" value="Will be merged with conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_CONFLICTS" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with tree conflicts" />
+        <option name="myStatusName" value="Merged with tree conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with property conflicts" />
+        <option name="myStatusName" value="Will be merged with property conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged" />
+        <option name="myStatusName" value="Will be merged" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Not in repository" />
+        <option name="myStatusName" value="Not in repository" />
+        <option name="mySupportsDeletion" value="true" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="UNKNOWN" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally added" />
+        <option name="myStatusName" value="Locally added" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_ADDED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally removed" />
+        <option name="myStatusName" value="Locally removed" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_REMOVED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Switched" />
+        <option name="myStatusName" value="Switched" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SWITCHED" />
+      </FILE-GROUP>
+    </UpdatedFiles>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -584,7 +692,9 @@
       <workItem from="1568269072000" duration="7423000" />
       <workItem from="1568298697947" duration="9608000" />
       <workItem from="1568313447279" duration="2679000" />
-      <workItem from="1568350888535" duration="15929000" />
+      <workItem from="1568350888535" duration="16188000" />
+      <workItem from="1568402609732" duration="607000" />
+      <workItem from="1568527810802" duration="6337000" />
     </task>
     <task id="LOCAL-00004" summary="profile super admin #6">
       <created>1566254260160</created>
@@ -775,11 +885,18 @@
       <option name="project" value="LOCAL" />
       <updated>1568284245171</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="[X]update login page for admin&#10;[X]update login page for student and lecture&#10;[X]add register page for student and lecture&#10;[X]create update password for all user &#10;[X]update course information for lecture">
+      <created>1568372428530</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1568372428532</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="69798000" />
+    <option name="totallyTimeSpent" value="77001000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -794,7 +911,7 @@
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19591528" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19515885" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -808,7 +925,7 @@
       <window_info anchor="bottom" id="LuaCheck" order="7" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49394855" visible="true" weight="0.0" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.49394855" visible="true" weight="0.2" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5060514" side_tool="true" weight="0.26615384" />
       <window_info anchor="bottom" id="Docker" order="12" show_stripe_button="false" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -867,23 +984,10 @@
     <MESSAGE value="[X] add sweet alert library&#10;[X] update user information&#10;[X] view course that enrrolled by user" />
     <MESSAGE value="[X] create login page for user and register&#10;[X] create login controller for student and lecture" />
     <MESSAGE value="solve problem" />
-    <option name="LAST_COMMIT_MESSAGE" value="solve problem" />
+    <MESSAGE value="[X]update login page for admin&#10;[X]update login page for student and lecture&#10;[X]add register page for student and lecture&#10;[X]create update password for all user &#10;[X]update course information for lecture" />
+    <option name="LAST_COMMIT_MESSAGE" value="[X]update login page for admin&#10;[X]update login page for student and lecture&#10;[X]add register page for student and lecture&#10;[X]create update password for all user &#10;[X]update course information for lecture" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/resources/views/dashboard/course/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="30" selection-start-column="30" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layouts/dashboard/app.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="815">
-          <caret line="310" selection-start-line="310" selection-end-line="310" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://E:/desktop2019.2/MyEdu (1)/MyEdu/classroom/settings.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="13328">
@@ -936,13 +1040,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Student/CourseController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="18" column="28" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://E:/desktop2019.2/MyEdu (1)/MyEdu/sign-in.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
@@ -953,13 +1050,6 @@
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Controller.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/View/LessonsController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="27" selection-start-line="27" selection-end-line="27" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/package-lock.json">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -967,13 +1057,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="802">
           <caret line="84" column="41" selection-start-line="84" selection-start-column="41" selection-end-line="84" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/lessons/lessons.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="202" column="7" lean-forward="true" selection-start-line="202" selection-start-column="7" selection-end-line="202" selection-end-column="7" />
         </state>
       </provider>
     </entry>
@@ -1066,9 +1149,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="432">
           <caret line="52" column="33" selection-start-line="52" selection-start-column="23" selection-end-line="52" selection-end-column="33" />
-          <folding>
-            <element signature="e#45#58#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1111,9 +1191,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret line="30" column="7" lean-forward="true" selection-start-line="30" selection-start-column="7" selection-end-line="30" selection-end-column="7" />
-          <folding>
-            <element signature="e#45#58#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1121,20 +1198,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/app.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="85" column="49" selection-start-line="85" selection-start-column="49" selection-end-line="85" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/laravellocalization.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="301" column="37" selection-start-line="301" selection-start-column="37" selection-end-line="301" selection-end-column="37" />
         </state>
       </provider>
     </entry>
@@ -1156,9 +1219,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="160">
           <caret line="64" lean-forward="true" selection-start-line="64" selection-end-line="64" />
-          <folding>
-            <element signature="e#553#1960#0#PHP" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1176,17 +1236,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/web.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Requests/CourseRequest.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="59" column="35" selection-start-line="59" selection-start-column="35" selection-end-line="59" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/lecture/course/edit.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="32" column="42" selection-start-line="32" selection-start-column="42" selection-end-line="32" selection-end-column="42" />
+        <state relative-caret-position="646">
+          <caret line="38" selection-start-line="38" selection-end-line="38" />
         </state>
       </provider>
     </entry>
@@ -1199,22 +1252,79 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/lecture/course/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="300" selection-start-line="300" selection-end-line="300" />
+        <state relative-caret-position="5100">
+          <caret line="303" selection-start-line="303" selection-end-line="303" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Requests/CourseRequest.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/lecture/course/edit.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="568">
-          <caret line="38" selection-start-line="38" selection-end-line="38" />
+        <state relative-caret-position="544">
+          <caret line="32" column="42" selection-start-line="32" selection-start-column="42" selection-end-line="32" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/laravellocalization.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5117">
+          <caret line="301" column="37" selection-start-line="301" selection-start-column="37" selection-end-line="301" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/app.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1445">
+          <caret line="85" column="49" selection-start-line="85" selection-start-column="49" selection-end-line="85" selection-end-column="49" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Lecture/CourseController.php">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="232">
+          <caret line="84" column="71" selection-start-line="84" selection-start-column="71" selection-end-line="84" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/View/CourseController.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="302">
+          <caret line="66" column="33" selection-start-line="66" selection-start-column="28" selection-end-line="66" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Student/CourseController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="618">
+          <caret line="44" selection-start-line="44" selection-end-line="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Lesson.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="183">
+          <caret line="20" column="40" selection-start-line="20" selection-start-column="20" selection-end-line="20" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/lessons/lessons.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="302">
+          <caret line="71" column="40" lean-forward="true" selection-start-line="71" selection-start-column="40" selection-end-line="71" selection-end-column="92" />
+          <folding>
+            <element signature="e#52#973#0#HTML" />
+            <element signature="e#2610#2630#0#HTML" expanded="true" />
+            <element signature="e#2751#2771#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/View/LessonsController.php">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
-          <caret line="81" column="24" selection-start-line="81" selection-start-column="24" selection-end-line="81" selection-end-column="24" />
+          <caret line="21" column="6" selection-start-line="21" selection-start-column="6" selection-end-line="21" selection-end-column="6" />
         </state>
       </provider>
     </entry>

@@ -24,6 +24,8 @@ class Lesson extends Model
     public function comment()
     {
         return $this->morphMany(Comment::class,'commentable');
-    }//end of get comment lesson
+    }
+
+
 
 }

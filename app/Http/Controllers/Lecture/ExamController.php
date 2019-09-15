@@ -9,37 +9,42 @@ use App\DataTables\Lecture\ExamDataTable;
 use App\Exam;
 use App\File;
 use App\Http\Requests\CourseRequest;
+use App\Http\Requests\View\ExamRequest;
+use App\Option_exam;
 use App\Tag;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 class ExamController extends Controller
 {
-    public function index(ExamDataTable $exam,$lesson_id)
+    public function index(ExamDataTable $exam,$course_id)
     {
 
         $title= trans('admin.exams');
-        return $exam->render('lecture.exam.index', compact('title','lesson_id'));
+        return $exam->render('lecture.exam.index', compact('title','course_id'));
     }
 
 
-    public function store(Request $courseRequest)
+    public function store(ExamRequest $request ,$id)
     {
-        $courseData= $courseRequest->all();
-        $courseData['user_id']=auth()->id();
-
-
-        $course= Course::create($courseData);
-        $course->tags()->attach($courseRequest->tags);
-        if($courseRequest->file('image'))
-        {
-            $image = new File();
-            $image->file_path = $this->uploadImage($courseRequest);
-            $course->image()->save($image);
+        $exam = Exam::create([
+            'title_en'=>$request->title_en,
+            'title_ar'=>$request->title_ar,
+            'course_id'=>$id,
+            'user_id'=>auth()->id(),
+        ]);
+        $array = [];
+        foreach ($request->value_en as $key=>$value){
+        $option = new Option_exam();
+        $option['value_ar']=$request->value_ar[$key];
+        $option['value_en']=$value;
+        $option['is_correct']= $request->is_correct == $key ? true:false;
+        $array[]=$option;
         }
+        $exam->option_exam()->saveMany($array);
 
 
-        session()->flash('success', __('error.added_successfully'));
+
         return response(['status'=>true ,'message'=> __('error.added_successfully')]);
     }
 
@@ -63,7 +68,26 @@ class ExamController extends Controller
          $show = view('lecture.course.show' ,compact('course','categories','tags','tags_course'))->render();
         return response(['status'=>true , 'show'=>$show]);
     }
+    public function edit($course_id)
+    {
+        $course=Course::find($course_id);
+        $categories= Category::where('parent',0)->get();
+        $tags = Tag::all();
 
+        $tags_course = $course->tags()->pluck('tag_id')->toArray();
+        $show = view('lecture.course.show' ,compact('course','categories','tags','tags_course'))->render();
+        return response(['status'=>true , 'show'=>$show]);
+    }
+    public function destroy($course_id)
+    {
+        $course=Course::find($course_id);
+        $categories= Category::where('parent',0)->get();
+        $tags = Tag::all();
+
+        $tags_course = $course->tags()->pluck('tag_id')->toArray();
+        $show = view('lecture.course.show' ,compact('course','categories','tags','tags_course'))->render();
+        return response(['status'=>true , 'show'=>$show]);
+    }
 
 
 

@@ -883,7 +883,13 @@
 <script src="{{ asset('/brisk-form/js/brisk-form.js') }}"></script>
 <script src="{{ asset('/brisk-datatable/js/brisk-datatable.js') }}"></script>--}}
 
-
+<script>
+    const title_success = "{{trans('error.title_success')}}";
+    const title_filed = "{{trans('error.title_filed')}}";
+    const button_ok = "{{trans('error.button_ok')}}";
+    const button_cancel = "{{trans('error.button_cancel')}}";
+    const button_cancel = "{{trans('error.button_cancel')}}";
+</script>
 
 {{--        <script src="{{asset('js/app.js')}}"></script>--}}
 <script src="{{ asset('resources/assets/js/globals.js') }}"></script>

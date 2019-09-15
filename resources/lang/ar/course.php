@@ -8,7 +8,6 @@ return [
     'allCourses' => 'إستعراض الكورسات',
     'in-progress'=>'مستمر',
     'closed'=>'مغلق',
-    'published'=>'منتهي',
-    'In-publish'=>'منتهي',
-
+    'published'=>'نشر',
+    'un-publish'=>'الغاء النشر',
 ];

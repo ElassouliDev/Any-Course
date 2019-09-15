@@ -1,6 +1,10 @@
 @extends('layouts.layout_lessons')
 @push('css')
     <style>
+        div#dataTableBuilder_wrapper {
+            width: 100%;
+        }
+
         .thumbnail {
             padding: 0px;
         }
@@ -138,7 +142,7 @@
                         <div class="col-sm-1">
                             <div class="thumbnail">
                                 <img class="img-responsive user-photo"
-                                     src="{{isset($comment->user->image()->file_path) ? url('storage/'.$comment->user->image()->file_path) :'https://ssl.gstatic.com/accounts/ui/avatar_2x.png'}}">
+                                     src="{{isset($comment->user->image['file_path']) ? url('storage/'.$comment->user->image['file_path']) :'https://ssl.gstatic.com/accounts/ui/avatar_2x.png'}}">
                             </div><!-- /thumbnail -->
                         </div><!-- /col-sm-1 -->
 

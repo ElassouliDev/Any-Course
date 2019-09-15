@@ -3,6 +3,9 @@
 @push('css')
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.9/css/select2.min.css" rel="stylesheet"/>
     <style>
+        div#dataTableBuilder_wrapper {
+            width: 100%;
+        }
         table#dataTableBuilder,
         span.select2.select2-container.select2-container--default,
         span.select2.select2-container.select2-container--default.select2-container--above,

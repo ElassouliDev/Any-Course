@@ -69,7 +69,7 @@
                 {!! $dataTable->table(["class"=> "table table-striped table-bordered table-hover table-checkable no-footer"],true) !!}
 
             </div>
-            <input type="hidden"name="lesson_id" value="{{$lesson_id}}">
+            <input type="hidden"name="course_id" value="{{$course_id}}">
 
         </div>
     </div>
@@ -87,7 +87,7 @@
                         </h5>
                     </div>
                     <div class="modal-body">
-                        <form role="form" method="post" action="{{route('course_lecture.store')}}" autocomplete="off"
+                        <form role="form" method="post" action="{{route('exam.store',['course_id'=>$course_id])}}" autocomplete="off"
                               enctype="multipart/form-data">
                             @csrf
                             <div class="form-group-attached">
@@ -96,11 +96,11 @@
                                         <div class="form-group form-group-default">
                                             <div class="row">
                                                 <div class="col-md-6 col-sm-12">
-                                                    <label>@lang('course.question_ar'):</label>
+                                                    <label>@lang('course.title_ar'):</label>
                                                     <input name="title_ar" type="text" class="form-control" required>
                                                 </div>
                                                 <div class="col-md-6 col-sm-12">
-                                                    <label>@lang('course.question_en'):</label>
+                                                    <label>@lang('course.title_en'):</label>
                                                     <input name="title_en" type="text" class="form-control" required>
                                                 </div>
                                             </div>
@@ -119,7 +119,7 @@
 
                                              <span class="input-group-addon">
 
-                                              <input type="radio" name="is_correct">
+                                              <input type="radio" name="is_correct" value="0">
                                                           </span>
                                                     <input type="text" name="value_ar[]" class="form-control">
                                                 </div>
@@ -144,7 +144,7 @@
 
                                              <span class="input-group-addon">
 
-                                              <input type="radio" name="is_correct">
+                                              <input type="radio" name="is_correct" value="1">
                                                           </span>
                                                         <input type="text" name="value_ar[]" class="form-control">
                                                     </div>
@@ -167,7 +167,7 @@
 
                                              <span class="input-group-addon">
 
-                                              <input type="radio" name="is_correct">
+                                              <input type="radio" name="is_correct" value="2" >
                                                           </span>
                                                         <input type="text" name="value_ar[]" class="form-control">
                                                     </div>
@@ -190,7 +190,7 @@
 
                                              <span class="input-group-addon">
 
-                                              <input type="radio" name="is_correct">
+                                              <input type="radio" name="is_correct" value="3">
                                                           </span>
                                                         <input type="text" name="value_ar[]" class="form-control">
                                                     </div>
@@ -263,7 +263,7 @@
         });
 
 
-        //////////////// ------------------------------  create  course
+        ////////////// ------------------------------  create  course
         $(document).on('submit', '#new form', function (event) {
             event.preventDefault();
             var $this = $(this);
@@ -280,9 +280,9 @@
                     processData: false
                 });
             request.done(function (response) {
-                $this.find('[type="reset"]').click();
+                $('#new [type="reset"]').click();
                 $('#new').modal('hide');
-                // http.success(response, true);
+                http.success(response, true);
 
                 $('#dataTableBuilder').DataTable().ajax.reload();
             });
@@ -310,7 +310,7 @@
 
                 // $('#growls').remove();
 
-                // http.success(response, false);
+                http.success(response,true);
             });
             request.fail(function (response, exception) {
                 // /$('#growls').remove();

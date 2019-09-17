@@ -22,7 +22,7 @@ class CommentController extends Controller
         $comment->content = $request['content'];
         $comment->user_id = \auth()->id();
         $lesson->comment()->save($comment);
-
+        return back();
     }
 
     function delete(Comment $comment)
@@ -36,6 +36,8 @@ class CommentController extends Controller
         $comment->content = $request['content'];
         $comment->user_id = \auth()->id();
         $question->comment()->save($comment);
+
+        return back();
 
     }
 }

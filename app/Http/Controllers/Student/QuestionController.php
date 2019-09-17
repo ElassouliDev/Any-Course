@@ -20,6 +20,6 @@ class QuestionController extends Controller
     {
         $request['user_id']=\auth()->id();
         Question::create($request->all());
-
+        return back();
     }
 }

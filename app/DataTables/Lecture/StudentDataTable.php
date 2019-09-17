@@ -16,6 +16,7 @@ class StudentDataTable extends DataTable
      * @param mixed $query Results from query() method.
      * @return \Yajra\DataTables\DataTableAbstract
      */
+    protected $attributes = ['id'];
 
 
     public function dataTable($query)
@@ -23,7 +24,7 @@ class StudentDataTable extends DataTable
         return datatables($query)
             ->addColumn('image', function ($row){
                 return isset($row->image->file_path)?
-                    '<img src="'.url('/storage/'.$row->image->file_path).'" class="img-fluid" width="45px" height="45px" style="border-radius: 50%">':
+                    '<img src="'.url('/storage/'.$row->user->image->file_path).'" class="img-fluid" width="45px" height="45px" style="border-radius: 50%">':
                     '<img src="'.url('/storage/image/user.jpeg').'" class="img-fluid" width="45px" height="45px" style="border-radius: 50%">';
 
             })->rawColumns(['image']);
@@ -38,11 +39,13 @@ class StudentDataTable extends DataTable
      */
     public function query()
     {
+
+
         return (Course::query()->with(['student_course' => function ($q) {
             $q->with(['user' => function ($qq) {
                 $qq->with('image');
             }]);
-        }])->where('user_id', auth()->id())->find(6))->student_course;
+        }])->where('user_id', auth()->id())->find(request('course_id')))->student_course;
         /*User::all();*/
 //        return $model->newQuery()->select('id', 'add-your-columns-here', 'created_at', 'updated_at');
 //        return Course::query()->where('user_id',auth()->id())->orderBy('id','desc');

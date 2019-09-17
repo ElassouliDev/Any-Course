@@ -72,7 +72,7 @@
             <div class="row px-5 py-2 pb-5">
 
                 {!! $dataTable->table(["class"=> "table table-striped table-bordered table-hover table-checkable no-footer"],true) !!}
-{{--            <input type="hidden" name="course_id" value="{{isset($course_id) ? $course_id : ''}}">--}}
+
 
             </div>
         </div>

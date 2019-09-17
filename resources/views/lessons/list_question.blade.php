@@ -289,6 +289,7 @@
                                         <i class="fa fa-reply"></i>
                                         <i class="fa fa-heart"></i>
                                     </div>
+                                    <div class="comment-head h5">{{$question->title .' :'}}</div>
                                     <div class="comment-content">
 {!! $question->content !!}                                    </div>
                                 </div>
@@ -308,6 +309,7 @@
                                             <i class="fa fa-reply"></i>
                                             <i class="fa fa-heart"></i>
                                         </div>
+
                                         <div class="comment-content">
                                     {!! $comment->content !!}
                                         </div>
@@ -396,35 +398,4 @@
         </div>
     </div>
 @stop
-@push('js')
-<script>
-    $(document).on('submit', '#new form', function (event) {
 
-        event.preventDefault();
-        var $this = $(this);
-        // notifications.loading.show();
-
-        var url = $(this).attr('action'),
-            request = $.ajax({
-                url: url,
-                method: "post",
-                data: new FormData(this),
-                dataType: "json",
-                cache: false,
-                contentType: false,
-                processData: false
-            });
-        request.done(function (response) {
-            $this.find('[type="reset"]').click();
-            $('#new').modal('hide');
-            /*http.success(response, true);
-            $('.checkAll').prop("checked", false);
-
-            $('#dataTable').DataTable().ajax.reload();*/
-        });
-        request.fail(function (response, exception) {
-            http.fail(JSON.parse(response.responseText), true);
-        });
-    });
-</script>
-@endpush

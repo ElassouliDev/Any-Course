@@ -223,36 +223,7 @@
 
 @stop
 @push('js')
-    <script>
-        $(document).on('submit', '#new form', function (event) {
 
-            event.preventDefault();
-            var $this = $(this);
-            // notifications.loading.show();
-
-            var url = $(this).attr('action'),
-                request = $.ajax({
-                    url: url,
-                    method: "post",
-                    data: new FormData(this),
-                    dataType: "json",
-                    cache: false,
-                    contentType: false,
-                    processData: false
-                });
-            request.done(function (response) {
-                $this.find('[type="reset"]').click();
-                $('#new').modal('hide');
-                /*http.success(response, true);
-                $('.checkAll').prop("checked", false);
-
-                $('#dataTable').DataTable().ajax.reload();*/
-            });
-            request.fail(function (response, exception) {
-                http.fail(JSON.parse(response.responseText), true);
-            });
-        });
-    </script>
     <script type="text/javascript">
         /*$.ajaxSetup({
             headers: {
@@ -324,6 +295,81 @@
 
                 })
         }
+
+
+
+        $(document).on('click', '[data-action="new"]', function () {
+            // resetFormProductData($('#new-product'));
+            $('#new').modal('show');
+        });
+        $(document).on('click', '#customFile', function () {
+            // resetFormProductData($('#new-product'));
+            $('#image-course').click();
+        });
+        $(document).on('click', '.reset_show', function () {
+            // resetFormProductData($('#new-product'));
+            $('#show').modal('hide');
+            $('#show').remove();
+            $('.modal-backdrop.fade.show').remove();
+        });
+
+
+        //////////////// ------------------------------  create  course
+        // $(document).on('submit', 'form', function (event) {
+        //     event.preventDefault();
+        //     var $this = $(this);
+        //     notifications.loading.show();
+        //
+        //     var url = $(this).attr('action'),
+        //         request = $.ajax({
+        //             url: url,
+        //             method: "post",
+        //             data: new FormData(this),
+        //             dataType: "json",
+        //             cache: false,
+        //             contentType: false,
+        //             processData: false
+        //         });
+        //     request.done(function (response) {
+        //         $this.find('[type="reset"]').click();
+        //         $('.new').modal('hide');
+        //         http.success(response, true);
+        //         $('#dataTableBuilder').DataTable().ajax.reload();
+        //     });
+        //     request.fail(function (response, exception) {
+        //         http.fail(JSON.parse(response.responseText), true);
+        //     });
+        // });
+        $(document).on('click', '[data-action="show"]', function () {
+            notifications.loading.show();
+            $('#show').remove();
+            $('.modal-backdrop.fade.show').remove();
+
+            var url = $(this).attr('data-link'),
+                request = $.ajax({
+                    url: url,
+                    method: "get",
+                    data: [],
+                    dataType: "json",
+                    cache: false,
+                    contentType: false,
+                    processData: false
+                });
+            request.done(function (response) {
+                $('html').append(response.show);
+                $('#show').modal('show');
+                $('.js-example-basic-multiple').select2();
+
+                // $('#growls').remove();
+
+                // http.success(response, false);
+            });
+            request.fail(function (response, exception) {
+                // /$('#growls').remove();
+
+                // http.fail(JSON.parse(response.responseText), true);
+            });
+        });
 
     </script>
 @endpush

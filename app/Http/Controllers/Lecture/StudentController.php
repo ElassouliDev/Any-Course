@@ -19,28 +19,18 @@ class StudentController extends Controller
     {
 
         $title = trans('admin.courses');
-        return $studens->render('lecture.user.index', compact('title'));
+        return $studens->render('lecture.student.index', compact('title'));
 
     }
 
-    public function showCoursesStudents(StudentDataTable $studens)
+    public function showCoursesStudents(StudentDataTable $studens ,$course_id )
     {
-        /*$courses = Course::has('student_course')->with(['student_course' => function ($q) {
-            $q->has('user')->with(['user' => function ($qq) {
-                $qq->with('image');
-            }])->distinct();
-        }])->where('user_id', auth()->id())->get()  ;*/
-
-//                $user = User::has('student_course')->with(['image','student_course' => function ($q) {
-/*                    $q->has('course')->with(['course' => function ($qq) {
-                        $qq->where('course.user_id', auth()->id());
-                    }])->distinct();*/
-//                }])->get();
-                /*dd($user);
+//        $course_id = \request('course_id');
+//        return dd($course_id);
         $title = trans('admin.courses');
-        return $studens->render('lecture.user.index', compact('title'));*/
+        return $studens->render('lecture.student.index', compact('title','course_id'));
 
-                dd(1);
+//                dd(1);
     }
 
 

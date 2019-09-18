@@ -83,19 +83,6 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4">
-                        <div class="card card-course">
-                            <img class="card-img-top" height="240"
-                                 src="{{url('course_assets/img/courses/1555506865369_js.jpg')}}" alt="Card image"
-                                 style="width:100%">
-                            <div class="card-body">
-                                <h4 class="card-title"><b>Javascript</b></h4>
-                                <p class="card-text description">Lorem ipsum dolor sit amet.</p>
-                                <a href="#" class="btn btn-primary">View Course</a>
-                                <span class="pull-right"><b><s>20.22$</s>  <i><strong>$ 11.89</strong></i></b></span>
-                            </div>
-                        </div>
-                    </div>
                 @endforeach
 
             </div>

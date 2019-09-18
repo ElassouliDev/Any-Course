@@ -18,6 +18,11 @@
                             class="fa fa-user"></i> {{trans('admin.student')}}</a>
             </li>
             <li>
+                @if(app()->getLocale()=='ar')<a href="{{ route('lesson.index',$slug_ar)}}">
+                    @else<a href="{{ route('lesson.index',$slug_en)}}">@endif<i
+                            class="fa fa-user"></i> {{trans('admin.add_lesson')}}</a>
+            </li>
+            <li>
              @if(app()->getLocale()=='ar')<a href="{{ route('exam.index',$slug_ar)}}">
                 @else<a href="{{ route('exam.index',$slug_en)}}">@endif<i
                             class="fa fa-user"></i> {{trans('admin.add_exam')}}</a>

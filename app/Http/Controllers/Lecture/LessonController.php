@@ -13,13 +13,13 @@ use App\Http\Controllers\Controller;
 
 class LessonController extends Controller
 {
-    public function index(CourseDataTable $course)
+    public function index($slug)
     {
         /*$courses = Course::latest()->paginate(10);*/
-        $tags = Tag::all();
-        $categories = Category::where('parent', 0)->get();
-        $title = trans('admin.courses');
-        return $course->render('lecture.course.index', compact('title', 'categories', 'tags'));
+        $id = Course::where('slug_'.app()->getLocale(),$slug)->first()->id;
+        $course = Course::find($id);
+        $title = trans('admin.lesson');
+        return view('lecture.lesson.index', compact('title','course'));
     }
 
 

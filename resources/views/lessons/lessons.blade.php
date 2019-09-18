@@ -58,7 +58,7 @@
             @if (count($lessons) > 0)
                 @foreach($lessons as $lesson)
                     <li class="@if($lesson->id == $lesson_watching->id)active @endif" style="float: none">
-                        <a href="@if($lesson->id != $lesson_watching->id){{route('course_lesson',['course_id'=>$lesson->course_id,'lesson_id'=>$lesson->id])}}@else # @endif">
+                        <a href="@if($lesson->id != $lesson_watching->id){{route('course_lesson',['course_id'=>$lesson->course['slug_'.app()->getLocale()],'lesson_id'=>$lesson['slug_'.app()->getLocale()]])}}@else # @endif">
                             <div class="radio">
                                 <label>
                                     <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1"

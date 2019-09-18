@@ -61,7 +61,7 @@ Route::group(
         Route::get('lecture/courses/student/{course_id}','Lecture\StudentController@showCoursesStudents')->name('course.student.show');
         Route::get('lecture/course/{course_id}/exam','Lecture\ExamController@index')->name('course.exam.show');
         Route::resource('lecture/course/{course_id}/exam', 'Lecture\ExamController');
-//        Route::resource('lecture/course/{course_id}/exam', 'Lecture\LessonController');
+        Route::resource('lecture/course/{slug}/lesson', 'Lecture\LessonController');
 
 
         /////////////////////////// student

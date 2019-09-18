@@ -69,7 +69,7 @@
                 {!! $dataTable->table(["class"=> "table table-striped table-bordered table-hover table-checkable no-footer"],true) !!}
 
             </div>
-            <input type="hidden"name="course_id" value="{{$course_id}}">
+            <input type="hidden"name="slug" value="{{$slug}}">
 
         </div>
     </div>
@@ -87,7 +87,7 @@
                         </h5>
                     </div>
                     <div class="modal-body">
-                        <form role="form" method="post" action="{{route('exam.store',['course_id'=>$course_id])}}" autocomplete="off"
+                        <form role="form" method="post" action="{{route('exam.store',['slug'=>$slug])}}" autocomplete="off"
                               enctype="multipart/form-data">
                             @csrf
                             <div class="form-group-attached">

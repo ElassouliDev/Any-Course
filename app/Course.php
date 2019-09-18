@@ -4,12 +4,27 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Cviebrock\EloquentSluggable\Sluggable;
 
 class Course extends Model
 {
+    use Sluggable;
+
     use SoftDeletes;
     protected $fillable=['user_id','title_ar','title_en','description_en','description_ar','category_id',
         'status','is_paid','price'];
+
+    public function sluggable()
+    {
+        return [
+            'slug_ar' => [
+                'source' => 'title_ar'
+            ] ,
+        'slug_en' => [
+                'source' => 'title_en'
+            ]
+        ];
+    }
 
     public function image()
     {

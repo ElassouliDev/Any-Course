@@ -17,20 +17,21 @@ use App\Http\Controllers\Controller;
 
 class ExamController extends Controller
 {
-    public function index(ExamDataTable $exam,$course_id)
+    public function index(ExamDataTable $exam,$slug)
     {
 
         $title= trans('admin.exams');
-        return $exam->render('lecture.exam.index', compact('title','course_id'));
+        return $exam->render('lecture.exam.index', compact('title','slug'));
     }
 
 
-    public function store(ExamRequest $request ,$id)
+    public function store(ExamRequest $request ,$slug)
     {
+        $course = Course::where('slug_'.app()->getLocale(),$slug)->first()->id;
         $exam = Exam::create([
             'title_en'=>$request->title_en,
             'title_ar'=>$request->title_ar,
-            'course_id'=>$id,
+            'course_id'=>$course,
             'user_id'=>auth()->id(),
         ]);
         $array = [];
@@ -58,9 +59,9 @@ class ExamController extends Controller
 
     }
 
-    public function show($course_id)
+    public function show($slug)
     {
-            $course=Course::find($course_id);
+        $course = Course::where('slug_'.app()->getLocale(),$slug)->first();
         $categories= Category::where('parent',0)->get();
         $tags = Tag::all();
 
@@ -68,9 +69,9 @@ class ExamController extends Controller
          $show = view('lecture.course.show' ,compact('course','categories','tags','tags_course'))->render();
         return response(['status'=>true , 'show'=>$show]);
     }
-    public function edit($course_id)
+    public function edit($slug)
     {
-        $course=Course::find($course_id);
+        $course = Course::where('slug_'.app()->getLocale(),$slug)->first();
         $categories= Category::where('parent',0)->get();
         $tags = Tag::all();
 
@@ -78,9 +79,9 @@ class ExamController extends Controller
         $show = view('lecture.course.show' ,compact('course','categories','tags','tags_course'))->render();
         return response(['status'=>true , 'show'=>$show]);
     }
-    public function destroy($course_id)
+    public function destroy($slug)
     {
-        $course=Course::find($course_id);
+        $course = Course::where('slug_'.app()->getLocale(),$slug)->first();
         $categories= Category::where('parent',0)->get();
         $tags = Tag::all();
 

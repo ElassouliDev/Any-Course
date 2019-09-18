@@ -13,11 +13,13 @@
             </li>
             <li class="divider"></li>
             <li>
-                    <a href="{{route('course.student.show',$id)}}"><i
+                @if(app()->getLocale()=='ar')<a href="{{ route('exam.index',$slug_ar)}}">
+                    @else<a href="{{ route('course.student.show',$slug_en)}}">@endif<i
                             class="fa fa-user"></i> {{trans('admin.student')}}</a>
             </li>
             <li>
-                <a href="{{ route('exam.index',$id)}}"><i
+             @if(app()->getLocale()=='ar')<a href="{{ route('exam.index',$slug_ar)}}">
+                @else<a href="{{ route('exam.index',$slug_en)}}">@endif<i
                             class="fa fa-user"></i> {{trans('admin.add_exam')}}</a>
             </li>
             <li class="divider"></li>

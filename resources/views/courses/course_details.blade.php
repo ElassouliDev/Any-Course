@@ -110,7 +110,7 @@
                                                         <button class="btn btn-lg btn-primary">@lang('course.enroll')</button>
                                                     @else
                                                         <button class="btn btn-lg btn-danger">@lang('course.In-enroll')</button>
-                                                        <a href="{{route('course_lesson',$course->id)}}"
+                                                        <a href="{{route('course_lesson',$course['slug_'.app()->getLocale()])}}"
                                                            class="btn btn-lg btn-info">@lang('course.watch_course')</a>
 
                                                     @endif

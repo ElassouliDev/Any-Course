@@ -3,6 +3,7 @@
 namespace App\DataTables\lecture;
 
 use App\Exam;
+use App\Course;
 use Yajra\DataTables\Services\DataTable;
 
 
@@ -29,8 +30,8 @@ class ExamDataTable extends DataTable
      */
     public function query()
     {
-//        return $model->newQuery()->select('id', 'add-your-columns-here', 'created_at', 'updated_at');
-        return Exam::where('course_id',request('course_id'))->with('course')->orderBy('id','desc');
+        $id = Course::where('slug_'.app()->getLocale(),request('slug'))->first()->id;
+        return Exam::where('course_id',$id)->with('course')->orderBy('id','desc');
 
     }
 

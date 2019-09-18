@@ -43,7 +43,7 @@ Route::group(
         Route::post('/course_enroll/{course_id}','Student\CourseController@enroll_and_in_enroll_course')->name('user.course_enroll');
         Route::get('/course','View\CourseController@course_list');
         Route::get('/course/{course_id}','View\CourseController@course_details')->name('course_details'); //course details
-        Route::get('/lessons/{course_id}/{lesson_id?}','View\LessonsController@lessons_list')->name('course_lesson'); //lessons list
+        Route::get('/course/{course_id}/lesson/{lesson_id?}','View\LessonsController@lessons_list')->name('course_lesson'); //lessons list
         Route::get('/','View\CourseController@course_list');
         Route::get('lesson/{lesson_id}/question','Student\QuestionController@lesson_question')->name('list_question');
         Route::post('lesson/question/comment','Student\CommentController@store_question')->name('new_comment_question');
@@ -61,6 +61,7 @@ Route::group(
         Route::get('lecture/courses/student/{course_id}','Lecture\StudentController@showCoursesStudents')->name('course.student.show');
         Route::get('lecture/course/{course_id}/exam','Lecture\ExamController@index')->name('course.exam.show');
         Route::resource('lecture/course/{course_id}/exam', 'Lecture\ExamController');
+//        Route::resource('lecture/course/{course_id}/exam', 'Lecture\LessonController');
 
 
         /////////////////////////// student

@@ -30,10 +30,11 @@ class LessonController extends Controller
 
         $request['user_id'] = auth()->id();
         $lesson = Lesson::create($request->all());
-        if ($request->file('file_path')) {
-            $image = new File();
-            $image->file_path = $this->uploadImage($request);
-            $lesson->image()->save($image);
+        if ($request->has('file_path')) {
+            $file = new File();
+            $file->file_path = $request->file_path;
+            $lesson->file()->save($file);
+
         }
 
 
@@ -41,57 +42,37 @@ class LessonController extends Controller
     }
 
 
-    function uploadImage($image, $edit = null)
+    public function show($id)
     {
-        if ($edit != null)
-            Storage::has($edit->image->file_path) ? Storage::delete($edit->image->file_path) : '';
-
-        $file = $image->file('image')->store('image/courses');
-        return $file;
-
+        //
     }
 
-    public function show($course_id)
+    public function edit($slug_course, $slug)
     {
-        $course = Course::find($course_id);
-        $categories = Category::where('parent', 0)->get();
-        $tags = Tag::all();
 
-        $tags_course = $course->tags()->pluck('tag_id')->toArray();
-        $show = view('lecture.course.show', compact('course', 'categories', 'tags', 'tags_course'))->render();
-        return response(['status' => true, 'show' => $show]);
+        $lesson = Lesson::where('slug_' . app()->getLocale(), $slug)->first();
+        $data = view('lecture.lesson.edit', compact('lesson'))->render();
+
+        return response(['status' => true, 'data' => $data]);
     }
 
-    public function edit($course_id)
+    public function update(LessonRequest $request, $slug_course, $slug)
     {
-
-        $course = Course::find($course_id);
-        $categories = Category::where('parent', 0)->get();
-        $tags = Tag::all();
-
-        $tags_course = $course->tags()->pluck('tag_id')->toArray();
-        $show = view('lecture.course.edit', compact('course', 'categories', 'tags', 'tags_course'))->render();
-
-        return response(['status' => true, 'show' => $show]);
-    }
-
-    public function update(LessonRequest $request, $slug)
-    {
-        $lesson = Lesson::where('slug_' . app()->getLocale(), $slug)->first()->id;
-
-        $lesson->update($request->all());
+        $lesson = Lesson::where('slug_' . app()->getLocale(), $slug)->first();
+        $lesson->update(
+            ['title_ar' => $request['title_ar'],
+                'title_en' => $request['title_en']
+            ]
+        );
+        $lesson->file()->update(['file_path' => $request->file_path]);
 
 
         return back();
     }
 
-    public function destroy($slug)
+    public function destroy($slug_course, $slug)
     {
-        $lesson = Lesson::where('slug_' . app()->getLocale(), $slug)->first()->id;
-
-        $lesson->delete();
-
-
+        Lesson::where('slug_' . app()->getLocale(), $slug)->delete();
         return back();
     }
 

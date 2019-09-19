@@ -80,6 +80,13 @@
         });
     });
 </script>--}}
+<script src="{{ asset('sweetalert/2.1.0/sweetalert.min.js') }}"></script>
+
+<script src="{{ asset('resources/assets/js/globals.js') }}"></script>
+<script src="{{ asset('resources/assets/js/lists.js') }}"></script>
+<script src="{{ asset('resources/assets/js/notifications.js') }}"></script>
+<script src="{{ asset('resources/assets/js/http.js') }}"></script>
+<script src="{{ asset('resources/assets/js/editable.js') }}"></script>
 @stack('js')
 </body>
 </html>

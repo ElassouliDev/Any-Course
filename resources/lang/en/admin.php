@@ -37,6 +37,9 @@ return [
     'courses'=>'Courses',
     'course'=>'Course',
 
+    'cancel' => 'Cancel',
+    'save' => 'Save',
+
     'permissions'=>'Permissions',
     'key'=>'Key',
     'value'=>'Value',

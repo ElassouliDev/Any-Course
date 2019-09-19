@@ -78,7 +78,7 @@
                                     <div class="col-lg-5 col-md-5 col-sm-12">
                                         <div class="card card-detail text-center">
 
-                                            <a href="{{(($course->is_enroll==1)?route('course_lesson',$course->id):'#')}}" class="img-preview">
+                                            <a href="{{(($course->is_enroll==1)?route('course_lesson',$course['slug_'.app()->getLocale()]):'#')}}" class="img-preview">
                                                 <img class="card-img-top" height="240"
                                                      src="{{url('storage/'.$course->image->file_path)}}"
                                                      alt="Card image"
@@ -104,7 +104,7 @@
 
 
                                                 <form method="post"
-                                                      action="{{route('user.course_enroll',$course->id)}}">
+                                                      action="{{route('user.course_enroll',$course['slug_'.app()->getLocale()])}}">
                                                     @csrf
                                                     @if($course->is_enroll == 0)
                                                         <button class="btn btn-lg btn-primary">@lang('course.enroll')</button>

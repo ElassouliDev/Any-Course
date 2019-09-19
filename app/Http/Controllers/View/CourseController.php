@@ -19,7 +19,7 @@ class CourseController extends Controller
 
     function course_details($slug)
     {
-        $course_id = \App\Course::where('slug_'.app()->getLocale(),$slug)->first()->id;
+        $course_id = \App\Course::where('slug_ar' , $slug)->orWhere('slug_en',$slug)->first()->id;
         $course = \App\Course::with(['student_course' => function ($q) use($course_id) {
             $q->where('course_student.user_id', Auth::id());
         }])->find($course_id);

@@ -27,7 +27,7 @@ class ExamController extends Controller
 
     public function store(ExamRequest $request ,$slug)
     {
-        $course = Course::where('slug_'.app()->getLocale(),$slug)->first()->id;
+        $course = Course::where('slug_ar' , $slug)->orWhere('slug_en',$slug)->first()->id;
         $exam = Exam::create([
             'title_en'=>$request->title_en,
             'title_ar'=>$request->title_ar,
@@ -61,7 +61,7 @@ class ExamController extends Controller
 
     public function show($slug)
     {
-        $course = Course::where('slug_'.app()->getLocale(),$slug)->first();
+        $course = Course::where('slug_ar' , $slug)->orWhere('slug_en',$slug)->first();
         $categories= Category::where('parent',0)->get();
         $tags = Tag::all();
 
@@ -71,7 +71,7 @@ class ExamController extends Controller
     }
     public function edit($slug)
     {
-        $course = Course::where('slug_'.app()->getLocale(),$slug)->first();
+        $course = Course::where('slug_ar' , $slug)->orWhere('slug_en',$slug)->first();
         $categories= Category::where('parent',0)->get();
         $tags = Tag::all();
 
@@ -81,7 +81,7 @@ class ExamController extends Controller
     }
     public function destroy($slug)
     {
-        $course = Course::where('slug_'.app()->getLocale(),$slug)->first();
+        $course = Course::where('slug_ar' , $slug)->orWhere('slug_en',$slug)->first();
         $categories= Category::where('parent',0)->get();
         $tags = Tag::all();
 

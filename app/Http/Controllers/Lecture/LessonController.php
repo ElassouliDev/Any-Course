@@ -18,7 +18,7 @@ class LessonController extends Controller
     public function index($slug)
     {
         /*$courses = Course::latest()->paginate(10);*/
-        $id = Course::where('slug_' . app()->getLocale(), $slug)->first()->id;
+        $id = Course::where('slug_ar' , $slug)->orWhere('slug_en',$slug)->first()->id;
         $course = Course::find($id);
         $title = trans('admin.lesson');
         return view('lecture.lesson.index', compact('title', 'course'));
@@ -50,7 +50,7 @@ class LessonController extends Controller
     public function edit($slug_course, $slug)
     {
 
-        $lesson = Lesson::where('slug_' . app()->getLocale(), $slug)->first();
+        $lesson = Lesson::where('slug_ar' , $slug)->orWhere('slug_en',$slug)->first();
         $data = view('lecture.lesson.edit', compact('lesson'))->render();
 
         return response(['status' => true, 'data' => $data]);
@@ -58,7 +58,7 @@ class LessonController extends Controller
 
     public function update(LessonRequest $request, $slug_course, $slug)
     {
-        $lesson = Lesson::where('slug_' . app()->getLocale(), $slug)->first();
+        $lesson = Lesson::where('slug_ar' , $slug)->orWhere('slug_en',$slug)->first();
         $lesson->update(
             ['title_ar' => $request['title_ar'],
                 'title_en' => $request['title_en']
@@ -72,7 +72,7 @@ class LessonController extends Controller
 
     public function destroy($slug_course, $slug)
     {
-        Lesson::where('slug_' . app()->getLocale(), $slug)->delete();
+        Lesson::where('slug_ar' , $slug)->orWhere('slug_en',$slug)->delete();
         return back();
     }
 

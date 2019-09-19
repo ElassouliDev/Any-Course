@@ -59,14 +59,13 @@
                         <a href="@if($lesson->id != $lesson_watching->id){{route('course_lesson',['course_id'=>$lesson->course['slug_'.app()->getLocale()],'lesson_id'=>$lesson['slug_'.app()->getLocale()]])}}@else # @endif">
                             <div class="radio">
                                 <label>
-                                    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1"
+                                    <input type="radio" name="optionsRadios"  value="option1"
                                            @if($lesson->id == $lesson_watching->id)checked @endif >
                                     {{++$loop->index}}
                                     .{{$lesson['title_'.app()->getLocale()]}}
                                 </label>
 
                                 @if(!empty($lesson->student_watch_lesson) && $lesson->student_watch_lesson->count()>0 )
-                                    {{--{{dd($lesson->student_watch_lesson->first()->is_completed)}}--}}
                                     @if($lesson->student_watch_lesson->first()->is_completed == 1)
                                         <i class="fa fa-star text-light" style="color: white"></i>
                                     @else
@@ -205,17 +204,7 @@
             </div>
 
 
-            {{--                <div id="menu13" class="tab-pane fade">--}}
-            {{--                    <h3 class="text-center">First Lesson</h3>--}}
-            {{--                    <a href="#"><span class="back">@lang('course.feed_back')</span></a>--}}
-            {{--                    <div class="video text-center">--}}
-            {{--                        <iframe width="560" height="420" src="https://www.youtube.com/embed/HdSaxRtNxAM"--}}
-            {{--                                frameborder="0"--}}
-            {{--                                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"--}}
-            {{--                                allowfullscreen></iframe>--}}
-            {{--                    </div>--}}
-            {{--                </div>---}}
-        </div>
+
     </div>
     </div>
 
@@ -223,11 +212,7 @@
 @push('js')
 
     <script type="text/javascript">
-        /*$.ajaxSetup({
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="token"]').attr('content')
-            }
-        });*/
+
         var tag = document.createElement('script');
         tag.id = 'iframe-demo';
         tag.src = 'https://www.youtube.com/iframe_api';
@@ -296,6 +281,11 @@
 
 
 
+        $(document).on('change', '[name="optionsRadios"]', function () {
+
+            location.replace($(this).parents("a").attr('href'));
+
+        });
         $(document).on('click', '[data-action="new"]', function () {
             // resetFormProductData($('#new-product'));
             $('#new').modal('show');

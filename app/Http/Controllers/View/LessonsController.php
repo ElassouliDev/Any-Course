@@ -9,18 +9,17 @@ use App\Http\Controllers\Controller;
 
 class LessonsController extends Controller
 {
-    function lessons_list($slug, $lesson_id = 0)
+    function lessons_list($slug, $lesson_slug = '')
     {
-        $lesson_id = Lesson::where('slug_'.app()->getLocale(),$lesson_id)->first()->id;
-        $course_id = Course::where('slug_'.app()->getLocale(),$slug)->first()->id;
+
+        $course_id = Course::where('slug_ar' , $slug)->orWhere('slug_en',$slug)->first()->id;
         $lessons = \App\Lesson::with(['student_watch_lesson' => function ($q) {
             $q->select('*')->where('lesson_student.user_id', auth()->id());
         }])->where('course_id', $course_id)->orderBy('id', 'asc')->get();
-        if ($lesson_id == 0) {
+        if ($lesson_slug =='') {
             $lesson_watching = $lessons->first();
         } else {
-
-            $lesson_watching = $lessons->where('id', $lesson_id)->first();
+            $lesson_watching = Lesson::where('slug_ar' , $lesson_slug)->orWhere('slug_en',$lesson_slug)->first();
         }
         return view('lessons.lessons', compact('lessons', 'lesson_watching'));
 

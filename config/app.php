@@ -165,7 +165,7 @@ return [
         /*
          * Package Service Providers...
          */
-
+        Ghanem\Rating\RatingServiceProvider::class,
         /*
          * Application Service Providers...
          */

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "195a93cedc27b26be361c20488e61fde",
+    "content-hash": "aa8abfe21b209334a9671e052ffaf086",
     "packages": [
         {
             "name": "cocur/slugify",
@@ -505,6 +505,48 @@
                 "trusted proxy"
             ],
             "time": "2019-09-03T16:45:42+00:00"
+        },
+        {
+            "name": "ghanem/rating",
+            "version": "1.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/AbdullahGhanem/rating.git",
+                "reference": "2709cf334f0daabb2317b8f5fa8dc3d864b87e60"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/AbdullahGhanem/rating/zipball/2709cf334f0daabb2317b8f5fa8dc3d864b87e60",
+                "reference": "2709cf334f0daabb2317b8f5fa8dc3d864b87e60",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "~5.0",
+                "php": ">=5.5.9"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Ghanem\\Rating\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "ِAbdullah Ghanem",
+                    "email": "3bdullah.ghanem@gmail.com"
+                }
+            ],
+            "description": "Rating syetem for Laravel 5",
+            "keywords": [
+                "Ratable",
+                "Rating",
+                "laravel"
+            ],
+            "time": "2017-04-25T22:42:00+00:00"
         },
         {
             "name": "jakub-onderka/php-console-color",
@@ -2170,54 +2212,6 @@
                 "roles"
             ],
             "time": "2019-09-16T15:50:06+00:00"
-        },
-        {
-            "name": "spatie/laravel-sluggable",
-            "version": "2.2.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/spatie/laravel-sluggable.git",
-                "reference": "a51839b77a9f0fc8246b690b92b9339de464dc8a"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-sluggable/zipball/a51839b77a9f0fc8246b690b92b9339de464dc8a",
-                "reference": "a51839b77a9f0fc8246b690b92b9339de464dc8a",
-                "shasum": ""
-            },
-            "require": {
-                "illuminate/database": "~5.6.0|~5.7.0|~5.8.0|^6.0",
-                "illuminate/support": "~5.6.0|~5.7.0|~5.8.0|^6.0",
-                "php": "^7.2"
-            },
-            "require-dev": {
-                "orchestra/testbench": "~3.6.0|~3.7.0|~3.8.0|^4.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Spatie\\Sluggable\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Freek Van der Herten",
-                    "email": "freek@spatie.be",
-                    "homepage": "https://spatie.be",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Generate slugs when saving Eloquent models",
-            "homepage": "https://github.com/spatie/laravel-sluggable",
-            "keywords": [
-                "laravel-sluggable",
-                "spatie"
-            ],
-            "time": "2019-09-16T09:37:47+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -4174,9 +4168,9 @@
             "authors": [
                 {
                     "name": "Marcel Pociot",
-                    "role": "Developer",
                     "email": "marcel@beyondco.de",
-                    "homepage": "https://beyondco.de"
+                    "homepage": "https://beyondco.de",
+                    "role": "Developer"
                 }
             ],
             "description": "Symfony Var-Dump Server for Laravel",
@@ -4288,8 +4282,8 @@
             "authors": [
                 {
                     "name": "Filipe Dobreira",
-                    "role": "Developer",
-                    "homepage": "https://github.com/filp"
+                    "homepage": "https://github.com/filp",
+                    "role": "Developer"
                 }
             ],
             "description": "php error handling for cool kids",

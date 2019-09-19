@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Ghanem\Rating\Traits\Ratingable as Rating;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Cviebrock\EloquentSluggable\Sluggable;
@@ -9,7 +10,7 @@ use Cviebrock\EloquentSluggable\Sluggable;
 class Course extends Model
 {
     use Sluggable;
-
+    use Rating;
     use SoftDeletes;
     protected $fillable=['user_id','title_ar','title_en','description_en','description_ar','category_id',
         'status','is_paid','price'];

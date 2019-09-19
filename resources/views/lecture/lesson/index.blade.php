@@ -5,7 +5,7 @@
 @endphp
 
 @section('title',$trans)
-@section('content')
+@section('css')
     <style>
 
 
@@ -77,6 +77,9 @@
 
         }
     </style>
+@endsection
+@section('content')
+
 
     <div class="col-md-3 left-side" style="min-height:760px ">
 

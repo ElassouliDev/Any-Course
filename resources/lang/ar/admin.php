@@ -63,4 +63,9 @@ return [
     'sale_price' => 'سعر البيع',
     'stock' => 'المخزن',
     'profit_percent' => 'المكسب',
+
+    'in-progress'=>'جاري المعالجة',
+    'completed'=>'مكتمل',
+    'published'=>'نشر',
+    'un-publish'=>'إلغاء النشر',
 ];

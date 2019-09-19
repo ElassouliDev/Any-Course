@@ -18,29 +18,26 @@ class LessonController extends Controller
     public function index($slug)
     {
         /*$courses = Course::latest()->paginate(10);*/
-        $id = Course::where('slug_'.app()->getLocale(),$slug)->first()->id;
+        $id = Course::where('slug_' . app()->getLocale(), $slug)->first()->id;
         $course = Course::find($id);
         $title = trans('admin.lesson');
-        return view('lecture.lesson.index', compact('title','course'));
+        return view('lecture.lesson.index', compact('title', 'course'));
     }
 
 
-    public function store(Request $courseRequest)
+    public function store(LessonRequest $request)
     {
-        $courseData = $courseRequest->all();
-        $courseData['user_id'] = auth()->id();
 
-
-        $course = Course::create($courseData);
-        $course->tags()->attach($courseRequest->tags);
-        if ($courseRequest->file('image')) {
+        $request['user_id'] = auth()->id();
+        $lesson = Lesson::create($request->all());
+        if ($request->file('file_path')) {
             $image = new File();
-            $image->file_path = $this->uploadImage($courseRequest);
-            $course->image()->save($image);
+            $image->file_path = $this->uploadImage($request);
+            $lesson->image()->save($image);
         }
 
 
-        return response(['status' => true, 'message' => __('error.added_successfully')]);
+        return back();
     }
 
 
@@ -78,16 +75,25 @@ class LessonController extends Controller
         return response(['status' => true, 'show' => $show]);
     }
 
-    public function update(LessonRequest $request, $slug )
+    public function update(LessonRequest $request, $slug)
     {
-        $lesson =Lesson::where('slug_'.app()->getLocale(),$slug)->first()->id;
+        $lesson = Lesson::where('slug_' . app()->getLocale(), $slug)->first()->id;
 
         $lesson->update($request->all());
 
 
-        return response(['status' => true, 'message' => __('error.updated_successfully')]);
+        return back();
     }
 
+    public function destroy($slug)
+    {
+        $lesson = Lesson::where('slug_' . app()->getLocale(), $slug)->first()->id;
+
+        $lesson->delete();
+
+
+        return back();
+    }
 
 
 }

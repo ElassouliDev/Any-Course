@@ -23,5 +23,6 @@ return [
     'in-progress'=>'In progress',
     'lecture_course'=>'Lecture course',
     'exam_lesson'=>'Exam lesson',
+    'view_course'=>'View Course',
 
 ];

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Student;
 
+use App\Course;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
@@ -20,8 +21,9 @@ class CourseController extends Controller
 
     }
 
-    function enroll_and_in_enroll_course($course_id)
+    function enroll_and_in_enroll_course($slug)
     {
+        $course_id = Course::where('slug_'.app()->getLocale(),$slug)->first()->id;
         Auth::user()->student_course()->toggle($course_id);
         return back();
 

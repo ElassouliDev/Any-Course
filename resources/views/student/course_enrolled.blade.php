@@ -23,8 +23,7 @@
                             <div class="card-body">
                                 <h4 class="card-title"><b>{{$course['title_'.app()->getLocale()]}}</b></h4>
                                 <p class="card-text description">{{$course->category['title_'.app()->getLocale()]}}</p>
-                                <a href="{{route('course_details',$course->id)}}" class="btn btn-primary">View
-                                    Course</a>
+                                <a href="{{route('course_details',$course['slug_'.app()->getLocale()])}}" class="btn btn-primary">@lang('course.view_course')</a>
 
                             </div>
                         </div>

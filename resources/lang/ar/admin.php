@@ -22,7 +22,7 @@ return [
     'remember_me' => 'تذكرني',
     'password' => 'كلمه المرور',
     'password_confirmation' => 'تاكيد كلمه المرور',
-    
+
     'no_data_found' => 'للاسف لا يوجد اي سجلات',
     'no_records' => 'للاسف لا يوجد اي سجلات',
 
@@ -68,4 +68,5 @@ return [
     'completed'=>'مكتمل',
     'published'=>'نشر',
     'un-publish'=>'إلغاء النشر',
+    'blocked'=>'حظر',
 ];

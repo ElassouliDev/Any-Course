@@ -1,7 +1,7 @@
 @extends('layouts.dashboard.app')
 @section('title',$title)
 @push('css')
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.9/css/select2.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.9/css/select2.min.css" rel="stylesheet"/>
 @endpush
 @section('content')
     {{--    update commit github--}}
@@ -31,7 +31,8 @@
 
                     @include('partials._errors')
 
-                    <form action="{{ route('dashboard.course.update',$course->id) }}" method="post" enctype="multipart/form-data">
+                    <form action="{{ route('dashboard.course.update',$course->id) }}" method="post"
+                          enctype="multipart/form-data">
 
                         @csrf
                         @method('put')
@@ -82,7 +83,7 @@
                                                 <option @if (!$course->is_paid))
                                                         selected="selected"
                                                         @endif
-                                                                value="0">@lang('admin.free')</option>
+                                                        value="0">@lang('admin.free')</option>
                                                 <option @if ($course->is_paid))
                                                         selected="selected"
                                                         @endif
@@ -93,7 +94,8 @@
 
                                             <div class="input-group">
                                                 <span class="input-group-addon">$</span>
-                                                <input type="number" min="0"  name="price" class="form-control" value="{{ $course->price}}">
+                                                <input type="number" min="0" name="price" class="form-control"
+                                                       value="{{ $course->price}}">
                                             </div>
                                         </div>
                                     </div>
@@ -124,13 +126,15 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>@lang('admin.tag')</label>
-                                    <select class="js-example-basic-multiple form-control" name="tags[]" multiple="multiple">
+                                    <select class="js-example-basic-multiple form-control" name="tags[]"
+                                            multiple="multiple">
                                         @foreach($tags as $tag)
                                             <option value="{{$tag->id}}"
                                             @foreach($course->tags as $coursetag)
-                                           {{$tag->id === $coursetag->id ? 'selected' : ''}}
-                                        @endforeach
-                                            >{{$tag['name_'.app()->getLocale()]}}</option>
+                                                {{$tag->id === $coursetag->id ? 'selected' : ''}}
+                                                @endforeach
+                                            >{{$tag['name_'.app()->getLocale()]}}
+                                            </option>
                                         @endforeach
                                     </select>
                                 </div>
@@ -145,8 +149,36 @@
                             </div>
 
                         </div>
+                        <div class="row">
+                            <div class="col-md-12  col-sm-12">
+                                <label>@lang('admin.status')
+                                </label>
+                                <select name="status" class="form-control">
+                                    <option value="in-progress"
+                                            @if($course->status == "in-progress") selected="selected" @endif> @lang('admin.in-progress') </option>
+                                    <option value="blocked"
+                                            @if($course->status == "blocked") selected="selected" @endif> @lang('admin.blocked') </option>
+                                    <option value="completed"
+                                            @if($course->status =="completed") selected="selected" @endif> @lang('admin.completed') </option>
+
+
+                                    <option value="published"
+                                            @if($course->status == "published") selected="selected" @endif>
+                                        @lang('admin.published')
+                                    </option>
+
+                                    <option value="un-publish"
+                                            @if($course->status =="un-publish") selected="selected" @endif> @lang('admin.un-publish') </option>
+
+
+                                </select>
+                            </div>
+                        </div>
+
+
                         <div class="form-group">
-                            <button type="submit" class="btn btn-primary"><i class="fa fa-edit"></i> @lang('admin.edit')</button>
+                            <button type="submit" class="btn btn-primary"><i class="fa fa-edit"></i> @lang('admin.edit')
+                            </button>
                         </div>
 
                     </form><!-- end of form -->
@@ -163,7 +195,7 @@
 @push('js')
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.9/js/select2.min.js"></script>
     <script>
-        $(document).ready(function() {
+        $(document).ready(function () {
             $('.js-example-basic-multiple').select2();
         });
     </script>

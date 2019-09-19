@@ -27,8 +27,12 @@ class CourseDataTable extends DataTable
                     return trans('admin.free');
                 }else{
 
-                    return $row->is_paid;
+                    return trans('admin.paid');
                 }
+            })->editColumn('price', function($row){
+                return "$".$row->price;
+            })->editColumn('status', function($row){
+                return trans('admin.'.$row->status);
             })
             ->rawColumns(['actions']);
     }
@@ -136,11 +140,6 @@ class CourseDataTable extends DataTable
             ],
 
             [
-                'name'=>'status',
-                'data'=>'status',
-                'title'=>trans('admin.status'),
-            ],
-            [
                 'name'=>'is_paid',
                 'data'=>'is_paid',
                 'title'=>trans('admin.is_paid'),
@@ -149,6 +148,16 @@ class CourseDataTable extends DataTable
                 'name'=>'category_id',
                 'data'=>'category_id',
                 'title'=>trans('admin.category'),
+            ],
+            [
+                'name'=>'status',
+                'data'=>'status',
+                'title'=>trans('admin.status'),
+            ],
+            [
+                'name'=>'price',
+                'data'=>'price',
+                'title'=>trans('admin.price'),
             ],
             [
                 'name' => 'actions',

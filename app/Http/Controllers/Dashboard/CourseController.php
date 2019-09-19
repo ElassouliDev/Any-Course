@@ -64,7 +64,6 @@ class CourseController extends Controller
             $course->image()->save($image);
         }
 
-        return $course->slug_en;
         session()->flash('success', __('error.added_successfully'));
         return redirect()->route('dashboard.course.index');
 

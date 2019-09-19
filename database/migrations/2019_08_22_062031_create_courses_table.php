@@ -25,7 +25,7 @@ class CreateCoursesTable extends Migration
                 ->on('categories')->onDelete('cascade');
             $table->foreign('user_id')->references('id')
                 ->on('users')->onDelete('cascade');
-            $table->enum('status', ['published', 'In-publish', 'in-progress', 'blocked', 'closed'])->default('in-progress');
+            $table->enum('status', ['published', 'un-publish', 'in-progress', 'blocked', 'completed'])->default('in-progress');
             $table->boolean('is_paid');
             $table->float('price')->default('0');
             $table->softDeletes();

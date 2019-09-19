@@ -66,5 +66,9 @@ return [
     'question'=>'Question',
     'questions'=>'Questions',
     'paid'=>'Paid',
+    'in-progress'=>'in-progress',
+    'completed'=>'completed',
+    'published'=>'published',
+    'un-publish'=>'un-publish',
 
 ];

@@ -22,12 +22,12 @@
                                             <div class="col-md-6 col-sm-12">
                                                 <label>@lang('admin.title_ar'):</label>
                                                 <input name="title_ar" type="text" value="{{$course->title_ar}}"
-                                                       class="form-control" >
+                                                       class="form-control">
                                             </div>
                                             <div class="col-md-6  col-sm-12">
                                                 <label>@lang('admin.title_en'):</label>
                                                 <input name="title_en" value="{{$course->title_en}}" type="text"
-                                                       class="form-control" >
+                                                       class="form-control">
                                             </div>
                                         </div>
                                     </div>
@@ -41,11 +41,11 @@
                                             <div class="col-md-6  col-sm-12">
                                                 <label>@lang('admin.category'):</label>
                                                 <select name="category_id" class="form-control"
-                                                        >
+                                                >
                                                     <option value="-1">-- @lang('admin.SelectCategory') --</option>
                                                     @foreach($categories as $category)
                                                         <option value="{{ $category->id }}"
-                                                                >{{ $category['title_'.app()->getLocale()] }}</option>
+                                                        >{{ $category['title_'.app()->getLocale()] }}</option>
                                                         @foreach($category->subCategories as $subCategory)
                                                             <option value="{{ $subCategory->id }}"
                                                                     @if($course->category_id == $subCategory->id) selected="selected" @endif
@@ -60,7 +60,7 @@
                                                 <div class="form-group"><label>@lang('admin.isPaid')</label>
                                                     <div class="row">
                                                         <div class="col-md-8">
-                                                            <select class="form-control" 
+                                                            <select class="form-control"
                                                                     name="is_paid">
                                                                 <option value="-1">
                                                                     -- @lang('admin.selectPaid')--
@@ -75,7 +75,7 @@
 
                                                             <div class="input-group">
                                                                 <span class="input-group-addon">$</span>
-                                                                <input type="number" value="{{$course->price}}" 
+                                                                <input type="number" value="{{$course->price}}"
                                                                        min="0"
                                                                        class="form-control">
                                                             </div>
@@ -97,14 +97,14 @@
                                                 <textarea rows="4" name="description_ar"
                                                           style="resize: none"
                                                           class="form-control"
-                                                          >{{$course->description_ar}}</textarea>
+                                                >{{$course->description_ar}}</textarea>
                                             </div>
                                             <div class="col-md-6  col-sm-12">
                                                 <label>@lang('admin.description_en'):</label>
                                                 <textarea rows="4" name="description_en"
                                                           style="resize: none"
                                                           class="form-control"
-                                                          >{{$course->description_en}}</textarea>
+                                                >{{$course->description_en}}</textarea>
                                             </div>
                                         </div>
                                     </div>
@@ -116,7 +116,7 @@
                                         <div class="row">
                                             <div class="col-md-12 w-100">
                                                 <label for="tag">@lang('admin.tag')</label>
-                                                <select id="tag" 
+                                                <select id="tag"
                                                         class="js-example-basic-multiple form-control w-100"
                                                         name="tags[]" multiple="multiple">
                                                     @foreach($tags as $tag)
@@ -135,13 +135,26 @@
                                     <div class="form-group form-group-default">
                                         <div class="row">
                                             <div class="col-md-12  col-sm-12">
-                                                <label>@lang('admin.status'):</label>
-                                                <select name="status" class="form-control" >
-                                                    <option value="published" @if($course->status == "published") selected="selected" @endif>@lang('admin.published') </option>
-                                                    <option value="In-publish" @if($course->status =="In-publish") selected="selected" @endif> @lang('admin.In-publish') </option>
-                                                    <option value="in-progress" @if($course->status == "in-progress") selected="selected" @endif> @lang('admin.in-progress') </option>
-                                                    <option value="blocked" @if($course->status == "blocked") selected="selected" @endif> @lang('admin.blocked') </option>
-                                                    <option value="closed" @if($course->status =="closed") selected="selected" @endif> @lang('admin.closed') </option>
+                                                <label>@lang('admin.status'): @if($course->status == "blocked")<span
+                                                            class="text-danger">@lang('course.blocked')</span> @endif
+                                                </label>
+                                                <select @if($course->status != "blocked")name="status" @else disabled
+                                                        @endif class="form-control">
+                                                    <option></option>
+                                                    <option value="in-progress"
+                                                            @if($course->status == "in-progress") selected="selected" @endif> @lang('admin.in-progress') </option>
+                                                    <option value="completed"
+                                                            @if($course->status =="completed") selected="selected" @endif> @lang('admin.completed') </option>
+                                                    @if($course->status != "blocked" && $course->status != "in-progress")
+
+                                                            {{--@if($course->status != "published")--}}
+                                                            <option value="published"
+                                                                    @if($course->status == "published") selected="selected" @endif>@lang('admin.published') </option>
+                                                        {{--@else--}}
+                                                            <option value="un-publish"
+                                                                    @if($course->status =="un-publish") selected="selected" @endif> @lang('admin.un-publish') </option>
+                                                        {{--@endif--}}
+                                                    @endif
                                                 </select>
                                             </div>
                                         </div>

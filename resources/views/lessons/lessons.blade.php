@@ -47,9 +47,7 @@
 
         <div class="heading-side">
             <i class="fa fa-caret-left fa-lg"></i>
-            <h5>@lang('course.lesson') 1 :</h5>
-            <p class="my-3" style="margin-top: 15px;"> Why Responsive
-            <p>
+            <h5>@lang('admin.course') : {{ucfirst($lesson_watching->course['title_'.app()->getLocale()])}} <span style="float: right; color: #1d2124 ; background: white ; padding:5px 10px; border-radius: 20px;  ">@lang('course.lesson') :{{count($lessons)}} </span></h5>
 
 
         </div>

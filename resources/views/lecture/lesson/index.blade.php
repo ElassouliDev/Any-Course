@@ -151,11 +151,14 @@
                                                     <h4 class="modal-title">@lang('course.edit_lesson')</h4>
                                                 </div>
                                                 <div class="modal-body">
-                                                    <form action="" method="post">
+                                                    <form action="{{route('lesson.update',[$course['slug_'.app()->getLocale()],$lesson['slug_'.app()->getLocale()]])}}" method="post">
                                                         @csrf
                                                         @method('put')
+
+                                                        <input name="title_en" class="form-control">
+                                                        <input name="title_ar" class="form-control">
                                                     </form>
-                                                    <p>One fine body…</p>
+
                                                 </div>
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>

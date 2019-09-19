@@ -7,6 +7,8 @@ use App\Course;
 use App\DataTables\Lecture\CourseDataTable;
 use App\File;
 use App\Http\Requests\CourseRequest;
+use App\Http\Requests\View\LessonRequest;
+use App\Lesson;
 use App\Tag;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -76,19 +78,13 @@ class LessonController extends Controller
         return response(['status' => true, 'show' => $show]);
     }
 
-    public function update(CourseRequest $courseRequest)
+    public function update(LessonRequest $request, $slug )
     {
-        $course =Course::find($courseRequest->course_id);
-        $course->update($courseRequest->all());
-        if($courseRequest->hasFile('image')){
-            $course->image()->update([
-                'file_path'=>$this->uploadImage($courseRequest,$course)
-            ]);
+        $lesson =Lesson::where('slug_'.app()->getLocale(),$slug)->first()->id;
+
+        $lesson->update($request->all());
 
 
-        }
-//        dd($courseRequest->tags);
-        $course->tags()->sync($courseRequest->tags);
         return response(['status' => true, 'message' => __('error.updated_successfully')]);
     }
 

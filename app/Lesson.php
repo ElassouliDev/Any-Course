@@ -4,13 +4,27 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Cviebrock\EloquentSluggable\Sluggable;
 
 class Lesson extends Model
 {
+
     use SoftDeletes;
+
+    use Sluggable;
     protected $fillable = ['title_ar','title_en','course_id','user_id'];
     protected $hidden = ['deleted_at'];
-
+    public function sluggable()
+    {
+        return [
+            'slug_ar' => [
+                'source' => 'title_ar'
+            ] ,
+            'slug_en' => [
+                'source' => 'title_en'
+            ]
+        ];
+    }
     public function course(){
         return $this->belongsTo(Course::class);
     }

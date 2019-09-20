@@ -10,7 +10,7 @@ class Option_exam extends Model
    function exam(){
        return $this->belongsTo(Exam::class);
    }
-//    function answer(){
-//        return $this->hasMany(Answer_user::class);
-//    }
+    function answer(){
+        return $this->belongsToMany(User::class,'answer_users');
+    }
 }

@@ -58,6 +58,7 @@ Route::group(
         Route::get('lecture/course/{course_id}/edit', 'Lecture\CourseController@edit')->name('course_lecture.edit');
         Route::put('lecture/course/update', 'Lecture\CourseController@update')->name('course_lecture.update');
         Route::get('lecture/courses/student/{course_id}', 'Lecture\StudentController@showCoursesStudents')->name('course.student.show');
+        Route::get('lecture/all/students', 'Lecture\StudentController@showAllStudents')->name('course.all.student');
         Route::get('lecture/course/{course_id}/exam', 'Lecture\ExamController@index')->name('course.exam.show');
         Route::resource('lecture/course/{course_id}/exam', 'Lecture\ExamController');
         Route::resource('lecture/course/{slug}/lesson', 'Lecture\LessonController');

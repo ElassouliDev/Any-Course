@@ -6,6 +6,7 @@ use App\Category;
 use App\Course;
 use App\DataTables\Lecture\CourseDataTable;
 use App\DataTables\Lecture\StudentDataTable;
+use App\DataTables\Lecture\StudentsCoursesDataTable;
 use App\File;
 use App\Http\Requests\CourseRequest;
 use App\Tag;
@@ -15,11 +16,11 @@ use App\Http\Controllers\Controller;
 
 class StudentController extends Controller
 {
-    public function showCourseStudent(StudentDataTable $studens ,$slug)
+    public function showAllStudents(StudentsCoursesDataTable $studens )
     {
 
-        $title = trans('admin.courses');
-        return $studens->with('slug',$slug)->render('lecture.student.index', compact('title'));
+        $title = trans('course.all_students_in_courses');
+        return $studens->render('lecture.student.all', compact('title'));
 
     }
 

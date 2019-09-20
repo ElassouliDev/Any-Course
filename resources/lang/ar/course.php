@@ -10,4 +10,7 @@ return [
     'closed'=>'مغلق',
     'published'=>'نشر',
     'un-publish'=>'الغاء النشر',
+
+    'all_students_in_courses'=>'جميع الطلاب في كورساتك',
+
 ];

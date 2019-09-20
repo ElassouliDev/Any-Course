@@ -21,27 +21,37 @@ class StudentsCoursesDataTable extends DataTable
     public function dataTable($query)
     {
         return datatables($query)
-            ->addColumn('image', function ($row){
+            ->editColumn('image', function ($row){
                 return isset($row->image->file_path)?
                     '<img src="'.url('/storage/'.$row->image->file_path).'" class="img-fluid" width="45px" height="45px" style="border-radius: 50%">':
                     '<img src="'.url('https://ssl.gstatic.com/accounts/ui/avatar_2x.png').'" class="img-fluid" width="45px" height="45px" style="border-radius: 50%">';
 
-            })->rawColumns(['image']);
+            })
+            ->editColumn('course', function ($row){
+                return $row['title_'.app()->getLocale()];
+            })
+            ->editColumn('first_name', function ($row){
+
+               return $row->user->first_name;
+            })   ->editColumn('last_name', function ($row){
+
+               return $row->user->last_name;
+            })  ->editColumn('email', function ($row){
+
+               return $row->user->email;
+            })
+            ->rawColumns(['image','actions']);
 
     }
 
     public function query()
     {
-        $course_id = Course::where('slug_en',$this->slug)->orWhere('slug_en',$this->slug)->first()->id;
 
         return (Course::query()->with(['student_course' => function ($q) {
             $q->with(['user' => function ($qq) {
                 $qq->with('image');
             }])->distinct();
-        }])->where('user_id', auth()->id())->get())->student_course;
-        /*User::all();*/
-//        return $model->newQuery()->select('id', 'add-your-columns-here', 'created_at', 'updated_at');
-//        return Course::query()->where('user_id',auth()->id())->orderBy('id','desc');
+        }])->where('user_id', auth()->id())->get());
 
     }
 
@@ -61,7 +71,7 @@ class StudentsCoursesDataTable extends DataTable
                 "bFilter"=> false,
                 "bLengthChange"=> false,
                 'initComplete' => "function () {
-                this.api().columns([0]).every(function () {
+                this.api().columns([3]).every(function () {
                 var column = this;
                 var input = document.createElement(\"input\");
                 $(input).attr( 'style', 'width: 100%');
@@ -119,30 +129,32 @@ class StudentsCoursesDataTable extends DataTable
                 'title' => '',
                 'orderable'=>false
 
-            ],[
-                'name' => 'user.first_name',
-                'data' => 'user.first_name',
+                ],
+
+            [
+                 'name' => 'course',
+                'data' => 'course',
+                'title' => trans('admin.course'),
+
+                ],
+
+
+            [
+                'name' => 'first_name',
+                'data' => 'first_name',
                 'title' => trans('admin.first_name'),
             ],
             [
-                'name' => 'user.last_name',
-                'data' => 'user.last_name',
+                'name' => 'last_name',
+                'data' => 'last_name',
                 'title' => trans('admin.last_name'),
             ],
             [
-                'name' => 'user.email',
-                'data' => 'user.email',
+                'name' => 'email',
+                'data' => 'email',
                 'title' => trans('admin.email'),
             ],
-            /*[
-                'name' => 'actions',
-                'data' => 'actions',
-                'title' => trans('admin.actions'),
-                'exportable' => false,
-                'printable' => false,
-                'searchable' => false,
-                'orderable' => false,
-            ]*/
+
 
 
         ];

@@ -105,6 +105,14 @@
 									</span>
                 </a>
             </li>
+            <li class="m-menu__item">
+                <a href="{{route('course.all.student')}}" class="m-menu__link">
+                    <i class="m-menu__link-icon fa fa-users"></i>
+                    <span class="m-menu__link-text">
+									@lang('course.all_students_in_courses')
+									</span>
+                </a>
+            </li>
 
             <li class="m-menu__item">
                 <a href="{{route('user.setting')}}" class="m-menu__link">

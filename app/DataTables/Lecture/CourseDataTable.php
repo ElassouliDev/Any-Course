@@ -112,7 +112,7 @@ class CourseDataTable extends DataTable
             [
                 'name'=>'image',
                 'data'=>'image',
-                'title'=>trans('admin.image'),
+                'title'=>'',
             ],
             [
                 'name'=>'title_'.app()->getLocale(),

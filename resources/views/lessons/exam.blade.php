@@ -444,8 +444,9 @@
                                 <label>
                                     <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1"
                                            checked >
-                                    {{++$loop->index}}
-                                    .{{$lesson['title_'.app()->getLocale()]}}
+                                    >
+                                    {{1 + count($lessons)}}
+                                    .{{__('course.exam')}}
                                     {{--@if(!empty($lesson->student_watch_lesson) && $lesson->student_watch_lesson->count()>0 )
                                         --}}{{--{{dd($lesson->student_watch_lesson->first()->is_completed)}}--}}{{--
                                         @if($lesson->student_watch_lesson->first()->is_completed == 1)

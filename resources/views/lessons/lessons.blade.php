@@ -47,7 +47,7 @@
 
         <div class="heading-side">
             <i class="fa fa-caret-left fa-lg"></i>
-            <h5>@lang('admin.course') : {{ucfirst($course['title_'.app()->getLocale()])}} <span style="float: right; color: #1d2124 ; background: white ; padding:5px 10px; border-radius: 20px;  ">@lang('course.lesson') :{{count($lessons)}} </span></h5>
+            <h5>@lang('admin.course') : {{ucfirst($lesson_watching->course['title_'.app()->getLocale()])}} <span style="float: right; color: #1d2124 ; background: white ; padding:5px 10px; border-radius: 20px;  ">@lang('course.lesson') :{{count($lessons)}} </span></h5>
 
 
         </div>
@@ -82,8 +82,8 @@
                                 <label>
                                     <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1"
                                             >
-                                    {{++$loop->index}}
-                                    .{{$lesson['title_'.app()->getLocale()]}}
+                                    {{1 + count($lessons)}}
+                                    .{{__('course.exam')}}
                                     {{--@if(!empty($lesson->student_watch_lesson) && $lesson->student_watch_lesson->count()>0 )
                                         --}}{{--{{dd($lesson->student_watch_lesson->first()->is_completed)}}--}}{{--
                                         @if($lesson->student_watch_lesson->first()->is_completed == 1)

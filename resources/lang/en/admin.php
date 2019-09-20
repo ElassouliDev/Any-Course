@@ -2,6 +2,7 @@
 return [
     'home'=>'Home',
     'login'=>'Login',
+    'register'=>'Register',
     'dashboard'=>'Dashboard',
 
     'search'=>'Search',
@@ -73,5 +74,8 @@ return [
     'completed'=>'completed',
     'published'=>'published',
     'un-publish'=>'un-publish',
+
+
+    'price'=>'Price',
 
 ];

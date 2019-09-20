@@ -19,18 +19,25 @@ class CourseDataTable extends DataTable
     {
         return datatables($query)
             ->addColumn('actions', 'lecture.course.buttons.actions')
+            ->editColumn('image', function ($row){
+                return '<img src="'.url('/storage/'.$row->image->file_path).'" class="img-fluid" width="45px" height="45px" style="border-radius: 50%">';
+
+
+            })
             ->editColumn('category_id', function($row){
                 return $row->category['title_'.app()->getLocale()];
-            })   ->editColumn('is_paid', function($row){
+            })     ->editColumn('is_paid', function($row){
                 if ($row->is_paid===0){
 
                     return trans('admin.free');
                 }else{
 
-                    return $row->is_paid;
+                    return trans('admin.paid');
                 }
+            })->editColumn('price', function($row){
+                return "$".$row->price;
             })
-            ->rawColumns(['actions']);
+            ->rawColumns(['actions','image']);
     }
 
     /**
@@ -58,36 +65,10 @@ class CourseDataTable extends DataTable
             ->ajax('')
             ->parameters([
                 'dom' => 'Blfrtip',
+                "bFilter"=> false,
+                "bLengthChange"=> false,
                 "lengthMenu" => [[10, 25, 50,100, -1], [10, 25, 50,100, trans('datatables.all_records')]],
-                'buttons' => [
-                    ['extend' => 'print', 'className' => 'btn dark btn-outline', 'text' => '<i class="fa fa-print"></i> '.trans('datatables.print')],
-                    ['extend' => 'excel', 'className' => 'btn green btn-outline', 'text' => '<i class="fa fa-file-excel-o"> </i> '.trans('datatables.export_excel')],
-                    /*['extend' => 'pdf', 'className' => 'btn red btn-outline', 'text' => '<i class="fa fa-file-pdf-o"> </i> '.trans('datatables.export_pdf')],*/
-                    ['extend' => 'csv', 'className' => 'btn purple btn-outline', 'text' => '<i class="fa fa-file-excel-o"> </i> '.trans('datatables.export_csv')],
-                    ['extend' => 'reload', 'className' => 'btn blue btn-outline', 'text' => '<i class="fa fa fa-refresh"></i> '.trans('datatables.reload')],
-                    [
-                        'text' => '<i class="fa fa-trash"></i> '.trans('datatables.delete'),
-                        'className'    => 'btn red btn-outline deleteBtn',
-                    ], [
-                        'text' => '<i class="fa fa-plus"></i> '.trans('datatables.add'),
-                        'className'    => 'btn btn-primary',
-                        'action'    => 'function(){
-                        	window.location.href =  "'.\URL::current().'/create";
-                        }',
-                    ],
-                ],
-                'initComplete' => "function () {
-                this.api().columns([0]).every(function () {
-                var column = this;
-                var input = document.createElement(\"input\");
-                $(input).attr( 'style', 'width: 100%');
-                $(input).attr( 'class', 'form-control');
-                $(input).appendTo($(column.footer()).empty())
-                .on('keyup', function () {
-                    column.search($(this).val()).draw();
-                });
-            });
-            }",
+
                 'order' => [[1, 'desc']],
 
                 'language' => [
@@ -130,6 +111,11 @@ class CourseDataTable extends DataTable
 
 
             [
+                'name'=>'image',
+                'data'=>'image',
+                'title'=>trans('admin.image'),
+            ],
+            [
                 'name'=>'title_'.app()->getLocale(),
                 'data'=>'title_'.app()->getLocale(),
                 'title'=>trans('admin.title'),
@@ -149,6 +135,11 @@ class CourseDataTable extends DataTable
                 'name'=>'category_id',
                 'data'=>'category_id',
                 'title'=>trans('admin.category'),
+            ],
+            [
+                'name'=>'price',
+                'data'=>'price',
+                'title'=>trans('admin.price'),
             ],
             [
                 'name' => 'actions',

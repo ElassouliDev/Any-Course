@@ -19,6 +19,8 @@ return [
     'no' => 'لا',
 
     'login' => 'تسجيل الدخول',
+    'register'=>'إنشاء حساب ',
+
     'remember_me' => 'تذكرني',
     'password' => 'كلمه المرور',
     'password_confirmation' => 'تاكيد كلمه المرور',
@@ -71,4 +73,7 @@ return [
     'published'=>'نشر',
     'un-publish'=>'إلغاء النشر',
     'blocked'=>'حظر',
+
+    'price'=>'السعر',
+
 ];

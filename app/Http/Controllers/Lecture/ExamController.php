@@ -21,7 +21,7 @@ class ExamController extends Controller
     {
 
         $title= trans('admin.exams');
-        return $exam->render('lecture.exam.index', compact('title','slug'));
+        return $exam->with('slug',$slug)->render('lecture.exam.index', compact('title','slug'));
     }
 
 

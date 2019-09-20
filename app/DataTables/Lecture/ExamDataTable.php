@@ -30,7 +30,7 @@ class ExamDataTable extends DataTable
      */
     public function query()
     {
-        $id = Course::where('slug_'.app()->getLocale(),request('slug'))->first()->id;
+        $id = Course::where('slug_'.app()->getLocale(),$this->slug)->first()->id;
         return Exam::where('course_id',$id)->with('course')->orderBy('id','desc');
 
     }

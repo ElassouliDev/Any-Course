@@ -30,7 +30,7 @@ class ExamDataTable extends DataTable
      */
     public function query()
     {
-        $id = Course::where('slug_'.app()->getLocale(),$this->slug)->first()->id;
+        $id = Course::where('slug_en',$this->slug)->orWhere('slug_en',$this->slug)->first()->id;
         return Exam::where('course_id',$id)->with('course')->orderBy('id','desc');
 
     }
@@ -48,23 +48,8 @@ class ExamDataTable extends DataTable
             ->parameters([
                 'dom' => 'Blfrtip',
                 "lengthMenu" => [[10, 25, 50,100, -1], [10, 25, 50,100, trans('datatables.all_records')]],
-                'buttons' => [
-                    ['extend' => 'print', 'className' => 'btn dark btn-outline', 'text' => '<i class="fa fa-print"></i> '.trans('datatables.print')],
-                    ['extend' => 'excel', 'className' => 'btn green btn-outline', 'text' => '<i class="fa fa-file-excel-o"> </i> '.trans('datatables.export_excel')],
-                    /*['extend' => 'pdf', 'className' => 'btn red btn-outline', 'text' => '<i class="fa fa-file-pdf-o"> </i> '.trans('datatables.export_pdf')],*/
-                    ['extend' => 'csv', 'className' => 'btn purple btn-outline', 'text' => '<i class="fa fa-file-excel-o"> </i> '.trans('datatables.export_csv')],
-                    ['extend' => 'reload', 'className' => 'btn blue btn-outline', 'text' => '<i class="fa fa fa-refresh"></i> '.trans('datatables.reload')],
-                    [
-                        'text' => '<i class="fa fa-trash"></i> '.trans('datatables.delete'),
-                        'className'    => 'btn red btn-outline deleteBtn',
-                    ], [
-                        'text' => '<i class="fa fa-plus"></i> '.trans('datatables.add'),
-                        'className'    => 'btn btn-primary',
-                        'action'    => 'function(){
-                        	window.location.href =  "'.\URL::current().'/create";
-                        }',
-                    ],
-                ],
+                "bFilter"=> false,
+                "bLengthChange"=> false,
                 'initComplete' => "function () {
                 this.api().columns([0]).every(function () {
                 var column = this;

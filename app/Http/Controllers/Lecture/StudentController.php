@@ -15,20 +15,20 @@ use App\Http\Controllers\Controller;
 
 class StudentController extends Controller
 {
-    public function showCourseStudent(StudentDataTable $studens)
+    public function showCourseStudent(StudentDataTable $studens ,$slug)
     {
 
         $title = trans('admin.courses');
-        return $studens->render('lecture.student.index', compact('title'));
+        return $studens->with('slug',$slug)->render('lecture.student.index', compact('title'));
 
     }
 
-    public function showCoursesStudents(StudentDataTable $studens ,$course_id )
+    public function showCoursesStudents(StudentDataTable $studens ,$slug )
     {
 //        $course_id = \request('course_id');
 //        return dd($course_id);
         $title = trans('admin.courses');
-        return $studens->render('lecture.student.index', compact('title','course_id'));
+        return $studens->with('slug',$slug)->render('lecture.student.index', compact('title','slug'));
 
 //                dd(1);
     }

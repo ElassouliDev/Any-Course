@@ -16,18 +16,20 @@ class StudentDataTable extends DataTable
      * @param mixed $query Results from query() method.
      * @return \Yajra\DataTables\DataTableAbstract
      */
-    protected $attributes = ['id'];
+
 
 
     public function dataTable($query)
     {
         return datatables($query)
-            ->addColumn('image', function ($row){
-                return isset($row->image->file_path)?
-                    '<img src="'.url('/storage/'.$row->user->image->file_path).'" class="img-fluid" width="45px" height="45px" style="border-radius: 50%">':
-                    '<img src="'.url('/storage/image/user.jpeg').'" class="img-fluid" width="45px" height="45px" style="border-radius: 50%">';
+            ->editColumn('image', function ($row){
+                return isset($row->user->image['file_path'])?
+                    '<img src="'.url('/storage/'.$row->user->image['file_path']).'" class="img-fluid" width="45px" height="45px" style="border-radius: 50%">':
+                    '<img src="'.url('https://ssl.gstatic.com/accounts/ui/avatar_2x.png').'" class="img-fluid" width="45px" height="45px" style="border-radius: 50%">';
 
-            })->rawColumns(['image']);
+            })
+            ->rawColumns(['image']);
+
 
     }
 
@@ -39,13 +41,14 @@ class StudentDataTable extends DataTable
      */
     public function query()
     {
-
+        $course_id = Course::where('slug_en',$this->slug)->orWhere('slug_en',$this->slug)->first()->id;
 
         return (Course::query()->with(['student_course' => function ($q) {
             $q->with(['user' => function ($qq) {
                 $qq->with('image');
             }]);
-        }])->where('user_id', auth()->id())->find(request('course_id')))->student_course;
+        }])->where('user_id', auth()->id())->find($course_id)->student_course);
+//        $course_id = \request('course_id');
         /*User::all();*/
 //        return $model->newQuery()->select('id', 'add-your-columns-here', 'created_at', 'updated_at');
 //        return Course::query()->where('user_id',auth()->id())->orderBy('id','desc');
@@ -65,23 +68,8 @@ class StudentDataTable extends DataTable
             ->parameters([
                 'dom' => 'Blfrtip',
                 "lengthMenu" => [[10, 25, 50, 100, -1], [10, 25, 50, 100, trans('datatables.all_records')]],
-                'buttons' => [
-                    ['extend' => 'print', 'className' => 'btn dark btn-outline', 'text' => '<i class="fa fa-print"></i> ' . trans('datatables.print')],
-                    ['extend' => 'excel', 'className' => 'btn green btn-outline', 'text' => '<i class="fa fa-file-excel-o"> </i> ' . trans('datatables.export_excel')],
-                    /*['extend' => 'pdf', 'className' => 'btn red btn-outline', 'text' => '<i class="fa fa-file-pdf-o"> </i> '.trans('datatables.export_pdf')],*/
-                    ['extend' => 'csv', 'className' => 'btn purple btn-outline', 'text' => '<i class="fa fa-file-excel-o"> </i> ' . trans('datatables.export_csv')],
-                    ['extend' => 'reload', 'className' => 'btn blue btn-outline', 'text' => '<i class="fa fa fa-refresh"></i> ' . trans('datatables.reload')],
-                    [
-                        'text' => '<i class="fa fa-trash"></i> ' . trans('datatables.delete'),
-                        'className' => 'btn red btn-outline deleteBtn',
-                    ], [
-                        'text' => '<i class="fa fa-plus"></i> ' . trans('datatables.add'),
-                        'className' => 'btn btn-primary',
-                        'action' => 'function(){
-                        	window.location.href =  "' . \URL::current() . '/create";
-                        }',
-                    ],
-                ],
+                "bFilter"=> false,
+                "bLengthChange"=> false,
                 'initComplete' => "function () {
                 this.api().columns([0]).every(function () {
                 var column = this;
@@ -141,7 +129,8 @@ class StudentDataTable extends DataTable
                 'title' => '',
                 'orderable'=>false
 
-            ],[
+            ],
+[
                 'name' => 'user.first_name',
                 'data' => 'user.first_name',
                 'title' => trans('admin.first_name'),
@@ -156,15 +145,6 @@ class StudentDataTable extends DataTable
                 'data' => 'user.email',
                 'title' => trans('admin.email'),
             ],
-            /*[
-                'name' => 'actions',
-                'data' => 'actions',
-                'title' => trans('admin.actions'),
-                'exportable' => false,
-                'printable' => false,
-                'searchable' => false,
-                'orderable' => false,
-            ]*/
 
 
         ];

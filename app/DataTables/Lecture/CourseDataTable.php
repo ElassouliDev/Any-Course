@@ -62,11 +62,10 @@ class CourseDataTable extends DataTable
     {
         $html =  $this->builder()
             ->columns($this->getColumns())
-            ->ajax('')
             ->parameters([
                 'dom' => 'Blfrtip',
-                "bFilter"=> false,
-                "bLengthChange"=> false,
+//                "bFilter"=> ['id'=>'search'],
+//                "bLengthChange"=> false,
                 "lengthMenu" => [[10, 25, 50,100, -1], [10, 25, 50,100, trans('datatables.all_records')]],
 
                 'order' => [[1, 'desc']],

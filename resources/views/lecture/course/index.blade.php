@@ -32,7 +32,7 @@
             <div class="row px-5 py-2 pb-5">
 
                 <div class="col-md-4">
-                    <input type="text" name="search" class="form-control"
+                    <input type="text" name="search" id="search" class="form-control"
                            placeholder="@lang('admin.search')">
                 </div>
 
@@ -252,6 +252,7 @@
         $(document).ready(function () {
             $('.js-example-basic-multiple').select2();
         });
+
     </script>
     <script>
 
@@ -329,5 +330,7 @@
         });
 
     </script>
-
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.0.3/css/buttons.dataTables.min.css">
+    <script src="https://cdn.datatables.net/buttons/1.0.3/js/dataTables.buttons.min.js"></script>
+    <script src="/vendor/datatables/buttons.server-side.js"></script>
 @endpush

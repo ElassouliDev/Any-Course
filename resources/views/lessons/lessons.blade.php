@@ -76,6 +76,28 @@
                         </a>
                     </li>
                 @endforeach
+                    <li  style="float: none">
+                        <a href="{{route('course.exam',$course['slug_'.app()->getLocale()])}}">
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1"
+                                            >
+                                    {{++$loop->index}}
+                                    .{{$lesson['title_'.app()->getLocale()]}}
+                                    {{--@if(!empty($lesson->student_watch_lesson) && $lesson->student_watch_lesson->count()>0 )
+                                        --}}{{--{{dd($lesson->student_watch_lesson->first()->is_completed)}}--}}{{--
+                                        @if($lesson->student_watch_lesson->first()->is_completed == 1)
+                                            <i class="fa fa-star text-light" style="color: white"></i>
+                                        @else
+                                            <i class="fa fa-hourglass-start" style="color: white"></i>
+                                        @endif
+                                    @endif--}}
+                                </label>
+
+
+                            </div>
+                        </a>
+                    </li>
             @else
                 <li style="float: none">
 

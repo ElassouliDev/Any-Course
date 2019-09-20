@@ -83,6 +83,9 @@ Route::group(
             return view('certification.index');
         });
 
+        Route::get('/course/{course_id}/exam/', 'View\LessonsController@exams')->name('course.exam'); //lessons list
+        Route::post('/course/{course_id}/exam/', 'View\LessonsController@answerExam'); //lessons list
+
 
         ////// end lecture
         Auth::routes();

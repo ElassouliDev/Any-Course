@@ -64,8 +64,8 @@ class CourseDataTable extends DataTable
             ->columns($this->getColumns())
             ->parameters([
                 'dom' => 'Blfrtip',
-//                "bFilter"=> ['id'=>'search'],
-//                "bLengthChange"=> false,
+                "bFilter"=> false,
+                "bLengthChange"=> false,
                 "lengthMenu" => [[10, 25, 50,100, -1], [10, 25, 50,100, trans('datatables.all_records')]],
 
                 'order' => [[1, 'desc']],

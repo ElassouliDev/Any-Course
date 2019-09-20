@@ -80,8 +80,7 @@
                         <a href="{{route('course.exam',$course['slug_'.app()->getLocale()])}}">
                             <div class="radio">
                                 <label>
-                                    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1"
-                                            >
+                                    <input type="radio" name="optionsRadios"  id="optionsRadios1" value="option1">
                                     {{1 + count($lessons)}}
                                     .{{__('course.exam')}}
                                     {{--@if(!empty($lesson->student_watch_lesson) && $lesson->student_watch_lesson->count()>0 )

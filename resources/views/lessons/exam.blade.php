@@ -254,7 +254,7 @@
             padding: 0;
         }
 
-        ul li {
+        #quiz ul li {
             color: #AAAAAA;
             display: block;
             position: relative;
@@ -264,12 +264,12 @@
             border-bottom: 1px solid #111111;
         }
 
-        ul li input[type=radio] {
+        #quiz ul li input[type=radio] {
             position: absolute;
             visibility: hidden;
         }
 
-        ul li label {
+        #quiz ul li label {
             display: block;
             position: relative;
             font-weight: 300;
@@ -318,15 +318,15 @@
             -webkit-transition: background 0.25s linear;
         }
 
-        input[type=radio]:checked ~ .check {
+        #quiz  input[type=radio]:checked ~ .check {
             border: 5px solid #00FF00;
         }
 
-        input[type=radio]:checked ~ .check::before {
+        #quiz input[type=radio]:checked ~ .check::before {
             background: #00FF00; /*attr('data-background');*/
         }
 
-        input[type=radio]:checked ~ label {
+        #quiz input[type=radio]:checked ~ label {
             color: #00FF00;
         }
 
@@ -416,11 +416,10 @@
             @if (count($lessons) > 0)
                 @foreach($lessons as $lesson)
                     <li class="{{--@if($lesson->id == $lesson_watching->id)active @endif--}}" style="float: none">
-                        <a href="@if(isset($lesson_watching)&& $lesson->id != $lesson_watching->id){{route('course_lesson',['course_id'=>$lesson->course['slug_'.app()->getLocale()],'lesson_id'=>$lesson['slug_'.app()->getLocale()]])}}@else # @endif">
+                        <a href="{{route('course_lesson',['course_id'=>$lesson->course['slug_'.app()->getLocale()],'lesson_id'=>$lesson['slug_'.app()->getLocale()]])}}">
                             <div class="radio">
                                 <label>
-                                    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1"
-                                           @if(isset($lesson_watching)&&$lesson->id == $lesson_watching->id)checked @endif >
+                                    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1">
                                     {{++$loop->index}}
                                     .{{$lesson['title_'.app()->getLocale()]}}
                                     @if(!empty($lesson->student_watch_lesson) && $lesson->student_watch_lesson->count()>0 )
@@ -444,7 +443,6 @@
                                 <label>
                                     <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1"
                                            checked >
-                                    >
                                     {{1 + count($lessons)}}
                                     .{{__('course.exam')}}
                                     {{--@if(!empty($lesson->student_watch_lesson) && $lesson->student_watch_lesson->count()>0 )
@@ -739,7 +737,7 @@
 */
                     } else {
                         $('#qid').html(questionNo + 1);
-                        $('input:radio').prop('checked', false);
+                        $('#quiz input:radio').prop('checked', false);
                         setTimeout(function () {
                             $('#quiz').show();
                             $('#loadbar').fadeOut();

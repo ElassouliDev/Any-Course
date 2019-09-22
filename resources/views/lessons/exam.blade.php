@@ -318,7 +318,7 @@
             -webkit-transition: background 0.25s linear;
         }
 
-        #quiz  input[type=radio]:checked ~ .check {
+        #quiz input[type=radio]:checked ~ .check {
             border: 5px solid #00FF00;
         }
 
@@ -437,28 +437,28 @@
                         </a>
                     </li>
                 @endforeach
-                    <li class="active" style="float: none">
-                        <a href="{{route('course.exam',$course['slug_'.app()->getLocale()])}}">
-                            <div class="radio">
-                                <label>
-                                    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1"
-                                           checked >
-                                    {{1 + count($lessons)}}
-                                    .{{__('course.exam')}}
-                                    {{--@if(!empty($lesson->student_watch_lesson) && $lesson->student_watch_lesson->count()>0 )
-                                        --}}{{--{{dd($lesson->student_watch_lesson->first()->is_completed)}}--}}{{--
-                                        @if($lesson->student_watch_lesson->first()->is_completed == 1)
-                                            <i class="fa fa-star text-light" style="color: white"></i>
-                                        @else
-                                            <i class="fa fa-hourglass-start" style="color: white"></i>
-                                        @endif
-                                    @endif--}}
-                                </label>
+                <li class="active" style="float: none">
+                    <a href="{{route('course.exam',$course['slug_'.app()->getLocale()])}}">
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1"
+                                       checked>
+                                {{1 + count($lessons)}}
+                                .{{__('course.exam')}}
+                                {{--@if(!empty($lesson->student_watch_lesson) && $lesson->student_watch_lesson->count()>0 )
+                                    --}}{{--{{dd($lesson->student_watch_lesson->first()->is_completed)}}--}}{{--
+                                    @if($lesson->student_watch_lesson->first()->is_completed == 1)
+                                        <i class="fa fa-star text-light" style="color: white"></i>
+                                    @else
+                                        <i class="fa fa-hourglass-start" style="color: white"></i>
+                                    @endif
+                                @endif--}}
+                            </label>
 
 
-                            </div>
-                        </a>
-                    </li>
+                        </div>
+                    </a>
+                </li>
             @else
                 <li style="float: none">
 
@@ -552,7 +552,8 @@
         </div>
     </div>
     </div>
-    <form method="post" enctype="multipart/form-data" id="AnswerQuestion" action="{{route('course.exam',$course['slug_'.app()->getLocale()])}}">
+    <form method="post" enctype="multipart/form-data" id="AnswerQuestion"
+          action="{{route('course.exam',$course['slug_'.app()->getLocale()])}}">
         @csrf
         <input type="hidden" name="data_answer" multiple value="">
     </form>
@@ -563,37 +564,10 @@
 
 
         $(document).on('click', '[data-action="new"]', function () {
-            // resetFormProductData($('#new-product'));
             $('#new').modal('show');
         });
 
 
-        //////////////// ------------------------------  create  course
-        // $(document).on('submit', 'form', function (event) {
-        //     event.preventDefault();
-        //     var $this = $(this);
-        //     notifications.loading.show();
-        //
-        //     var url = $(this).attr('action'),
-        //         request = $.ajax({
-        //             url: url,
-        //             method: "post",
-        //             data: new FormData(this),
-        //             dataType: "json",
-        //             cache: false,
-        //             contentType: false,
-        //             processData: false
-        //         });
-        //     request.done(function (response) {
-        //         $this.find('[type="reset"]').click();
-        //         $('.new').modal('hide');
-        //         http.success(response, true);
-        //         $('#dataTableBuilder').DataTable().ajax.reload();
-        //     });
-        //     request.fail(function (response, exception) {
-        //         http.fail(JSON.parse(response.responseText), true);
-        //     });
-        // });
         $(document).on('click', '[data-action="show"]', function () {
             notifications.loading.show();
             $('#show').remove();
@@ -628,9 +602,19 @@
     </script>
 
 
-    // exam script
+    {{--// exam script--}}
     <script>
         /*--------loader script-----------*/
+
+        $(document).on('submit', 'form#AnswerQuestion', function (event) {
+            event.preventDefault();
+            $this = $(this);
+            url = $(this).attr('action');
+            $.post(url, $(this).serialize(), function (response) {
+
+            })
+        });
+
         $(function () {
             var loading = $('#loadbar').hide();
             $(document)
@@ -702,7 +686,7 @@
                     questionNo++;
                     if ((questionNo + 1) > q.length) {
                         alert("Quiz completed, Now click ok to get your answer");
-                        var answerExam= [];
+                        var answerExam = [];
 
 
                         $('label.element-animation').unbind('click');
@@ -733,8 +717,8 @@
 
                         }, 1000);
 
-/*
-*/
+                        /*
+                        */
                     } else {
                         $('#qid').html(questionNo + 1);
                         $('#quiz input:radio').prop('checked', false);
@@ -747,7 +731,7 @@
                         $($('#option2').parent().find('label')).html(q[questionNo].C[1]);
                         $($('#option3').parent().find('label')).html(q[questionNo].C[2]);
                         $($('#option4').parent().find('label')).html(q[questionNo].C[3]);
-                   }
+                    }
                 }, 1000);
             });
 

@@ -16,7 +16,7 @@ class CourseController extends Controller
 
     function getEnrolledCoursesByUser()
     {
-        $courses = Auth::user()->student_course()->paginate(27);
+        $courses = Auth::user()->enrolled_course()->paginate(27);
         return view('student.course_enrolled',compact('courses'));
 
     }
@@ -24,7 +24,7 @@ class CourseController extends Controller
     function enroll_and_in_enroll_course($slug)
     {
         $course_id = Course::where('slug_'.app()->getLocale(),$slug)->first()->id;
-        Auth::user()->student_course()->toggle($course_id);
+        Auth::user()->enrolled_course()->toggle($course_id);
         return back();
 
     }

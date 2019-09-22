@@ -26,10 +26,11 @@ class StudentController extends Controller
 
     public function showCoursesStudents(StudentDataTable $studens ,$slug )
     {
-//        $course_id = \request('course_id');
-//        return dd($course_id);
+        $id = Course::where('slug_en',$slug)->orWhere('slug_en',$slug)->first()->id;
+
+
         $title = trans('admin.courses');
-        return $studens->with('slug',$slug)->render('lecture.student.index', compact('title','slug'));
+        return $studens->with('id',$id)->render('lecture.student.index', compact('title','slug'));
 
 //                dd(1);
     }

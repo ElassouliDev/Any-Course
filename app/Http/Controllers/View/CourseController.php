@@ -20,13 +20,13 @@ class CourseController extends Controller
     function course_details($slug)
     {
         $course_id = \App\Course::where('slug_ar' , $slug)->orWhere('slug_en',$slug)->first()->id;
-        $course = \App\Course::with(['student_course' => function ($q) use($course_id) {
+        $course = \App\Course::with(['students' => function ($q) use($course_id) {
             $q->where('course_student.user_id', Auth::id());
         }])->find($course_id);
-        $course['is_enroll'] = (count($course->student_course) > 0) ? true : false;
+        $course['is_enroll'] = (count($course->students) > 0) ? true : false;
 //        dd([$course->student_course,$course->is_enroll]);
 
-        unset($course->student_course);
+        unset($course->students);
         return view('courses.course_details', compact('course'));
     }
 

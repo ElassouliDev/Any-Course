@@ -23,8 +23,8 @@ class StudentDataTable extends DataTable
     {
         return datatables($query)
             ->editColumn('image', function ($row){
-                return isset($row->user->image['file_path'])?
-                    '<img src="'.url('/storage/'.$row->user->image['file_path']).'" class="img-fluid" width="45px" height="45px" style="border-radius: 50%">':
+                return isset($row->image['file_path'])?
+                    '<img src="'.url('/storage/'.$row->image['file_path']).'" class="img-fluid" width="45px" height="45px" style="border-radius: 50%">':
                     '<img src="'.url('https://ssl.gstatic.com/accounts/ui/avatar_2x.png').'" class="img-fluid" width="45px" height="45px" style="border-radius: 50%">';
 
             })
@@ -41,17 +41,9 @@ class StudentDataTable extends DataTable
      */
     public function query()
     {
-        $course_id = Course::where('slug_en',$this->slug)->orWhere('slug_en',$this->slug)->first()->id;
-
-        return (Course::query()->with(['student_course' => function ($q) {
-            $q->with(['user' => function ($qq) {
-                $qq->with('image');
-            }]);
-        }])->where('user_id', auth()->id())->find($course_id)->student_course);
-//        $course_id = \request('course_id');
-        /*User::all();*/
-//        return $model->newQuery()->select('id', 'add-your-columns-here', 'created_at', 'updated_at');
-//        return Course::query()->where('user_id',auth()->id())->orderBy('id','desc');
+        return (Course::with(['students' => function ($q) {
+            $q->with('image');
+        }])->where('courses.user_id', auth()->id())->find($this->id))->students;
 
     }
 
@@ -131,18 +123,18 @@ class StudentDataTable extends DataTable
 
             ],
 [
-                'name' => 'user.first_name',
-                'data' => 'user.first_name',
+                'name' => 'first_name',
+                'data' => 'first_name',
                 'title' => trans('admin.first_name'),
             ],
             [
-                'name' => 'user.last_name',
-                'data' => 'user.last_name',
+                'name' => 'last_name',
+                'data' => 'last_name',
                 'title' => trans('admin.last_name'),
             ],
             [
-                'name' => 'user.email',
-                'data' => 'user.email',
+                'name' => 'email',
+                'data' => 'email',
                 'title' => trans('admin.email'),
             ],
 

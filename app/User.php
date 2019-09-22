@@ -58,7 +58,7 @@ class User extends Authenticatable
         return $this->morphOne(File::class,'fileable');
     }//end of get image user
 
-    public function student_course(){
+    public function enrolled_course(){
         return $this->belongsToMany(Course::class,'course_student');
     } // end of get user course that have a course
 
@@ -75,4 +75,8 @@ class User extends Authenticatable
      function answer(){
         return $this->hasMany(Answer_user::class);
     }//end of get  answer user
+
+/*    function enrrole_course(){
+        return $this->hasMany(Answer_user::class);
+    }//end of get  answer user*/
 }

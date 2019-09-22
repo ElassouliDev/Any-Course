@@ -52,10 +52,15 @@ class Course extends Model
         return $this->belongsTo(Category::class);
     } // end of get category that have a course
 
-    public function student_course()
+    public function students()
     {
-        return $this->belongsToMany(Course::class, 'course_student');
-    } // end of get user course that have a course
+        return $this->belongsToMany(User::class, 'course_student')->withPivot('user_id');
+    } // end of get user course that have a course,
+
+  /*  public function student()
+    {
+        return $this->hasManyThrough(User::class, 'course_student');
+    } */// end of get user course that have a course
 
     public function exams()
     {

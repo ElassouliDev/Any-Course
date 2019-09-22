@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Dashboard;
 
+use App\Course;
+use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -13,12 +15,17 @@ class DashboardController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    
-    
+
+
     public function index()
     {
-        $title = 'Dashboard';
-        return view('dashboard.dashboard',compact('title'));
+        $title = trans('admin.dashboard');
+        $users = User::query();
+        $users_count = $users->count();
+        $lectures_count = $users->whereRoleIs('lecture')->count();
+        $students_count = $users->whereRoleIs('student')->count();
+        $courses_count = Course::count();
+        return view('dashboard.dashboard',compact('title','users_count','lectures_count','students_count','courses_count'));
     }
 
 

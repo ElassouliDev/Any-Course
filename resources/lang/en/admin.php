@@ -77,5 +77,13 @@ return [
 
 
     'price'=>'Price',
+    'status'=>'Status',
+    'is_paid'=>'Is Paid',
+    'parent'=>'Parent',
+    'count_users'=>'Count users',
+    'count_students'=>'Count students',
+    'count_lectures'=>'Count lectures',
+    'count_courses'=>'Count courses',
+    'more_info'=>'More info',
 
 ];

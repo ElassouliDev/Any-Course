@@ -25,5 +25,6 @@ return [
     'exam_lesson'=>'Exam lesson',
     'view_course'=>'View Course',
     'all_students_in_courses'=>'All students in your courses',
+    'course_enrolled'=>'Course enrolled',
 
 ];

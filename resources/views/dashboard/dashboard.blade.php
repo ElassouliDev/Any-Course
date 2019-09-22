@@ -15,17 +15,65 @@
         <section class="content">
             <div class="col-lg-3 col-xs-6">
                 <!-- small box -->
-                <div class="small-box bg-yellow">
+                <div class="small-box bg-blue">
                     <div class="inner">
-                        <h3>44</h3>
+                        <h3>{{$users_count}}</h3>
 
-                        <p>User Registrations</p>
+                        <p>@lang('admin.count_users')</p>
                     </div>
                     <div class="icon">
-                        <i class="fa fa-person-add"></i>
+                        <i class="fa fa-users"></i>
                     </div>
-                    <a href="#" class="small-box-footer">
-                        More info <i class="fa fa-arrow-circle-right"></i>
+                    <a href="{{route('dashboard.users.index')}}" class="small-box-footer">
+                        @lang('admin.more_info') <i class="fa fa-arrow-circle-right"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-xs-6">
+                <!-- small box -->
+                <div class="small-box bg-green">
+                    <div class="inner">
+                        <h3>{{$lectures_count}}</h3>
+
+                        <p>@lang('admin.count_lectures')</p>
+                    </div>
+                    <div class="icon">
+                        <i class="fa fa-users"></i>
+                    </div>
+                    <a href="{{route('dashboard.users.index')}}" class="small-box-footer">
+                        @lang('admin.more_info') <i class="fa fa-arrow-circle-right"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-xs-6">
+                <!-- small box -->
+                <div class="small-box bg-yellow">
+                    <div class="inner">
+                        <h3>{{$students_count}}</h3>
+
+                        <p>@lang('admin.count_students')</p>
+                    </div>
+                    <div class="icon">
+                        <i class="fa fa-users"></i>
+                    </div>
+                    <a href="{{route('dashboard.users.index')}}" class="small-box-footer">
+                        @lang('admin.more_info') <i class="fa fa-arrow-circle-right"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-xs-6">
+                <!-- small box -->
+                <div class="small-box bg-yellow">
+                    <div class="inner">
+                        <h3>{{$courses_count}}</h3>
+
+                        <p>@lang('admin.count_courses')</p>
+                    </div>
+                    <div class="icon">
+                        <i class="fa fa-users"></i>
+                    </div>
+                    <a href="{{route('dashboard.course.index')}}" class="small-box-footer">
+                        @lang('admin.more_info') <i class="fa fa-arrow-circle-right"></i>
                     </a>
                 </div>
             </div>

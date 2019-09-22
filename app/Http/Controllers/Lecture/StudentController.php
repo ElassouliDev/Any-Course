@@ -18,7 +18,11 @@ class StudentController extends Controller
 {
     public function showAllStudents(StudentsCoursesDataTable $studens )
     {
-
+//        return dd(Course::where('user_id',auth()->id())->with(['students' => function ($q) {
+//            $q->with('image');
+//        }])->get())->map(function ($d){
+//            return $d->students;
+//        });
         $title = trans('course.all_students_in_courses');
         return $studens->render('lecture.student.all', compact('title'));
 
@@ -32,7 +36,6 @@ class StudentController extends Controller
         $title = trans('admin.courses');
         return $studens->with('id',$id)->render('lecture.student.index', compact('title','slug'));
 
-//                dd(1);
     }
 
 

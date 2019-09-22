@@ -85,5 +85,8 @@ return [
     'count_lectures'=>'Count lectures',
     'count_courses'=>'Count courses',
     'more_info'=>'More info',
+    'Your answer'=>'Your answer',
+    'Result'=>'Result',
+    'Question No'=>'Question No.',
 
 ];

@@ -27,31 +27,21 @@ class StudentsCoursesDataTable extends DataTable
                     '<img src="'.url('https://ssl.gstatic.com/accounts/ui/avatar_2x.png').'" class="img-fluid" width="45px" height="45px" style="border-radius: 50%">';
 
             })
-            ->editColumn('course', function ($row){
-                return $row['title_'.app()->getLocale()];
-            })
-            ->editColumn('first_name', function ($row){
 
-               return $row->user->first_name;
-            })   ->editColumn('last_name', function ($row){
-
-               return $row->user->last_name;
-            })  ->editColumn('email', function ($row){
-
-               return $row->user->email;
-            })
             ->rawColumns(['image','actions']);
 
     }
 
     public function query()
     {
-
-        return (Course::query()->with(['student_course' => function ($q) {
-            $q->with(['user' => function ($qq) {
-                $qq->with('image');
-            }])->distinct();
-        }])->where('user_id', auth()->id())->get());
+        return User::with('image')->whereHas('enrolled_course',function ($q){
+            return $q->where('courses.user_id',auth()->id());
+        });
+        /*Course::query()->where('user_id',auth()->id())->with(['students' => function ($q) {
+            $q->with('image');
+        }])->get())->map(function ($d){
+            return $d->students;
+        });*/
 
     }
 
@@ -131,12 +121,7 @@ class StudentsCoursesDataTable extends DataTable
 
                 ],
 
-            [
-                 'name' => 'course',
-                'data' => 'course',
-                'title' => trans('admin.course'),
 
-                ],
 
 
             [

@@ -13,6 +13,25 @@
         h3 {
             color: #fff;
         }
+        /* width */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        /* Track */
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+            background: #888;
+        }
+
+        /* Handle on hover */
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
     </style>
 
 @endpush
@@ -55,23 +74,21 @@
                                         {{--<h3>The Complete Android N Developer Course</h3>--}}
                                         <h3>{{$course['title_'.app()->getLocale()]}}</h3>
                                         <p class="lead">
-                                            {{$course['description_'.app()->getLocale()]}}
-                                            {{--  Learn Android App Development with Android 7 Nougat by
-                                              building real apps including Uber, Whatsapp and Instagram !--}}
+                                            {{$course->category['title_'.app()->getLocale()]}}
                                         </p>
                                         <div>
                                                             <span>
-                                                                    <span class="fa fa-star checked"></span>
-                                                                    <span class="fa fa-star checked"></span>
-                                                                    <span class="fa fa-star checked"></span>
-                                                                    <span class="fa fa-star"></span>
-                                                                    <span class="fa fa-star"></span>
+                                                                    <span class="fa fa-star {{$course->ratingPercent(5) >=1 ? 'checked' : ''}}"></span>
+                                                                    <span class="fa fa-star {{$course->ratingPercent(5) >=2 ? 'checked' : ''}}"></span>
+                                                                    <span class="fa fa-star {{$course->ratingPercent(5) >=3 ? 'checked' : ''}}"></span>
+                                                                    <span class="fa fa-star {{$course->ratingPercent(5) >=4 ? 'checked' : ''}}"></span>
+                                                                    <span class="fa fa-star {{$course->ratingPercent(5) >=5 ? 'checked' : ''}}"></span>
                                                                     <small>
-                                                                     <b>3 (20,782 ratings)</b>
+                                                                     <b>{{$course->avgRating}} ( {{  $course->countPositive}} @lang('course.ratings') )</b>
                                                                     </small>
                                                             </span>
                                             <span>
-                                                                    112,366 students enrolled
+                                                                    {{$course->students->count()}} @lang('course.students enrolled')
                                                             </span>
                                         </div>
                                     </div>
@@ -86,7 +103,7 @@
 
                                                 @if($course->is_enroll == 1)
                                                     <i class="fa fa-play"></i>
-                                                    <span>Preview this course</span>
+                                                    <span>@lang('course.Preview this course')</span>
                                                 @endif
 
                                             </a>
@@ -109,7 +126,7 @@
                                                     @if($course->is_enroll == 0)
                                                         <button class="btn btn-lg btn-primary">@lang('course.enroll')</button>
                                                     @else
-                                                        <button class="btn btn-lg btn-danger">@lang('course.In-enroll')</button>
+                                                        <button class="btn btn-lg btn-danger">@lang('course.un-enroll')</button>
                                                         <a href="{{route('course_lesson',$course['slug_'.app()->getLocale()])}}"
                                                            class="btn btn-lg btn-info">@lang('course.watch_course')</a>
 

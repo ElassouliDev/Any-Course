@@ -4,7 +4,7 @@ return [
     'follow' => 'follow',
     'watch_course' => 'watch course',
     'enroll' => 'enroll',
-    'In-enroll' => 'In-enroll',
+    'un-enroll' => 'Un-enroll',
     'LatestCourses' => 'Latest Courses',
     'no_lessons' => 'Lessons will be added soon',
     'soon'=>'Soon',
@@ -26,5 +26,10 @@ return [
     'view_course'=>'View Course',
     'all_students_in_courses'=>'All students in your courses',
     'course_enrolled'=>'Course enrolled',
+    'ratings'=>'ratings',
+    'description'=>'Description',
+    'students enrolled'=>'students enrolled',
+    'Preview this course'=>'Preview this course',
+    'basic information'=>'Basic information',
 
 ];

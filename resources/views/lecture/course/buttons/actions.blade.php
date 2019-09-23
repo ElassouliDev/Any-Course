@@ -8,8 +8,9 @@
         </a>
         <ul class="dropdown-menu pull-right">
             <li>
-                <a href="#" data-link="{{route('course_lecture.show',$id)}}"  data-action="show"><i
-                            class="fa fa-eye"></i> {{trans('admin.show')}}</a>
+                @if(app()->getLocale()=='ar')<a  href="#" data-link="{{route('course_lecture.show',$slug_ar)}}" data-action="show">
+                    @else<a  href="#" data-link="{{ route('course_lecture.show',$slug_en)}}" data-action="show">@endif
+                        <i class="fa fa-eye"></i> {{trans('admin.show')}}</a>
             </li>
             <li class="divider"></li>
             <li>
@@ -24,13 +25,14 @@
             </li>
             <li>
              @if(app()->getLocale()=='ar')<a href="{{ route('exam.index',$slug_ar)}}">
-                @else<a href="{{ route('exam.index',$slug_en)}}">@endif<i
-                            class="fa fa-user"></i> {{trans('admin.add_exam')}}</a>
+                @else<a href="{{ route('exam.index',$slug_en)}}">@endif
+                        <i class="fa fa-user"></i> {{trans('admin.add_exam')}}</a>
             </li>
             <li class="divider"></li>
             <li>
-                <a href="#" data-link="{{ route('course_lecture.edit',$id)}}" data-action="show"><i
-                            class="fa fa-pencil-square-o"></i> {{trans('admin.edit')}}</a>
+                @if(app()->getLocale()=='ar')<a  href="#" data-link="{{route('course_lecture.edit',$slug_ar)}}" data-action="show">
+                    @else<a  href="#" data-link="{{ route('course_lecture.edit',$slug_en)}}" data-action="show">@endif
+            <i class="fa fa-pencil-square-o"></i> {{trans('admin.edit')}}</a>
             </li>
             <li class="divider"></li>
 

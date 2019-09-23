@@ -52,9 +52,10 @@ class CourseController extends Controller
 
     }
 
-    public function show($course_id)
+    public function show($slug)
     {
-        $course = Course::find($course_id);
+        $id = Course::where('slug_en',$slug)->orWhere('slug_ar',$slug)->first()->id;
+        $course = Course::find($id);
         $categories = Category::where('parent', 0)->get();
         $tags = Tag::all();
 
@@ -63,10 +64,11 @@ class CourseController extends Controller
         return response(['status' => true, 'show' => $show]);
     }
 
-    public function edit($course_id)
+    public function edit($slug)
     {
 
-        $course = Course::find($course_id);
+        $id = Course::where('slug_en',$slug)->orWhere('slug_ar',$slug)->first()->id;
+        $course = Course::find($id);
         $categories = Category::where('parent', 0)->get();
         $tags = Tag::all();
 
@@ -78,7 +80,8 @@ class CourseController extends Controller
 
     public function update(CourseRequest $courseRequest)
     {
-        $course =Course::find($courseRequest->course_id);
+        $id = Course::where('slug_en',$courseRequest->slug)->orWhere('slug_ar',$courseRequest->slug)->first()->id;
+        $course = Course::find($id);
         $course->update($courseRequest->all());
         if($courseRequest->hasFile('image')){
             $course->image()->update([
@@ -87,7 +90,6 @@ class CourseController extends Controller
 
 
         }
-//        dd($courseRequest->tags);
         $course->tags()->sync($courseRequest->tags);
         return response(['status' => true, 'message' => __('error.updated_successfully')]);
     }

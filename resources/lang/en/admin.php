@@ -87,6 +87,8 @@ return [
     'more_info'=>'More info',
     'Your answer'=>'Your answer',
     'Result'=>'Result',
+    'close'=>'Close',
     'Question No'=>'Question No.',
+    'students enrolled'=>'students enrolled',
 
 ];

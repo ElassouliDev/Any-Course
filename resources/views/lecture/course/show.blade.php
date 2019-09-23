@@ -1,11 +1,11 @@
-<div class="modal fade slide-up " id="show" role="dialog" aria-hidden="false">
+<div class="modal fade bd-example-modal-lg " tabindex="-1"  id="show" role="dialog" aria-hidden="true">
     <div class="modal-dialog modal-lg">
-        <div class="modal-content-wrapper">
+        <div class="modal-content-wrapper overflow-auto" role="document">
             <div class="modal-content">
-                <div class="modal-header clearfix text-left">
+                <div class="modal-header clearfix text-left" >
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i
                                 class="pg-close fs-14"></i></button>
-                    <h5 class="title">@lang('admin.show')
+                    <h5 class="modal-title"  id="exampleModalLongTitle">@lang('admin.show')
                     </h5>
                 </div>
                 <div class="modal-body">
@@ -91,17 +91,17 @@
                                         <div class="row">
                                             <div class="col-md-6 col-sm-12">
                                                 <label>@lang('admin.description_ar'):</label>
-                                                <textarea rows="4" name="description_ar"
+                                                <div rows="4" name="description_ar"
                                                           style="resize: none"
-                                                          class="form-control"
-                                                          disabled>{{$course->description_ar}}</textarea>
+                                                          class="form-control overflow-auto"
+                                                          disabled>{!! $course->description_ar !!}</div>
                                             </div>
                                             <div class="col-md-6  col-sm-12">
                                                 <label>@lang('admin.description_en'):</label>
-                                                <textarea rows="4" name="description_en"
+                                                <div rows="4" name="description_en"
                                                           style="resize: none"
-                                                          class="form-control"
-                                                          disabled>{{$course->description_en}}</textarea>
+                                                          class="form-control overflow-auto"
+                                                          disabled>{!! $course->description_en !!}</div>
                                             </div>
                                         </div>
                                     </div>

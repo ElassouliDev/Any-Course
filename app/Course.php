@@ -67,9 +67,10 @@ class Course extends Model
         return $this->hasMany(Exam::class);
     } // end of get course exam
 
-    /* public function student_watch_lesson(){
-             return $this->belongsToMany(Course::class,'lesson_student');
-         } // end of get user course that have a course*/
+    public function comments()
+    {
+        return $this->morphMany(Comment::class,'commentable');
+    }
 
 
 }

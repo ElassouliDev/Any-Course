@@ -86,6 +86,8 @@ Route::group(
         Route::get('/course/{course_id}/exam/', 'View\LessonsController@exams')->name('course.exam'); //lessons list
         Route::post('/course/{course_id}/exam/', 'View\LessonsController@answerExam'); //lessons list
 
+        Route::post('/course/{course_slug}/review/', 'Student\ReviewCourseController@review')->name('course.review'); //lessons list
+
 
         ////// end lecture
         Auth::routes();

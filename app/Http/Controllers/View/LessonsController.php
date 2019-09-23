@@ -35,7 +35,10 @@ class LessonsController extends Controller
         $lessons = \App\Lesson::with(['student_watch_lesson' => function ($q) {
             $q->select('*')->where('lesson_student.user_id', auth()->id());
         }])->where('course_id', $course_id)->orderBy('id', 'asc')->get();
-        return view('lessons.exam', compact('lessons', 'course'));
+
+        $user_review = $course->ratings()->where('author_id', \auth()->id())->first();
+        $user_comment_review = $course->comments()->where('user_id', \auth()->id())->first();
+        return view('lessons.exam', compact('lessons', 'course', 'user_comment_review', 'user_review'));
 
     }
 
@@ -44,13 +47,8 @@ class LessonsController extends Controller
         $course = Course::where('slug_ar', $slug)->orWhere('slug_en', $slug)->first();
         $exams = $course->exams;
         $data = explode(',', $request->data_answer);
-        $aa = [];
         for ($i = 0; $i < count($data); $i += 2) {
-
-           /* dd( $exams->where('id', $data[$i])->first()
-                ->option_exam->where('value_' . app()->getLocale(), $data[$i + 1])
-                ->first()->answer()->first());*/
-            $exam = $exams->where('id', $data[$i])->first()
+            $exams->where('id', $data[$i])->first()
                 ->option_exam->where('value_' . app()->getLocale(), $data[$i + 1])
                 ->first()->answer()->sync(auth()->id());
         }

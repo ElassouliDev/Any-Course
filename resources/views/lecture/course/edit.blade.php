@@ -157,8 +157,8 @@
                                                 <div class="row">
                                                     <div class="col-md-12">
                                                         <label>@lang('admin.description_ar'):</label>
-                                                        <textarea rows="4" name="description_ar" id="example">
-                                                     {{$course->description_ar}}
+                                                        <textarea rows="4" name="description_ar" id="example_ar" >
+{!! $course->description_ar !!}
 
                                                         </textarea>
                                                     </div>
@@ -166,12 +166,9 @@
                                                 </div>
                                                 <div class="row">
                                                     <div class="col-md-12">
-
-
                                                         <label>@lang('admin.description_en'):</label>
-                                                        <textarea  name="description_en" id="example">
-                                                            {{$course->description_en}}
-
+                                                        <textarea  name="description_en" id="example_en">
+{!! $course->description_en !!}
                                                         </textarea>
                                                     </div>
                                                 </div>
@@ -201,6 +198,18 @@
     </div>
 </div>
 <script>
-    var editor = new FroalaEditor('#example');
+    new FroalaEditor('#example_en');
+    new FroalaEditor('#example_ar');
+
+{{--new FroalaEditor('#example_en', {toolbarInline:false}, function () {--}}
+{{--        // Call the method inside the initialized event.--}}
+{{--        editor.html.insert('{!! $course->description_en !!}');--}}
+
+{{--    });--}}
+{{--new FroalaEditor('#example_ar', {toolbarInline:false}, function () {--}}
+{{--        // Call the method inside the initialized event.--}}
+{{--        editor.html.insert('{!! $course->description_ar !!}');--}}
+{{--    })--}}
+
 
 </script>

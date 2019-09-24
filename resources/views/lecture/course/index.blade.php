@@ -315,7 +315,31 @@
             $('#show').remove();
             $('.modal-backdrop.fade.show').remove();
         });
+        $(document).on('click', '[data-action="show"]', function () {
+            notifications.loading.show();
+            $('#show').remove();
+            $('.modal-backdrop.fade.show').remove();
 
+            var url = $(this).attr('data-link'),
+                request = $.ajax({
+                    url: url,
+                    method: "get",
+                    data: [],
+                    dataType: "json",
+                    cache: false,
+                    contentType: false,
+                    processData: false
+                });
+
+            request.done(function (response) {
+                $('html').append(response.show);
+                $('#show').modal('show');
+                $('.js-example-basic-multiple').select2();
+            });
+            request.fail(function (response, exception) {
+
+            });
+        });
 
         //////////////// ------------------------------  create  course
         $(document).on('submit', 'form', function (event) {
@@ -343,36 +367,7 @@
                  http.fail(JSON.parse(response.responseText), true);
             });
         });
-        $(document).on('click', '[data-action="show"]', function () {
-            notifications.loading.show();
-            $('#show').remove();
-            $('.modal-backdrop.fade.show').remove();
 
-            var url = $(this).attr('data-link'),
-                request = $.ajax({
-                    url: url,
-                    method: "get",
-                    data: [],
-                    dataType: "json",
-                    cache: false,
-                    contentType: false,
-                    processData: false
-                });
-            request.done(function (response) {
-                $('html').append(response.show);
-                $('#show').modal('show');
-                $('.js-example-basic-multiple').select2();
-
-                // $('#growls').remove();
-
-                // http.success(response, false);
-            });
-            request.fail(function (response, exception) {
-                // /$('#growls').remove();
-
-                // http.fail(JSON.parse(response.responseText), true);
-            });
-        });
     </script>
 
 

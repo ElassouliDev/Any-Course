@@ -10,7 +10,12 @@
 
             <li class="divider"></li>
             <li>
-                <a href="{{ route('exam.edit',['exam_id'=>$id,'course_id'=>$course_id])}}"><i
+                <a data-action="show" data-link="{{route('exam.show',['exam_id'=>$id,'course_id'=>$course_id])}}"><i
+                             class="fa fa-eye"></i> {{trans('admin.show')}}</a>
+            </li>
+            <li class="divider"></li>
+            <li>
+                <a data-action="show" data-link="{{ route('exam.edit',['exam_id'=>$id,'course_id'=>$course_id])}}"><i
                             class="fa fa-pencil-square-o"></i> {{trans('admin.edit')}}</a>
             </li>
             <li class="divider"></li>
@@ -33,7 +38,7 @@
                 <i class="fa fa-exclamation-triangle"></i> {{trans('admin.ask_del')}} {{trans('admin.id')}} ({{$id}}) ؟
             </div>
             <div class="modal-footer">
-                <form method="post" action="{{route('exam.destroy', ['exam_id'=>$id,'course_id'=>$course_id])}}">
+                <form method="post" data-action="delete" action="{{route('exam.destroy', ['exam_id'=>$id,'course_id'=>$course_id])}}">
                     @csrf
                     @method('delete')
                     <input type="submit" class="btn btn-danger" value="{{trans('admin.approval')}}">

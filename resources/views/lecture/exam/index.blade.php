@@ -2,7 +2,7 @@
 @section('title', $title)
 @push('css')
     <style>
-        #dataTableBuilder_wrapper,table,
+        #dataTableBuilder_wrapper, table,
         form .select2-container--default.select2-container--disabled,
         form .select2.select2-container.select2-container--default.select2-container--focus {
             width: 100% !important;
@@ -69,14 +69,14 @@
                 {!! $dataTable->table(["class"=> "table table-striped table-bordered table-hover table-checkable no-footer"],true) !!}
 
             </div>
-            <input type="hidden"name="slug" value="{{$slug}}">
+            <input type="hidden" name="slug" value="{{$slug}}">
 
         </div>
     </div>
 
 
 
-    <div class="modal fade slide-up " id="new" role="dialog" aria-hidden="false">
+    <div class="modal fade slide-up new " id="new" role="dialog" aria-hidden="false">
         <div class="modal-dialog modal-lg">
             <div class="modal-content-wrapper">
                 <div class="modal-content">
@@ -87,7 +87,8 @@
                         </h5>
                     </div>
                     <div class="modal-body">
-                        <form role="form" method="post" action="{{route('exam.store',['slug'=>$slug])}}" autocomplete="off"
+                        <form role="form" method="post" action="{{route('exam.store',['slug'=>$slug])}}"
+                              autocomplete="off"
                               enctype="multipart/form-data">
                             @csrf
                             <div class="form-group-attached">
@@ -113,18 +114,18 @@
                                         <div class="form-group form-group-default">
                                             <div class="row">
 
-                                            <div class="col-lg-6">
-                                                <label>@lang('course.answers_ar'):</label>
-                                                <div class="input-group">
+                                                <div class="col-lg-6">
+                                                    <label>@lang('course.answers_ar'):</label>
+                                                    <div class="input-group">
 
                                              <span class="input-group-addon">
 
                                               <input type="radio" name="is_correct" value="0">
                                                           </span>
-                                                    <input type="text" name="value_ar[]" class="form-control">
+                                                        <input type="text" name="value_ar[]" class="form-control">
+                                                    </div>
+                                                    <!-- /input-group -->
                                                 </div>
-                                                <!-- /input-group -->
-                                            </div>
                                                 <div class="col-lg-6">
                                                     <label>@lang('course.answers_en'):</label>
 
@@ -167,7 +168,7 @@
 
                                              <span class="input-group-addon">
 
-                                              <input type="radio" name="is_correct" value="2" >
+                                              <input type="radio" name="is_correct" value="2">
                                                           </span>
                                                         <input type="text" name="value_ar[]" class="form-control">
                                                     </div>
@@ -248,15 +249,14 @@
     <script>
 
         $(document).on('click', '[data-action="new"]', function () {
-            // resetFormProductData($('#new-product'));
             $('#new').modal('show');
         });
+
         $(document).on('click', '#customFile', function () {
-            // resetFormProductData($('#new-product'));
             $('#image-course').click();
         });
+
         $(document).on('click', '.reset_show', function () {
-            // resetFormProductData($('#new-product'));
             $('#show').modal('hide');
             $('#show').remove();
             $('.modal-backdrop.fade.show').remove();
@@ -264,10 +264,9 @@
 
 
         ////////////// ------------------------------  create  course
-        $(document).on('submit', '#new form', function (event) {
+        $(document).on('submit', '.new form', function (event) {
             event.preventDefault();
             var $this = $(this);
-            // notifications.loading.show();
 
             var url = $(this).attr('action'),
                 request = $.ajax({
@@ -280,8 +279,9 @@
                     processData: false
                 });
             request.done(function (response) {
-                $('#new [type="reset"]').click();
-                $('#new').modal('hide');
+
+                $($this).find('[type="reset"]').click();
+                $($this).parents('.new').modal('hide');
                 http.success(response, true);
 
                 $('#dataTableBuilder').DataTable().ajax.reload();
@@ -290,9 +290,12 @@
                 // http.fail(JSON.parse(response.responseText), true);
             });
         });
-        $(document).on('click', '[data-action="show"]', function () {
-            // notifications.loading.show();
 
+        $(document).on('click', '[data-action="show"]', function (event) {
+            event.preventDefault();
+            // notifications.loading.show();
+            $('#show').remove();
+            alert();
             var url = $(this).attr('data-link'),
                 request = $.ajax({
                     url: url,
@@ -306,17 +309,38 @@
             request.done(function (response) {
                 $('html').append(response.show);
                 $('#show').modal('show');
-                $('.js-example-basic-multiple').select2();
-
                 // $('#growls').remove();
-
-                http.success(response,true);
+                // http.success(response, true);
             });
+            /*
             request.fail(function (response, exception) {
                 // /$('#growls').remove();
 
                 // http.fail(JSON.parse(response.responseText), true);
-            });
+            });*/
+        });
+        $(document).on('submit', '[data-action="delete"]', function (event) {
+            event.preventDefault();
+            swal({
+                title: "@lang('admin.confirm_delete_notifications')",
+                icon: "warning",
+                dangerMode: true,
+                buttons: ["@lang('admin.cancel')", "@lang('admin.delete')"]
+            })
+
+                .then((process) => {
+                    if (!process) {
+
+                        return;
+                    }
+
+                    data = $(this).serialize();
+                    url = $(this).attr('action');
+                    $.post(url, data, function (response) {
+
+                        $('html').append(response.show);
+                    });
+                });
         });
 
     </script>

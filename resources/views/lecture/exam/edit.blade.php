@@ -73,7 +73,7 @@
                                         @endforeach
                                     </div>
                                 </div>
-                            </div>
+                            Div>/<
                             <div class="row btn-div mt-3">
                                 <div class="col-md-12 m-t-10 sm-m-t-10 m-auto btn-div">
                                     <button type="submit"
@@ -83,7 +83,7 @@
                                     </button>
                                 </div>
                             </div>
-                        </div>
+                        Div>/<
                     </form>
                 </div>
             </div>

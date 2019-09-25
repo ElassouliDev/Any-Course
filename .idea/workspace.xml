@@ -3,12 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="0b226c64-b40e-40b8-97c2-65fd791ffb0a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Course.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Course.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/DataTables/Lecture/StudentDataTable.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/DataTables/Lecture/StudentDataTable.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Lecture/StudentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Lecture/StudentController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Student/CourseController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Student/CourseController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/View/CourseController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/View/CourseController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/lecture/exam/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/lecture/exam/edit.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -37,15 +32,18 @@
     <session id="88611432">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="7" />
+          <entry key="project.closed" value="10" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.109" value="2" />
+          <entry key="project.open.time.116" value="1" />
           <entry key="project.open.time.12" value="1" />
           <entry key="project.open.time.167" value="1" />
+          <entry key="project.open.time.187" value="1" />
           <entry key="project.open.time.2" value="2" />
           <entry key="project.open.time.22" value="1" />
-          <entry key="project.open.time.3" value="1" />
+          <entry key="project.open.time.3" value="2" />
           <entry key="project.open.time.31" value="1" />
+          <entry key="project.open.time.4" value="2" />
           <entry key="project.open.time.5" value="1" />
           <entry key="project.open.time.53" value="1" />
           <entry key="project.open.time.55" value="1" />
@@ -55,165 +53,254 @@
           <entry key="project.open.time.8" value="1" />
           <entry key="project.open.time.82" value="1" />
           <entry key="project.open.time.90" value="1" />
-          <entry key="project.opened" value="19" />
+          <entry key="project.opened" value="24" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="css" value="1" />
-          <entry key="env" value="1" />
+          <entry key="env" value="2" />
           <entry key="html" value="4" />
           <entry key="js" value="9" />
-          <entry key="json" value="3" />
-          <entry key="php" value="148" />
+          <entry key="json" value="4" />
+          <entry key="php" value="188" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key=".env file" value="1" />
-          <entry key="Blade" value="63" />
+          <entry key=".env file" value="2" />
+          <entry key="Blade" value="78" />
           <entry key="CSS" value="1" />
           <entry key="HTML" value="4" />
-          <entry key="JSON" value="3" />
+          <entry key="JSON" value="4" />
           <entry key="JavaScript" value="9" />
-          <entry key="PHP" value="85" />
+          <entry key="PHP" value="110" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="7" />
           <entry key="js" value="2" />
-          <entry key="php" value="8820" />
-          <entry key="txt" value="627" />
+          <entry key="php" value="12418" />
+          <entry key="txt" value="789" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Blade" value="4983" />
+          <entry key="Blade" value="7163" />
           <entry key="JavaScript" value="2" />
-          <entry key="PHP" value="3837" />
-          <entry key="PLAIN_TEXT" value="634" />
+          <entry key="PHP" value="5255" />
+          <entry key="PLAIN_TEXT" value="796" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Lecture/StudentController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="29" selection-start-line="29" selection-end-line="29" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Course.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="161">
-              <caret line="60" column="5" selection-start-line="60" selection-start-column="5" selection-end-line="60" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/DataTables/Lecture/StudentDataTable.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-187">
-              <caret line="25" column="6" selection-start-line="25" selection-start-column="6" selection-end-line="28" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/User.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="226">
-              <caret line="60" column="35" selection-start-line="60" selection-start-column="20" selection-end-line="60" selection-end-column="35" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Lecture/CourseController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-89">
-              <caret line="65" column="36" selection-start-line="65" selection-start-column="36" selection-end-line="65" selection-end-column="36" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Lecture/ExamController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="173">
-              <caret line="23" column="50" selection-start-line="23" selection-start-column="50" selection-end-line="23" selection-end-column="50" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Lecture/LessonController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="224">
-              <caret line="55" column="18" selection-start-line="55" selection-start-column="18" selection-end-line="55" selection-end-column="18" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Student/CourseController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="305">
-              <caret line="29" column="5" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/View/CourseController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="415">
-              <caret line="28" column="31" selection-start-line="28" selection-start-column="31" selection-end-line="28" selection-end-column="31" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <splitter split-orientation="horizontal" split-proportion="0.73203886">
+      <split-first>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Lecture/ExamController.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="816">
+                  <caret line="59" selection-start-line="59" selection-end-line="59" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/resources/lang/ar/error.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="289">
+                  <caret line="17" column="20" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="25" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/resources/views/lecture/exam/show.blade.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="561">
+                  <caret line="33" column="34" selection-start-line="33" selection-start-column="34" selection-end-line="33" selection-end-column="34" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/resources/views/lecture/exam/edit.blade.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="285">
+                  <caret line="85" column="30" lean-forward="true" selection-start-line="85" selection-start-column="30" selection-end-line="85" selection-end-column="30" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/Exam.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="272">
+                  <caret line="16" selection-start-line="16" selection-end-line="16" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/resources/views/lecture/exam/buttons/actions.blade.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="697">
+                  <caret line="41" column="25" selection-start-line="41" selection-start-column="25" selection-end-line="41" selection-end-column="25" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Lecture/CourseController.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="1122">
+                  <caret line="73" selection-start-line="73" selection-end-line="73" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/.env">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="561">
+                  <caret line="33" selection-start-line="33" selection-end-line="33" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/database/migrations/2019_09_08_091840_create_option_exams_table.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="476">
+                  <caret line="30" column="7" selection-start-line="30" selection-start-column="7" selection-end-line="30" selection-end-column="7" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/resources/views/lecture/exam/index.blade.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="5814">
+                  <caret line="342" column="17" selection-start-line="342" selection-start-column="17" selection-end-line="342" selection-end-column="17" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Student/ReviewCourseController.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="612">
+                  <caret line="40" selection-start-line="40" selection-end-line="40" />
+                  <folding>
+                    <element signature="e#48#64#0#PHP" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/resources/views/lecture/course/index.blade.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="4012">
+                  <caret line="236" column="42" selection-start-line="236" selection-start-column="42" selection-end-line="236" selection-end-column="42" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/resources/views/layouts/layout.blade.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="220">
+                  <caret line="885" lean-forward="true" selection-start-line="885" selection-end-line="885" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/resources/views/lecture/student/index.blade.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="544">
+                  <caret line="32" column="50" selection-start-line="32" selection-start-column="50" selection-end-line="32" selection-end-column="50" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/Course.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="1122">
+                  <caret line="69" column="28" selection-start-line="69" selection-start-column="20" selection-end-line="69" selection-end-column="28" />
+                  <folding>
+                    <element signature="e#23#69#0#PHP" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/User.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="1190">
+                  <caret line="73" column="33" selection-start-line="73" selection-start-column="33" selection-end-line="73" selection-end-column="33" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/resources/views/lessons/list_question.blade.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="4522">
+                  <caret line="266" column="19" selection-start-line="266" selection-start-column="19" selection-end-line="266" selection-end-column="19" />
+                  <folding>
+                    <element signature="e#0#14226#0#Blade" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>lecture/course/</find>
-      <find>uti</find>
-      <find>data-correct</find>
-      <find>add</find>
-      <find>delete</find>
-      <find>edit</find>
-      <find>course</find>
-      <find>course.exam</find>
-      <find>Ghanem/Rating</find>
-      <find>publish</find>
-      <find>$lesson_watching</find>
-      <find>image-position</find>
-      <find>bg-for-submit-name</find>
-      <find>loading</find>
-      <find>loadbar</find>
-      <find>question</find>
-      <find>q</find>
-      <find>f-option</find>
-      <find>s-option</find>
-      <find>bootstrap</find>
-      <find>#s-option</find>
-      <find>element-animation</find>
-      <find>selector</find>
-      <find>option</find>
-      <find>checking</find>
-      <find>alert</find>
-      <find>radio</find>
       <find>$course</find>
-      <find>user</find>
-      <find>student_course</find>
+      <find>course</find>
+      <find>autosize</find>
+      <find>new-review</find>
+      <find>width</find>
+      <find>btn</find>
+      <find>true</find>
+      <find>rating</find>
+      <find>comments</find>
+      <find>modal</find>
+      <find>exampleModalLabel</find>
+      <find>@csrf</find>
+      <find>content</find>
+      <find>starrr</find>
+      <find>comment</find>
+      <find>review_content</find>
+      <find>text</find>
+      <find>h5</find>
+      <find>edit_question</find>
+      <find>edit_review</find>
+      <find>description_ar</find>
+      <find>form</find>
+      <find>textarea</find>
+      <find>exams</find>
+      <find>form&gt;</find>
+      <find>foreach</find>
+      <find>&lt;form</find>
+      <find>.new</find>
+      <find>new</find>
+      <find>exam</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -225,14 +312,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/public/resources/assets/js/globals.js" />
-        <option value="$PROJECT_DIR$/public/resources/assets/js/lists.js" />
-        <option value="$PROJECT_DIR$/public/resources/assets/js/notifications.js" />
-        <option value="$PROJECT_DIR$/resources/views/student/course_enrolled.blade.php" />
-        <option value="E:/desktop2019.2/MyEdu (1)/MyEdu/sign-in.html" />
-        <option value="$PROJECT_DIR$/resources/views/auth/student/login.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/student/settings.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Student/SettingController.php" />
         <option value="$PROJECT_DIR$/resources/views/layouts/aside.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/courses/course_details.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/lecture/course/update.blade.php" />
@@ -249,9 +328,7 @@
         <option value="$PROJECT_DIR$/config/laravellocalization.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Dashboard/CourseController.php" />
         <option value="$PROJECT_DIR$/resources/views/lecture/course/show.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/lecture/course/index.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Lecture/CourseController.php" />
-        <option value="$PROJECT_DIR$/app/Lesson.php" />
         <option value="$PROJECT_DIR$/resources/views/courses/all_courses.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/certifivation/certification.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/certification/index.blade.php" />
@@ -261,21 +338,31 @@
         <option value="$PROJECT_DIR$/resources/views/lecture/lesson/edit.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/lecture/lesson/index.blade.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_08_22_062031_create_courses_table.php" />
-        <option value="$PROJECT_DIR$/resources/views/lecture/course/edit.blade.php" />
         <option value="$PROJECT_DIR$/resources/lang/ar/admin.php" />
         <option value="$PROJECT_DIR$/resources/lang/en/admin.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Lecture/LessonController.php" />
-        <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/app/Option_exam.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/View/LessonsController.php" />
-        <option value="$PROJECT_DIR$/resources/views/lessons/lessons.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/lessons/exam.blade.php" />
-        <option value="$PROJECT_DIR$/app/Course.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Lecture/StudentController.php" />
         <option value="$PROJECT_DIR$/app/DataTables/Lecture/StudentDataTable.php" />
         <option value="$PROJECT_DIR$/app/User.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Student/CourseController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/View/CourseController.php" />
+        <option value="$PROJECT_DIR$/resources/views/lessons/lessons.blade.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2019_09_22_164813_alter_ratio_to_comments_table.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2019_09_19_210811_create_ratings_table.php" />
+        <option value="$PROJECT_DIR$/app/Course.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/View/LessonsController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Student/ReviewCourseController.php" />
+        <option value="$PROJECT_DIR$/resources/views/lessons/exam.blade.php" />
+        <option value="$PROJECT_DIR$/app/Lesson.php" />
+        <option value="$PROJECT_DIR$/resources/views/lecture/course/edit.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/lecture/course/index.blade.php" />
+        <option value="$PROJECT_DIR$/routes/web.php" />
+        <option value="$PROJECT_DIR$/resources/views/lecture/exam/show.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/lecture/exam/buttons/actions.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/lecture/exam/index.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Lecture/ExamController.php" />
+        <option value="$PROJECT_DIR$/resources/views/lecture/exam/edit.blade.php" />
       </list>
     </option>
   </component>
@@ -401,6 +488,8 @@
     </include_path>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="607" />
+    <option name="y" value="151" />
     <option name="width" value="683" />
     <option name="height" value="768" />
   </component>
@@ -423,28 +512,36 @@
             <path>
               <item name="anycourse" type="b2602c69:ProjectViewProjectNode" />
               <item name="anycourse" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="anycourse" type="b2602c69:ProjectViewProjectNode" />
               <item name="anycourse" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Http" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="anycourse" type="b2602c69:ProjectViewProjectNode" />
               <item name="anycourse" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Http" type="462c0819:PsiDirectoryNode" />
-              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="lecture" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="anycourse" type="b2602c69:ProjectViewProjectNode" />
               <item name="anycourse" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Http" type="462c0819:PsiDirectoryNode" />
-              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
-              <item name="View" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="lecture" type="462c0819:PsiDirectoryNode" />
+              <item name="course" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="anycourse" type="b2602c69:ProjectViewProjectNode" />
+              <item name="anycourse" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="lecture" type="462c0819:PsiDirectoryNode" />
+              <item name="exam" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -457,7 +554,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DatabaseDriversLRU" value="mariadb" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="SearchEverywhereHistoryKey" value="User&#9;null&#9;null&#10;Exa&#9;null&#9;null&#10;LessonsController&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/app/Http/Controllers/View/LessonsController.php&#10;composer&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/composer.json&#10;web&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/routes/web.php&#10;admin&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/resources/lang/ar/admin.php&#10;lesson&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/resources/views/lessons/lessons.blade.php&#10;less&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/resources/views/lessons/lessons.blade.php&#10;localeSessionRedirect&#9;null&#9;null&#10;LaravelLocalization&#9;null&#9;null&#10;error&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/resources/lang/ar/error.php&#10;resources&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/public/resources&#10;setting&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/resources/views/user/settings.blade.php&#10;SettingController&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/app/Http/Controllers/View/SettingController.php&#10;Logi&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/app/Http/Controllers/Auth/LoginController.php&#10;auth&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/app/Http/Controllers/View/AuthController.php&#10;login&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/resources/views/auth/login.blade.php&#10;login.&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/resources/views/auth/user/login.blade.php&#10;Lecture\CourseController&#9;null&#9;null&#10;courses_&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/database/migrations/2019_08_22_062031_create_courses_table.php&#10;asid&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/resources/views/layouts/aside.blade.php&#10;settings&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/resources/views/student/settings.blade.php&#10;lay&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/resources/views/layouts/layout.blade.php&#10;resour&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/public/resources&#10;http&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/public/resources/assets/js/http.js&#10;we&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/routes/web.php&#10;.env&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/.env&#10;reg&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/resources/views/auth/register.blade.php&#10;layout&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/resources/views/layouts/layout.blade.php&#10;Res&#9;null&#9;null&#10;CourseController&#9;null&#9;null&#10;notification.js&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/public/resources/assets/js/notifications.js&#10;lists&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/public/resources/assets/js/lists.js&#10;global.js&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/public/resources/assets/js/globals.js&#10;Q&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/resources/views/lessons/list_question.blade.php&#10;tagF&#9;null&#9;null&#10;tag&#9;null&#9;null&#10;Ques&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/app/Http/Controllers/Student/QuestionController.php&#10;ques&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/database/migrations/2019_09_04_183623_create_questions_table.php&#10;cours&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/resources/views/courses/all_courses.blade.php&#10;course&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/app/Course.php&#10;Course&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/app/Course.php&#10;Cour&#9;null&#9;null&#10;emmet&#9;ACTION&#9;Emmet&#10;les&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/app/Http/Controllers/Dashboard/LessonController.php&#10;cou&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/app/Http/Controllers/Dashboard/CourseController.php&#10;session&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/config/session.php&#10;config&#9;null&#9;null&#10;r&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/app/Http/Requests/UserRequest.php&#10;index&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/resources/views/dashboard/course/index.blade.php" />
+    <property name="SearchEverywhereHistoryKey" value="error&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/resources/lang/ar/error.php&#10;Exam&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/app/Exam.php&#10;exam&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/resources/views/lessons/exam.blade.php&#10;ExamController&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/app/Http/Controllers/Lecture/ExamController.php&#10;web&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/routes/web.php&#10;course&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/app/Http/Controllers/Lecture/CourseController.php&#10;.e&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/.env&#10;.&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/app/Lesson.php&#10;blad&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/resources/views/lecture/student/index.blade.php&#10;R&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/app/Http/Controllers/Student/ReviewCourseController.php&#10;question&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/resources/views/lessons/list_question.blade.php&#10;LessonsController&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/app/Http/Controllers/View/LessonsController.php&#10;Ex&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/app/Http/Controllers/Lecture/ExamController.php&#10;Comme&#9;null&#9;null&#10;Q&#9;null&#9;null&#10;User&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/app/User.php&#10;rating&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/database/migrations/2019_09_19_210811_create_ratings_table.php&#10;exa&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/resources/views/lessons/exam.blade.php&#10;ratin&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/database/migrations/2019_09_19_210811_create_ratings_table.php&#10;ratio&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/database/migrations/2019_09_22_164813_alter_ratio_to_comments_table.php&#10;composer&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/composer.json&#10;less&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/resources/views/lessons/lessons.blade.php&#10;Exa&#9;null&#9;null&#10;admin&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/resources/lang/ar/admin.php&#10;lesson&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/resources/views/lessons/lessons.blade.php&#10;localeSessionRedirect&#9;null&#9;null&#10;LaravelLocalization&#9;null&#9;null&#10;resources&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/public/resources&#10;setting&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/resources/views/user/settings.blade.php&#10;SettingController&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/app/Http/Controllers/View/SettingController.php&#10;Logi&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/app/Http/Controllers/Auth/LoginController.php&#10;auth&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/app/Http/Controllers/View/AuthController.php&#10;login&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/resources/views/auth/login.blade.php&#10;login.&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/resources/views/auth/user/login.blade.php&#10;Lecture\CourseController&#9;null&#9;null&#10;courses_&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/database/migrations/2019_08_22_062031_create_courses_table.php&#10;asid&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/resources/views/layouts/aside.blade.php&#10;settings&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/resources/views/student/settings.blade.php&#10;lay&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/resources/views/layouts/layout.blade.php&#10;resour&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/public/resources&#10;http&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/public/resources/assets/js/http.js&#10;we&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/routes/web.php&#10;.env&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/.env&#10;reg&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/resources/views/auth/register.blade.php&#10;layout&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/resources/views/layouts/layout.blade.php&#10;Res&#9;null&#9;null&#10;CourseController&#9;null&#9;null&#10;notification.js&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/public/resources/assets/js/notifications.js&#10;lists&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/public/resources/assets/js/lists.js&#10;global.js&#9;FILE&#9;file://C:/xampp/htdocs/anycourse/public/resources/assets/js/globals.js" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
@@ -469,6 +566,13 @@
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\anycourse\resources\views\lecture\exam" />
+      <recent name="C:\xampp\htdocs\anycourse\app\Http\Controllers\Student" />
+      <recent name="C:\xampp\htdocs\anycourse\resources\views\lessons" />
+      <recent name="C:\xampp\htdocs\anycourse\resources\views" />
+      <recent name="C:\xampp\htdocs\anycourse\resources\views\lecture\course" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\anycourse\app\Http\Controllers\Dashboard" />
       <recent name="C:\xampp\htdocs\anycourse\resources\views\user" />
@@ -476,126 +580,6 @@
       <recent name="C:\xampp\htdocs\anycourse\resources\views" />
       <recent name="C:\xampp\htdocs\anycourse\resources\views\courses" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\anycourse\resources\views\lessons" />
-      <recent name="C:\xampp\htdocs\anycourse\resources\views" />
-      <recent name="C:\xampp\htdocs\anycourse\resources\views\lecture\course" />
-      <recent name="C:\xampp\htdocs\anycourse\app\Http\Controllers\View" />
-      <recent name="C:\xampp\htdocs\anycourse\resources\views\auth\student" />
-    </key>
-  </component>
-  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
-    <UpdatedFiles>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Updated from server" />
-        <option name="myStatusName" value="Changed on server" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="CHANGED_ON_SERVER" />
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Updated" />
-          <option name="myStatusName" value="Changed" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="UPDATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/Http/Controllers/Dashboard/DashboardController.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/resources/lang/en/admin.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/resources/lang/en/course.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/resources/views/dashboard/dashboard.blade.php</PATH>
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Created" />
-          <option name="myStatusName" value="Created" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="CREATED" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Deleted" />
-          <option name="myStatusName" value="Deleted" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="true" />
-          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Restored" />
-          <option name="myStatusName" value="Will be restored" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="RESTORED" />
-        </FILE-GROUP>
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Modified" />
-        <option name="myStatusName" value="Modified" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MODIFIED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Skipped" />
-        <option name="myStatusName" value="Skipped" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="SKIPPED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with conflicts" />
-        <option name="myStatusName" value="Will be merged with conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_CONFLICTS" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with tree conflicts" />
-        <option name="myStatusName" value="Merged with tree conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with property conflicts" />
-        <option name="myStatusName" value="Will be merged with property conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged" />
-        <option name="myStatusName" value="Will be merged" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Not in repository" />
-        <option name="myStatusName" value="Not in repository" />
-        <option name="mySupportsDeletion" value="true" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="UNKNOWN" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Locally added" />
-        <option name="myStatusName" value="Locally added" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="LOCALLY_ADDED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Locally removed" />
-        <option name="myStatusName" value="Locally removed" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="LOCALLY_REMOVED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Switched" />
-        <option name="myStatusName" value="Switched" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="SWITCHED" />
-      </FILE-GROUP>
-    </UpdatedFiles>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -689,7 +673,12 @@
       <workItem from="1568990101970" duration="16171000" />
       <workItem from="1569013818779" duration="1404000" />
       <workItem from="1569050169804" duration="356000" />
-      <workItem from="1569136936935" duration="6546000" />
+      <workItem from="1569136936935" duration="12834000" />
+      <workItem from="1569158902803" duration="17025000" />
+      <workItem from="1569248484492" duration="14797000" />
+      <workItem from="1569306928087" duration="11053000" />
+      <workItem from="1569351136902" duration="4799000" />
+      <workItem from="1569395045923" duration="1023000" />
     </task>
     <task id="LOCAL-00004" summary="profile super admin #6">
       <created>1566254260160</created>
@@ -922,11 +911,39 @@
       <option name="project" value="LOCAL" />
       <updated>1569014603218</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="[X] fix problem in view students in course">
+      <created>1569145186713</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1569145186713</updated>
+    </task>
+    <task id="LOCAL-00038" summary="[X] fix problem in view lesson &#10;[X] covert exam to ajax">
+      <created>1569151057324</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1569151057324</updated>
+    </task>
+    <task id="LOCAL-00039" summary="[X] create and update and show review  for course #29">
+      <created>1569275683516</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1569275683516</updated>
+    </task>
+    <task id="LOCAL-00040" summary="[X] add crud exam by ajax">
+      <created>1569355780543</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1569355780543</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="136617000" />
+    <option name="totallyTimeSpent" value="191602000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -939,9 +956,32 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22768533" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22390318" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="npm" order="2" side_tool="true" />
+      <window_info id="Favorites" order="3" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49848714" weight="0.3276923" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="LuaCheck" order="7" />
+      <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.49924356" weight="0.32923076" />
+      <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.60665655" visible="true" weight="0.32923076" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.39334342" side_tool="true" visible="true" weight="0.32923076" />
+      <window_info anchor="bottom" id="Docker" order="12" show_stripe_button="false" />
+      <window_info active="true" anchor="bottom" id="Command Line Tools Console" order="13" sideWeight="0.49924356" visible="true" weight="0.32923076" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.24962178" />
+      <window_info anchor="right" id="Database" order="3" weight="0.0816944" />
+    </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22087745" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -955,15 +995,15 @@
       <window_info anchor="bottom" id="LuaCheck" order="7" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.607413" weight="0.23846154" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.607413" visible="true" weight="0.0" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5015129" side_tool="true" weight="0.23846154" />
       <window_info anchor="bottom" id="Docker" order="12" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Command Line Tools Console" order="13" sideWeight="0.49924356" weight="0.0" />
+      <window_info active="true" anchor="bottom" id="Command Line Tools Console" order="13" sideWeight="0.49924356" visible="true" weight="0.32923076" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.24962178" />
-      <window_info anchor="right" id="Database" order="3" visible="true" weight="0.06505295" />
-    </layout>
+      <window_info anchor="right" id="Database" order="3" weight="0.0816944" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -991,11 +1031,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add page crud of course #9&#10;[X]create course controller&#10;[X]update course migration" />
-    <MESSAGE value="[X]update request user &#10;[X]add user id to update form  &#10;[X]add request  user to update method" />
-    <MESSAGE value="[X]add data table  to project&#10;[X]update all table to use datatable" />
-    <MESSAGE value="update" />
-    <MESSAGE value="add page crud of setting #2" />
     <MESSAGE value="AA" />
     <MESSAGE value="create view courses blade" />
     <MESSAGE value="update course controller" />
@@ -1016,121 +1051,24 @@
     <MESSAGE value="[X] create crud lesson for lecture" />
     <MESSAGE value="[X] update course status &#10;[X] add course status to lang" />
     <MESSAGE value="[X] fix problem in exam route" />
-    <option name="LAST_COMMIT_MESSAGE" value="[X] fix problem in exam route" />
+    <MESSAGE value="[X] fix problem in view students in course" />
+    <MESSAGE value="[X] fix problem in view lesson &#10;[X] covert exam to ajax" />
+    <MESSAGE value="[X] fix problem in view lesson &#10;[X] create and update review for course" />
+    <MESSAGE value="[X] create and update and show review  for course #29" />
+    <MESSAGE value="[X] add crud exam by ajax" />
+    <option name="LAST_COMMIT_MESSAGE" value="[X] add crud exam by ajax" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/database/migrations/2019_09_08_091840_create_option_exams_table.php</url>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/resources/views/partials/_errors.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/mcamara/laravel-localization/src/Mcamara/LaravelLocalization/Facades/LaravelLocalization.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="39" lean-forward="true" selection-start-line="13" selection-start-column="39" selection-end-line="13" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/mcamara/laravel-localization/src/Mcamara/LaravelLocalization/Middleware/LocaleSessionRedirect.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="48" column="103" selection-start-line="48" selection-start-column="101" selection-end-line="48" selection-end-column="103" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/View/SettingController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="64" lean-forward="true" selection-start-line="64" selection-end-line="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Dashboard/CourseController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="115" column="5" lean-forward="true" selection-start-line="115" selection-start-column="5" selection-end-line="115" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/lang/ar/error.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="31" selection-start-line="5" selection-start-column="31" selection-end-line="5" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Requests/CourseRequest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="38" selection-start-line="38" selection-end-line="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/lecture/course/show.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="25" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/laravellocalization.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5117">
-          <caret line="301" column="37" selection-start-line="301" selection-start-column="37" selection-end-line="301" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/app.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1445">
-          <caret line="85" column="49" selection-start-line="85" selection-start-column="49" selection-end-line="85" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/certifivation/settings.blade.php" />
-    <entry file="file://$PROJECT_DIR$/resources/views/courses/all_courses.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="53" lean-forward="true" selection-start-line="6" selection-start-column="53" selection-end-line="6" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/auth/login.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="38" column="28" lean-forward="true" selection-end-line="88" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/auth/user/login.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3009">
-          <caret line="177" column="41" lean-forward="true" selection-end-line="254" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../projectMina/js/owl.carousel.min.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../projectMina/quiz.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2856">
-          <caret line="168" column="39" selection-start-line="168" selection-start-column="39" selection-end-line="168" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../projectMina/js/quiz.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2091">
-          <caret line="123" column="32" selection-start-line="123" selection-start-column="32" selection-end-line="123" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/lecture/student/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/certification/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="358">
@@ -1147,13 +1085,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/lecture/lesson/show.blade.php">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Lesson.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="30" column="24" selection-start-line="30" selection-start-column="20" selection-end-line="30" selection-end-column="24" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/layouts/layout_lessons.blade.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -1190,20 +1121,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/lecture/course/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1394">
-          <caret line="82" column="83" selection-start-line="82" selection-start-column="83" selection-end-line="82" selection-end-column="83" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/composer.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="39" selection-start-line="19" selection-start-column="39" selection-end-line="19" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/search_datatable/js/search.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
@@ -1218,52 +1135,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/lecture/course/edit.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="296">
-          <caret line="124" column="57" selection-start-line="124" selection-start-column="56" selection-end-line="124" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layouts/layout.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="27" column="30" lean-forward="true" selection-start-line="27" selection-start-column="30" selection-end-line="27" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/lessons/lessons.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1394">
-          <caret line="82" column="77" selection-start-line="82" selection-start-column="77" selection-end-line="82" selection-end-column="77" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/DataTables/Lecture/ExamDataTable.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="510">
           <caret line="32" column="71" selection-start-line="32" selection-start-column="71" selection-end-line="32" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/web.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1445">
-          <caret line="85" column="87" selection-start-line="85" selection-start-column="87" selection-end-line="85" selection-end-column="98" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/View/LessonsController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="833">
-          <caret line="52" column="59" selection-start-line="52" selection-start-column="59" selection-end-line="52" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Exam.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="34" selection-start-line="10" selection-start-column="30" selection-end-line="10" selection-end-column="34" />
         </state>
       </provider>
     </entry>
@@ -1281,62 +1156,68 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/lessons/exam.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="425" column="78" lean-forward="true" selection-start-line="425" selection-end-line="426" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/search_datatable/css/search.css">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Lecture/StudentController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="29" selection-start-line="29" selection-end-line="29" />
+        <state relative-caret-position="255">
+          <caret line="33" selection-start-line="33" selection-end-line="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/lessons/lessons.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="918">
+          <caret line="54" column="33" selection-start-line="54" selection-start-column="33" selection-end-line="54" selection-end-column="33" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/DataTables/Lecture/StudentDataTable.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-187">
+        <state relative-caret-position="374">
           <caret line="25" column="6" selection-start-line="25" selection-start-column="6" selection-end-line="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Course.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="60" column="5" selection-start-line="60" selection-start-column="5" selection-end-line="60" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="226">
-          <caret line="60" column="35" selection-start-line="60" selection-start-column="20" selection-end-line="60" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Lecture/CourseController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-89">
-          <caret line="65" column="36" selection-start-line="65" selection-start-column="36" selection-end-line="65" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Lecture/ExamController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
-          <caret line="23" column="50" selection-start-line="23" selection-start-column="50" selection-end-line="23" selection-end-column="50" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Lecture/LessonController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
+        <state relative-caret-position="782">
           <caret line="55" column="18" selection-start-line="55" selection-start-column="18" selection-end-line="55" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/View/CourseController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="33" selection-start-line="33" selection-end-line="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2019_09_18_171334_add_column_slug_multple_lang_to_table_lessons.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2019_09_18_170659_add_column_slug_multple_lang.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/composer.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="19" column="49" selection-start-line="19" selection-start-column="49" selection-end-line="19" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2019_09_19_210811_create_ratings_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="19" column="5" lean-forward="true" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/ghanem/rating/src/Traits/Ratingable.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="211">
+          <caret line="14" column="36" selection-start-line="14" selection-start-column="36" selection-end-line="14" selection-end-column="36" />
         </state>
       </provider>
     </entry>
@@ -1347,10 +1228,194 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/View/CourseController.php">
+    <entry file="file://$PROJECT_DIR$/vendor/ghanem/rating/src/Models/Rating.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="415">
-          <caret line="28" column="31" selection-start-line="28" selection-start-column="31" selection-end-line="28" selection-end-column="31" />
+        <state relative-caret-position="412">
+          <caret line="33" selection-start-line="33" selection-end-line="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2019_09_22_164813_alter_ratio_to_comments_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="33" column="11" selection-start-line="33" selection-end-line="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Student/QuestionController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="22" column="22" selection-start-line="22" selection-start-column="22" selection-end-line="22" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/View/LessonsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="714">
+          <caret line="60" selection-start-line="60" selection-end-line="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/lecture/course/edit.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="73" column="26" selection-start-line="73" selection-start-column="26" selection-end-line="73" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Student/CommentController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="16" column="36" selection-start-line="16" selection-start-column="36" selection-end-line="16" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1054">
+          <caret line="62" column="82" selection-start-line="62" selection-start-column="68" selection-end-line="62" selection-end-column="82" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Lesson.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/lessons/exam.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="123">
+          <caret line="677" column="5" selection-start-line="677" selection-start-column="5" selection-end-line="677" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Lecture/ExamController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="816">
+          <caret line="59" selection-start-line="59" selection-end-line="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/lang/ar/error.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="20" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/lecture/exam/show.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="33" column="34" selection-start-line="33" selection-start-column="34" selection-end-line="33" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Exam.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/lecture/exam/buttons/actions.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="697">
+          <caret line="41" column="25" selection-start-line="41" selection-start-column="25" selection-end-line="41" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Lecture/CourseController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1122">
+          <caret line="73" selection-start-line="73" selection-end-line="73" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.env">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="33" selection-start-line="33" selection-end-line="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2019_09_08_091840_create_option_exams_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="30" column="7" selection-start-line="30" selection-start-column="7" selection-end-line="30" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/lecture/exam/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5814">
+          <caret line="342" column="17" selection-start-line="342" selection-start-column="17" selection-end-line="342" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Student/ReviewCourseController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="612">
+          <caret line="40" selection-start-line="40" selection-end-line="40" />
+          <folding>
+            <element signature="e#48#64#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/lecture/course/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4012">
+          <caret line="236" column="42" selection-start-line="236" selection-start-column="42" selection-end-line="236" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/lecture/student/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="32" column="50" selection-start-line="32" selection-start-column="50" selection-end-line="32" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Course.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1122">
+          <caret line="69" column="28" selection-start-line="69" selection-start-column="20" selection-end-line="69" selection-end-column="28" />
+          <folding>
+            <element signature="e#23#69#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1190">
+          <caret line="73" column="33" selection-start-line="73" selection-start-column="33" selection-end-line="73" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/lessons/list_question.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4522">
+          <caret line="266" column="19" selection-start-line="266" selection-start-column="19" selection-end-line="266" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#14226#0#Blade" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/layout.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="885" lean-forward="true" selection-start-line="885" selection-end-line="885" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/lecture/exam/edit.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="85" column="30" lean-forward="true" selection-start-line="85" selection-start-column="30" selection-end-line="85" selection-end-column="30" />
         </state>
       </provider>
     </entry>

@@ -30,7 +30,7 @@
     <link href="{{asset('course_assets/css/style.bundle.css')}}" rel="stylesheet" type="text/css"/>
     <link href="{{asset('course_assets/css/style.css')}}" rel="stylesheet" type="text/css"/>
     <!--end::Base Styles -->
-    <link rel="shortcut icon" href="{{url($icon == 'image/icon.png' ? 'course_assets/img/logo/logo.png' : 'storage/'.$icon)}}"/>
+    <link rel="shortcut icon" href="{{ url($icon)}}"/>
     <link href="{{ asset('resources/assets/css/custom.css') }}" rel="stylesheet" type="text/css">
 
     @stack('css')
@@ -52,7 +52,7 @@
                         <div class="m-stack m-stack--ver m-stack--general">
                             <div class="m-stack__item m-stack__item--middle m-brand__logo">
                                 <a href="{{url('/')}}" class="m-brand__logo-wrapper">
-                                    <img alt="" src="{{url($logo == 'image/logo.png' ?  'public/course_assets/image/logo/logo.png' : 'storage/'.$logo)}}" width="50" height="40"/>
+                                    <img alt="" src="{{url($logo)}}" width="50" height="40"/>
                                     <span>{{$site_title}}</span>
                                 </a>
                             </div>

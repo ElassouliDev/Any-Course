@@ -23,11 +23,11 @@ class BaseController extends Controller
         $this->siteCopyright = Cache::remember('websiteCopyright', 60 * 60 * 24, function () {
         return Setting::where('key','copyright')->first()->value ?? 'Copyright © 2014-2016';
         });
-        $this->icon = Cache::remember('icon', 60 * 60 * 24, function () {
-        return (Setting::where('key','icon')->first()->value) != 'image/icon.png' ? 'image/icon.png' :  'storage'.(Setting::where('key','icon')->first()->value) ?? 'image/icon.png'  ;
+        $this->icon = Cache::remember('icon', 60, function () {
+        return (Setting::where('key','icon')->first()->value) == 'image/icon.png' ? 'storage/'.(Setting::where('key','icon')->first()->value):  'storage'.(Setting::where('key','icon')->first()->value) ?? 'image/icon.png'  ;
         });
-        $this->logo = Cache::remember('logo', 60 * 60 * 24, function () {
-            return (Setting::where('key','logo')->first()->value) == 'image/logo.png' ? 'image/logo.png' :  'storage'.(Setting::where('key','icon')->first()->value) ?? 'image/logo.png'  ;
+        $this->logo = Cache::remember('logo', 60, function () {
+            return (Setting::where('key','logo')->first()->value) == 'image/logo.png' ? 'image/logo.png' :  'storage/'.(Setting::where('key','icon')->first()->value) ?? 'image/logo.png'  ;
         });
         View::share('site_title',$this->siteTitle);
         View::share('site_copyright',$this->siteCopyright);

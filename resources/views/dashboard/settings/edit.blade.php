@@ -12,7 +12,7 @@
             <ol class="breadcrumb">
                 <li><a href="{{ url('dashboard') }}"><i class="fa fa-dashboard"></i> @lang('admin.dashboard')</a></li>
                 <li><a href="{{ route('dashboard.settings.index') }}"> @lang('admin.settings')</a></li>
-                <li class="active">@lang('admin.add')</li>
+                <li class="active">@lang('admin.edit')</li>
             </ol>
         </section>
 
@@ -21,7 +21,7 @@
             <div class="box box-primary">
 
                 <div class="box-header">
-                    <h3 class="box-title">@lang('admin.add')</h3>
+                    <h3 class="box-title">@lang('admin.edit')</h3>
                 </div><!-- end of box header -->
 
                 <div class="box-body">
@@ -40,7 +40,13 @@
 
                         <div class="form-group">
                             <label>@lang('admin.value')</label>
-                            <input type="text" name="value" class="form-control" value="{{ $setting->value }}">
+                            @if($setting->key === 'icon' )
+                                <input type="file" name="icon" class="form-control" required>
+                            @elseif($setting->key === 'logo' )
+                                <input type="file" name="logo" class="form-control" required>
+                                @else
+                                <input type="text" name="value" class="form-control" value="{{ $setting->value }}" required>
+                            @endif
                         </div>
 
 

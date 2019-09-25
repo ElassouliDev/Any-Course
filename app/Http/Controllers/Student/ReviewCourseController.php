@@ -4,11 +4,12 @@ namespace App\Http\Controllers\Student;
 
 use App\Comment;
 use App\Course;
+use App\Http\Controllers\BaseController;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class ReviewCourseController extends Controller
+class ReviewCourseController extends BaseController
 {
 
     /***

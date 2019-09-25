@@ -4,11 +4,12 @@ namespace App\Http\Controllers\Dashboard;
 
 use App\Category;
 use App\DataTables\CategoryDataTable;
+use App\Http\Controllers\BaseController;
 use App\Http\Requests\CategoryRequest;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class CategoryController extends Controller
+class CategoryController extends BaseController
 {
 
     public function __construct()

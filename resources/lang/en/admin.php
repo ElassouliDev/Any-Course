@@ -90,5 +90,7 @@ return [
     'close'=>'Close',
     'Question No'=>'Question No.',
     'students enrolled'=>'students enrolled',
+    'certificate'=>'Certificate',
+    'version'=>'Version',
 
 ];

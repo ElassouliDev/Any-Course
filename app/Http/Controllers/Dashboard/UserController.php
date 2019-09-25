@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Dashboard;
 
 use App\DataTables\UserDataTable;
+use App\Http\Controllers\BaseController;
 use App\Http\Requests\UserRequest;
 use App\Role;
 use App\User;
@@ -10,7 +11,7 @@ use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 use App\Http\Controllers\Controller;
 
-class UserController extends Controller
+class UserController extends BaseController
 {
     /**
      * Display a listing of the resource.

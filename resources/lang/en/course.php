@@ -31,5 +31,6 @@ return [
     'students enrolled'=>'students enrolled',
     'Preview this course'=>'Preview this course',
     'basic information'=>'Basic information',
+    'My Profile'=>'My Profile',
 
 ];

@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers\View;
 
+use App\Http\Controllers\BaseController;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 
-class CourseController extends Controller
+class CourseController extends BaseController
 {
     function course_list()
     {

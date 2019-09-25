@@ -68,6 +68,7 @@ Route::group(
         Route::post('lesson/watch/', 'Student\CourseController@student_watch_lesson')->name('student.lesson.watch');
         Route::post('lesson/complete/', 'Student\CourseController@complete_watch_lesson')->name('student.lesson.complete');
         Route::get('student/course/', 'Student\CourseController@getEnrolledCoursesByUser')->name('student.courses.enrolled');
+        Route::resource('student/certificate/', 'Student\CertificateController');
         /// end student
 
         ////////////////////////////start setting user

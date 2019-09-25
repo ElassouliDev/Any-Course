@@ -3,11 +3,12 @@
 namespace App\Http\Controllers\Dashboard;
 
 use App\Course;
+use App\Http\Controllers\BaseController;
 use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class DashboardController extends Controller
+class DashboardController extends BaseController
 {
     /**
      * Display a listing of the resource.

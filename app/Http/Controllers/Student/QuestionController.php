@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers\Student;
 
+use App\Http\Controllers\BaseController;
 use App\Http\Requests\View\QuestionRequest;
 use App\Question;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 
-class QuestionController extends Controller
+class QuestionController extends BaseController
 {
 
     function lesson_question($lesson_id)

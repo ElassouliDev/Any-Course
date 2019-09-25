@@ -6,13 +6,14 @@ use App\Category;
 use App\Course;
 use App\DataTables\CourseDataTable;
 use App\File;
+use App\Http\Controllers\BaseController;
 use App\Http\Requests\CourseRequest;
 use App\Tag;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Storage;
 
-class CourseController extends Controller
+class CourseController extends BaseController
 {
     /**
      * Display a listing of the resource.

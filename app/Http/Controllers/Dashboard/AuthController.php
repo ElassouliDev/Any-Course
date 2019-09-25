@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers\Dashboard;
 
+use App\Http\Controllers\BaseController;
 use App\Role;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 
-class AuthController extends Controller
+class AuthController extends BaseController
 {
 
     public function __construct()

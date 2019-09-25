@@ -6,6 +6,7 @@ use App\Category;
 use App\Course;
 use App\DataTables\Lecture\CourseDataTable;
 use App\File;
+use App\Http\Controllers\BaseController;
 use App\Http\Requests\CourseRequest;
 use App\Http\Requests\View\LessonRequest;
 use App\Lesson;
@@ -13,7 +14,7 @@ use App\Tag;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class LessonController extends Controller
+class LessonController extends BaseController
 {
     public function index($slug)
     {

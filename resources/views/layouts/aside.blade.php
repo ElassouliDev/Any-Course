@@ -115,6 +115,15 @@
             </li>
 
             <li class="m-menu__item">
+                <a href="{{route('index')}}" class="m-menu__link">
+                    <i class="m-menu__link-icon flaticon-settings"></i>
+                    <span class="m-menu__link-text">
+										@lang('course.certificate')
+									</span>
+                </a>
+            </li>
+
+            <li class="m-menu__item">
                 <a href="{{route('user.setting')}}" class="m-menu__link">
                     <i class="m-menu__link-icon flaticon-settings"></i>
                     <span class="m-menu__link-text">

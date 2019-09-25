@@ -3,11 +3,12 @@
 namespace App\Http\Controllers\View;
 
 use App\Course;
+use App\Http\Controllers\BaseController;
 use App\Lesson;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class LessonsController extends Controller
+class LessonsController extends BaseController
 {
     function lessons_list($slug, $lesson_slug = '')
     {

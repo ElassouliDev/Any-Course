@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers\Dashboard;
 
+use App\Http\Controllers\BaseController;
 use App\Http\Requests\SettingRequest;
 use App\Setting;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class SettingController extends Controller
+class SettingController extends BaseController
 {
     /**
      * Display a listing of the resource.
@@ -16,15 +17,7 @@ class SettingController extends Controller
 
      */
 
-        public function __construct()
-    {
-        //create read update delete
-        $this->middleware(['permission:read_settings'])->only('index');
-        $this->middleware(['permission:create_settings'])->only('create');
-        $this->middleware(['permission:update_settings'])->only('edit');
-        $this->middleware(['permission:delete_settings'])->only('destroy');
 
-    }//end of constructor
 
     public function index(Request $request)
     {
@@ -62,6 +55,7 @@ class SettingController extends Controller
     public function store(SettingRequest $settingRequest)
     {
        $settingRequest = $settingRequest->all();
+
         $setting = Setting::create($settingRequest);
 
         session()->flash('success', __('error.added_successfully'));
@@ -101,7 +95,16 @@ class SettingController extends Controller
     public function update(SettingRequest $settingRequest, Setting $setting)
     {
         $settingRequest = $settingRequest->all();
-
+        if(request()->hasFile('icon'))
+        {
+            \Storage::has($setting->value) ? \Storage::delete($setting->value) : '';
+            $icon = request()->file('icon')->store('image') ;
+            $settingRequest['value'] = $icon;
+        }elseif (request()->hasFile('logo')){
+            \Storage::has($setting->value) ? \Storage::delete($setting->value) : '';
+            $logo = request()->file('logo')->store('image') ;
+            $settingRequest['value'] = $logo;
+        }
         $setting->update($settingRequest);
 
         session()->flash('success', __('error.updated_successfully'));

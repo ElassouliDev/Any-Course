@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Dashboard;
 use App\Course;
 use App\DataTables\QuestionDataTable;
 use App\File;
+use App\Http\Controllers\BaseController;
 use App\Http\Requests\QuestionRequest;
 use App\Lesson;
 use App\Question;
@@ -12,7 +13,7 @@ use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class QuestionController extends Controller
+class QuestionController extends BaseController
 {
     /**
      * Display a listing of the resource.

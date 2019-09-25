@@ -8,13 +8,14 @@ use App\DataTables\Lecture\CourseDataTable;
 use App\DataTables\Lecture\StudentDataTable;
 use App\DataTables\Lecture\StudentsCoursesDataTable;
 use App\File;
+use App\Http\Controllers\BaseController;
 use App\Http\Requests\CourseRequest;
 use App\Tag;
 use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class StudentController extends Controller
+class StudentController extends BaseController
 {
     public function showAllStudents(StudentsCoursesDataTable $studens )
     {

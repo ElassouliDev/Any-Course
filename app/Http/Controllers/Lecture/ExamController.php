@@ -8,6 +8,7 @@ use App\DataTables\Lecture\CourseDataTable;
 use App\DataTables\Lecture\ExamDataTable;
 use App\Exam;
 use App\File;
+use App\Http\Controllers\BaseController;
 use App\Http\Requests\CourseRequest;
 use App\Http\Requests\View\ExamRequest;
 use App\Option_exam;
@@ -15,7 +16,7 @@ use App\Tag;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class ExamController extends Controller
+class ExamController extends BaseController
 {
     public function index(ExamDataTable $exam, $slug)
     {

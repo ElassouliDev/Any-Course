@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\View;
 
 use App\File;
+use App\Http\Controllers\BaseController;
 use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -12,7 +13,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 
-class SettingController extends Controller
+class SettingController extends BaseController
 {
 
     function index()

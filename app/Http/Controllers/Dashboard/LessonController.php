@@ -5,13 +5,14 @@ namespace App\Http\Controllers\Dashboard;
 use App\Course;
 use App\DataTables\LessonDataTable;
 use App\File;
+use App\Http\Controllers\BaseController;
 use App\Http\Requests\LessonRequest;
 use App\Lesson;
 use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class LessonController extends Controller
+class LessonController extends BaseController
 {
     /**
      * Display a listing of the resource.

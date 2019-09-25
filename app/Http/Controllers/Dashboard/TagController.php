@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers\Dashboard;
 
+use App\Http\Controllers\BaseController;
 use App\Http\Requests\TagRequest;
 use App\Tag;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class TagController extends Controller
+class TagController extends BaseController
 {
     //update commit github
 

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Dashboard;
 use App\Course;
 use App\DataTables\CommentDataTable;
 use App\File;
+use App\Http\Controllers\BaseController;
 use App\Http\Requests\CommentRequest;
 use App\Lesson;
 use App\Comment;
@@ -12,7 +13,7 @@ use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class CommentController extends Controller
+class CommentController extends BaseController
 {
     /**
      * Display a listing of the resource.

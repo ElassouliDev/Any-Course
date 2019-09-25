@@ -26,8 +26,8 @@ class CourseRequest extends FormRequest
         return [
             'title_ar' => 'string|required',
             'title_en' => 'string|required',
-            'description_ar' => 'string|required',
-            'description_en' => 'string|required',
+            'description_ar' => 'required',
+            'description_en' => 'required',
             'category_id' => 'numeric|required',
             'is_paid' => 'boolean|required',
             'price' => 'numeric|nullable',

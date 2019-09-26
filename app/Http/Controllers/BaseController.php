@@ -31,6 +31,10 @@ class BaseController extends Controller
            $setting_logo =Setting::where('key','logo')->first()->value;
             return   $setting_logo =='image/logo.png' ? 'image/logo.png' :  'storage/'. $setting_logo  ?? 'image/logo.png'  ;
         });
+        $this->Version = Cache::remember('version', 60, function () {
+           $setting_version =Setting::where('key','version')->first()->value;
+            return   $setting_version??'1.0'   ;
+        });
         View::share('site_title',$this->siteTitle);
         View::share('site_copyright',$this->siteCopyright);
         View::share('site_version',$this->Version);

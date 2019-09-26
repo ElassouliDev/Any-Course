@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Ghanem\Rating\Models\Rating;
 use Illuminate\Database\Eloquent\Model;
 
 class Comment extends Model
@@ -15,5 +16,11 @@ class Comment extends Model
     public function user()
     {
         return $this->belongsTo(User::class);
+    }//end of get user for comment
+
+
+    public function rating()
+    {
+        return $this->belongsTo(Rating::class);
     }//end of get user for comment
 }

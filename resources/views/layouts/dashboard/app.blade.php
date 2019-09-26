@@ -213,7 +213,7 @@
 
 
                                 <a href="{{ route('logout') }}" class="btn btn-default btn-flat" onclick="event.preventDefault();
-                                                 document.getElementById('logout-form').submit();">@lang('auth.logout')</a>
+                                                 document.getElementById('logout-form').submit();">@lang('admin.logout')</a>
 
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                     @csrf

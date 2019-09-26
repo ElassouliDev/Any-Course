@@ -4,7 +4,7 @@ return [
     'login'=>'Login',
     'register'=>'Register',
     'dashboard'=>'Dashboard',
-
+    'logout' => 'Logout',
     'search'=>'Search',
     'create_user'=>'Create User',
     'first_name'=>'First Name',

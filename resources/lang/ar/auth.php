@@ -26,4 +26,6 @@ return [
     'dont_account'=>'لا يوجد لديك حساب ؟',
     'already_account'=>'لديك حساب!',
     'create_account'=>'سجل',
+    'password_confirmation'=>'تأكيد كلمة المرور',
+    'logout'=>'تسجيل خروج',
 ];

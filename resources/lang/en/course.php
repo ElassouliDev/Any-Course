@@ -14,7 +14,7 @@ return [
     'content'=>'Content',
     'title'=>'Title',
     'lesson_course'=>'Lesson questions',
-    'course_management'=>'Course Management',
+    'course_management'=>'Courses Management',
     'question_en'=>'Question english',
     'question_ar'=>'Question arabic',
     'answers_ar'=>'Answers arabic',

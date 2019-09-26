@@ -32,5 +32,6 @@ return [
     'Preview this course'=>'Preview this course',
     'basic information'=>'Basic information',
     'My Profile'=>'My Profile',
+    'certificate'=>'Certificate',
 
 ];

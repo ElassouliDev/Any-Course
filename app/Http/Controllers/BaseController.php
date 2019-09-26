@@ -24,10 +24,12 @@ class BaseController extends Controller
         return Setting::where('key','copyright')->first()->value ?? 'Copyright © 2014-2016';
         });
         $this->icon = Cache::remember('icon', 60, function () {
-        return (Setting::where('key','icon')->first()->value) == 'image/icon.png' ? 'storage/'.(Setting::where('key','icon')->first()->value):  'storage'.(Setting::where('key','icon')->first()->value) ?? 'image/icon.png'  ;
+            $setting_icon = Setting::where('key','icon')->first()->value;
+        return $setting_icon == 'image/icon.png' ? 'image/icon.png'  :  'storage/'.$setting_icon ?? 'image/icon.png'  ;
         });
         $this->logo = Cache::remember('logo', 60, function () {
-            return (Setting::where('key','logo')->first()->value) == 'image/logo.png' ? 'image/logo.png' :  'storage/'.(Setting::where('key','icon')->first()->value) ?? 'image/logo.png'  ;
+           $setting_logo =Setting::where('key','logo')->first()->value;
+            return   $setting_logo =='image/logo.png' ? 'image/logo.png' :  'storage/'. $setting_logo  ?? 'image/logo.png'  ;
         });
         View::share('site_title',$this->siteTitle);
         View::share('site_copyright',$this->siteCopyright);

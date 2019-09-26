@@ -92,5 +92,9 @@ return [
     'students enrolled'=>'students enrolled',
     'certificate'=>'Certificate',
     'version'=>'Version',
+    'Settings'=>'Settings',
+    'Password'=>'Password',
+    'certificate'=>'Certificate',
+    'Personal Information'=>'Personal Information',
 
 ];

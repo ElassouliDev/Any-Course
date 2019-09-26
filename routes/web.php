@@ -40,60 +40,70 @@ Route::group(
             Route::resource('/comment', 'Dashboard\CommentController');
 
         });
-        Route::post('/course_enroll/{course_id}', 'Student\CourseController@enroll_and_in_enroll_course')->name('user.course_enroll');
-        Route::get('/course', 'View\CourseController@course_list');
-        Route::get('/course/{course_id}', 'View\CourseController@course_details')->name('course_details'); //course details
-        Route::get('/course/{course_id}/lesson/{lesson_id?}', 'View\LessonsController@lessons_list')->name('course_lesson'); //lessons list
-        Route::get('/', 'View\CourseController@course_list');
-        Route::get('lesson/{lesson_id}/question', 'Student\QuestionController@lesson_question')->name('list_question');
-        Route::post('lesson/question/comment', 'Student\CommentController@store_question')->name('new_comment_question');
-        Route::post('lesson/question', 'Student\QuestionController@store')->name('new_question');
-        Route::post('lesson/comment', 'Student\CommentController@store')->name('new_comment');
+        Route::group(['middleware' => ['auth']], function () {
 
+            Route::get('student/course/', 'Student\CourseController@getEnrolledCoursesByUser')->name('student.courses.enrolled');
+
+
+
+            Route::post('/course_enroll/{course_slug}', 'Student\CourseController@enroll_and_in_enroll_course')->name('user.course_enroll');
+            Route::get('/course/{course_slug}/lesson/{lesson_slug?}', 'View\LessonsController@lessons_list')->name('course_lesson')->middleware('lesson'); //lessons list
+            Route::get('lesson/{lesson_id}/question', 'Student\QuestionController@lesson_question')->name('list_question')->middleware('lesson');
+            Route::post('lesson/question/comment', 'Student\CommentController@store_question')->name('new_comment_question')->middleware('lesson');
+            Route::post('lesson/question', 'Student\QuestionController@store')->name('new_question')->middleware('lesson');
+            Route::post('lesson/comment', 'Student\CommentController@store')->name('new_comment')->middleware('lesson');
+
+
+            // setting user
+            Route::get('setting/', 'View\SettingController@index')->name('user.setting');
+            Route::put('setting/update_info', 'View\SettingController@updateUserInformation')->name('user.updateInfo');
+            Route::put('setting/update_password', 'View\SettingController@updateUserPassword')->name('user.updatePassword');
+        });
+        Route::get('/course', 'View\CourseController@course_list');
+        Route::get('/course/{course_slug}', 'View\CourseController@course_details')->name('course_details'); //course details
+        Route::get('/', 'View\CourseController@course_list');
 
         ////////////////////////// lecture
-        Route::get('lecture/course', 'Lecture\CourseController@index')->name('course_lecture.index');
-        Route::post('lecture/course', 'Lecture\CourseController@store')->name('course_lecture.store');
-        Route::get('lecture/course/{course_id}', 'Lecture\CourseController@show')->name('course_lecture.show');
-        Route::get('lecture/course/{course_id}/edit', 'Lecture\CourseController@edit')->name('course_lecture.edit');
-        Route::put('lecture/course/update', 'Lecture\CourseController@update')->name('course_lecture.update');
-        Route::get('lecture/courses/student/{course_id}', 'Lecture\StudentController@showCoursesStudents')->name('course.student.show');
-        Route::get('lecture/all/students', 'Lecture\StudentController@showAllStudents')->name('course.all.student');
-        Route::get('lecture/course/{course_id}/exam', 'Lecture\ExamController@index')->name('course.exam.show');
-        Route::resource('lecture/course/{course_id}/exam', 'Lecture\ExamController');
-        Route::resource('lecture/course/{slug}/lesson', 'Lecture\LessonController');
+            Route::group(['middleware' => ['lecture']], function() {
 
+                Route::get('lecture/course', 'Lecture\CourseController@index')->name('course_lecture.index');
+            Route::post('lecture/course', 'Lecture\CourseController@store')->name('course_lecture.store');
+            Route::get('lecture/course/{course_slug}', 'Lecture\CourseController@show')->name('course_lecture.show');
+            Route::get('lecture/course/{course_slug}/edit', 'Lecture\CourseController@edit')->name('course_lecture.edit');
+            Route::put('lecture/course/update', 'Lecture\CourseController@update')->name('course_lecture.update');
+            Route::get('lecture/courses/student/{course_slug}', 'Lecture\StudentController@showCoursesStudents')->name('course.student.show');
+            Route::get('lecture/all/students', 'Lecture\StudentController@showAllStudents')->name('course.all.student');
+            Route::get('lecture/course/{course_slug}/exam', 'Lecture\ExamController@index')->name('course.exam.show');
+            Route::resource('lecture/course/{course_slug}/exam', 'Lecture\ExamController');
+            Route::resource('lecture/course/{course_slug}/lesson', 'Lecture\LessonController');
 
+        });
         /////////////////////////// student
-        Route::post('lesson/watch/', 'Student\CourseController@student_watch_lesson')->name('student.lesson.watch');
-        Route::post('lesson/complete/', 'Student\CourseController@complete_watch_lesson')->name('student.lesson.complete');
-        Route::get('student/course/', 'Student\CourseController@getEnrolledCoursesByUser')->name('student.courses.enrolled');
-        Route::resource('student/certificate/', 'Student\CertificateController');
+        Route::group(['middleware' => ['student']], function() {
+            Route::post('lesson/watch/', 'Student\CourseController@student_watch_lesson')->name('student.lesson.watch');
+            Route::post('lesson/complete/', 'Student\CourseController@complete_watch_lesson')->name('student.lesson.complete');
+            Route::resource('student/certificate/', 'Student\CertificateController')->middleware('lesson');
+            Route::get('/course/{course_slug}/exam/', 'View\LessonsController@exams')->name('course.exam'); //lessons list
+            Route::post('/course/{course_slug}/exam/', 'View\LessonsController@answerExam'); //lessons list
+
+            Route::post('/course/{course_slug}/review/', 'Student\ReviewCourseController@review')->name('course.review'); //lessons list
+
+
+
+
+        });
         /// end student
 
-        ////////////////////////////start setting user
-        ///
-        Route::get('setting/', 'View\SettingController@index')->name('user.setting');
-        Route::put('setting/update_info', 'View\SettingController@updateUserInformation')->name('user.updateInfo');
-        Route::put('setting/update_password', 'View\SettingController@updateUserPassword')->name('user.updatePassword');
+
 
 
         Route::get('dashboard/login', 'Dashboard\AuthController@getLoginPage')->name('dashboard.login');
         Route::post('dashboard/login', 'Dashboard\AuthController@login');
-        Route::get('certification', function () {
-            return view('certification.index');
-        });
-
-        Route::get('/course/{course_id}/exam/', 'View\LessonsController@exams')->name('course.exam'); //lessons list
-        Route::post('/course/{course_id}/exam/', 'View\LessonsController@answerExam'); //lessons list
-
-        Route::post('/course/{course_slug}/review/', 'Student\ReviewCourseController@review')->name('course.review'); //lessons list
 
 
-        ////// end lecture
         Auth::routes();
 
         ///Deploy
-        Route::get('deploy', 'Deploy@index');
+        Route::get('deploy', 'Deploy@index')->middleware('superAdmin');
 
     });

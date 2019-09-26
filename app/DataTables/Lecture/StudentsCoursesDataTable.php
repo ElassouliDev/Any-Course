@@ -37,11 +37,6 @@ class StudentsCoursesDataTable extends DataTable
         return User::with('image')->whereHas('enrolled_course',function ($q){
             return $q->where('courses.user_id',auth()->id());
         });
-        /*Course::query()->where('user_id',auth()->id())->with(['students' => function ($q) {
-            $q->with('image');
-        }])->get())->map(function ($d){
-            return $d->students;
-        });*/
 
     }
 

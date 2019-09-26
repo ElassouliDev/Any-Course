@@ -638,7 +638,7 @@
                                         data-dropdown-toggle="click">
                                         <a href="#" class="m-nav__link m-dropdown__toggle">
 												<span class="m-topbar__userpic">
-													<img src="{{url('storage/'.auth()->user()->image->file_path)}}"
+													<img src="{{isset(auth()->user()->image->file_path) ? url('storage/'.auth()->user()->image->file_path) : 'https://ssl.gstatic.com/accounts/ui/avatar_2x.png' }}"
                                                          class="m--img-rounded m--marginless m--img-centered" alt="{{auth()->user()->full_name()}}"/>
 												</span>
                                             <span class="m-topbar__username m--hide">
@@ -653,7 +653,7 @@
                                                      style="background: url(assets/app/media/img/misc/user_profile_bg.jpg); background-size: cover;">
                                                     <div class="m-card-user m-card-user--skin-dark">
                                                         <div class="m-card-user__pic">
-                                                            <img src="{{url('storage/'.auth()->user()->image->file_path)}}"
+                                                            <img src="{{isset(auth()->user()->image->file_path) ? url('storage/'.auth()->user()->image->file_path) : 'https://ssl.gstatic.com/accounts/ui/avatar_2x.png'}}"
                                                                  class="m--img-rounded m--marginless" alt=""/>
                                                         </div>
                                                         <div class="m-card-user__details">

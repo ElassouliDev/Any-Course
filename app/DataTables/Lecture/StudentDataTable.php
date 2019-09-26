@@ -44,7 +44,6 @@ class StudentDataTable extends DataTable
         return (Course::with(['students' => function ($q) {
             $q->with('image');
         }])->where('courses.user_id', auth()->id())->find($this->id))->students;
-
     }
 
     /**

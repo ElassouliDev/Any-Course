@@ -34,7 +34,7 @@ Route::group(
             Route::get('/users/profile/{id}', 'Dashboard\UserController@profile')->name('users.profile');
 
             Route::post('/users/profile/{id}/edit', 'Dashboard\UserController@update_profile')->name('users.update_profile');
-            Route::resource('/settings', 'Dashboard\SettingController');
+            Route::resource('/settings', 'Dashboard\SettingController')->except('create','delete');
             Route::resource('/question', 'Dashboard\QuestionController');
             Route::resource('/exam', 'Dashboard\ExamController');
             Route::resource('/comment', 'Dashboard\CommentController');

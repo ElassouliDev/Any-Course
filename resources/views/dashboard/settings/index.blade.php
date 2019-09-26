@@ -36,11 +36,11 @@
 
                             <div class="col-md-4">
                                 <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i> @lang('admin.search')</button>
-                                @if (auth()->user()->hasPermission('create_settings'))
-                                    <a href="{{ route('dashboard.settings.create') }}" class="btn btn-primary"><i class="fa fa-plus"></i> @lang('admin.add')</a>
-                                @else
-                                    <a href="#" class="btn btn-primary disabled"><i class="fa fa-plus"></i> @lang('admin.add')</a>
-                                @endif
+{{--                                @if (auth()->user()->hasPermission('create_settings'))--}}
+{{--                                    <a href="{{ route('dashboard.settings.create') }}" class="btn btn-primary"><i class="fa fa-plus"></i> @lang('admin.add')</a>--}}
+{{--                                @else--}}
+{{--                                    <a href="#" class="btn btn-primary disabled"><i class="fa fa-plus"></i> @lang('admin.add')</a>--}}
+{{--                                @endif--}}
                             </div>
 
                         </div>
@@ -75,15 +75,15 @@
                                         @else
                                             <a href="#" class="btn btn-info btn-sm disabled"><i class="fa fa-edit"></i> @lang('admin.edit')</a>
                                         @endif
-                                        @if (auth()->user()->hasPermission('delete_settings'))
-                                            <form action="{{ route('dashboard.settings.destroy', $setting->id) }}" method="post" style="display: inline-block">
-                                                {{ csrf_field() }}
-                                                {{ method_field('delete') }}
-                                                <button type="submit" class="btn btn-danger delete btn-sm"><i class="fa fa-trash"></i> @lang('admin.delete')</button>
-                                            </form><!-- end of form -->
-                                        @else
-                                            <button class="btn btn-danger btn-sm disabled"><i class="fa fa-trash"></i> @lang('admin.delete')</button>
-                                        @endif
+{{--                                        @if (auth()->user()->hasPermission('delete_settings'))--}}
+{{--                                            <form action="{{ route('dashboard.settings.destroy', $setting->id) }}" method="post" style="display: inline-block">--}}
+{{--                                                {{ csrf_field() }}--}}
+{{--                                                {{ method_field('delete') }}--}}
+{{--                                                <button type="submit" class="btn btn-danger delete btn-sm"><i class="fa fa-trash"></i> @lang('admin.delete')</button>--}}
+{{--                                            </form><!-- end of form -->--}}
+{{--                                        @else--}}
+{{--                                            <button class="btn btn-danger btn-sm disabled"><i class="fa fa-trash"></i> @lang('admin.delete')</button>--}}
+{{--                                        @endif--}}
                                     </td>
                                 </tr>
 

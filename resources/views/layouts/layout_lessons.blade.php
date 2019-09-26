@@ -7,7 +7,7 @@
 
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title> @yield('title')-{{ config('app.name', 'AnyCourse') }} </title>
+    <title> @yield('title')- {{$site_title}} </title>
 
     <!-- Bootstrap -->
     <link href="{{asset('course_assets/assets/lib/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">

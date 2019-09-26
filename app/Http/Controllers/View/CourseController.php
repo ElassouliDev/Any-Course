@@ -25,9 +25,7 @@ class CourseController extends BaseController
             $q->where('course_student.user_id', Auth::id());
         }])->find($course_id);
         $course['is_enroll'] = (count($course->students) > 0) ? true : false;
-//        dd([$course->student_course,$course->is_enroll]);
         $reveiw_course = $course->comments()->has('rating')->with('rating')->get();
-
         unset($course->students);
         return view('courses.course_details', compact('course','reveiw_course'));
     }

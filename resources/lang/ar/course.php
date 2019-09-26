@@ -45,4 +45,7 @@ return [
     'My Profile'=>'الملف الشخصي',
     'certificate'=>'شهادة',
     'View Course'=>'مشاهدة الكورس',
+    'what you will learn'=>'ماذا ستتعلم',
+    'The language'=>'اللغة',
+
 ];

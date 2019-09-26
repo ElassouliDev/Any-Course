@@ -271,6 +271,40 @@
                                     </ul>
                                 </div>
                             </li>
+                            <li class="m-menu__item  m-menu__item--submenu m-menu__item--rel"
+                                data-menu-submenu-toggle="click" data-redirect="true" aria-haspopup="true">
+                                <a href="#" class="m-menu__link m-menu__toggle">
+                                    <i class="m-menu__link-icon flaticon-add"></i>
+                                    <span class="m-menu__link-text">
+												@lang('course.The language')
+											</span>
+                                    <i class="m-menu__hor-arrow la la-angle-down"></i>
+                                    <i class="m-menu__ver-arrow la la-angle-right"></i>
+                                </a>
+                                <div class="m-menu__submenu m-menu__submenu--classic m-menu__submenu--left">
+                                    <span class="m-menu__arrow m-menu__arrow--adjust"></span>
+                                    <ul class="m-menu__subnav">
+                                        @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+                                            <li class="m-menu__item " aria-haspopup="true">
+
+                                                <a rel="alternate" hreflang="{{ $localeCode }}" class="m-menu__link "
+                                                   href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
+                                                    <i class="m-menu__link-icon flaticon-file"></i>
+
+                                                    <span class="m-menu__link-text">
+                                                     {{ $properties['native'] }}
+                                                    </span>
+
+                                                </a>
+                                            </li>
+                                        @endforeach
+                                        <li class="m-menu__item " aria-haspopup="true">
+
+                                        </li>
+
+                                    </ul>
+                                </div>
+                            </li>
                         </ul>
                     </div>
                     <!-- END: Horizontal Menu -->                                <!-- BEGIN: Topbar -->
@@ -638,8 +672,10 @@
                                         data-dropdown-toggle="click">
                                         <a href="#" class="m-nav__link m-dropdown__toggle">
 												<span class="m-topbar__userpic">
-													<img src="{{isset(auth()->user()->image->file_path) ? url('storage/'.auth()->user()->image->file_path) : 'https://ssl.gstatic.com/accounts/ui/avatar_2x.png' }}"
-                                                         class="m--img-rounded m--marginless m--img-centered" alt="{{auth()->user()->full_name()}}"/>
+													<img
+                                                        src="{{isset(auth()->user()->image->file_path) ? url('storage/'.auth()->user()->image->file_path) : 'https://ssl.gstatic.com/accounts/ui/avatar_2x.png' }}"
+                                                        class="m--img-rounded m--marginless m--img-centered"
+                                                        alt="{{auth()->user()->full_name()}}"/>
 												</span>
                                             <span class="m-topbar__username m--hide">
 													{{auth()->user()->full_name()}}
@@ -653,8 +689,9 @@
                                                      style="background: url(assets/app/media/img/misc/user_profile_bg.jpg); background-size: cover;">
                                                     <div class="m-card-user m-card-user--skin-dark">
                                                         <div class="m-card-user__pic">
-                                                            <img src="{{isset(auth()->user()->image->file_path) ? url('storage/'.auth()->user()->image->file_path) : 'https://ssl.gstatic.com/accounts/ui/avatar_2x.png'}}"
-                                                                 class="m--img-rounded m--marginless" alt=""/>
+                                                            <img
+                                                                src="{{isset(auth()->user()->image->file_path) ? url('storage/'.auth()->user()->image->file_path) : 'https://ssl.gstatic.com/accounts/ui/avatar_2x.png'}}"
+                                                                class="m--img-rounded m--marginless" alt=""/>
                                                         </div>
                                                         <div class="m-card-user__details">
 																<span class="m-card-user__email m--font-weight-500">
@@ -685,9 +722,9 @@
 																				</span>
 																				<span class="m-nav__link-badge">
 {{--																					<span--}}
-{{--                                                                                        class="m-badge m-badge--success">--}}
-{{--																						2--}}
-{{--																					</span>--}}
+                                                                                    {{--                                                                                        class="m-badge m-badge--success">--}}
+                                                                                    {{--																						2--}}
+                                                                                    {{--																					</span>--}}
 																				</span>
 																			</span>
 																		</span>

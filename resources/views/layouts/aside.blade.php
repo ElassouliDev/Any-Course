@@ -89,31 +89,34 @@
 									</span>
                 </a>
             </li>
-            <li class="m-menu__item">
-                <a href="{{route('course_lecture.index')}}" class="m-menu__link">
-                    <i class="m-menu__link-icon flaticon-settings"></i>
-                    <span class="m-menu__link-text">
+        @can('Lecture', auth()->user())
+
+                <li class="m-menu__item">
+                    <a href="{{route('course_lecture.index')}}" class="m-menu__link">
+                        <i class="m-menu__link-icon flaticon-settings"></i>
+                        <span class="m-menu__link-text">
 										@lang('course.course_management')
 									</span>
-                </a>
-            </li>
-            <li class="m-menu__item">
-                <a href="create_course.html" class="m-menu__link">
-                    <i class="m-menu__link-icon flaticon-add"></i>
-                    <span class="m-menu__link-text">
-										Create Course
-									</span>
-                </a>
-            </li>
-            <li class="m-menu__item">
-                <a href="{{route('course.all.student')}}" class="m-menu__link">
-                    <i class="m-menu__link-icon fa fa-users"></i>
-                    <span class="m-menu__link-text">
+                    </a>
+                </li>
+                <li class="m-menu__item">
+                    <a href="{{route('course.all.student')}}" class="m-menu__link">
+                        <i class="m-menu__link-icon fa fa-users"></i>
+                        <span class="m-menu__link-text">
 									@lang('course.all_students_in_courses')
 									</span>
-                </a>
-            </li>
+                    </a>
+                </li>
+            @endcan
 
+{{--            <li class="m-menu__item">--}}
+{{--                <a href="create_course.html" class="m-menu__link">--}}
+{{--                    <i class="m-menu__link-icon flaticon-add"></i>--}}
+{{--                    <span class="m-menu__link-text">--}}
+{{--										Create Course--}}
+{{--									</span>--}}
+{{--                </a>--}}
+{{--            </li>--}}
             <li class="m-menu__item">
                 <a href="{{route('index')}}" class="m-menu__link">
                     <i class="m-menu__link-icon flaticon-settings"></i>
@@ -122,7 +125,6 @@
 									</span>
                 </a>
             </li>
-
             <li class="m-menu__item">
                 <a href="{{route('user.setting')}}" class="m-menu__link">
                     <i class="m-menu__link-icon flaticon-settings"></i>

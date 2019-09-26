@@ -13,6 +13,8 @@ return [
     'new_question'=>'New question',
     'content'=>'Content',
     'title'=>'Title',
+    'title_ar'=>'Title Arabic',
+    'title_en'=>'Title English',
     'lesson_course'=>'Lesson questions',
     'course_management'=>'Courses Management',
     'question_en'=>'Question english',
@@ -27,6 +29,7 @@ return [
     'all_students_in_courses'=>'All students in your courses',
     'course_enrolled'=>'Course enrolled',
     'ratings'=>'ratings',
+    'allCourses'=>'All Courses',
     'description'=>'Description',
     'students enrolled'=>'students enrolled',
     'Preview this course'=>'Preview this course',
@@ -34,5 +37,7 @@ return [
     'My Profile'=>'My Profile',
     'certificate'=>'Certificate',
     'View Course'=>'View Course',
+    'what you will learn'=>'what you will learn',
+    'The language'=>'The language',
 
 ];

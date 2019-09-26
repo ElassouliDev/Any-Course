@@ -24,6 +24,10 @@ return [
     'action'=>'Action',
     'delete'=>'Delete',
     'image'=>'Image',
+    'new'=>'New',
+    'twitter'=>'twitter',
+    'google'=>'google',
+    'facebook'=>'facebook',
 
     'lessons'=>'Lessons',
     'lesson'=>'Lesson',

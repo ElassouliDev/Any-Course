@@ -124,5 +124,8 @@ return [
     'question'=>'سؤال',
     'questions'=>'الأسئلة',
     'paid'=>'مدفوع',
-
+    'new'=>'جديد',
+    'twitter'=>'تويتر',
+    'google'=>'قوقل',
+    'facebook'=>'فيسبوك',
 ];

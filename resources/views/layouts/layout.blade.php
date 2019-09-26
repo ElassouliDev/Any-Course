@@ -274,7 +274,7 @@
                             <li class="m-menu__item  m-menu__item--submenu m-menu__item--rel"
                                 data-menu-submenu-toggle="click" data-redirect="true" aria-haspopup="true">
                                 <a href="#" class="m-menu__link m-menu__toggle">
-                                    <i class="m-menu__link-icon flaticon-add"></i>
+                                    <i class="m-menu__link-icon fa fa-language"></i>
                                     <span class="m-menu__link-text">
 												@lang('course.The language')
 											</span>
@@ -282,14 +282,16 @@
                                     <i class="m-menu__ver-arrow la la-angle-right"></i>
                                 </a>
                                 <div class="m-menu__submenu m-menu__submenu--classic m-menu__submenu--left">
-                                    <span class="m-menu__arrow m-menu__arrow--adjust"></span>
+                                    <span class="m-menu__arrow m-menu__arrow--adjust "></span>
                                     <ul class="m-menu__subnav">
                                         @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
                                             <li class="m-menu__item " aria-haspopup="true">
 
                                                 <a rel="alternate" hreflang="{{ $localeCode }}" class="m-menu__link "
                                                    href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
-                                                    <i class="m-menu__link-icon flaticon-file"></i>
+                                                    <i class="m-menu__link-bullet m-menu__link-bullet--dot">
+                                                        <span></span>
+                                                    </i>
 
                                                     <span class="m-menu__link-text">
                                                      {{ $properties['native'] }}
@@ -718,7 +720,7 @@
                                                                     <span class="m-nav__link-title">
 																			<span class="m-nav__link-wrap">
 																				<span class="m-nav__link-text">
-																					@lang('course.My Profile')
+																					@lang('course.MyProfile')
 																				</span>
 																				<span class="m-nav__link-badge">
 {{--																					<span--}}

@@ -83,17 +83,17 @@
             </li>
             <li class="m-menu__item">
                 <a href="{{route('student.courses.enrolled')}}" class="m-menu__link">
-                    <i class="m-menu__link-icon flaticon-settings"></i>
+                    <i class="m-menu__link-icon fa fa-toggle-on"></i>
                     <span class="m-menu__link-text">
 										@lang('course.course_enrolled')
 									</span>
                 </a>
             </li>
-        @can('Lecture', auth()->user())
+            @role('lecture|super_admin')
 
                 <li class="m-menu__item">
                     <a href="{{route('course_lecture.index')}}" class="m-menu__link">
-                        <i class="m-menu__link-icon flaticon-settings"></i>
+                        <i class="m-menu__link-icon fa fa-file-video-o"></i>
                         <span class="m-menu__link-text">
 										@lang('course.course_management')
 									</span>
@@ -107,7 +107,7 @@
 									</span>
                     </a>
                 </li>
-            @endcan
+            @endrole
 
 {{--            <li class="m-menu__item">--}}
 {{--                <a href="create_course.html" class="m-menu__link">--}}
@@ -119,7 +119,7 @@
 {{--            </li>--}}
             <li class="m-menu__item">
                 <a href="{{route('index')}}" class="m-menu__link">
-                    <i class="m-menu__link-icon flaticon-settings"></i>
+                    <i class="m-menu__link-icon fa fa-certificate"></i>
                     <span class="m-menu__link-text">
 										@lang('course.certificate')
 									</span>

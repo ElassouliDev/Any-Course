@@ -12,16 +12,7 @@ use App\Http\Controllers\Controller;
 class CategoryController extends BaseController
 {
 
-    public function __construct()
-    {
 
-                // role category create read update delete
-        $this->middleware(['permission:read_categories'])->only('index');
-        $this->middleware(['permission:create_categories'])->only('create');
-        $this->middleware(['permission:update_categories'])->only('edit');
-        $this->middleware(['permission:delete_categories'])->only('destroy');
-
-    }//end of constructor
     public function index(CategoryDataTable $category)
     {
 

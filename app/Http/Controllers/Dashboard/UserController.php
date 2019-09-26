@@ -18,20 +18,20 @@ class UserController extends BaseController
      *
      * @return \Illuminate\Http\Response
      */
-      public function __construct()
-    {
-
-        //role profile
-        $this->middleware(['permission:update_profile'])->only('update_profile');
-        $this->middleware(['permission:read_profile'])->only('profile');
-
-        // role user create read update delete
-        $this->middleware(['permission:read_users'])->only('index');
-        $this->middleware(['permission:create_users'])->only('create');
-        $this->middleware(['permission:update_users'])->only('edit');
-        $this->middleware(['permission:delete_users'])->only('destroy');
-
-    }//end of constructor
+//      public function __construct()
+//    {
+//
+//        //role profile
+//        $this->middleware(['permission:update_profile'])->only('update_profile');
+//        $this->middleware(['permission:read_profile'])->only('profile');
+//
+//        // role user create read update delete
+//        $this->middleware(['permission:read_users'])->only('index');
+//        $this->middleware(['permission:create_users'])->only('create');
+//        $this->middleware(['permission:update_users'])->only('edit');
+//        $this->middleware(['permission:delete_users'])->only('destroy');
+//
+//    }//end of constructor
     public function index(UserDataTable $user)
     {
         $title = trans('admin.users');

@@ -45,7 +45,19 @@
 
 
             @if (auth()->user()->hasPermission('read_users'))
-                <li><a href="{{ route('dashboard.users.index') }}"><i class="fa fa-users"></i><span>@lang('admin.users')</span></a></li>
+                <li class="treeview">
+                    <a href="#">
+                        <i class="fa fa-users"></i> <span>@lang('admin.users')</span>
+                        <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a href="{{ route('dashboard.users.index',['users'=>'admin']) }}"><i class="fa fa-user"></i><span>@lang('admin.admins')</span></a></li>
+                        <li><a href="{{ route('dashboard.users.index',['users'=>'student']) }}"><i class="fa fa-user"></i><span>@lang('admin.students')</span></a></li>
+                        <li><a href="{{ route('dashboard.users.index',['users'=>'lecture']) }}"><i class="fa fa-user"></i><span>@lang('admin.lectures')</span></a></li>
+                    </ul>
+                </li>
             @endif
 
             {{--<li><a href="{{ route('dashboard.categories.index') }}"><i class="fa fa-book"></i><span>@lang('admin.categories')</span></a></li>--}}

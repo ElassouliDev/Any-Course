@@ -33,7 +33,7 @@ class UserDataTable extends DataTable
     public function query()
     {
 //        return $model->newQuery()->select('id', 'add-your-columns-here', 'created_at', 'updated_at');
-        return User::query()->whereRoleIs('admin')->orderBy('id','desc');
+        return User::query()->whereRoleIs(request('users'))->orderBy('id','desc');
 
     }
 

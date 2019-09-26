@@ -83,7 +83,6 @@ class CourseController extends BaseController
     {
         $id = Course::where('slug_en',$courseRequest->slug)->orWhere('slug_ar',$courseRequest->slug)->first()->id;
         $course = Course::find($id);
-        dd($courseRequest->all());
         $course->update($courseRequest->all());
         if($courseRequest->hasFile('image')){
             $course->image()->update([

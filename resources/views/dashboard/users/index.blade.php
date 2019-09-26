@@ -8,11 +8,33 @@
 
         <section class="content-header">
 
-            <h1>@lang('admin.user')</h1>
+            <h1>
+                @if(request('users') == 'admin')
+                    @lang('admin.admins')
+                    @elseif(request('users') == 'student')
+
+                    @lang('admin.students')
+
+                    @elseif(request('users') == 'lecture')
+
+                    @lang('admin.lectures')
+
+                @endif
+            </h1>
 
             <ol class="breadcrumb">
                 <li><a href="{{ url('dashboard') }}"><i class="fa fa-dashboard"></i> @lang('admin.dashboard')</a></li>
-                <li class="active">@lang('admin.user')</li>
+                <li class="active">      @if(request('users') == 'admin')
+                        @lang('admin.admins')
+                    @elseif(request('users') == 'student')
+
+                        @lang('admin.students')
+
+                    @elseif(request('users') == 'lecture')
+
+                        @lang('admin.lectures')
+
+                    @endif</li>
             </ol>
         </section>
 
@@ -22,7 +44,17 @@
 
                 <div class="box-header with-border">
 
-                    <h3 class="box-title" style="margin-bottom: 15px">@lang('admin.user')
+                    <h3 class="box-title" style="margin-bottom: 15px">      @if(request('users') == 'admin')
+                            @lang('admin.admins')
+                        @elseif(request('users') == 'student')
+
+                            @lang('admin.students')
+
+                        @elseif(request('users') == 'lecture')
+
+                            @lang('admin.lectures')
+
+                        @endif
                         {{--                        <small>{{ $users->total() }}</small>--}}
                     </h3>
 

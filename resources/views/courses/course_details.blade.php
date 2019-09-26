@@ -1,5 +1,6 @@
 @extends('layouts.layout')
 @push('css')
+    <script src="{{asset('social.jsphp artisan make:policy PostPolicy --model=Post')}}" ></script>
     <style>
         .checked {
             color: orange;

@@ -33,5 +33,6 @@ return [
     'basic information'=>'Basic information',
     'My Profile'=>'My Profile',
     'certificate'=>'Certificate',
+    'View Course'=>'View Course',
 
 ];

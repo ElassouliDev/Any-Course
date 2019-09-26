@@ -33,8 +33,7 @@
                             <div class="card-body">
                                 <h4 class="card-title"><b>{{$course['title_'.app()->getLocale()]}}</b></h4>
                                 <p class="card-text description">{{$course->category['title_'.app()->getLocale()]}}</p>
-                                <a href="{{route('course_details',$course['slug_'.app()->getLocale()])}}" class="btn btn-primary">View
-                                    Course</a>
+                                <a href="{{route('course_details',$course['slug_'.app()->getLocale()])}}" class="btn btn-primary">@lang('course.View Course')</a>
                                 @if($course->is_paid)
                                     <span class="pull-right"><b>{{--<s>20.22$</s>  --}}
                                             <i><strong>$ {{$course->price}}</strong></i></b></span>
@@ -70,8 +69,7 @@
                             <div class="card-body">
                                 <h4 class="card-title"><b>{{$course['title_'.app()->getLocale()]}}</b></h4>
                                 <p class="card-text description">{{$course->category['title_'.app()->getLocale()]}}</p>
-                                <a href="{{route('course_details',$course['slug_'.app()->getLocale()])}}" class="btn btn-primary">View
-                                    Course</a>
+                                <a href="{{route('course_details',$course['slug_'.app()->getLocale()])}}" class="btn btn-primary">@lang('course.View Course')</a>
                                 @if($course->is_paid)
                                     <span class="pull-right"><b>{{--<s>20.22$</s>  --}}
                                             <i><strong>$ {{$course->price}}</strong></i></b></span>

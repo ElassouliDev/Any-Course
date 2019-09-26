@@ -44,4 +44,5 @@ return [
     'basic information'=>'معلومات اساسية',
     'My Profile'=>'الملف الشخصي',
     'certificate'=>'شهادة',
+    'View Course'=>'مشاهدة الكورس',
 ];

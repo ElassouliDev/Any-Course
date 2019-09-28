@@ -47,5 +47,8 @@ return [
     'View Course'=>'مشاهدة الكورس',
     'what you will learn'=>'ماذا ستتعلم',
     'The language'=>'اللغة',
+    'Type a comment'=>'اكتب تعليق',
+    'NO DATA'=>'لا يوجد بيانات',
+
 
 ];

@@ -60,38 +60,13 @@
 
                         <div class="form-group">
                             <label>@lang('admin.permissions')</label>
-                            <div class="nav-tabs-custom">
-
-                                @php
-                                    $models = ['settings','users','profile','categories','courses','lessons','questions','exams'];
-                                    $maps = ['create', 'read', 'update', 'delete'];
-                                @endphp
-
-                                <ul class="nav nav-tabs">
-                                    @foreach ($models as $index=>$model)
-                                        <li class="{{ $index == 0 ? 'active' : '' }}"><a href="#{{ $model }}" data-toggle="tab">@lang('admin.' . $model)</a></li>
-                                    @endforeach
-                                </ul>
-
-                                <div class="tab-content">
-
-                                    @foreach ($models as $index=>$model)
-
-                                        <div class="tab-pane {{ $index == 0 ? 'active' : '' }}" id="{{ $model }}">
-
-                                            @foreach ($maps as $map)
-                                                <label><input type="checkbox" name="permissions[]" value="{{ $map . '_' . $model }}"> @lang('admin.' . $map)</label>
-                                            @endforeach
-
-                                        </div>
-
-                                    @endforeach
-
-                                </div><!-- end of tab content -->
+                            <input type="radio" name="permissions"  value="admin">@lang('admin.admin')
+                            <input type="radio" name="permissions" value="student">@lang('admin.student')
+                            <input type="radio" name="permissions" value="lecture">@lang('admin.lecture')
 
                             </div><!-- end of nav tabs -->
 
-                        </div>
+
 
                         <div class="form-group">
                             <button type="submit" class="btn btn-primary"><i class="fa fa-plus"></i> @lang('admin.add')</button>

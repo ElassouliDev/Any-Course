@@ -48,9 +48,9 @@ Route::group(
 
             Route::post('/course_enroll/{course_slug}', 'Student\CourseController@enroll_and_in_enroll_course')->name('user.course_enroll');
             Route::get('/course/{course_slug}/lesson/{lesson_slug?}', 'View\LessonsController@lessons_list')->name('course_lesson')->middleware('lesson'); //lessons list
-            Route::get('lesson/{lesson_id}/question', 'Student\QuestionController@lesson_question')->name('list_question')->middleware('lesson');
+            Route::get('/course/{course_slug}/lesson/{lesson_slug?}/question', 'Student\QuestionController@lesson_question')->name('list_question')->middleware('lesson');
             Route::post('lesson/question/comment', 'Student\CommentController@store_question')->name('new_comment_question')->middleware('lesson');
-            Route::post('lesson/question', 'Student\QuestionController@store')->name('new_question')->middleware('lesson');
+            Route::post('/course/{course_slug}/lesson/{lesson_slug?}lesson/question', 'Student\QuestionController@store')->name('new_question')->middleware('lesson');
             Route::post('lesson/comment', 'Student\CommentController@store')->name('new_comment')->middleware('lesson');
 
 

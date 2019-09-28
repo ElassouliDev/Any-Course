@@ -12,6 +12,7 @@ return [
             'lessons' => 'c,r,u,d',
             'questions' => 'c,r,u,d',
             'exams' => 'c,r,u,d',
+            'certificate' => 'c,r,u,d',
         ],
         'admin' =>[
             'users' => 'c,r',
@@ -20,7 +21,9 @@ return [
             'courses' => 'r',
             'lessons' => 'r,u,d',
             'questions' => 'r,u,d',
-            'exams' => 'r,u,d'
+            'exams' => 'r,u,d',
+            'certificate' => 'c,r,u,d',
+
         ],
         'lecture' =>[
             'profile' => 'r,u',
@@ -29,6 +32,8 @@ return [
             'questions' => 'c,r,d',
             'exams' => 'c,r,u,d',
             'reviews' => 'c,r,u',
+            'certificate' => 'r',
+
         ],
 
         'student' =>[
@@ -37,6 +42,8 @@ return [
             'exams' => 'r',
             'questions' => 'c,r',
             'reviews' => 'c,r,u',
+            'certificate' => 'r',
+
 
 
         ],

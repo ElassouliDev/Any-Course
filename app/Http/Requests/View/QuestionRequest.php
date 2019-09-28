@@ -26,7 +26,6 @@ class QuestionRequest extends FormRequest
         return [
             'title' => 'string|required',
             'content' => 'string|required',
-            'lesson_id' => 'required|numeric',
         ];
     }
 }

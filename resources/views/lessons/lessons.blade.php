@@ -38,16 +38,23 @@
             border-right-color: #ddd;
             border-width: 8px;
         }
+
     </style>
 @endpush
 
 @section('content')
-
+    <style>
+        .form-control {
+            background: white !important;
+        }
+    </style>
     <div class="col-md-3 left-side" style="min-height:760px ">
 
         <div class="heading-side">
             <i class="fa fa-caret-left fa-lg"></i>
-            <h5>@lang('admin.course') : {{ucfirst($course['title_'.app()->getLocale()])}} <span style="float: right; color: #1d2124 ; background: white ; padding:5px 10px; border-radius: 20px;  ">@lang('course.lesson') :{{count($lessons)}} </span></h5>
+            <h5>@lang('admin.course') : {{ucfirst($course['title_'.app()->getLocale()])}} <span
+                    style="float: right; color: #1d2124 ; background: white ; padding:5px 10px; border-radius: 20px;  ">@lang('course.lesson') :{{count($lessons)}} </span>
+            </h5>
 
 
         </div>
@@ -59,7 +66,7 @@
                         <a href="@if($lesson->id != $lesson_watching->id){{route('course_lesson',['course_id'=>$lesson->course['slug_'.app()->getLocale()],'lesson_id'=>$lesson['slug_'.app()->getLocale()]])}}@else # @endif">
                             <div class="radio">
                                 <label>
-                                    <input type="radio" name="optionsRadios"  value="option1"
+                                    <input type="radio" name="optionsRadios" value="option1"
                                            @if($lesson->id == $lesson_watching->id)checked @endif >
                                     {{++$loop->index}}
                                     .{{$lesson['title_'.app()->getLocale()]}}
@@ -76,27 +83,27 @@
                         </a>
                     </li>
                 @endforeach
-                    <li  style="float: none">
-                        <a href="{{route('course.exam',$course['slug_'.app()->getLocale()])}}">
-                            <div class="radio">
-                                <label>
-                                    <input type="radio" name="optionsRadios"  id="optionsRadios1" value="option1">
-                                    {{1 + count($lessons)}}
-                                    .{{__('course.exam')}}
-                                    {{--@if(!empty($lesson->student_watch_lesson) && $lesson->student_watch_lesson->count()>0 )
-                                        --}}{{--{{dd($lesson->student_watch_lesson->first()->is_completed)}}--}}{{--
-                                        @if($lesson->student_watch_lesson->first()->is_completed == 1)
-                                            <i class="fa fa-star text-light" style="color: white"></i>
-                                        @else
-                                            <i class="fa fa-hourglass-start" style="color: white"></i>
-                                        @endif
-                                    @endif--}}
-                                </label>
+                <li style="float: none">
+                    <a href="{{route('course.exam',$course['slug_'.app()->getLocale()])}}">
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1">
+                                {{1 + count($lessons)}}
+                                .{{__('course.exam')}}
+                                {{--@if(!empty($lesson->student_watch_lesson) && $lesson->student_watch_lesson->count()>0 )
+                                    --}}{{--{{dd($lesson->student_watch_lesson->first()->is_completed)}}--}}{{--
+                                    @if($lesson->student_watch_lesson->first()->is_completed == 1)
+                                        <i class="fa fa-star text-light" style="color: white"></i>
+                                    @else
+                                        <i class="fa fa-hourglass-start" style="color: white"></i>
+                                    @endif
+                                @endif--}}
+                            </label>
 
 
-                            </div>
-                        </a>
-                    </li>
+                        </div>
+                    </a>
+                </li>
             @else
                 <li style="float: none">
 
@@ -131,8 +138,8 @@
                 @if (isset($lesson_watching)&& !empty($lesson_watching))
                     <div id="menu1" class="tab-pane fade in active ">
                         <h3 class="text-center">{{$lesson_watching['title_'.app()->getLocale()]}}</h3>
-                        <a href="{{route('list_question',$lesson_watching->id)}}"><span
-                                    class="back">@lang('course.feed_back')</span></a>
+                        <a href="{{route('list_question',['slug_course'=>$course['slug_'.app()->getLocale()],'slug_lesson'=>$lesson_watching['slug_'.app()->getLocale()]])}}"><span
+                                class="back">@lang('course.feed_back')</span></a>
                         <div class="video text-center">
 
                             <iframe id="existing-iframe-example"
@@ -175,7 +182,7 @@
                                     <div class="panel-heading">
                                         <strong>{{$comment->user->first_name.' '.$comment->user->last_name}}</strong>
                                         <span
-                                                class="text-muted">{{Carbon\Carbon::parse($comment->created_at)->diffForHumans()}}</span>
+                                            class="text-muted">{{Carbon\Carbon::parse($comment->created_at)->diffForHumans()}}</span>
                                     </div>
                                     <div class="panel-body">
                                         {{$comment->content}}
@@ -205,8 +212,12 @@
                                 @csrf
                                 <div class="form-group">
                                     <label for="content" class="col-form-label">@lang('course.content'):</label>
-                                    <textarea class="form-control" rows="4" name="content" id="content"
-                                              required></textarea>
+                                    <p class="lead emoji-picker-container">
+                                        <textarea class="form-control textarea-control" rows="5"
+                                                  placeholder="{{trans('course.content')}}" data-emojiable="true"
+                                                  data-emoji-input="unicode"></textarea>
+                                    </p>
+
                                     <input type="hidden" name='lesson_id'
                                            value="{{isset($lesson->id) ? $lesson->id : ''}}">
 
@@ -225,8 +236,7 @@
             </div>
 
 
-
-    </div>
+        </div>
     </div>
 
 @stop
@@ -299,7 +309,6 @@
 
                 })
         }
-
 
 
         $(document).on('change', '[name="optionsRadios"]', function () {
@@ -380,5 +389,31 @@
             });
         });
 
+    </script>
+    <script>
+        $(function () {
+            window.emojiPicker = new EmojiPicker({
+                emojiable_selector: '[data-emojiable=true]',
+                assetsPath: '{{asset('plugins/lib/')}}',
+                popupButtonClasses: 'fa fa-smile-o'
+            });
+            window.emojiPicker.discover();
+        });
+    </script>
+    <script>
+        // Google Analytics
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+        ga('create', 'UA-49610253-3', 'auto');
+        ga('send', 'pageview');
     </script>
 @endpush

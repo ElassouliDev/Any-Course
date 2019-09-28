@@ -28,7 +28,8 @@
 
                     @include('partials._errors')
 
-                    <form action="{{ route('dashboard.users.update', $user->id) }}" method="post" enctype="multipart/form-data">
+                    <form action="{{ route('dashboard.users.update', $user->id) }}" method="post"
+                          enctype="multipart/form-data">
 
                         @csrf
                         @method('put')
@@ -48,44 +49,20 @@
                             <label>@lang('admin.email')</label>
                             <input type="email" name="email" class="form-control" value="{{ $user->email }}">
                         </div>
-                                                <div class="form-group">
+                        <div class="form-group">
                             <label>@lang('admin.permissions')</label>
-                            <div class="nav-tabs-custom">
-
-                                @php
-                                    $models = ['settings','users','profile','categories','courses','lessons','questions','exams'];
-                                    $maps = ['create', 'read', 'update', 'delete'];
-                                @endphp
-
-                                <ul class="nav nav-tabs">
-                                    @foreach ($models as $index=>$model)
-                                        <li class="{{ $index == 0 ? 'active' : '' }}"><a href="#{{ $model }}" data-toggle="tab">@lang('admin.' . $model)</a></li>
-                                    @endforeach
-                                </ul>
-
-                                <div class="tab-content">
-
-                                    @foreach ($models as $index=>$model)
-
-                                        <div class="tab-pane {{ $index == 0 ? 'active' : '' }}" id="{{ $model }}">
-
-                                            @foreach ($maps as $map)
-                                                {{--create_users--}}
-                                                <label><input type="checkbox" name="permissions[]" {{ $user->hasPermission($map . '_' . $model) ? 'checked' : '' }} value="{{ $map . '_' . $model }}"> @lang('admin.' . $map)</label>
-                                            @endforeach
-
-                                        </div>
-
-                                    @endforeach
-
-                                </div><!-- end of tab content -->
-
-                            </div><!-- end of nav tabs -->
+                            <input type="radio" name="permissions"
+                                   {{$user->hasRole('admin') ? 'checked' : ''}} value="admin">@lang('admin.admin')
+                            <input type="radio" name="permissions"
+                                   {{$user->hasRole('student') ? 'checked' : ''}}value="student">@lang('admin.student')
+                            <input type="radio" name="permissions"
+                                   {{$user->hasRole('lecture') ? 'checked' : ''}} value="lecture">@lang('admin.lecture')
 
                         </div>
 
                         <div class="form-group">
-                            <button type="submit" class="btn btn-primary"><i class="fa fa-edit"></i> @lang('admin.edit')</button>
+                            <button type="submit" class="btn btn-primary"><i class="fa fa-edit"></i> @lang('admin.edit')
+                            </button>
                         </div>
 
                     </form><!-- end of form -->

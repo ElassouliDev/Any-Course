@@ -6,6 +6,8 @@
     <title>
         {{$site_title}} | Home
     </title>
+
+    <link href="{{asset('plugins/lib/')}}/css/emoji.css" rel="stylesheet">
     <meta name="description" content="Latest updates and statistic charts">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -21,6 +23,8 @@
             }
         });
     </script>
+    <link rel="shortcut icon" href="{{ url(@$icon)}}"/>
+
     <link rel="stylesheet" href="{{ asset('dashboard_files/css/font-awesome-rtl.min.css') }}">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
 
@@ -930,6 +934,7 @@
 <script src="{{asset('course_assets/js/dashboard.js')}}" type="text/javascript"></script>
 <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
 <script src="{{ asset('sweetalert/2.1.0/sweetalert.min.js') }}"></script>
+<script src="{{ asset('social.js') }}"></script>
 
 {{--<script src="{{ asset('/brisk-selectOptions/js/brisk-selectOptions.js') }}"></script>
 <script src="{{ asset('/brisk-form/js/brisk-form.js') }}"></script>
@@ -945,6 +950,14 @@
 <script src="{{ asset('resources/assets/js/editable.js') }}"></script>
 @stack('js')
 <!--end::Page Snippets -->
+
+
+
+<!-- ** Don't forget to Add jQuery here ** -->
+<script src="{{asset('plugins/lib/')}}/js/config.js"></script>
+<script src="{{asset('plugins/lib/')}}/js/util.js"></script>
+<script src="{{asset('plugins/lib/')}}/js/jquery.emojiarea.js"></script>
+<script src="{{asset('plugins/lib/')}}/js/emoji-picker.js"></script>
 </body>
 <!-- end::Body -->
 </html>

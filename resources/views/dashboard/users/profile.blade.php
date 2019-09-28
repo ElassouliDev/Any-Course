@@ -46,41 +46,7 @@
                             <label>@lang('admin.email')</label>
                             <input type="email" name="email" class="form-control" value="{{  auth()->user()->email }}">
                         </div>
-                                                <div class="form-group">
-                            <label>@lang('admin.permissions')</label>
-                            <div class="nav-tabs-custom">
 
-                                @php
-                                    $models = ['users', 'categories', 'settings','profile'];
-                                    $maps = ['create', 'read', 'update', 'delete'];
-                                @endphp
-
-                                <ul class="nav nav-tabs">
-                                    @foreach ($models as $index=>$model)
-                                        <li class="{{ $index == 0 ? 'active' : '' }}"><a href="#{{ $model }}" data-toggle="tab">@lang('admin.' . $model)</a></li>
-                                    @endforeach
-                                </ul>
-
-                                <div class="tab-content">
-
-                                    @foreach ($models as $index=>$model)
-
-                                        <div class="tab-pane {{ $index == 0 ? 'active' : '' }}" id="{{ $model }}">
-
-                                            @foreach ($maps as $map)
-                                                {{--create_users--}}
-                                                <label><input type="checkbox" name="permissions[]" {{  auth()->user()->hasPermission($map . '_' . $model) ? 'checked' : '' }} value="{{ $map . '_' . $model }}"> @lang('admin.' . $map)</label>
-                                            @endforeach
-
-                                        </div>
-
-                                    @endforeach
-
-                                </div><!-- end of tab content -->
-
-                            </div><!-- end of nav tabs -->
-
-                        </div>
 
                         <div class="form-group">
                             <button type="submit" class="btn btn-primary"><i class="fa fa-edit"></i> @lang('admin.edit')</button>

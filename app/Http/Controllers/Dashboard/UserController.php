@@ -45,6 +45,7 @@ class UserController extends BaseController
      */
     public function create()
     {
+
         $title = trans('admin.create_user');
         return view('dashboard.users.create', compact('title'));
     }
@@ -58,17 +59,14 @@ class UserController extends BaseController
     public function store(UserRequest $userRequest)
     {
         $request_data= $userRequest->except(['password', 'password_confirmation', 'permissions']);
-
-//        $request_data = $userRequest->except(['password', 'password_confirmation', 'permissions']);
         $request_data['password'] = bcrypt($userRequest->password);
-
-
         $user = User::create($request_data);
-        $user->attachRole('admin');
-        $user->syncPermissions($userRequest->permissions);
+
+        $user->attachRole($userRequest->permissions);
 
         session()->flash('success', __('error.added_successfully'));
-        return redirect()->route('dashboard.users.index');
+        return redirect()->route('dashboard.users.index',['users'=>$userRequest->permissions]);
+
     }
 
     /**
@@ -101,9 +99,10 @@ class UserController extends BaseController
 
 
         $user->update($request->all());
-        $user->syncPermissions($request->permissions);
+        $user->detachRole();
+        $user->attachRole($request->permissions);
         session()->flash('success', __('error.updated_successfully'));
-        return redirect()->route('dashboard.users.index');
+        return redirect()->route('dashboard.users.index',['users'=>$request->permissions]);
     }
 
 
@@ -111,7 +110,7 @@ class UserController extends BaseController
     {
         $user->delete();
         session()->flash('success', __('error.deleted_successfully'));
-        return redirect()->route('dashboard.users.index');
+        return back();
     }
 
     public function profile()
@@ -130,7 +129,6 @@ class UserController extends BaseController
         ]);
 
         auth()->user()->update($request->all());
-        auth()->user()->syncPermissions($request->permissions);
         session()->flash('success', __('error.updated_successfully'));
         return redirect('dashboard');
 

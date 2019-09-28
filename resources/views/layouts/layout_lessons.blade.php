@@ -8,8 +8,10 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title> @yield('title')- {{$site_title}} </title>
-
+    <link href="{{asset('plugins/lib/')}}/css/emoji.css" rel="stylesheet">
     <!-- Bootstrap -->
+    <link rel="shortcut icon" href="{{ url(@$icon)}}"/>
+
     <link href="{{asset('course_assets/assets/lib/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{asset('course_assets/assets/css/font-awesome.min.css')}}">
@@ -88,5 +90,13 @@
 <script src="{{ asset('resources/assets/js/http.js') }}"></script>
 <script src="{{ asset('resources/assets/js/editable.js') }}"></script>
 @stack('js')
+
+
+
+<!-- ** Don't forget to Add jQuery here ** -->
+<script src="{{asset('plugins/lib/')}}/js/config.js"></script>
+<script src="{{asset('plugins/lib/')}}/js/util.js"></script>
+<script src="{{asset('plugins/lib/')}}/js/jquery.emojiarea.js"></script>
+<script src="{{asset('plugins/lib/')}}/js/emoji-picker.js"></script>
 </body>
 </html>

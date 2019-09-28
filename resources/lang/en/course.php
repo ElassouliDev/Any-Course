@@ -39,5 +39,8 @@ return [
     'View Course'=>'View Course',
     'what you will learn'=>'what you will learn',
     'The language'=>'The language',
+    'new_comment'=>'New comment',
+    'Type a comment'=>'Type a comment',
+    'NO DATA'=>'NO DATA',
 
 ];

@@ -28,7 +28,7 @@ class UserRequest extends FormRequest
             'last_name' => 'required',
             'email' => 'required|unique:users',
             'password' => 'required|confirmed',
-            'permissions' => 'required|min:1'
+            'permissions' => 'required'
         ];
         if($this->request->has('_method') == 'put'){
             $rules['email']=   'required|unique:users,email,'.$this->user_id;

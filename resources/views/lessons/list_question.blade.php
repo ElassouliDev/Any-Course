@@ -74,7 +74,10 @@
             border-radius: 50%;
         }
 
-        .reply-list:before, .reply-list:after {display: none;}
+        .reply-list:before, .reply-list:after {
+            display: none;
+        }
+
         .reply-list li:before {
             content: '';
             width: 60px;
@@ -105,6 +108,7 @@
             clear: both;
             margin-top: 15px;
         }
+
         /**
          * Avatar
          ---------------------------*/
@@ -118,9 +122,9 @@
             -webkit-border-radius: 4px;
             -moz-border-radius: 4px;
             border-radius: 4px;
-            -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.2);
-            -moz-box-shadow: 0 1px 2px rgba(0,0,0,0.2);
-            box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+            -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+            -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
             overflow: hidden;
         }
 
@@ -141,6 +145,7 @@
             display: block;
             clear: both;
         }
+
         /**
          * Caja del Comentario
          ---------------------------*/
@@ -148,9 +153,9 @@
             width: 680px;
             float: right;
             position: relative;
-            -webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.15);
-            -moz-box-shadow: 0 1px 1px rgba(0,0,0,0.15);
-            box-shadow: 0 1px 1px rgba(0,0,0,0.15);
+            -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+            -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
         }
 
         .comments-list .comment-box:before, .comments-list .comment-box:after {
@@ -168,13 +173,14 @@
 
         .comments-list .comment-box:before {
             border-width: 11px 13px 11px 0;
-            border-color: transparent rgba(0,0,0,0.05);
+            border-color: transparent rgba(0, 0, 0, 0.05);
             left: -12px;
         }
 
         .reply-list .comment-box {
             width: 610px;
         }
+
         .comment-box .comment-head {
             background: #FCFCFC;
             padding: 10px 12px;
@@ -231,7 +237,10 @@
             border-radius: 0 0 4px 4px;
         }
 
-        .comment-box .comment-name.by-author, .comment-box .comment-name.by-author a {color: #03658c;}
+        .comment-box .comment-name.by-author, .comment-box .comment-name.by-author a {
+            color: #03658c;
+        }
+
         .comment-box .comment-name.by-author:after {
             content: 'autor';
             background: #03658c;
@@ -262,107 +271,118 @@
             }
         }
     </style>
-    @endpush
+@endpush
 
 @section('content')
     <div class="container ">
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#new" >@lang('course.new_question')</button>
+        <button type="button" class="btn btn-primary" data-toggle="modal"
+                data-target="#new">@lang('course.new_question')</button>
 
-        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
-            <div class="row">
-                <!-- Contenedor Principal -->
-                <div class="comments-container">
-                    <h1>@lang('course.lesson_course') <a href="http://creaticode.com">creaticode.com</a></h1>
-                    @if (count($questions) > 0)
-                        @foreach ($questions as $question)
-                    <ul id="comments-list" class="comments-list">
-                        <li>
-                            <div class="comment-main-level">
-                                <!-- Avatar -->
-                                <div class="comment-avatar"><img src="{{isset($question->user->image['file_path']) ? url('storage/'.$question->user->image['file_path']) : 'https://ssl.gstatic.com/accounts/ui/avatar_2x.png'}}" alt=""></div>
-                                <!-- Contenedor del Comentario -->
-                                <div class="comment-box">
-                                    <div class="comment-head">
-
-                                        <h6 class="comment-name by-author"><a href="#">{{$question->user->full_name()}}</a></h6>
-                                        <span>{{Carbon\Carbon::parse($question->created_at)->diffForHumans()}}</span>
-                                        <i class="fa fa-reply"></i>
-                                        <i class="fa fa-heart"></i>
-                                    </div>
-                                    <div class="comment-head h5">{{$question->title .' :'}}</div>
-                                    <div class="comment-content">
-{!! $question->content !!}                                    </div>
-                                </div>
-                            </div>
-                            <!-- Respuestas de los comentarios -->
-                            <ul class="comments-list reply-list">
-                                @foreach ($question->comment as $comment)
-
-                                <li>
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet"
+              integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1"
+              crossorigin="anonymous">
+        <div class="row">
+            <!-- Contenedor Principal -->
+            <div class="comments-container">
+                <h1>@lang('course.lesson_course') <a href="http://creaticode.com">creaticode.com</a></h1>
+                @if (count($questions) > 0)
+                    @foreach ($questions as $question)
+                        <ul id="comments-list" class="comments-list">
+                            <li>
+                                <div class="comment-main-level">
                                     <!-- Avatar -->
-                                    <div class="comment-avatar"><img src="{{isset($comment->user->image['file_path']) ? url('storage/'.$comment->user->image['file_path']) : 'https://ssl.gstatic.com/accounts/ui/avatar_2x.png'}}" alt=""></div>
+                                    <div class="comment-avatar"><img
+                                            src="{{isset($question->user->image['file_path']) ? url('storage/'.$question->user->image['file_path']) : 'https://ssl.gstatic.com/accounts/ui/avatar_2x.png'}}"
+                                            alt=""></div>
                                     <!-- Contenedor del Comentario -->
                                     <div class="comment-box">
                                         <div class="comment-head">
-                                            <h6 class="comment-name"><a href="#">{{$comment->user->first_name.' '.$comment->user->last_name}}</a></h6>
-                                            <span>{{Carbon\Carbon::parse($comment->created_at)->diffForHumans()}}</span>
+
+                                            <h6 class="comment-name by-author"><a
+                                                    href="#">{{$question->user->full_name()}}</a></h6>
+                                            <span>{{Carbon\Carbon::parse($question->created_at)->diffForHumans()}}</span>
                                             <i class="fa fa-reply"></i>
                                             <i class="fa fa-heart"></i>
                                         </div>
-
+                                        <div class="comment-head h5">{{$question->title .' :'}}</div>
                                         <div class="comment-content">
-                                    {!! $comment->content !!}
-                                        </div>
+                                            {!! $question->content !!}                                    </div>
                                     </div>
-                                </li>
-                                @endforeach
+                                </div>
+                                <!-- Respuestas de los comentarios -->
+                                <ul class="comments-list reply-list">
+                                    @foreach ($question->comment as $comment)
+
+                                        <li>
+                                            <!-- Avatar -->
+                                            <div class="comment-avatar"><img
+                                                    src="{{isset($comment->user->image['file_path']) ? url('storage/'.$comment->user->image['file_path']) : 'https://ssl.gstatic.com/accounts/ui/avatar_2x.png'}}"
+                                                    alt=""></div>
+                                            <!-- Contenedor del Comentario -->
+                                            <div class="comment-box">
+                                                <div class="comment-head">
+                                                    <h6 class="comment-name"><a
+                                                            href="#">{{$comment->user->first_name.' '.$comment->user->last_name}}</a>
+                                                    </h6>
+                                                    <span>{{Carbon\Carbon::parse($comment->created_at)->diffForHumans()}}</span>
+                                                    <i class="fa fa-reply"></i>
+                                                    <i class="fa fa-heart"></i>
+                                                </div>
+
+                                                <div class="comment-content">
+                                                    {!! $comment->content !!}
+                                                </div>
+                                            </div>
+                                        </li>
+                                    @endforeach
 
 
-                            </ul>
-                            <form method="post" action="{{route('new_comment_question')}}">
-                                @csrf
-                                @method('post')
-                                <input type="hidden" name="question_id" value="{{$question->id}}" >
-                                <input class="form-control input-sm" name="content" type="text" required placeholder="Type a comment">
-                                <input type="submit"
-                                       style="position: absolute; left: -9999px; width: 1px; height: 1px;"
-                                       tabindex="-1" />
+                                </ul>
+                                <form method="post" action="{{route('new_comment_question')}}">
+                                    @csrf
+                                    @method('post')
+                                    <input type="hidden" name="question_id" value="{{$question->id}}">
 
-                            </form>
+                                    <input class="form-control input-sm" name="content"
+                                           type="text" required placeholder="{{trans('course.Type a comment')}}"  >
+                                    <input type="submit"
+                                           style="position: absolute; left: -9999px; width: 1px; height: 1px;"
+                                           tabindex="-1"/>
 
-                        </li>
+                                </form>
+
+                            </li>
 
 
-                    </ul>
-                        @endforeach
-                    @else
-                        <div class="row bg-light pt-2 px-1">
+                        </ul>
+                    @endforeach
+                @else
+                    <div class="row bg-light pt-2 px-1">
 
-                            <div class="divider"></div>
-                            <div class="col-md-12 lead ">
-                                NO DATA
-                            </div>
+                        <div class="divider"></div>
+                        <div class="col-md-12 lead ">
+                          {{trans('course.NO DATA')}}
                         </div>
-                    @endif
-                </div>
+                    </div>
+                @endif
             </div>
-
+        </div>
 
 
     </div>
-{{--    <div class="modal-body" id="new">
-        <h5>@lang('course.new_question')</h5>
-        <div class="row">
-            <div class="col-12">
-                <label>@lang('course.content_question')</label>
-                <textarea class="w-100" rows="4"></textarea>
+    {{--    <div class="modal-body" id="new">
+            <h5>@lang('course.new_question')</h5>
+            <div class="row">
+                <div class="col-12">
+                    <label>@lang('course.content_question')</label>
+                    <textarea class="w-100" rows="4"></textarea>
+                </div>
             </div>
-        </div>
-        <p>This <a href="#" role="button" class="btn btn-secondary popover-test" title="Popover title" data-content="Popover body content is set in this attribute.">button</a> triggers a popover on click.</p>
-        <hr>
-        <h5>Tooltips in a modal</h5>
-        <p><a href="#" class="tooltip-test" title="Tooltip">This link</a> and <a href="#" class="tooltip-test" title="Tooltip">that link</a> have tooltips on hover.</p>
-    </div>--}}
+            <p>This <a href="#" role="button" class="btn btn-secondary popover-test" title="Popover title" data-content="Popover body content is set in this attribute.">button</a> triggers a popover on click.</p>
+            <hr>
+            <h5>Tooltips in a modal</h5>
+            <p><a href="#" class="tooltip-test" title="Tooltip">This link</a> and <a href="#" class="tooltip-test" title="Tooltip">that link</a> have tooltips on hover.</p>
+        </div>--}}
 
 
     <div class="modal fade" id="new" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -375,21 +395,28 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form method="post" action="{{route('new_question')}}">
+                    <form method="post"
+                          action="{{route('new_question',['slug_course'=>$course['slug_'.app()->getLocale()],'slug_lesson'=>$lesson['slug_'.app()->getLocale()]])}}">
                         @csrf
                         <div class="form-group">
                             <label for="title" class="col-form-label">@lang('course.title'):</label>
-                            <input type="text" name="title" class="form-control" id="title" required>
-                            <input type="hidden" name='lesson_id' value="{{$lesson_id}}">
+                            <p class="lead emoji-picker-container">
+                                <input type="text" name="title" class="form-control" placeholder="{{trans('course.title')}}"
+                                       data-emojiable="true"  data-emoji-input="unicode" maxlength="10" required>
+                            </p>
                         </div>
                         <div class="form-group">
                             <label for="content" class="col-form-label">@lang('course.content'):</label>
-                            <textarea class="form-control"  rows="4" name="content" id="content" required></textarea>
+                            <p class="lead emoji-picker-container">
+                                <textarea class="form-control textarea-control" rows="3" name="content"
+                                          placeholder="{{trans('course.content')}}" data-emojiable="true"
+                                          data-emoji-input="unicode" required></textarea>
+                            </p></div>
+                        <div class="form-group">
+                            <button type="reset" class="btn btn-secondary"
+                                    data-dismiss="modal">@lang('admin.cancel')</button>
+                            <button type="submit" class="btn btn-primary">@lang('admin.add')</button>
                         </div>
-                    <div class="form-group">
-                        <button type="reset" class="btn btn-secondary" data-dismiss="modal">@lang('admin.cancel')</button>
-                        <button type="submit" class="btn btn-primary">@lang('admin.add')</button>
-                    </div>
                     </form>
 
                 </div>
@@ -397,5 +424,33 @@
             </div>
         </div>
     </div>
+    @push('js')
+        <script>
+            $(function () {
+                window.emojiPicker = new EmojiPicker({
+                    emojiable_selector: '[data-emojiable=true]',
+                    assetsPath: '{{asset('plugins/lib/')}}',
+                    popupButtonClasses: 'fa fa-smile-o'
+                });
+                window.emojiPicker.discover();
+            });
+        </script>
+        <script>
+            // Google Analytics
+            (function (i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r;
+                i[r] = i[r] || function () {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
+                a = s.createElement(o),
+                    m = s.getElementsByTagName(o)[0];
+                a.async = 1;
+                a.src = g;
+                m.parentNode.insertBefore(a, m)
+            })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+            ga('create', 'UA-49610253-3', 'auto');
+            ga('send', 'pageview');
+        </script>
+    @endpush
 @stop
 

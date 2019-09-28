@@ -9,10 +9,13 @@
             <h1>@lang('admin.dashboard')</h1>
 
             <ol class="breadcrumb">
-                                <li><a href="{{ url('dashboard') }}"><i class="fa fa-dashboard"></i> @lang('admin.dashboard')</a></li>
+                <li><a href="{{ url('dashboard') }}"><i class="fa fa-dashboard"></i> @lang('admin.dashboard')</a></li>
             </ol>
         </section>
+
+
         <section class="content">
+
             <div class="col-lg-3 col-xs-6">
                 <!-- small box -->
                 <div class="small-box bg-blue">
@@ -77,7 +80,17 @@
                     </a>
                 </div>
             </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    {!! $chart->container() !!}
+                </div>
+            </div>
 
         </section>
     </div>
 @endsection
+@push('js')
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js" charset="utf-8"></script>
+    {!! $chart->script() !!}
+
+@endpush

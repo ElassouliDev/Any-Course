@@ -2,11 +2,14 @@
 
 namespace App\Http\Controllers\Dashboard;
 
+use App\Certificate;
+use App\Charts\ChartJS;
 use App\Course;
 use App\Http\Controllers\BaseController;
 use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Arr;
 
 class DashboardController extends BaseController
 {
@@ -26,10 +29,21 @@ class DashboardController extends BaseController
         $lectures_count = $users->whereRoleIs('lecture')->count();
         $students_count = $users->whereRoleIs('student')->count();
         $courses_count = Course::count();
-        return view('dashboard.dashboard',compact('title','users_count','lectures_count','students_count','courses_count'));
+        $chart = $this->certificates_degree();
+        return view('dashboard.dashboard',compact('title','users_count','lectures_count','students_count','courses_count','chart'));
     }
 
+    public function certificates_degree(){
 
+    $chart = new ChartJS();
+    $courses = Course::all()->toArray();
+    $certificates = Certificate::whereIn('course_id',Arr::pluck($courses,'id'))->orderBy('id','desc')->get()->groupBy('course_id')->map(function ($row){
+            return $row->avg('degree');
+        });
+        $chart->labels(Arr::pluck($courses,'title_'.app()->getLocale()));
+    $chart->dataset(trans('admin.certificates_data'),'line',Arr::flatten($certificates));
+    return $chart;
+    }
     /**
      * Show the form for creating a new resource.
      *

@@ -102,7 +102,9 @@ return [
     'version'=>'Version',
     'Settings'=>'Settings',
     'Password'=>'Password',
-    'certificate'=>'Certificate',
     'Personal Information'=>'Personal Information',
+    'average'=>'Average',
+    'average_degree'=>'Average Degree',
+    'certificates_data'=>'Certificates Data',
 
 ];

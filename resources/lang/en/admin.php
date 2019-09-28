@@ -67,11 +67,7 @@ return [
     'SelectCourse'=>'Select the course',
     'selectPaid'=>'Select the paid',
     'file_path'=>'File Path',
-    'admin'=>'Admin',
-    'admins'=>'Admins',
     'lecture'=>'Lecture',
-    'lectures'=>'Lectures',
-    'students'=>'Students',
     'student'=>'Student',
     'exam'=>'Exam',
     'exams'=>'Exams',
@@ -102,9 +98,7 @@ return [
     'version'=>'Version',
     'Settings'=>'Settings',
     'Password'=>'Password',
+    'certificate'=>'Certificate',
     'Personal Information'=>'Personal Information',
-    'average'=>'Average',
-    'average_degree'=>'Average Degree',
-    'certificates_data'=>'Certificates Data',
 
 ];

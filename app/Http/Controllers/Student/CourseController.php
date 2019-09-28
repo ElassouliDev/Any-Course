@@ -2,29 +2,31 @@
 
 namespace App\Http\Controllers\Student;
 
+use App\Answer_user;
+use App\Certificate;
 use App\Course;
 use App\Http\Controllers\BaseController;
+use Barryvdh\DomPDF\Facade as PDF;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\View;
 
 class CourseController extends BaseController
 {
 
 
-
-
-
     function getEnrolledCoursesByUser()
     {
         $courses = Auth::user()->enrolled_course()->paginate(27);
-        return view('student.course_enrolled',compact('courses'));
+        return view('student.course_enrolled', compact('courses'));
 
     }
 
     function enroll_and_in_enroll_course($slug)
     {
-        $course_id = Course::where('slug_'.app()->getLocale(),$slug)->first()->id;
+        $course_id = Course::where('slug_' . app()->getLocale(), $slug)->first()->id;
         Auth::user()->enrolled_course()->toggle($course_id);
         return back();
 
@@ -39,14 +41,60 @@ class CourseController extends BaseController
             Auth::user()->student_watch_lesson()->attach($request->lesson_id);
 
 
-        return response(['status'=>true]);
+        return response(['status' => true]);
     }
 
     function complete_watch_lesson(Request $request)
     {
         Auth::user()->student_watch_lesson()->syncWithoutDetaching([$request->lesson_id => ['is_completed' => true]]);
 
-        return response(['status'=>true]);
+        return response(['status' => true]);
+
+    }
+
+
+    function certification($course_slug)
+    {
+
+        $course = Course::where('slug_ar', $course_slug)->orWhere('slug_en', $course_slug)->first();
+        $certification = Certificate::where('course_id', $course->id)->where('user_id', \auth()->id())->first();
+        View::share('certificate', $certification);
+        // Set extra option
+//        $pdf = App::make('dompdf.wrapper');
+
+
+//        $pdf=PDF::loadView('certification.index',['certificate'=>$certification]);
+//        $pdf->save('/path');
+
+//        return $data;
+//        return PDF::loadFile($data)->save('/path-to/my_stored_file.pdf')->stream('download.pdf');
+
+//        $pdf->loadHTML($data);
+
+        //        $pdf = PDF::loadView('certification.index',['certificate'=>$certification]);
+        // download pdf
+//        return $pdf->stream(); // download('home.pdf');
+        /**/
+//        return $pdf->stream();
+        if (\request()->has('download')) {
+
+            /*$data = Cache::remember('certification_'.\auth()->id().'_'.$course->id,330, function () use($certification) {
+                return  View::make('certification.index')->with('certificate',$certification)->render();
+            });*/
+/*
+            $pdf = PDF::loadView('home');
+
+            dd(   $pdf->download('home.pdf')); */
+            PDF::setOptions(['dpi' => 150, 'defaultFont' => 'sans-serif']);
+            // pass view file
+
+
+            $pdf = PDF::loadView('home');
+            // download pdf
+            return $pdf->download('home.pdf');
+        }
+
+        return view('certification.index');
 
     }
 }

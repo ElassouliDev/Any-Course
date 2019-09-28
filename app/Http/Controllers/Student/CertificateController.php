@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Student;
 
+use App\Certificate;
 use App\Comment;
 use App\Course;
 use App\Http\Controllers\BaseController;
@@ -17,5 +18,8 @@ class CertificateController extends BaseController
 
  function index(){
 
+     $certifications = Certificate::where('user_id',\auth()->id())->get();
+
+     return view('certification.user_certification_list',compact('certifications'));
  }
 }

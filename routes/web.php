@@ -82,10 +82,12 @@ Route::group(
         Route::group(['middleware' => ['role:student|super_admin']], function() {
             Route::post('lesson/watch/', 'Student\CourseController@student_watch_lesson')->name('student.lesson.watch');
             Route::post('lesson/complete/', 'Student\CourseController@complete_watch_lesson')->name('student.lesson.complete');
-            Route::resource('student/certificate/', 'Student\CertificateController')->middleware('lesson');
+            Route::resource('student/certificate/', 'Student\CertificateController');///->middleware('lesson');
             Route::get('/course/{course_slug}/exam/', 'View\LessonsController@exams')->name('course.exam'); //lessons list
             Route::post('/course/{course_slug}/exam/', 'View\LessonsController@answerExam'); //lessons list
             Route::post('/course/{course_slug}/review/', 'Student\ReviewCourseController@review')->name('course.review'); //lessons list
+            Route::get('/course/{course_slug}/certification/', 'Student\CourseController@certification')->name('course.certification'); //lessons list
+//            Route::get('/certifications', 'Student\CertificateController@certifications_student')->name('student.certifications'); //lessons list
 
 
         });

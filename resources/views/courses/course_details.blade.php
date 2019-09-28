@@ -451,8 +451,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="container" style="    padding-bottom: 27px;
-    padding: 0px 20px 20px;">
+                <div class="container" style="padding: 0px 20px 20px;">
                     <div class="multiple-items">
                         @foreach($reveiw_course as $review)
                             <div>

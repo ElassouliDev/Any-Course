@@ -131,7 +131,4 @@ return [
     'twitter'=>'تويتر',
     'google'=>'قوقل',
     'facebook'=>'فيسبوك',
-    'average'=>'متوسط ',
-    'average_degree'=>'متوسط العلامات',
-    'certificates_data'=>'بيانات الشهادات',
 ];

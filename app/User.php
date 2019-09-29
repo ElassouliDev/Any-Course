@@ -13,6 +13,7 @@ class User extends Authenticatable
     use LaratrustUserTrait;
     use Notifiable;
     use SoftDeletes;
+    use Notifiable;
 
     /**
      * The attributes that are mass assignable.

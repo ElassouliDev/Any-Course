@@ -106,5 +106,7 @@ return [
     'average'=>'Average',
     'average_degree'=>'Average Degree',
     'certificates_data'=>'Certificates Data',
+    'dashboard_webSite'=>'Dashboard web Site',
+    'isPaid'=>'Status: Paid / Free',
 
 ];

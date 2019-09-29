@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>{{@$site_title}}</title>
+
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 
     {{--<!-- Bootstrap 3.3.7 -->--}}
@@ -30,6 +31,41 @@
 
     @endif
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+    <script src="https://js.pusher.com/5.0/pusher.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+    <script>
+
+
+        var notificationsWrapper   = $('#notifcations');
+        var notificationsToggle    = notificationsWrapper.find('a[data-toggle]');
+        var notificationsCountElem = notificationsToggle.find('i[data-count]');
+        var notificationsCount     = parseInt(notificationsCountElem.data('count'));
+
+
+        Pusher.logToConsole = true;
+
+        var pusher = new Pusher('3154f7166f89b46a4e19', {
+            cluster: 'ap2',
+            forceTLS: true
+        });
+
+        var channel = pusher.subscribe('my-channel');
+        channel.bind('my-event', function(data) {
+            var result = JSON.parse(JSON.stringify(data));
+            console.log(result);
+            var notifcations = $('#notifcations ul .menu');
+            notifcations.prepend("<li>" +
+            @if(app()->getLocale() == 'en')
+                "<a href='#'>"+result.course.message_en+"</a>"+
+                @else
+                "<a href='#'>"+result.message_en+"</a>"+ @endif
+
+
+                +"</li>");
+            // alert(JSON.stringify(data));
+        });
+    </script>
 
     @stack('css')
     <style>
@@ -92,7 +128,7 @@
     <header class="main-header">
 
         {{--<!-- Logo -->--}}
-        <a href="{{ asset('dashboard') }}/index2.html" class="logo">
+        <a href="{{ route('dashboard.index') }}" class="logo">
             {{--<!-- mini logo for sidebar mini 50x50 pixels -->--}}
             <span class="logo-mini"><b>A</b>LT</span>
             <span class="logo-lg"><b>Admin</b>LTE</span>
@@ -144,21 +180,18 @@
                     </li>
 
                     {{--<!-- Notifications: style can be found in dropdown.less -->--}}
-                    <li class="dropdown notifications-menu">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <i class="fa fa-bell-o"></i>
-                            <span class="label label-warning">10</span>
+                    <li class="dropdown notifications-menu dropdown-notifications " id="notifcations">
+
+                        <a href="#notifications-panel" class="dropdown-toggle" data-toggle="dropdown">
+                            <i data-count="0" class="glyphicon glyphicon-bell notification-icon fa fa-bell-o" ></i>
+                            <span class="label label-warning"><span class="notif-count">0</span></span>
                         </a>
-                        <ul class="dropdown-menu">
-                            <li class="header">You have 10 notifications</li>
+                        <ul class="dropdown-menu ">
+                            <li class="header">You have (<span class="notif-count">0</span>) notifications</li>
                             <li>
-                                {{--<!-- inner menu: contains the actual data -->--}}
+                                <!-- inner menu: contains the actual data -->
                                 <ul class="menu">
-                                    <li>
-                                        <a href="#">
-                                            <i class="fa fa-users text-aqua"></i> 5 new members joined today
-                                        </a>
-                                    </li>
+
                                 </ul>
                             </li>
                             <li class="footer">
@@ -332,6 +365,7 @@
     });//end of ready
 
 </script>
+
 @stack('js')
 </body>
 </html>

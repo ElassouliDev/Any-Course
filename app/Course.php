@@ -6,12 +6,14 @@ use Ghanem\Rating\Traits\Ratingable as Rating;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Cviebrock\EloquentSluggable\Sluggable;
+use Illuminate\Notifications\Notifiable;
 
 class Course extends Model
 {
     use Sluggable;
     use Rating;
     use SoftDeletes;
+    use Notifiable;
     protected $fillable = ['user_id', 'title_ar', 'title_en', 'description_en', 'description_ar', 'category_id',
         'status', 'is_paid', 'price'];
 
@@ -57,10 +59,10 @@ class Course extends Model
         return $this->belongsToMany(User::class, 'course_student')->withPivot('user_id');
     } // end of get user course that have a course,
 
-  /*  public function student()
-    {
-        return $this->hasManyThrough(User::class, 'course_student');
-    } */// end of get user course that have a course
+    /*  public function student()
+      {
+          return $this->hasManyThrough(User::class, 'course_student');
+      } */// end of get user course that have a course
 
     public function exams()
     {
@@ -69,7 +71,7 @@ class Course extends Model
 
     public function comments()
     {
-        return $this->morphMany(Comment::class,'commentable');
+        return $this->morphMany(Comment::class, 'commentable');
     }
 
 

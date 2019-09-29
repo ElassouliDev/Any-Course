@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\View;
 
+use App\Certificate;
 use App\Course;
 use App\Http\Controllers\BaseController;
 use App\Lesson;
@@ -48,12 +49,20 @@ class LessonsController extends BaseController
         $course = Course::where('slug_ar', $slug)->orWhere('slug_en', $slug)->first();
         $exams = $course->exams;
         $data = explode(',', $request->data_answer);
+        $degree = 0;
         for ($i = 0; $i < count($data); $i += 2) {
-            $exams->where('id', $data[$i])->first()
+            $option = $exams->where('id', $data[$i])->first()
                 ->option_exam->where('value_' . app()->getLocale(), $data[$i + 1])
-                ->first()->answer()->sync(auth()->id());
-        }
+                ->first();
+            if (!empty($option)){
 
+                $option->answer()->sync(auth()->id());
+                $degree+=$option->is_correct?1:0;
+            }
+        }
+        $degreee= $degree*(count($data)/2)*(100/100);
+
+        Certificate::updateOrCreate(['user_id'=>auth()->id(),'course_id'=>$course->id],['degree'=>$degreee]);
         return back();
 
     }

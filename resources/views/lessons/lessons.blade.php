@@ -53,7 +53,8 @@
         <div class="heading-side">
             <i class="fa fa-caret-left fa-lg"></i>
             <h5>@lang('admin.course') : {{ucfirst($course['title_'.app()->getLocale()])}} <span
-                    style="float: right; color: #1d2124 ; background: white ; padding:5px 10px; border-radius: 20px;  ">@lang('course.lesson') :{{count($lessons)}} </span>
+                        style="float: right; color: #1d2124 ; background: white ; padding:5px 10px; border-radius: 20px;  ">@lang('course.lesson')
+                    :{{count($lessons)}} </span>
             </h5>
 
 
@@ -83,27 +84,7 @@
                         </a>
                     </li>
                 @endforeach
-                <li style="float: none">
-                    <a href="{{route('course.exam',$course['slug_'.app()->getLocale()])}}">
-                        <div class="radio">
-                            <label>
-                                <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1">
-                                {{1 + count($lessons)}}
-                                .{{__('course.exam')}}
-                                {{--@if(!empty($lesson->student_watch_lesson) && $lesson->student_watch_lesson->count()>0 )
-                                    --}}{{--{{dd($lesson->student_watch_lesson->first()->is_completed)}}--}}{{--
-                                    @if($lesson->student_watch_lesson->first()->is_completed == 1)
-                                        <i class="fa fa-star text-light" style="color: white"></i>
-                                    @else
-                                        <i class="fa fa-hourglass-start" style="color: white"></i>
-                                    @endif
-                                @endif--}}
-                            </label>
 
-
-                        </div>
-                    </a>
-                </li>
             @else
                 <li style="float: none">
 
@@ -113,8 +94,36 @@
                         </label>
 
                     </div>
+                </li>
+
+            @endif
+
+        </ul>
+        <ul class="list-unstyled">
+            @if (count($lessons) > 0)
+                <li style="float: none">
+                    <a href="{{route('course.exam',$course['slug_'.app()->getLocale()])}}">
+                        <div class="radio">
+                            <label>
+                                {{__('course.exam')}}
+
+                            </label>
+
+
+                        </div>
                     </a>
                 </li>
+                <li style="float: none">
+                    <a href="{{route('course.certification',$course['slug_'.app()->getLocale()])}}">
+                        <div class="radio">
+                            <label>
+
+                                {{__('course.certificate')}}
+                            </label>
+                        </div>
+                    </a>
+                </li>
+
 
             @endif
 
@@ -125,21 +134,12 @@
     <div class="col-md-9">
         <div class="show-videos">
             <div class="tab-content">
-                {{--    <div id="home" class="tab-pane fade in active">
-                        <h3 class="text-center">First Lesson</h3>
-                        <a href="#"><span class="back">@lang('course.feed_back')</span></a>
-                        <div class="video text-center">
-                            <iframe width="560" height="420" src="https://www.youtube.com/embed/HdSaxRtNxAM"
-                                    frameborder="0"
-                                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                                    allowfullscreen></iframe>
-                        </div>
-                    </div>--}}
+
                 @if (isset($lesson_watching)&& !empty($lesson_watching))
                     <div id="menu1" class="tab-pane fade in active ">
                         <h3 class="text-center">{{$lesson_watching['title_'.app()->getLocale()]}}</h3>
                         <a href="{{route('list_question',['slug_course'=>$course['slug_'.app()->getLocale()],'slug_lesson'=>$lesson_watching['slug_'.app()->getLocale()]])}}"><span
-                                class="back">@lang('course.feed_back')</span></a>
+                                    class="back">@lang('course.feed_back')</span></a>
                         <div class="video text-center">
 
                             <iframe id="existing-iframe-example"
@@ -182,7 +182,7 @@
                                     <div class="panel-heading">
                                         <strong>{{$comment->user->first_name.' '.$comment->user->last_name}}</strong>
                                         <span
-                                            class="text-muted">{{Carbon\Carbon::parse($comment->created_at)->diffForHumans()}}</span>
+                                                class="text-muted">{{Carbon\Carbon::parse($comment->created_at)->diffForHumans()}}</span>
                                     </div>
                                     <div class="panel-body">
                                         {{$comment->content}}

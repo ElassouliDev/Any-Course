@@ -42,5 +42,7 @@ return [
     'new_comment'=>'New comment',
     'Type a comment'=>'Type a comment',
     'NO DATA'=>'NO DATA',
+    'exam'=>'Exam',
+
 
 ];

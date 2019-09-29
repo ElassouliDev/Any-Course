@@ -41,6 +41,9 @@ $app->singleton(
     App\Exceptions\Handler::class
 );
 
+/*/////////////// add pdf library for certification
+$app->singleton(\Barryvdh\DomPDF\ServiceProvider::class);*/
+
 /*
 |--------------------------------------------------------------------------
 | Return The Application

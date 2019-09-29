@@ -333,8 +333,7 @@
 
         #result-of-question th {
             text-align: center;
-            background-attachment: ;
-            ckground: #75ba48;
+            background: #75ba48;
             color: #fff;
             padding: 18px;
             font-size: 18px;
@@ -415,6 +414,7 @@
             font-size: 28px;
             color: #75ba48;
         }
+
     </style>
 
     {{-- strat style comment  --}}
@@ -521,7 +521,7 @@
                         </a>
                     </li>
                 @endforeach
-                <li class="active" style="float: none">
+               {{-- <li class="active" style="float: none">
                     <a href="{{route('course.exam',$course['slug_'.app()->getLocale()])}}">
                         <div class="radio">
                             <label>
@@ -533,6 +533,18 @@
                         </div>
                     </a>
                 </li>
+                <li style="float: none">
+                    <a href="{{route('course.certification',$course['slug_'.app()->getLocale()])}}">
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1"
+                                       checked>
+                                {{1 + count($lessons)}}
+                                .{{__('course.certificate')}}
+                            </label>
+                        </div>
+                    </a>
+                </li>--}}
             @else
                 <li style="float: none">
 
@@ -547,7 +559,37 @@
             @endif
 
         </ul>
+        @if (count($lessons) > 0)
+            <ul class="list-unstyled">
+                @if (count($lessons) > 0)
+                    <li style="float: none"  class="active">
+                        <a href="{{route('course.exam',$course['slug_'.app()->getLocale()])}}">
+                            <div class="radio">
+                                <label>
+                                    {{__('course.exam')}}
 
+                                </label>
+
+
+                            </div>
+                        </a>
+                    </li>
+                    <li style="float: none">
+                        <a href="{{route('course.certification',$course['slug_'.app()->getLocale()])}}">
+                            <div class="radio">
+                                <label>
+
+                                    {{__('course.certificate')}}
+                                </label>
+                            </div>
+                        </a>
+                    </li>
+
+
+                @endif
+
+            </ul>
+        @endif
     </div>
 
     <div class="col-md-9">
@@ -561,49 +603,31 @@
 
 
                 </button>
-                <div class="review_content">
-                    @if(isset($user_review ) && !empty($user_review ))
-                        <div class="comments">
-                            <p class="lead">
-                                {{$user_comment_review->content}}
-                                <span class="stars stars_reveiw" style="padding: 0; margin: -9px 3px;">
-                              <i class="glyphicon .glyphicon-star-empty {{$user_review->rating>0?'glyphicon-star':'glyphicon-star-empty'}}"></i>
-                              <i class="glyphicon .glyphicon-star-empty {{$user_review->rating>1?'glyphicon-star':'glyphicon-star-empty'}}"></i>
-                              <i class="glyphicon .glyphicon-star-empty {{$user_review->rating>2?'glyphicon-star':'glyphicon-star-empty'}}"></i>
-                              <i class="glyphicon .glyphicon-star-empty {{$user_review->rating>3?'glyphicon-star':'glyphicon-star-empty'}}"></i>
-                              <i class="glyphicon .glyphicon-star-empty {{$user_review->rating>4?'glyphicon-star':'glyphicon-star-empty'}}"></i>
-                        </span>
-                                <span>{{Carbon\Carbon::parse($user_comment_review->created_at)->diffForHumans()}}</span>
 
-                            </p>
+                {{-- view course review by user --}}
+                {{-- <div class="review_content">
+                     @if(isset($user_review ) && !empty($user_review ))
+                         <div class="comments">
+                             <p class="lead">
+                                 {{$user_comment_review->content}}
+                                 <span class="stars stars_reveiw" style="padding: 0; margin: -9px 3px;">
+                               <i class="glyphicon .glyphicon-star-empty {{$user_review->rating>0?'glyphicon-star':'glyphicon-star-empty'}}"></i>
+                               <i class="glyphicon .glyphicon-star-empty {{$user_review->rating>1?'glyphicon-star':'glyphicon-star-empty'}}"></i>
+                               <i class="glyphicon .glyphicon-star-empty {{$user_review->rating>2?'glyphicon-star':'glyphicon-star-empty'}}"></i>
+                               <i class="glyphicon .glyphicon-star-empty {{$user_review->rating>3?'glyphicon-star':'glyphicon-star-empty'}}"></i>
+                               <i class="glyphicon .glyphicon-star-empty {{$user_review->rating>4?'glyphicon-star':'glyphicon-star-empty'}}"></i>
+                         </span>
+                                 <span>{{Carbon\Carbon::parse($user_comment_review->created_at)->diffForHumans()}}</span>
 
-                        </div>
+                             </p>
 
-                    @endif
-                </div>
-                {{--<div class="comments">
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error alias ab enim est
-                    consequatur,
-                    porro esse distinctio laborum saepe perferendis dicta perspiciatis repellendus tempore
-                    praesentium, quaerat inventore quas, eaque nisi!
+                         </div>
 
-                    <span class="stars stars_reveiw" style="padding: 0;margin: -13px 0px;">
-                          <i class="glyphicon .glyphicon-star-empty glyphicon-star"></i>
-                          <i class="glyphicon .glyphicon-star-empty glyphicon-star"></i>
-                          <i class="glyphicon .glyphicon-star-empty glyphicon-star"></i>
-                          <i class="glyphicon .glyphicon-star-empty glyphicon-star"></i>
-                          <i class="glyphicon .glyphicon-star-empty glyphicon-star-empty"></i>
-                    </span>
-                    <span>
-                          in 08.09.2016
-                    </span>
-                    --}}{{--<button>repley</button>--}}{{--
-                </p>
-
-            </div>--}}
+                     @endif
+                 </div>--}}
                 @if (isset($course->exams)&& count($course->exams)>0)
-                    <div class="row"><br><br>
+                    <div class="row question-content"
+                         style="{{isset($user_review)&&!empty($user_review)?'':'display:none'}} "><br><br>
                         <div class="col-sm-8 col-sm-offset-2">
                             <div class="loader">
                                 <div class="col-xs-3 col-xs-offset-5">
@@ -655,7 +679,11 @@
                                         <th>@lang('course.Result')</th>
                                     </tr>
                                     </thead>
-                                    <tbody id="quizResult"></tbody>
+                                    <tbody id="quizResult">
+                                    {{--
+                                                                        @foreach()
+                                    --}}
+                                    </tbody>
                                 </table>
                             </div>
                         </div>
@@ -734,36 +762,33 @@
         });
 
 
-        $(document).on('click', '[data-action="show"]', function () {
-            notifications.loading.show();
-            $('#show').remove();
-            $('.modal-backdrop.fade.show').remove();
+        /*
+                $(document).on('click', '[data-action="show"]', function () {
+                    notifications.loading.show();
+                    $('#show').remove();
+                    $('.modal-backdrop.fade.show').remove();
 
-            var url = $(this).attr('data-link'),
-                request = $.ajax({
-                    url: url,
-                    method: "get",
-                    data: [],
-                    dataType: "json",
-                    cache: false,
-                    contentType: false,
-                    processData: false
+                    var url = $(this).attr('data-link'),
+                        request = $.ajax({
+                            url: url,
+                            method: "get",
+                            data: [],
+                            dataType: "json",
+                            cache: false,
+                            contentType: false,
+                            processData: false
+                        });
+                    request.done(function (response) {
+                         $('html').append(response.show);
+                        $('#show').modal('show');
+
+                        $('.question-content').show();
+                        // $('#growls').remove();
+
+                        // http.success(response, false);
+                    });
                 });
-            request.done(function (response) {
-                $('html').append(response.show);
-                $('#show').modal('show');
-                $('.js-example-basic-multiple').select2();
-
-                // $('#growls').remove();
-
-                // http.success(response, false);
-            });
-            request.fail(function (response, exception) {
-                // /$('#growls').remove();
-
-                // http.fail(JSON.parse(response.responseText), true);
-            });
-        });
+        */
 
     </script>
 
@@ -893,10 +918,14 @@
                             $('#loadbar').fadeOut();
                         }, 1500);
                         $('#question').html(q[questionNo].Q);
-                        $($('#option1').parent().find('label')).html(q[questionNo].C[0]);
-                        $($('#option2').parent().find('label')).html(q[questionNo].C[1]);
-                        $($('#option3').parent().find('label')).html(q[questionNo].C[2]);
-                        $($('#option4').parent().find('label')).html(q[questionNo].C[3]);
+                        $('#option1').parent().find('label').html(q[questionNo].C[0]);
+                        $('#option2').parent().find('label').html(q[questionNo].C[1]);
+                        $('#option3').parent().find('label').html(q[questionNo].C[2]);
+                        $('#option4').parent().find('label').html(q[questionNo].C[3]);
+                        $('#option1').val(q[questionNo].C[0]);
+                        $('#option2').val(q[questionNo].C[1]);
+                        $('#option3').val(q[questionNo].C[2]);
+                        $('#option4').val(q[questionNo].C[3]);
                     }
                 }, 1000);
             });
@@ -1170,20 +1199,21 @@
             url = $($this).attr('action');
             $.post(url, data, function (response) {
                 $rating = $($this).find('[name=rating]').val();
-                $('.review_content').html('<div class="comments">' +
-                    '<p class="lead">' +
-                    response.comment.content +
-                    '<span class="stars stars_reveiw" style="padding: 0; margin: -9px 3px;">\n' +
-                    '<i class="glyphicon .glyphicon-star-empty ' + ($rating > 0 ? 'glyphicon-star' : 'glyphicon-star-empty') + '"></i>' +
-                    '<i class="glyphicon .glyphicon-star-empty ' + ($rating > 1 ? 'glyphicon-star' : 'glyphicon-star-empty') + '"></i>' +
-                    '<i class="glyphicon .glyphicon-star-empty ' + ($rating > 2 ? 'glyphicon-star' : 'glyphicon-star-empty') + '"></i>' +
-                    '<i class="glyphicon .glyphicon-star-empty ' + ($rating > 3 ? 'glyphicon-star' : 'glyphicon-star-empty') + '"></i>' +
-                    '<i class="glyphicon .glyphicon-star-empty ' + ($rating > 4 ? 'glyphicon-star' : 'glyphicon-star-empty') + '"></i>' +
-                    '</span>' +
-                    '<span>' + response.comment.date + '</span>' +
-                    '</p>' +
-                    '</div>');
+                /*  $('.review_content').html('<div class="comments">' +
+                      '<p class="lead">' +
+                      response.comment.content +
+                      '<span class="stars stars_reveiw" style="padding: 0; margin: -9px 3px;">\n' +
+                      '<i class="glyphicon .glyphicon-star-empty ' + ($rating > 0 ? 'glyphicon-star' : 'glyphicon-star-empty') + '"></i>' +
+                      '<i class="glyphicon .glyphicon-star-empty ' + ($rating > 1 ? 'glyphicon-star' : 'glyphicon-star-empty') + '"></i>' +
+                      '<i class="glyphicon .glyphicon-star-empty ' + ($rating > 2 ? 'glyphicon-star' : 'glyphicon-star-empty') + '"></i>' +
+                      '<i class="glyphicon .glyphicon-star-empty ' + ($rating > 3 ? 'glyphicon-star' : 'glyphicon-star-empty') + '"></i>' +
+                      '<i class="glyphicon .glyphicon-star-empty ' + ($rating > 4 ? 'glyphicon-star' : 'glyphicon-star-empty') + '"></i>' +
+                      '</span>' +
+                      '<span>' + response.comment.date + '</span>' +
+                      '</p>' +
+                      '</div>');*/
                 $("#new").modal('hide');
+                $(".question-content").show();
                 $("#exampleModalLabel").text('@lang('course.edit_review')');
                 $(".btn_action_review").html(
                     '@lang('course.edit_review')' + '&ensp; <i class="fa fa-pencil" style="font-size: 11px;"></i>'

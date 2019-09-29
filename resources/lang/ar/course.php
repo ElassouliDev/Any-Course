@@ -49,6 +49,7 @@ return [
     'The language'=>'اللغة',
     'Type a comment'=>'اكتب تعليق',
     'NO DATA'=>'لا يوجد بيانات',
+    'exam'=>'إختبار',
 
 
 ];

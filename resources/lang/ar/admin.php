@@ -134,6 +134,4 @@ return [
     'average'=>'متوسط ',
     'average_degree'=>'متوسط العلامات',
     'certificates_data'=>'بيانات الشهادات',
-    'dashboard_webSite'=>'عرض الموقع',
-    'isPaid'=>'الحالة:مدوفوع/مجاني',
 ];

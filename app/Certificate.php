@@ -12,4 +12,14 @@ class Certificate extends Model
     {
         return $this->morphOne(File::class, 'fileable');
     }//end of get file Certificate
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }//end of get file Certificate
+
+     public function course()
+    {
+        return $this->belongsTo(Course::class);
+    }//end of get file Certificate
+
 }

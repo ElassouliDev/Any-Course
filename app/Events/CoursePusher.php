@@ -19,6 +19,8 @@ class CoursePusher implements ShouldBroadcast
     public function __construct(Course $course)
     {
 
+
+
         $this->course = [
             'message_en' => auth()->user()->full_name() . ' added a new course ',
             'message_ar' => auth()->user()->full_name() . 'اضاف كورس جديد  ',

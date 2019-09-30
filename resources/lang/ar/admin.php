@@ -134,4 +134,6 @@ return [
     'average'=>'متوسط ',
     'average_degree'=>'متوسط العلامات',
     'certificates_data'=>'بيانات الشهادات',
+    'not certifications exist'=>'لا شهادات موجودة',
+
 ];

@@ -14,19 +14,18 @@ class CoursePusher implements ShouldBroadcast
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
 
-
     public $course;
 
     public function __construct(Course $course)
     {
 
         $this->course = [
-            'message_en' => auth()->user()->full_name().' added a new course ',
-            'message_ar' => auth()->user()->full_name().'اضاف كورس جديد  ',
+            'message_en' => auth()->user()->full_name() . ' added a new course ',
+            'message_ar' => auth()->user()->full_name() . 'اضاف كورس جديد  ',
             'slug_en' => $course->slug_en,
             'slug_ar' => $course->slug_ar,
-            'title_en' =>$course->title_en,
-            'title_ar' =>$course->title_ar,
+            'title_en' => $course->title_en,
+            'title_ar' => $course->title_ar,
         ];
     }
 

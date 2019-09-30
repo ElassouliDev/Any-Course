@@ -106,5 +106,6 @@ return [
     'average'=>'Average',
     'average_degree'=>'Average Degree',
     'certificates_data'=>'Certificates Data',
+    'not certifications exist'=>'not certifications exist',
 
 ];

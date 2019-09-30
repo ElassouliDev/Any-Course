@@ -54,12 +54,14 @@
         channel.bind('my-event', function(data) {
             var result = JSON.parse(JSON.stringify(data));
             console.log(result);
+            link_en = "{{url('course')}}"+'/'+result.course.slug_en+'/?read='+result.id;
+            link_ar = "{{url('course')}}"+'/'+result.course.slug_ar;
             var notifcations = $('#notifcations ul .menu');
             notifcations.prepend("<li>" +
             @if(app()->getLocale() == 'en')
-                "<a href='#'>"+result.course.message_en+"</a>"+
+                "<a href='"+link_en +"'>"+result.course.message_en+"</a>"+
                 @else
-                "<a href='#'>"+result.message_en+"</a>"+ @endif
+                "<a href='"+link_ar +"'>"+result.course.message_ar+"</a>"+ @endif
 
 
                 +"</li>");

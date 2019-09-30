@@ -21,6 +21,9 @@ class CoursePusher implements ShouldBroadcast
 
 
 
+
+
+
         $this->course = [
             'message_en' => auth()->user()->full_name() . ' added a new course ',
             'message_ar' => auth()->user()->full_name() . 'اضاف كورس جديد  ',

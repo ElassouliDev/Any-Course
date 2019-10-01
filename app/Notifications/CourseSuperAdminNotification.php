@@ -57,15 +57,13 @@ class CourseSuperAdminNotification extends Notification
     public function toArray($notifiable)
     {
         return [
-            'id' => $this->id,
-            'read_at' => null,
-            'data' => [
                 'id'=>$this->course->id,
+                'user_id'=>auth()->user()->id,
                 'title_en'=>$this->course->title_en,
                 'title_ar'=>$this->course->title_ar,
                 'message_en' => auth()->user()->full_name().' added a new course ',
                 'message_ar' => auth()->user()->full_name().'اضاف كورس جديد  ',
-            ],
+
 
         ];
     }

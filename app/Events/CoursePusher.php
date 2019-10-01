@@ -3,6 +3,7 @@
 namespace App\Events;
 
 use App\Course;
+use App\User;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Broadcasting\PrivateChannel;
 use Illuminate\Foundation\Events\Dispatchable;
@@ -18,7 +19,6 @@ class CoursePusher implements ShouldBroadcast
 
     public function __construct(Course $course)
     {
-
         $this->course = [
             'message_en' => auth()->user()->full_name() . ' added a new course ',
             'message_ar' => auth()->user()->full_name() . 'اضاف كورس جديد  ',
@@ -26,6 +26,7 @@ class CoursePusher implements ShouldBroadcast
             'slug_ar' => $course->slug_ar,
             'title_en' => $course->title_en,
             'title_ar' => $course->title_ar,
+            'user_id'=>auth()->user()->id,
         ];
     }
 

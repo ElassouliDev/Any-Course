@@ -22,7 +22,8 @@ class CourseObserver
         $users = User::query();
         $super_admin = $users->whereRoleIs('super_admin')->get();
         if(count($users->where('id',$course->user_id)->get() ) == 0)
-        Notification::send($super_admin, new CourseSuperAdminNotification($course));
+        $notification = Notification::send($super_admin, new CourseSuperAdminNotification($course));
+//        dd($notification);
         event(new CoursePusher($course));
 
     }

@@ -3,6 +3,8 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
     <title>{{@$site_title}}</title>
 
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
@@ -35,14 +37,11 @@
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
     <script>
-
-
-        var notificationsWrapper   = $('#notifcations');
-        var notificationsToggle    = notificationsWrapper.find('a[data-toggle]');
-        var notificationsCountElem = notificationsToggle.find('i[data-count]');
-        var notificationsCount     = parseInt(notificationsCountElem.data('count'));
-
-
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
         Pusher.logToConsole = true;
 
         var pusher = new Pusher('3154f7166f89b46a4e19', {
@@ -54,17 +53,24 @@
         channel.bind('my-event', function(data) {
             var result = JSON.parse(JSON.stringify(data));
             console.log(result);
-            link_en = "{{url('course')}}"+'/'+result.course.slug_en+'/?read='+result.id;
-            link_ar = "{{url('course')}}"+'/'+result.course.slug_ar;
-            var notifcations = $('#notifcations ul .menu');
-            notifcations.prepend("<li>" +
-            @if(app()->getLocale() == 'en')
-                "<a href='"+link_en +"'>"+result.course.message_en+"</a>"+
-                @else
-                "<a href='"+link_ar +"'>"+result.course.message_ar+"</a>"+ @endif
+            url = "{{url('dashboard/notifications')}}"+'/'+result.course.user_id;
+            $.get(url,function(response) {
+                console.table(response);
+                link_en = "{{url('course')}}"+'/'+result.course.slug_en+'/?read='+response.data.id;
+                link_ar = "{{url('course')}}"+'/'+result.course.slug_ar+'/?read='+response.data.id;
+                var notifcations = $('#notifcations ul .menu');
+                notifcations.prepend("<li>" +
+                    @if(app()->getLocale() == 'en')
+                        "<a href='"+link_en +"'>"+result.course.message_en+"</a>"+
+                    @else
+                        "<a href='"+link_ar +"'>"+result.course.message_ar+"</a>"+ @endif
 
 
-                +"</li>");
+                        +"</li>");
+            });
+
+
+
             // alert(JSON.stringify(data));
         });
     </script>

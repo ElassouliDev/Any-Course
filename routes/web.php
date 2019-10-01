@@ -17,6 +17,7 @@ Route::group(
     ],
     function () {
         Route::prefix('dashboard')->name('dashboard.')->middleware(['auth'])->group(function () {
+            Route::get('/notifications/{id}','Dashboard\NotificationsController@index');
             Route::resource('/', 'Dashboard\DashboardController');
             Route::resource('/users', 'Dashboard\UserController');
             Route::resource('/category', 'Dashboard\CategoryController');

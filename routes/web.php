@@ -16,7 +16,7 @@ Route::group(
         'middleware' => ['localeSessionRedirect', 'localizationRedirect', 'localeViewPath']
     ],
     function () {
-        Route::prefix('dashboard')->name('dashboard.')->middleware(['auth'])->group(function () {
+        Route::prefix('dashboard')->name('dashboard.')->middleware(['auth','superAdmin'])->group(function () {
             Route::get('/notifications/{id}','Dashboard\NotificationsController@index');
             Route::resource('/', 'Dashboard\DashboardController');
             Route::resource('/users', 'Dashboard\UserController');

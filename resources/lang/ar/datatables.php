@@ -18,5 +18,10 @@ return [
     "sNext" => "التالى",
     "sPrevious" => "السابق",
     "sSortAscending" => "ترتيب بحسب الاقدم",
-
+    "add" => "اضف",
+    "delete" => "حذف",
+    "export_csv" => "تصدير Csv",
+    "reload" => "تحديث",
+    "export_excel" => "تصدير Excel",
+    "print" => "طباعة",
 ];

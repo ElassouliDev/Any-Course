@@ -23,15 +23,15 @@ class BaseController extends Controller
         $this->siteCopyright = Cache::remember('websiteCopyright', 60 * 60 * 24, function () {
         return Setting::where('key','copyright')->first()->value ?? 'Copyright © 2014-2016';
         });
-        $this->icon = Cache::remember('icon', 60, function () {
+        $this->icon = Cache::remember('icon', 60 * 60 * 24, function () {
             $setting_icon = Setting::where('key','icon')->first()->value;
         return $setting_icon == 'image/icon.png' ? 'image/icon.png'  :  'storage/'.$setting_icon ?? 'image/icon.png'  ;
         });
-        $this->logo = Cache::remember('logo', 60, function () {
+        $this->logo = Cache::remember('logo', 60 * 60 * 24, function () {
            $setting_logo =Setting::where('key','logo')->first()->value;
             return   $setting_logo =='image/logo.png' ? 'image/logo.png' :  'storage/'. $setting_logo  ?? 'image/logo.png'  ;
         });
-        $this->Version = Cache::remember('version', 60, function () {
+        $this->Version = Cache::remember('version', 60 * 60 * 24, function () {
            $setting_version =Setting::where('key','version')->first()->value;
             return   $setting_version??'1.0'   ;
         });

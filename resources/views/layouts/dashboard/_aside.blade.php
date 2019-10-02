@@ -4,7 +4,7 @@
 
         <div class="user-panel">
             <div class="pull-left image">
-                <img src="{{ asset('dashboard_files/img/user2-160x160.jpg') }}" class="img-circle" alt="User Image">
+                <img src="{{isset(auth()->user()->image['file_path']) ? url('storage/'.auth()->user()->image['file_path']) : 'https://ssl.gstatic.com/accounts/ui/avatar_2x.png'}}" class="img-circle" alt="User Image">
             </div>
             <div class="pull-left info">
                 <p>{{auth()->user()->first_name .' '.auth()->user()->last_name}}</p>

@@ -138,8 +138,8 @@
         {{--<!-- Logo -->--}}
         <a href="{{ route('dashboard.index') }}" class="logo">
             {{--<!-- mini logo for sidebar mini 50x50 pixels -->--}}
-            <span class="logo-mini"><b>A</b>LT</span>
-            <span class="logo-lg"><b>Admin</b>LTE</span>
+            <span class="logo-mini"><b>{{$site_title}}</b></span>
+            <span class="logo-lg"><b>{{$site_title}}</b></span>
         </a>
 
         <nav class="navbar navbar-static-top">
@@ -168,7 +168,7 @@
                                     <li><!-- start message -->
                                         <a href="#">
                                             <div class="pull-left">
-                                                <img src="{{ asset('dashboard_files/img/user2-160x160.jpg') }}" class="img-circle" alt="User Image">
+                                                <img src="{{isset(auth()->user()->image['file_path']) ? url('storage/'.auth()->user()->image['file_path']) : 'https://ssl.gstatic.com/accounts/ui/avatar_2x.png'}}" class="img-circle" alt="User Image">
                                             </div>
                                             <h4>
                                                 Support Team
@@ -231,19 +231,17 @@
                     <li class="dropdown user user-menu">
 
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <img src="{{ asset('dashboard_files/img/user2-160x160.jpg') }}" class="user-image" alt="User Image">
+                            <img src="{{isset(auth()->user()->image['file_path']) ? url('storage/'.auth()->user()->image['file_path']) : 'https://ssl.gstatic.com/accounts/ui/avatar_2x.png'}}" class="user-image" alt="User Image">
                             <span class="hidden-xs">{{ auth()->user()->first_name }} {{ auth()->user()->last_name }}</span>
                         </a>
                         <ul class="dropdown-menu">
 
                             {{--<!-- User image -->--}}
                             <li class="user-header">
-                                <img src="{{ asset('dashboard_files/img/user2-160x160.jpg') }}" class="img-circle" alt="User Image">
+                                <img src="{{isset(auth()->user()->image['file_path']) ? url('storage/'.auth()->user()->image['file_path']) : 'https://ssl.gstatic.com/accounts/ui/avatar_2x.png'}}" class="img-circle" alt="User Image">
 
                                 <p>
-                                    {{ auth()->user()->first_name }} {{ auth()->user()->last_name }}
-                                    <small>Member since 2 days</small>
-                                </p>
+                                    {{ auth()->user()->first_name }} {{ auth()->user()->last_name }}</p>
                             </li>
 
                             {{--<!-- Menu Footer-->--}}

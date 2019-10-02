@@ -24,5 +24,11 @@ return [
     "sPrevious" => "Previous",
     "sSortAscending" => ": activate to sort column ascending",
     "sSortDescending" => ": activate to sort column descending",
+    "add" => "Add",
+    "delete" => "Delete",
+    "export_csv" => "Export Csv",
+    "reload" => "Reload",
+    "export_excel" => "Export Excel",
+    "print" => "Print",
 
 ];

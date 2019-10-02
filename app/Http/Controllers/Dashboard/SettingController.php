@@ -111,12 +111,7 @@ class SettingController extends BaseController
         return redirect()->route('dashboard.settings.index');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function destroy(Setting $setting)
     {
         $setting->delete();

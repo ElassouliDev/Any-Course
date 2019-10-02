@@ -35,7 +35,7 @@
 
                         <div class="form-group">
                             <label>@lang('admin.key')</label>
-                            <input type="text" name="key" class="form-control" value="{{$setting->key }}">
+                            <input type="text" name="key" disabled class="form-control" value="{{$setting->key }}">
                         </div>
 
                         <div class="form-group">

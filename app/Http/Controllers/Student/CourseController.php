@@ -6,11 +6,14 @@ use App\Answer_user;
 use App\Certificate;
 use App\Course;
 use App\Http\Controllers\BaseController;
+use App\Notifications\Enroll_course;
+use App\User;
 use Barryvdh\DomPDF\Facade as PDF;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Notification;
 use Illuminate\Support\Facades\View;
 
 class CourseController extends BaseController
@@ -26,8 +29,12 @@ class CourseController extends BaseController
 
     function enroll_and_in_enroll_course($slug)
     {
-        $course_id = Course::where('slug_' . app()->getLocale(), $slug)->first()->id;
-        Auth::user()->enrolled_course()->toggle($course_id);
+        $course= Course::where('slug_' . app()->getLocale(), $slug)->first();
+        Auth::user()->enrolled_course()->toggle($course->id);
+
+
+        $user = User::find($course->user_id);
+        $user ->notify(new Enroll_course($course));
         return back();
 
     }

@@ -25,7 +25,7 @@ class SettingRequest extends FormRequest
     {
         return [
 //            'key'=>'string|required',
-            'value'=>'string|required',
+            'value'=>'string',
         ];
     }
 }

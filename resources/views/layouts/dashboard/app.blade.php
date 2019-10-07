@@ -27,7 +27,8 @@
             }
         </style>
     @else
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+        <link rel="stylesheet"
+              href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
         <link rel="stylesheet" href="{{ asset('dashboard_files/css/font-awesome.min.css') }}">
         <link rel="stylesheet" href="{{ mix('css/dashboard-ltr.css') }}">
 
@@ -50,25 +51,24 @@
         });
 
         var channel = pusher.subscribe('my-channel');
-        channel.bind('my-event', function(data) {
+        channel.bind('my-event', function (data) {
             var result = JSON.parse(JSON.stringify(data));
             console.log(result);
-            url = "{{url('dashboard/notifications')}}"+'/'+result.course.user_id;
-            $.get(url,function(response) {
+            url = "{{url('dashboard/notifications')}}" + '/' + result.course.user_id;
+            $.get(url, function (response) {
                 console.table(response);
-                link_en = "{{url('course')}}"+'/'+result.course.slug_en+'/?read='+response.data.id;
-                link_ar = "{{url('course')}}"+'/'+result.course.slug_ar+'/?read='+response.data.id;
+                link_en = "{{url('course')}}" + '/' + result.course.slug_en + '/?read=' + response.data.id;
+                link_ar = "{{url('course')}}" + '/' + result.course.slug_ar + '/?read=' + response.data.id;
                 var notifcations = $('#notifcations ul .menu');
                 notifcations.prepend("<li>" +
                     @if(app()->getLocale() == 'en')
-                        "<a href='"+link_en +"'>"+result.course.message_en+"</a>"+
+                        "<a href='" + link_en + "'>" + result.course.message_en + "</a>" +
                     @else
-                        "<a href='"+link_ar +"'>"+result.course.message_ar+"</a>"+ @endif
+                        "<a href='" + link_ar + "'>" + result.course.message_ar + "</a>" + @endif
 
 
                         +"</li>");
             });
-
 
 
             // alert(JSON.stringify(data));
@@ -77,7 +77,7 @@
 
     @stack('css')
     <style>
-        .mr-2{
+        .mr-2 {
             margin-right: 5px;
         }
 
@@ -155,55 +155,71 @@
                 <ul class="nav navbar-nav">
 
                     <!-- Messages: style can be found in dropdown.less-->
-                    <li class="dropdown messages-menu">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <i class="fa fa-envelope-o"></i>
-                            <span class="label label-success">4</span>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li class="header">You have 4 messages</li>
-                            <li>
-                                <!-- inner menu: contains the actual data -->
-                                <ul class="menu">
-                                    <li><!-- start message -->
-                                        <a href="#">
-                                            <div class="pull-left">
-                                                <img src="{{isset(auth()->user()->image['file_path']) ? url('storage/'.auth()->user()->image['file_path']) : 'https://ssl.gstatic.com/accounts/ui/avatar_2x.png'}}" class="img-circle" alt="User Image">
-                                            </div>
-                                            <h4>
-                                                Support Team
-                                                <small>
-                                                    <i class="fa fa-clock-o"></i> 5 mins
-                                                </small>
-                                            </h4>
-                                            <p>Why not buy a new awesome theme?</p>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="footer">
-                                <a href="#">See All Messages</a>
-                            </li>
-                        </ul>
-                    </li>
+{{--                    <li class="dropdown messages-menu">--}}
+{{--                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">--}}
+{{--                            <i class="fa fa-envelope-o"></i>--}}
+{{--                            <span class="label label-success">4</span>--}}
+{{--                        </a>--}}
+{{--                        <ul class="dropdown-menu">--}}
+{{--                            <li class="header">You have 4 messages</li>--}}
+{{--                            <li>--}}
+{{--                                <!-- inner menu: contains the actual data -->--}}
+{{--                                <ul class="menu">--}}
+{{--                                    <li><!-- start message -->--}}
+{{--                                        <a href="#">--}}
+{{--                                            <div class="pull-left">--}}
+{{--                                                <img--}}
+{{--                                                    src="{{isset(auth()->user()->image['file_path']) ? url('storage/'.auth()->user()->image['file_path']) : 'https://ssl.gstatic.com/accounts/ui/avatar_2x.png'}}"--}}
+{{--                                                    class="img-circle" alt="User Image">--}}
+{{--                                            </div>--}}
+{{--                                            <h4>--}}
+{{--                                                Support Team--}}
+{{--                                                <small>--}}
+{{--                                                    <i class="fa fa-clock-o"></i> 5 mins--}}
+{{--                                                </small>--}}
+{{--                                            </h4>--}}
+{{--                                            <p>Why not buy a new awesome theme?</p>--}}
+{{--                                        </a>--}}
+{{--                                    </li>--}}
+{{--                                </ul>--}}
+{{--                            </li>--}}
+{{--                            <li class="footer">--}}
+{{--                                <a href="#">See All Messages</a>--}}
+{{--                            </li>--}}
+{{--                        </ul>--}}
+{{--                    </li>--}}
 
                     {{--<!-- Notifications: style can be found in dropdown.less -->--}}
                     <li class="dropdown notifications-menu dropdown-notifications " id="notifcations">
 
                         <a href="#notifications-panel" class="dropdown-toggle" data-toggle="dropdown">
-                            <i data-count="0" class="glyphicon glyphicon-bell notification-icon fa fa-bell-o" ></i>
-                            <span class="label label-warning"><span class="notif-count">0</span></span>
+                            <i data-count="0" class="glyphicon glyphicon-bell notification-icon fa fa-bell-o"></i>
+                            <span class="label label-warning"><span
+                                    class="notif-count">{{count(auth()->user()->unreadNotifications)}}</span></span>
                         </a>
                         <ul class="dropdown-menu ">
-                            <li class="header">You have (<span class="notif-count">0</span>) notifications</li>
+                            <li class="header">@lang('admin.You have') (<span
+                                    class="notif-count">{{count(auth()->user()->unreadNotifications)}}</span>)
+                                notifications
+                            </li>
                             <li>
                                 <!-- inner menu: contains the actual data -->
                                 <ul class="menu">
+                                    @foreach(auth()->user()->unreadNotifications as $notification)
+                                        <li>
+                                            <a href="{{url($notification->data['url_'.app()->getLocale()].'?read='.$notification->id)}}">{{$notification->data['message_'.app()->getLocale()]}}
 
+                                                    <small class="label label-danger"><i
+                                                            class="fa fa-clock-o"></i>{{Carbon\Carbon::parse($notification->created_at)->diffForHumans()}}
+                                                    </small>
+
+                                            </a>
+                                        </li>
+                                    @endforeach
                                 </ul>
                             </li>
                             <li class="footer">
-                                <a href="#">View all</a>
+                                <a href="{{route('dashboard.notifications.index')}}">@lang('admin.View all')</a>
                             </li>
                         </ul>
                     </li>
@@ -217,7 +233,8 @@
                                 <ul class="menu">
                                     @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
                                         <li>
-                                            <a rel="alternate" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
+                                            <a rel="alternate" hreflang="{{ $localeCode }}"
+                                               href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
                                                 {{ $properties['native'] }}
                                             </a>
                                         </li>
@@ -231,14 +248,19 @@
                     <li class="dropdown user user-menu">
 
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <img src="{{isset(auth()->user()->image['file_path']) ? url('storage/'.auth()->user()->image['file_path']) : 'https://ssl.gstatic.com/accounts/ui/avatar_2x.png'}}" class="user-image" alt="User Image">
-                            <span class="hidden-xs">{{ auth()->user()->first_name }} {{ auth()->user()->last_name }}</span>
+                            <img
+                                src="{{isset(auth()->user()->image['file_path']) ? url('storage/'.auth()->user()->image['file_path']) : 'https://ssl.gstatic.com/accounts/ui/avatar_2x.png'}}"
+                                class="user-image" alt="User Image">
+                            <span
+                                class="hidden-xs">{{ auth()->user()->first_name }} {{ auth()->user()->last_name }}</span>
                         </a>
                         <ul class="dropdown-menu">
 
                             {{--<!-- User image -->--}}
                             <li class="user-header">
-                                <img src="{{isset(auth()->user()->image['file_path']) ? url('storage/'.auth()->user()->image['file_path']) : 'https://ssl.gstatic.com/accounts/ui/avatar_2x.png'}}" class="img-circle" alt="User Image">
+                                <img
+                                    src="{{isset(auth()->user()->image['file_path']) ? url('storage/'.auth()->user()->image['file_path']) : 'https://ssl.gstatic.com/accounts/ui/avatar_2x.png'}}"
+                                    class="img-circle" alt="User Image">
 
                                 <p>
                                     {{ auth()->user()->first_name }} {{ auth()->user()->last_name }}</p>
@@ -248,13 +270,15 @@
                             <li class="user-footer">
 
 
-                                <a href="{{ route('dashboard.users.profile',auth()->user()->id)}}" class="btn btn-default btn-flat">@lang('admin.profile')</a>
+                                <a href="{{ route('dashboard.users.profile',auth()->user()->id)}}"
+                                   class="btn btn-default btn-flat">@lang('admin.profile')</a>
 
 
                                 <a href="{{ route('logout') }}" class="btn btn-default btn-flat" onclick="event.preventDefault();
                                                  document.getElementById('logout-form').submit();">@lang('admin.logout')</a>
 
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                      style="display: none;">
                                     @csrf
                                 </form>
 
@@ -279,7 +303,7 @@
         </div>
         <strong class="">
             {{$site_copyright}}
-          </strong>
+        </strong>
     </footer>
 
 </div><!-- end of wrapper -->
@@ -366,7 +390,7 @@
         //
         // });
 
-        CKEDITOR.config.language =  "{{ app()->getLocale() }}";
+        CKEDITOR.config.language = "{{ app()->getLocale() }}";
 
     });//end of ready
 

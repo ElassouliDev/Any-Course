@@ -43,6 +43,8 @@ return [
     'Type a comment'=>'Type a comment',
     'NO DATA'=>'NO DATA',
     'exam'=>'Exam',
-
+    'add_lesson'=>'Add Lesson',
+    'notifications'=>'Notifications',
+    'message'=>'Message',
 
 ];

@@ -107,5 +107,11 @@ return [
     'average_degree'=>'Average Degree',
     'certificates_data'=>'Certificates Data',
     'not certifications exist'=>'not certifications exist',
+    'You have'=>'You have',
+    'View all'=>'View all',
+    'notifications'=>'Notifications',
+    'message'=>'Message',
+    'it_is_read'=>'Readable',
+    'reading'=>'Reading',
 
 ];

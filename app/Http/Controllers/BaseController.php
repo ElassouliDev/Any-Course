@@ -40,5 +40,7 @@ class BaseController extends Controller
         View::share('site_version',$this->Version);
         View::share('icon',$this->icon);
         View::share('logo',$this->logo);
+
+        // end share Settings .
     }
 }

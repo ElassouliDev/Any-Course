@@ -135,5 +135,10 @@ return [
     'average_degree'=>'متوسط العلامات',
     'certificates_data'=>'بيانات الشهادات',
     'not certifications exist'=>'لا شهادات موجودة',
-
+    'You have'=>'لديك',
+    'View all'=>'عرض الكل',
+    'notifications'=>'الاشعارات',
+    'message'=>'الرسالة',
+    'it_is_read'=>'مقروء',
+    'reading'=>'قراءة',
 ];

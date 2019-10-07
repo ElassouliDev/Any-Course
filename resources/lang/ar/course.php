@@ -50,6 +50,9 @@ return [
     'Type a comment'=>'اكتب تعليق',
     'NO DATA'=>'لا يوجد بيانات',
     'exam'=>'إختبار',
+    'add_lesson'=>'اضافة درس',
+    'notifications'=>'الاشعارات',
+    'message'=>'الرسالة',
 
 
 ];

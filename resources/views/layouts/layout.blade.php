@@ -412,104 +412,37 @@
                                                                     <div
                                                                         class="m-list-timeline m-list-timeline--skin-light">
                                                                         <div class="m-list-timeline__items">
-                                                                            <div class="m-list-timeline__item">
+                                                                            @if(count(auth()->user()->unreadNotifications) > 0)
+                                                                                @foreach(auth()->user()->unreadNotifications as $notification)
+                                                                                    <div class="m-list-timeline__item">
                                                                                 <span
-                                                                                    class="m-list-timeline__badge -m-list-timeline__badge--state-success"></span>
-                                                                                <span class="m-list-timeline__text">
-																						12 new users registered
-																					</span>
-                                                                                <span class="m-list-timeline__time">
-																						Just now
-																					</span>
-                                                                            </div>
-                                                                            <div class="m-list-timeline__item">
-                                                                                <span
-                                                                                    class="m-list-timeline__badge"></span>
-                                                                                <span class="m-list-timeline__text">
-																						System shutdown
-																						<span
-                                                                                            class="m-badge m-badge--success m-badge--wide">
-																							pending
+                                                                                    class="m-list-timeline__badge m-list-timeline__badge--state1-success"></span>
+                                                                                        <a href="{{url($notification->data['url_'.app()->getLocale()].'?read='.$notification->id)}}"
+                                                                                           class="m-list-timeline__text">
+                                                                                            {{$notification->data['message_'.app()->getLocale()]}}
+                                                                                            <span
+                                                                                                class="m-badge m-badge--success m-badge--wide">
+																							@lang('course.new')
 																						</span>
+                                                                                        </a>
+                                                                                        <span
+                                                                                            class="m-list-timeline__time">
+																						{{Carbon\Carbon::parse($notification->created_at)->diffForHumans()}}
 																					</span>
-                                                                                <span class="m-list-timeline__time">
-																						14 mins
-																					</span>
-                                                                            </div>
-                                                                            <div class="m-list-timeline__item">
+                                                                                    </div>
+                                                                                @endforeach
+                                                                            @else
+                                                                                <div class="m-list-timeline__item">
                                                                                 <span
-                                                                                    class="m-list-timeline__badge"></span>
-                                                                                <span class="m-list-timeline__text">
-																						New invoice received
-																					</span>
-                                                                                <span class="m-list-timeline__time">
-																						20 mins
-																					</span>
-                                                                            </div>
-                                                                            <div class="m-list-timeline__item">
-                                                                                <span
-                                                                                    class="m-list-timeline__badge"></span>
-                                                                                <span class="m-list-timeline__text">
-																						DB overloaded 80%
-																						<span
-                                                                                            class="m-badge m-badge--info m-badge--wide">
-																							settled
-																						</span>
-																					</span>
-                                                                                <span class="m-list-timeline__time">
-																						1 hr
-																					</span>
-                                                                            </div>
-                                                                            <div class="m-list-timeline__item">
-                                                                                <span
-                                                                                    class="m-list-timeline__badge"></span>
-                                                                                <span class="m-list-timeline__text">
-																						System error -
-																						<a href="#" class="m-link">
-																							Check
-																						</a>
-																					</span>
-                                                                                <span class="m-list-timeline__time">
-																						2 hrs
-																					</span>
-                                                                            </div>
-                                                                            <div
-                                                                                class="m-list-timeline__item m-list-timeline__item--read">
-                                                                                <span
-                                                                                    class="m-list-timeline__badge"></span>
-                                                                                <span href=""
-                                                                                      class="m-list-timeline__text">
-																						New order received
-																						<span
-                                                                                            class="m-badge m-badge--danger m-badge--wide">
-																							urgent
-																						</span>
-																					</span>
-                                                                                <span class="m-list-timeline__time">
-																						7 hrs
-																					</span>
-                                                                            </div>
-                                                                            <div
-                                                                                class="m-list-timeline__item m-list-timeline__item--read">
-                                                                                <span
-                                                                                    class="m-list-timeline__badge"></span>
-                                                                                <span class="m-list-timeline__text">
-																						Production server down
-																					</span>
-                                                                                <span class="m-list-timeline__time">
-																						3 hrs
-																					</span>
-                                                                            </div>
-                                                                            <div class="m-list-timeline__item">
-                                                                                <span
-                                                                                    class="m-list-timeline__badge"></span>
-                                                                                <span class="m-list-timeline__text">
-																						Production server up
-																					</span>
-                                                                                <span class="m-list-timeline__time">
-																						5 hrs
-																					</span>
-                                                                            </div>
+                                                                                    class="m-list-timeline__badge m-list-timeline__badge--state1-success"></span>
+                                                                                    <span
+                                                                                       class="m-list-timeline__text">
+                                                                                      @lang('course.not_notification')
+
+                                                                                    </span>
+                                                                                </div>
+
+                                                                            @endif
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -950,7 +883,6 @@
 <script src="{{ asset('resources/assets/js/editable.js') }}"></script>
 @stack('js')
 <!--end::Page Snippets -->
-
 
 
 <!-- ** Don't forget to Add jQuery here ** -->

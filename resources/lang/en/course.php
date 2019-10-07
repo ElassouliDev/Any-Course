@@ -46,5 +46,7 @@ return [
     'add_lesson'=>'Add Lesson',
     'notifications'=>'Notifications',
     'message'=>'Message',
+    'new'=>'New',
+    'not_notification'=>'No notifications',
 
 ];

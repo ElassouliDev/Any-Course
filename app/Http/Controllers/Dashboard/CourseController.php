@@ -52,8 +52,8 @@ class CourseController extends BaseController
      */
     public function store(CourseRequest $courseRequest)
     {
-    $courseData= $courseRequest->all();
-    $courseData['user_id']=auth()->id();
+        $courseData= $courseRequest->all();
+        $courseData['user_id']=auth()->id();
 
 
         $course= Course::create($courseData);
@@ -64,6 +64,7 @@ class CourseController extends BaseController
             $image->file_path = $this->uploadImage($courseRequest);
             $course->image()->save($image);
         }
+
 
         session()->flash('success', __('error.added_successfully'));
         return redirect()->route('dashboard.course.index');

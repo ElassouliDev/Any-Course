@@ -16,4 +16,7 @@ return [
    'added_successfully' => 'تم اضافه البيانات بنجاح',
     'updated_successfully' => 'تم تعديل البيانات بنجاح',
     'deleted_successfully' => 'تم حذف البيانات بنجاح',
+    'promocode_success' => 'تم خصم المبلغ بنجاح',
+    'promocode_not_valid' => 'البروموكود غير صحيح',
+    'amount_not_valid' => 'المبلغ المتوفر أقل من تكلفة الكورس',
 ];

@@ -141,4 +141,7 @@ return [
     'message'=>'الرسالة',
     'it_is_read'=>'مقروء',
     'reading'=>'قراءة',
+    'amount'=>'المبلغ',
+    'promocode'=>'البروموكود',
+    'numbers'=>'#',
 ];

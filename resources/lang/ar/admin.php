@@ -1,6 +1,6 @@
 <?php
 return [
-'dashboard' => 'الرئيسيه',
+    'dashboard' => 'الرئيسيه',
     'logout' => 'تسجيل الخروج',
 
     'add' => 'اضف',

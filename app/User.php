@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Gabievi\Promocodes\Traits\Rewardable;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
@@ -13,7 +14,7 @@ class User extends Authenticatable
     use LaratrustUserTrait;
     use Notifiable;
     use SoftDeletes;
-    use Notifiable;
+    use Rewardable;
 
     /**
      * The attributes that are mass assignable.

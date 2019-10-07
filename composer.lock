@@ -4,7 +4,11 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
+<<<<<<< Updated upstream
     "content-hash": "b1bcb2e80f7976be8e896b59c009a093",
+=======
+    "content-hash": "ec98fb3f0f828314113c4f356b5d6906",
+>>>>>>> Stashed changes
     "packages": [
         {
             "name": "cocur/slugify",
@@ -236,28 +240,30 @@
         },
         {
             "name": "doctrine/lexer",
-            "version": "1.0.2",
+            "version": "1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/lexer.git",
-                "reference": "1febd6c3ef84253d7c815bed85fc622ad207a9f8"
+                "reference": "e17f069ede36f7534b95adec71910ed1b49c74ea"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/lexer/zipball/1febd6c3ef84253d7c815bed85fc622ad207a9f8",
-                "reference": "1febd6c3ef84253d7c815bed85fc622ad207a9f8",
+                "url": "https://api.github.com/repos/doctrine/lexer/zipball/e17f069ede36f7534b95adec71910ed1b49c74ea",
+                "reference": "e17f069ede36f7534b95adec71910ed1b49c74ea",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.2"
+                "php": "^7.2"
             },
             "require-dev": {
-                "phpunit/phpunit": "^4.5"
+                "doctrine/coding-standard": "^6.0",
+                "phpstan/phpstan": "^0.11.8",
+                "phpunit/phpunit": "^8.2"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.0.x-dev"
+                    "dev-master": "1.1.x-dev"
                 }
             },
             "autoload": {
@@ -271,12 +277,12 @@
             ],
             "authors": [
                 {
-                    "name": "Roman Borschel",
-                    "email": "roman@code-factory.org"
-                },
-                {
                     "name": "Guilherme Blanco",
                     "email": "guilhermeblanco@gmail.com"
+                },
+                {
+                    "name": "Roman Borschel",
+                    "email": "roman@code-factory.org"
                 },
                 {
                     "name": "Johannes Schmitt",
@@ -292,7 +298,7 @@
                 "parser",
                 "php"
             ],
-            "time": "2019-06-08T11:03:04+00:00"
+            "time": "2019-07-30T19:33:28+00:00"
         },
         {
             "name": "dragonmantank/cron-expression",
@@ -1343,16 +1349,16 @@
         },
         {
             "name": "mcamara/laravel-localization",
-            "version": "1.4.1",
+            "version": "1.4.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mcamara/laravel-localization.git",
-                "reference": "82d06c66cdf1e3ed17783842886d87cbd5aadd43"
+                "reference": "d228a61afd8cfe9eb7f8f7450acfa0371382407d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mcamara/laravel-localization/zipball/82d06c66cdf1e3ed17783842886d87cbd5aadd43",
-                "reference": "82d06c66cdf1e3ed17783842886d87cbd5aadd43",
+                "url": "https://api.github.com/repos/mcamara/laravel-localization/zipball/d228a61afd8cfe9eb7f8f7450acfa0371382407d",
+                "reference": "d228a61afd8cfe9eb7f8f7450acfa0371382407d",
                 "shasum": ""
             },
             "require": {
@@ -1401,7 +1407,7 @@
                 "localization",
                 "php"
             ],
-            "time": "2019-09-08T13:56:19+00:00"
+            "time": "2019-09-20T15:24:04+00:00"
         },
         {
             "name": "monolog/monolog",
@@ -1483,16 +1489,16 @@
         },
         {
             "name": "nesbot/carbon",
-            "version": "2.24.0",
+            "version": "2.25.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/briannesbitt/Carbon.git",
-                "reference": "934459c5ac0658bc765ad1e53512c7c77adcac29"
+                "reference": "b70da677101cca7b584c7489770d2677c2733593"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/934459c5ac0658bc765ad1e53512c7c77adcac29",
-                "reference": "934459c5ac0658bc765ad1e53512c7c77adcac29",
+                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/b70da677101cca7b584c7489770d2677c2733593",
+                "reference": "b70da677101cca7b584c7489770d2677c2733593",
                 "shasum": ""
             },
             "require": {
@@ -1539,14 +1545,14 @@
                     "homepage": "http://github.com/kylekatarnls"
                 }
             ],
-            "description": "A API extension for DateTime that supports 281 different languages.",
+            "description": "An API extension for DateTime that supports 281 different languages.",
             "homepage": "http://carbon.nesbot.com",
             "keywords": [
                 "date",
                 "datetime",
                 "time"
             ],
-            "time": "2019-08-31T16:37:55+00:00"
+            "time": "2019-09-30T16:22:22+00:00"
         },
         {
             "name": "nikic/php-parser",
@@ -3937,16 +3943,16 @@
         },
         {
             "name": "yajra/laravel-datatables-editor",
-            "version": "v1.15.0",
+            "version": "v1.17.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yajra/laravel-datatables-editor.git",
-                "reference": "bd2c351d62a599bb62040a31e5c8ba4dbd2050e9"
+                "reference": "2e09ebe5d422d07d6a766ffa426ac64c3fba70ee"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yajra/laravel-datatables-editor/zipball/bd2c351d62a599bb62040a31e5c8ba4dbd2050e9",
-                "reference": "bd2c351d62a599bb62040a31e5c8ba4dbd2050e9",
+                "url": "https://api.github.com/repos/yajra/laravel-datatables-editor/zipball/2e09ebe5d422d07d6a766ffa426ac64c3fba70ee",
+                "reference": "2e09ebe5d422d07d6a766ffa426ac64c3fba70ee",
                 "shasum": ""
             },
             "require": {
@@ -3995,7 +4001,7 @@
                 "jquery",
                 "laravel"
             ],
-            "time": "2019-09-17T03:52:06+00:00"
+            "time": "2019-09-21T05:49:51+00:00"
         },
         {
             "name": "yajra/laravel-datatables-fractal",
@@ -4057,16 +4063,16 @@
         },
         {
             "name": "yajra/laravel-datatables-html",
-            "version": "v4.14.2",
+            "version": "v4.19.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yajra/laravel-datatables-html.git",
-                "reference": "db6c24d7ad64d4a344ab16d35bc0a9075a7c7c80"
+                "reference": "6b1bac3b1864433690763b573f3dc0231ed5ffba"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yajra/laravel-datatables-html/zipball/db6c24d7ad64d4a344ab16d35bc0a9075a7c7c80",
-                "reference": "db6c24d7ad64d4a344ab16d35bc0a9075a7c7c80",
+                "url": "https://api.github.com/repos/yajra/laravel-datatables-html/zipball/6b1bac3b1864433690763b573f3dc0231ed5ffba",
+                "reference": "6b1bac3b1864433690763b573f3dc0231ed5ffba",
                 "shasum": ""
             },
             "require": {
@@ -4113,20 +4119,20 @@
                 "jquery",
                 "laravel"
             ],
-            "time": "2019-09-17T03:21:41+00:00"
+            "time": "2019-10-02T02:54:47+00:00"
         },
         {
             "name": "yajra/laravel-datatables-oracle",
-            "version": "v9.6.0",
+            "version": "v9.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yajra/laravel-datatables.git",
-                "reference": "d8a965ab91662216956288cafcc4c60306af7b3f"
+                "reference": "bb6ff7b76bd6253396cb7a5a7b6c51c5ab14b1a8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yajra/laravel-datatables/zipball/d8a965ab91662216956288cafcc4c60306af7b3f",
-                "reference": "d8a965ab91662216956288cafcc4c60306af7b3f",
+                "url": "https://api.github.com/repos/yajra/laravel-datatables/zipball/bb6ff7b76bd6253396cb7a5a7b6c51c5ab14b1a8",
+                "reference": "bb6ff7b76bd6253396cb7a5a7b6c51c5ab14b1a8",
                 "shasum": ""
             },
             "require": {
@@ -4184,6 +4190,7 @@
                 "jquery",
                 "laravel"
             ],
+<<<<<<< Updated upstream
             "time": "2019-09-04T05:02:17+00:00"
         },
         {
@@ -4209,6 +4216,31 @@
             "require-dev": {
                 "orchestra/testbench": "~3.6.0",
                 "phpunit/phpunit": "~7.0"
+=======
+            "time": "2019-10-02T05:58:48+00:00"
+        },
+        {
+            "name": "zgabievi/promocodes",
+            "version": "2.3.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/zgabievi/laravel-promocodes.git",
+                "reference": "f7e9ed907ad504d74d8b9ed4d963ffa13842153e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/zgabievi/laravel-promocodes/zipball/f7e9ed907ad504d74d8b9ed4d963ffa13842153e",
+                "reference": "f7e9ed907ad504d74d8b9ed4d963ffa13842153e",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/framework": "~5.8||~6.0",
+                "php": "^7.2"
+            },
+            "require-dev": {
+                "orchestra/testbench": "~4.0",
+                "phpunit/phpunit": "^8.3"
+>>>>>>> Stashed changes
             },
             "type": "library",
             "extra": {
@@ -4245,7 +4277,11 @@
                 "php",
                 "promo code"
             ],
+<<<<<<< Updated upstream
             "time": "2019-04-01T13:10:19+00:00"
+=======
+            "time": "2019-09-25T22:42:57+00:00"
+>>>>>>> Stashed changes
         }
     ],
     "packages-dev": [
@@ -4408,9 +4444,9 @@
             "authors": [
                 {
                     "name": "Marcel Pociot",
+                    "role": "Developer",
                     "email": "marcel@beyondco.de",
-                    "homepage": "https://beyondco.de",
-                    "role": "Developer"
+                    "homepage": "https://beyondco.de"
                 }
             ],
             "description": "Symfony Var-Dump Server for Laravel",
@@ -4568,8 +4604,8 @@
             "authors": [
                 {
                     "name": "Filipe Dobreira",
-                    "homepage": "https://github.com/filp",
-                    "role": "Developer"
+                    "role": "Developer",
+                    "homepage": "https://github.com/filp"
                 }
             ],
             "description": "php error handling for cool kids",
@@ -4745,16 +4781,16 @@
         },
         {
             "name": "mockery/mockery",
-            "version": "1.2.3",
+            "version": "1.2.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mockery/mockery.git",
-                "reference": "4eff936d83eb809bde2c57a3cea0ee9643769031"
+                "reference": "b3453f75fd23d9fd41685f2148f4abeacabc6405"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mockery/mockery/zipball/4eff936d83eb809bde2c57a3cea0ee9643769031",
-                "reference": "4eff936d83eb809bde2c57a3cea0ee9643769031",
+                "url": "https://api.github.com/repos/mockery/mockery/zipball/b3453f75fd23d9fd41685f2148f4abeacabc6405",
+                "reference": "b3453f75fd23d9fd41685f2148f4abeacabc6405",
                 "shasum": ""
             },
             "require": {
@@ -4768,7 +4804,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.0.x-dev"
+                    "dev-master": "1.2.x-dev"
                 }
             },
             "autoload": {
@@ -4806,7 +4842,7 @@
                 "test double",
                 "testing"
             ],
-            "time": "2019-08-07T15:01:07+00:00"
+            "time": "2019-09-30T08:30:27+00:00"
         },
         {
             "name": "myclabs/deep-copy",
@@ -5174,22 +5210,22 @@
         },
         {
             "name": "phpspec/prophecy",
-            "version": "1.8.1",
+            "version": "1.9.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpspec/prophecy.git",
-                "reference": "1927e75f4ed19131ec9bcc3b002e07fb1173ee76"
+                "reference": "f6811d96d97bdf400077a0cc100ae56aa32b9203"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpspec/prophecy/zipball/1927e75f4ed19131ec9bcc3b002e07fb1173ee76",
-                "reference": "1927e75f4ed19131ec9bcc3b002e07fb1173ee76",
+                "url": "https://api.github.com/repos/phpspec/prophecy/zipball/f6811d96d97bdf400077a0cc100ae56aa32b9203",
+                "reference": "f6811d96d97bdf400077a0cc100ae56aa32b9203",
                 "shasum": ""
             },
             "require": {
                 "doctrine/instantiator": "^1.0.2",
                 "php": "^5.3|^7.0",
-                "phpdocumentor/reflection-docblock": "^2.0|^3.0.2|^4.0",
+                "phpdocumentor/reflection-docblock": "^2.0|^3.0.2|^4.0|^5.0",
                 "sebastian/comparator": "^1.1|^2.0|^3.0",
                 "sebastian/recursion-context": "^1.0|^2.0|^3.0"
             },
@@ -5233,7 +5269,7 @@
                 "spy",
                 "stub"
             ],
-            "time": "2019-06-13T12:50:23+00:00"
+            "time": "2019-10-03T11:07:50+00:00"
         },
         {
             "name": "phpunit/php-code-coverage",

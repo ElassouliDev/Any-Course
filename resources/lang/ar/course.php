@@ -53,6 +53,8 @@ return [
     'add_lesson'=>'اضافة درس',
     'notifications'=>'الاشعارات',
     'message'=>'الرسالة',
+    'not_notification'=>'لا يوجد اشعارات',
+    'new'=>'جديد',
 
 
 ];

@@ -50,5 +50,5 @@ return [
     'ByAdmin'=>'By Admin',
     'not_notification'=>'No notifications',
     'MyProfile'=>'Profile',
-
+    'view_lessons'=>'View Lessons'
 ];

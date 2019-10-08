@@ -351,21 +351,22 @@
                                             {{$course->category['title_'.app()->getLocale()]}}
                                         </p>
                                         <div>
-                                                            <span>
-                                                                    <span class="fa fa-star {{$course->ratingPercent(5) >=1 ? 'checked' : ''}}"></span>
-                                                                    <span class="fa fa-star {{$course->ratingPercent(5) >=2 ? 'checked' : ''}}"></span>
-                                                                    <span class="fa fa-star {{$course->ratingPercent(5) >=3 ? 'checked' : ''}}"></span>
-                                                                    <span class="fa fa-star {{$course->ratingPercent(5) >=4 ? 'checked' : ''}}"></span>
-                                                                    <span class="fa fa-star {{$course->ratingPercent(5) >=5 ? 'checked' : ''}}"></span>
-                                                                    <small>
-                                                                     <b>{{$course->avgRating}}
-                                                                         ( {{  $course->countPositive}} @lang('course.ratings')
-                                                                         )</b>
-                                                                    </small>
-                                                            </span>
                                             <span>
-                                                                    {{$course->students->count()}} @lang('course.students enrolled')
-                                                            </span>
+                                            <span class="fa fa-star {{$course->ratingPercent(5) >=1 ? 'checked' : ''}}"></span>
+                                            <span class="fa fa-star {{$course->ratingPercent(5) >=2 ? 'checked' : ''}}"></span>
+                                            <span class="fa fa-star {{$course->ratingPercent(5) >=3 ? 'checked' : ''}}"></span>
+                                            <span class="fa fa-star {{$course->ratingPercent(5) >=4 ? 'checked' : ''}}"></span>
+                                            <span class="fa fa-star {{$course->ratingPercent(5) >=5 ? 'checked' : ''}}"></span>
+                                            <small>
+                                                <b>
+                                                    {{$course->avgRating}}
+                                                    ({{$course->countPositive}} @lang('course.ratings'))
+                                                </b>
+                                            </small>
+                                            </span>
+                                            <span>
+                                            {{$course->students->count()}} @lang('course.students enrolled')
+                                            </span>
                                         </div>
                                     </div>
                                     <div class="col-lg-5 col-md-5 col-sm-12">
@@ -389,8 +390,15 @@
                                                 <h4 class="card-title">
                                                     <b>{{$course->category['title_'.app()->getLocale()]}}</b></h4>
                                                 <p class="card-text description">{!! $course->is_paid?'<b> '.__('admin.price').' : </b>'.$course->price.' $' :'<b> '.__('admin.free').' </b>' !!}</p>
+                                                @if($course->user_id == auth()->id())
+
+                                                        <a class="btn btn-lg btn-primary"
+                                                               href="{{ route('lesson.index',$course['slug_'.app()->getLocale()])}}" >@lang('course.view_lessons')</a>
+
+                                                @else
+
                                                 <form method="post"
-                                                      action="{{route('user.course_enroll',$course['slug_'.app()->getLocale()])}}">
+                                                      @if($course->is_paid == 0)action="{{route('user.course_enroll',$course['slug_'.app()->getLocale()])}}" @endif>
                                                     @csrf
                                                     @if($course->is_enroll == 0)
                                                         <button class="btn btn-lg btn-primary"
@@ -403,6 +411,7 @@
 
                                                     @endif
                                                 </form>
+                                                 @endif
                                                 <hr>
 
                                                 <a href="javascript: void(0)"
@@ -493,45 +502,46 @@
 
 
     </div>
-
-    <div class="modal fade" id="checkPromCode" style="display: none;">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span></button>
-                    <h4 class="modal-title">@lang('course.add_lesson')</h4>
-                </div>
-                <div class="modal-body">
-                    <form action="{{route('promocode.paycourse')}}" method="post">
-                        @csrf
-                        <input type="hidden" name="course_id" value="{{$course->id}}">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="form-group form-group-default">
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <label for="promocode">@lang('admin.promocode')</label>
-                                            <input id="promocode" class="form-control" style="background: #fff"
-                                                   name="promocode" required>
+    @if($course->is_paid)
+        <div class="modal fade" id="checkPromCode" style="display: none;">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span></button>
+                        <h4 class="modal-title">@lang('course.add_lesson')</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form action="{{route('promocode.paycourse')}}" method="post">
+                            @csrf
+                            <input type="hidden" name="course_id" value="{{$course->id}}">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group form-group-default">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <label for="promocode">@lang('admin.promocode')</label>
+                                                <input id="promocode" class="form-control" style="background: #fff"
+                                                       name="promocode" required>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
-                            <button type="submit" class="btn btn-primary">@lang('admin.add')</button>
-                        </div>
-                    </form>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close
+                                </button>
+                                <button type="submit" class="btn btn-primary">@lang('admin.add')</button>
+                            </div>
+                        </form>
 
+                    </div>
                 </div>
+                <!-- /.modal-content -->
             </div>
-            <!-- /.modal-content -->
+            <!-- /.modal-dialog -->
         </div>
-        <!-- /.modal-dialog -->
-    </div>
-
+    @endif
 @endsection
 @push('js')
     <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
@@ -556,27 +566,37 @@
 
         });
     </script>
+
     @if($course->is_paid)
-    <script>
 
-        $(document).on('click', '#enrrlor_paid_course', function (event) {
-            event.preventDefault();
-            $('#checkPromCode').modal('show');
+        <script>
 
-
-        });
-        $(document).on('submit', '#checkPromCode form', function (event) {
-            /*event.preventDefault();
-            $this = $(this);
-            url = $($this).attr('action');
-            data = $($this).serialize();
-            $.post(url,data,function (response) {
-
-            });*/
+            $(document).on('click', '#enrrlor_paid_course', function (event) {
+                event.preventDefault();
+                $('#checkPromCode').modal('show');
 
 
-        });
+            });
+            $(document).on('submit', '#checkPromCode form', function (event) {
+                event.preventDefault();
+                $this = $(this);
+                url = $($this).attr('action');
+                data = $($this).serialize();
+                $.post(url, data, function (response) {
+                    // $this.find('[type="reset"]').click();
+                    $('#checkPromCode').modal('hide');
+                    http.success(response, true);
+                    setTimeout(location.reload.bind(location), 4000);
 
-    </script>
+
+                }).fail(function (response, exception) {
+                    http.fail(JSON.parse(response.responseText), true);
+
+                });
+
+
+            });
+
+        </script>
     @endif
 @endpush

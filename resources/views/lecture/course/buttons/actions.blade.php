@@ -10,29 +10,29 @@
             <li>
                 @if(app()->getLocale()=='ar')<a  href="#" data-link="{{route('course_lecture.show',$slug_ar)}}" data-action="show">
                     @else<a  href="#" data-link="{{ route('course_lecture.show',$slug_en)}}" data-action="show">@endif
-                        <i class="fa fa-eye"></i> {{trans('admin.show')}}</a>
+                        <i class="fa fa-eye"></i> {{trans('admin.show')}}</a></a>
             </li>
             <li class="divider"></li>
             <li>
                 @if(app()->getLocale()=='ar')<a href="{{ route('exam.index',$slug_ar)}}">
                     @else<a href="{{ route('course.student.show',$slug_en)}}">@endif<i
-                            class="fa fa-user"></i> {{trans('admin.student')}}</a>
+                            class="fa fa-user"></i> {{trans('admin.student')}}</a></a>
             </li>
             <li>
                 @if(app()->getLocale()=='ar')<a href="{{ route('lesson.index',$slug_ar)}}">
                     @else<a href="{{ route('lesson.index',$slug_en)}}">@endif<i
-                            class="fa fa-user"></i> {{trans('admin.add_lesson')}}</a>
+                            class="fa fa-user"></i> {{trans('admin.add_lesson')}}</a></a>
             </li>
             <li>
              @if(app()->getLocale()=='ar')<a href="{{ route('exam.index',$slug_ar)}}">
                 @else<a href="{{ route('exam.index',$slug_en)}}">@endif
-                        <i class="fa fa-user"></i> {{trans('admin.add_exam')}}</a>
+                        <i class="fa fa-user"></i> {{trans('admin.add_exam')}}</a></a>
             </li>
             <li class="divider"></li>
             <li>
                 @if(app()->getLocale()=='ar')<a  href="#" data-link="{{route('course_lecture.edit',$slug_ar)}}" data-action="show">
                     @else<a  href="#" data-link="{{ route('course_lecture.edit',$slug_en)}}" data-action="show">@endif
-            <i class="fa fa-pencil-square-o"></i> {{trans('admin.edit')}}</a>
+            <i class="fa fa-pencil-square-o"></i> {{trans('admin.edit')}}</a></a>
             </li>
             <li class="divider"></li>
 

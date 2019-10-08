@@ -75,6 +75,10 @@
             }
 
         }
+        ul.nav.row {
+            color: #fffff9 !important;
+        }
+
     </style>
 @endsection
 @section('content')

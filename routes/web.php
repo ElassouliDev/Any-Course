@@ -61,6 +61,9 @@ Route::group(
             Route::get('setting/', 'View\SettingController@index')->name('user.setting');
             Route::put('setting/update_info', 'View\SettingController@updateUserInformation')->name('user.updateInfo');
             Route::put('setting/update_password', 'View\SettingController@updateUserPassword')->name('user.updatePassword');
+
+            Route::post('lecture/promocode/course/pay', 'Lecture\PromoCodeController@UsePromocode_to_pay_course')->name('promocode.paycourse');
+
         });
         Route::get('/course', 'View\CourseController@course_list');
         Route::get('/course/{course_slug}', 'View\CourseController@course_details')->name('course_details'); //course details
@@ -80,9 +83,9 @@ Route::group(
             Route::resource('lecture/course/{course_slug}/exam', 'Lecture\ExamController');
             Route::resource('lecture/course/{course_slug}/lesson', 'Lecture\LessonController');
             Route::resource('lecture/promocode', 'Lecture\PromoCodeController');
-            Route::post('lecture/promocode/course/pay', 'Lecture\PromoCodeController@UsePromocode_to_pay_course')->name('promocode.paycourse');
 
         });
+
 
         /////////////////////////// student
         Route::group(['middleware' => ['role:student|super_admin']], function() {

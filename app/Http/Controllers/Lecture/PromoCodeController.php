@@ -18,6 +18,7 @@ use Gabievi\Promocodes\Models\Promocode;
 use http\Env\Response;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class PromoCodeController extends BaseController
 {
@@ -32,24 +33,40 @@ class PromoCodeController extends BaseController
 
     public function UsePromocode_to_pay_course(Request $request)
     {
-        $course = Course::find($request->course_id);
+        try {
+            $course = Course::find($request->course_id);
 
-        if(Promocodes::check($request->promocode)){
+            if (Promocodes::check($request->promocode)) {
 
-            $remain = $promocode->data['amount_remain']??$promocode->data['amount']?? 0 ;
-            if($remain >= $course->price){
-                $promocode->data['amount_remain']-=$course->price;
-                $promocode->data['amount_demand'][]=['cost' =>$course->price ,'user_id'=>auth()->id()];
-                $promocode->save();
-                return response(['status'=>true,'message'=>trans('error.promocode_success')]);
+
+                $promocode = Promocodes::all()->where('code',$request->promocode)->first();
+                $remain = $promocode->data['amount_remain'] ?? $promocode->data['amount'] ?? 0;
+                $remain = floatval($remain);
+                if ($remain >= $course->price) {
+                    $data = $promocode->data;
+                    $remain -= $course->price;
+                    $data['amount_remain'] = $remain ;
+                    $data['amount_demand'][] = ['cost' => $course->price, 'course_id' => $course->id, 'user_id' => auth()->id()];
+                    $promocode->data= $data;
+                    $promocode->save();
+                    Auth::user()->enrolled_course()->attach($course->id);
+
+                    return response(['status' => true, 'message' => trans('error.promocode_success')]);
+
+                }
+                if($remain <= 0){
+                    Promocodes::disable($request->promocode);
+                }
+                return response(['status' => false, 'message' => trans('error.amount_not_valid')],403);
+
 
             }
 
-            return response(['status'=>false,'message'=>trans('error.amount_not_valid')]);
 
-        }
+        }catch (\Exception $exception) {}
 
-        return response(['status'=>false,'message'=>trans('error.promocode_not_valid')],403);
+        return response(['status' => false, 'message' => trans('error.promocode_not_valid')], 403);
+
     }
 
     public function store(Request $request)
@@ -74,8 +91,6 @@ class PromoCodeController extends BaseController
 //        dd([$request->all(), $data]);
 
     }
-
-
 
 
 }

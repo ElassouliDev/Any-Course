@@ -57,6 +57,7 @@ return [
     'new'=>'جديد',
     'ByAdmin'=>'من الادمن',
     'MyProfile'=>'حسابي',
+    'view_lessons'=>'استعراض الفيديوهات',
 
 
 ];

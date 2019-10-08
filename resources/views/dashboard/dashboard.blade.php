@@ -14,8 +14,10 @@
         </section>
 
 
-        <section class="content">
+        <section class="content">           <div class="box box-primary">
 
+                <div class="box-header with-border">
+            <div class="box-body portlet-body table-responsive">
             <div class="col-lg-3 col-xs-6">
                 <!-- small box -->
                 <div class="small-box bg-blue">
@@ -80,9 +82,19 @@
                     </a>
                 </div>
             </div>
+            </div>
+            </div>
+            </div>
+            <div class="box box-warning">
+
+                <div class="box-header with-border">
+                    <div class="box-body portlet-body table-responsive">
             <div class="row">
                 <div class="col-lg-12">
                     {!! $chart->container() !!}
+                </div>
+            </div>
+                    </div>
                 </div>
             </div>
 

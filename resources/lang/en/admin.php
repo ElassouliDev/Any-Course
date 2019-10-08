@@ -113,9 +113,5 @@ return [
     'message'=>'Message',
     'it_is_read'=>'Readable',
     'reading'=>'Reading',
-    'amount'=>'Amount',
-    'promocode'=>'Promocode',
-    'numbers'=>'#',
-    'description'=>'Description',
 
 ];

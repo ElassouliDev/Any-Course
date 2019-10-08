@@ -17,7 +17,7 @@ Route::group(
     ],
     function () {
         Route::prefix('dashboard')->name('dashboard.')->middleware(['auth','superAdmin'])->group(function () {
-            Route::get('/notifications/{id}','Dashboard\NotificationsController@index_by');
+            Route::get('/{id}/notifications','Dashboard\NotificationsController@index_by');
             Route::resource('/notifications','Dashboard\NotificationsController');
             Route::resource('/', 'Dashboard\DashboardController');
             Route::resource('/users', 'Dashboard\UserController');

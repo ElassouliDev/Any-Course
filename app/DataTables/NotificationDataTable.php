@@ -58,14 +58,11 @@ class NotificationDataTable extends DataTable
                     /*['extend' => 'pdf', 'className' => 'btn red btn-outline', 'text' => '<i class="fa fa-file-pdf-o"> </i> '.trans('datatables.export_pdf')],*/
                     ['extend' => 'csv', 'className' => 'btn bg-purple btn-outline', 'text' => '<i class="fa fa-file-excel-o"> </i> ' . trans('datatables.export_csv')],
                     ['extend' => 'reload', 'className' => 'btn bg-blue btn-outline', 'text' => '<i class="fa fa fa-refresh"></i> ' . trans('datatables.reload')],
-                    [
-                        'text' => '<i class="fa fa-trash"></i> ' . trans('datatables.delete'),
-                        'className' => 'btn bg-red btn-outline deleteBtn',
-                    ], [
+                  [
                         'text' => '<i class="fa fa-plus"></i> ' . trans('datatables.add'),
                         'className' => 'btn btn-primary',
                         'action' => 'function(){
-                        	window.location.href =  "' . \URL::current() . '/create";
+                        	window.location.href =  "' . route('dashboard.notifications.create')  .'";
                         }',
                     ],
                 ],

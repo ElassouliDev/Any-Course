@@ -1,8 +1,6 @@
 @extends('layouts.dashboard.app')
 @section('title',$title)
-@push('css')
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.9/css/select2.min.css" rel="stylesheet" />
-    @endpush
+
 
 @section('content')
     {{--    update commit github--}}
@@ -15,7 +13,7 @@
 
             <ol class="breadcrumb">
                 <li><a href="{{ url('dashboard') }}"><i class="fa fa-dashboard"></i> @lang('admin.dashboard')</a></li>
-                <li><a href="{{ route('dashboard.lesson.index') }}"> @lang('admin.lesson')</a></li>
+                <li><a href="{{ route('dashboard.notifications.index') }}"> @lang('admin.notifications')</a></li>
                 <li class="active">@lang('admin.add')</li>
             </ol>
         </section>
@@ -32,56 +30,27 @@
 
                     @include('partials._errors')
 
-                    <form action="{{ route('dashboard.lesson.store') }}" method="post" enctype="multipart/form-data">
+                    <form action="{{ route('dashboard.notifications.store') }}" method="post" >
 
                         @csrf
 
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label>@lang('admin.title_ar')</label>
-                                    <input type="text" name="title_ar" class="form-control"
-                                           value="{{ old('title_ar') }}">
+                                    <label>@lang('admin.message_en')</label>
+                                    <textarea type="text" name="message_en" class="form-control" required> {{ old('message_en') }} </textarea>
                                 </div>
 
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label>@lang('admin.title_en')</label>
-                                    <input type="text" name="title_en" class="form-control"
-                                           value="{{ old('title_en') }}">
+                                    <label>@lang('admin.message_ar')</label>
+                                    <textarea type="text" name="message_ar" class="form-control" required>{{ old('message_ar') }} </textarea>
                                 </div>
 
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label>@lang('admin.file_path')</label>
-                                  <input type="url" name="file_path" class="form-control">
 
-                                </div>
-
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label>@lang('admin.course')</label>
-                                    <select name="course_id" class="js-example-basic-single form-control" >
-                                        <option value="-1">-- @lang('admin.SelectCourse')--</option>
-
-                                        @foreach($courses as $course)
-                                            <option value="{{ $course->id }}" >{{ $course['title_'.app()->getLocale()] }}</option>
-
-                                        @endforeach
-
-
-                                    </select>
-
-                                </div>
-
-                            </div>
-
-                        </div>
 
                         <div class="form-group">
                             <button type="submit" class="btn btn-primary"><i class="fa fa-plus"></i> @lang('admin.add')
@@ -99,11 +68,3 @@
     </div><!-- end of content wrapper -->
 
 @endsection
-@push('js')
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.9/js/select2.min.js"></script>
-    <script>
-        $(document).ready(function() {
-            $('.js-example-basic-single').select2();
-        });
-    </script>
-@endpush

@@ -362,22 +362,14 @@
                                            id="m_topbar_notification_icon">
                                             <span
                                                 class="m-nav__link-badge m-badge m-badge--dot m-badge--dot-small m-badge--danger"></span>
-                                            <span class="m-nav__link-icon">
+                                            <span class="m-nav__link-icon ">
 													<i class="flaticon-music-2"></i>
 												</span>
                                         </a>
                                         <div class="m-dropdown__wrapper">
                                             <span class="m-dropdown__arrow m-dropdown__arrow--center"></span>
                                             <div class="m-dropdown__inner">
-                                                <div class="m-dropdown__header m--align-center"
-                                                     style="background: url(assets/app/media/img/misc/notification_bg.jpg); background-size: cover;">
-														<span class="m-dropdown__header-title">
-															9 New
-														</span>
-                                                    <span class="m-dropdown__header-subtitle">
-															User Notifications
-														</span>
-                                                </div>
+
                                                 <div class="m-dropdown__body">
                                                     <div class="m-dropdown__content">
                                                         <ul class="nav nav-tabs m-tabs m-tabs-line m-tabs-line--brand"
@@ -387,21 +379,21 @@
                                                                    data-toggle="tab"
                                                                    href="#topbar_notifications_notifications"
                                                                    role="tab">
-                                                                    Alerts
+                                                                    @lang('admin.notifications')
                                                                 </a>
                                                             </li>
-                                                            <li class="nav-item m-tabs__item">
-                                                                <a class="nav-link m-tabs__link" data-toggle="tab"
-                                                                   href="#topbar_notifications_events" role="tab">
-                                                                    Events
-                                                                </a>
-                                                            </li>
-                                                            <li class="nav-item m-tabs__item">
-                                                                <a class="nav-link m-tabs__link" data-toggle="tab"
-                                                                   href="#topbar_notifications_logs" role="tab">
-                                                                    Logs
-                                                                </a>
-                                                            </li>
+{{--                                                            <li class="nav-item m-tabs__item">--}}
+{{--                                                                <a class="nav-link m-tabs__link" data-toggle="tab"--}}
+{{--                                                                   href="#topbar_notifications_events" role="tab">--}}
+{{--                                                                    Events--}}
+{{--                                                                </a>--}}
+{{--                                                            </li>--}}
+{{--                                                            <li class="nav-item m-tabs__item">--}}
+{{--                                                                <a class="nav-link m-tabs__link" data-toggle="tab"--}}
+{{--                                                                   href="#topbar_notifications_logs" role="tab">--}}
+{{--                                                                    Logs--}}
+{{--                                                                </a>--}}
+{{--                                                            </li>--}}
                                                         </ul>
                                                         <div class="tab-content">
                                                             <div class="tab-pane active"
@@ -417,14 +409,20 @@
                                                                                     <div class="m-list-timeline__item">
                                                                                 <span
                                                                                     class="m-list-timeline__badge m-list-timeline__badge--state1-success"></span>
-                                                                                        <a href="{{url($notification->data['url_'.app()->getLocale()].'?read='.$notification->id)}}"
-                                                                                           class="m-list-timeline__text">
-                                                                                            {{$notification->data['message_'.app()->getLocale()]}}
-                                                                                            <span
-                                                                                                class="m-badge m-badge--success m-badge--wide">
-																							@lang('course.new')
+
+                                                                                            <a href="{{ $notification->data['url_en'] === '#' ? '#' : url($notification->data['url_'.app()->getLocale()].'?read='.$notification->id)}}"
+                                                                                               class="m-list-timeline__text">
+                                                                                                {{$notification->data['message_'.app()->getLocale()]}}
+                                                                                                <span warning
+                                                                                                    class="m-badge m-badge--{{ $notification->data['url_en'] === '#' ? 'warning' : 'success'}} m-badge--wide">
+                                                                                                    @if($notification->data['url_en'] === '#')
+                                                                                                        @lang('course.ByAdmin')
+                                                                                                        @else
+                                                                                                        @lang('course.new')
+                                                                                                    @endif
 																						</span>
-                                                                                        </a>
+                                                                                            </a>
+
                                                                                         <span
                                                                                             class="m-list-timeline__time">
 																						{{Carbon\Carbon::parse($notification->created_at)->diffForHumans()}}

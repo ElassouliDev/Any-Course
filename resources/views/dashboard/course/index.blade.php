@@ -26,28 +26,7 @@
                         {{--                        <small>{{ $course->total() }}</small>--}}
                     </h3>
 
-                    <form action="{{ route('dashboard.course.index') }}" method="get">
 
-                        <div class="row">
-
-                            <div class="col-md-4">
-                                <input type="text" name="search" class="form-control"
-                                       placeholder="@lang('admin.search')" >
-                            </div>
-
-                            <div class="col-md-4">
-                                <button type="submit" class="btn btn-primary"><i
-                                        class="fa fa-search"></i> @lang('admin.search')</button>
-                                                                @if (auth()->user()->hasPermission('create_courses'))
-                                <a href="{{ route('dashboard.course.create') }}" class="btn btn-primary"><i
-                                        class="fa fa-plus"></i> @lang('admin.add')</a>
-                                                                @else
-                                                                    <a href="#" class="btn btn-primary disabled"><i class="fa fa-plus"></i> @lang('admin.add')</a>
-                                                                @endif
-                            </div>
-
-                        </div>
-                    </form><!-- end of form -->
 
                 </div><!-- end of box header -->
 

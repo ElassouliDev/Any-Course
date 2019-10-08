@@ -4,6 +4,12 @@ namespace App\Http\Controllers\Dashboard;
 
 use App\DataTables\NotificationDataTable;
 use App\Http\Controllers\BaseController;
+use App\Http\Requests\SendNotificationToAllUserRequest;
+use App\Notifications\SendNotificationOfAllUser;
+use App\Notifications\SendNotificationToAllUser;
+use App\User;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Notification;
 
 
 class NotificationsController extends BaseController
@@ -19,6 +25,7 @@ class NotificationsController extends BaseController
                 $data = $notification;
                 break;
             }
+
         }
         return response(['data' => $data]);
     }
@@ -32,5 +39,21 @@ class NotificationsController extends BaseController
     {
         \auth()->user()->unreadNotifications()->where('read_at',null)->where('id',$id)->update(['read_at' => now()]);
         return back();
+    }
+    function create()
+    {
+        $title = trans('admin.create');
+        return view('dashboard.notification.create',compact('title'));
+    }
+
+
+    public function store(SendNotificationToAllUserRequest $request)
+    {
+    $users = User::where('id' ,'<>',auth()->id())->get();
+//    dd($request->all());
+        Notification::send($users, new SendNotificationToAllUser($request->all()));
+
+
+
     }
 }

@@ -47,6 +47,7 @@ return [
     'notifications'=>'Notifications',
     'message'=>'Message',
     'new'=>'New',
+    'ByAdmin'=>'By Admin',
     'not_notification'=>'No notifications',
 
 ];

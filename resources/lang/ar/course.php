@@ -55,6 +55,7 @@ return [
     'message'=>'الرسالة',
     'not_notification'=>'لا يوجد اشعارات',
     'new'=>'جديد',
+    'ByAdmin'=>'من الادمن',
 
 
 ];

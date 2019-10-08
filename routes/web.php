@@ -17,7 +17,6 @@ Route::group(
     ],
     function () {
         Route::prefix('dashboard')->name('dashboard.')->middleware(['auth','superAdmin'])->group(function () {
-            Route::get('/{id}/notifications','Dashboard\NotificationsController@index_by');
             Route::resource('/notifications','Dashboard\NotificationsController');
             Route::resource('/', 'Dashboard\DashboardController');
             Route::resource('/users', 'Dashboard\UserController');
@@ -42,6 +41,8 @@ Route::group(
             Route::resource('/comment', 'Dashboard\CommentController');
 
         });
+        Route::get('/{id}/notifications','Dashboard\NotificationsController@index_by');
+
         Route::group(['middleware' => ['auth']], function () {
 
             Route::get('student/course/', 'Student\CourseController@getEnrolledCoursesByUser')->name('student.courses.enrolled');

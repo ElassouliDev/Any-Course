@@ -54,7 +54,7 @@
         channel.bind('my-event', function (data) {
             var result = JSON.parse(JSON.stringify(data));
             console.log(result);
-            url = "{{url('dashboard/notifications')}}" + '/' + result.course.user_id;
+            url = "{{url('notifications')}}" + '/' + result.course.user_id;
             $.get(url, function (response) {
                 console.table(response);
                 link_en = "{{url('course')}}" + '/' + result.course.slug_en + '/?read=' + response.data.id;

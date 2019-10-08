@@ -15,12 +15,65 @@
 
     <!--begin::Web font -->
     <script src="{{asset('course_assets/js/webfontloader.js')}}"></script>
+    <script src="https://js.pusher.com/5.0/pusher.min.js"></script>
+
     <script>
         WebFont.load({
             google: {"families": ["Poppins:300,400,500,600,700", "Roboto:300,400,500,600,700"]},
             active: function () {
                 sessionStorage.fonts = true;
             }
+        });
+        Pusher.logToConsole = true;
+        url = "{{url('notifications')}}" + '/' + "{{auth()->id()}}";
+
+        var pusher = new Pusher('3154f7166f89b46a4e19', {
+            cluster: 'ap2',
+            forceTLS: true
+        });
+
+        var channel = pusher.subscribe('my-channel');
+        var channel2 = pusher.subscribe('my-channel' + "{{auth()->id()}}");
+        channel.bind('my-event', function (data) {
+            var result = JSON.parse(JSON.stringify(data));
+            // console.log(result);
+            $.get(url, function (response) {
+                console.table(response);
+                var notifcations = $('#notifcation  .notifcation');
+                notifcations.prepend("<div class='m-list-timeline__item'>" + "<span class='m-list-timeline__badge m-list-timeline__badge--state1-success'></span>" +
+                    @if(app()->getLocale() == 'en')
+                        "<a href='" + result.data.url_en + "'  class='m-list-timeline__text' >" + result.data.message_en + "</a>" +
+                    @else
+                        "<a href='" + result.data.url_ar + "'>" + result.data.message_ar + "</a>" +
+                    @endif
+
+                        "<span class='m-list-timeline__time'>" +
+                    result.data.created_at
+                    + "</span>" +
+                    +"</div>");
+            });
+        });
+        channel2.bind('my-event2', function (data) {
+            var result = JSON.parse(JSON.stringify(data));
+            console.log(result);
+            url = "{{url('/')}}" + '/' + result.data.user_id+ '/notifications';
+            $.get(url, function (response) {
+                // console.table(response);
+
+                $('.m-list-timeline__items.notification').prepend(
+                    "<div class='m-list-timeline__item'>" +
+                    "<span class='m-list-timeline__badge m-list-timeline__badge--state1-success'></span>" +
+                    @if(app()->getLocale() == 'en')
+                        "<a href='" + result.data.url_en  + "'  class='m-list-timeline__text' >" + result.data.message_en + "</a>" +
+                    @else
+                        "<a href='" + result.data.url_ar + "'>" + result.data.message_ar + "</a>" +
+                    @endif
+
+                        "<span class='m-list-timeline__time'>" +
+                    result.data.created_at
+                    + "</span>" +
+                    +"</div>");
+            });
         });
     </script>
     <link rel="shortcut icon" href="{{ url(@$icon)}}"/>
@@ -346,18 +399,7 @@
                                                                     @lang('admin.notifications')
                                                                 </a>
                                                             </li>
-                                                            {{--                                                            <li class="nav-item m-tabs__item">--}}
-                                                            {{--                                                                <a class="nav-link m-tabs__link" data-toggle="tab"--}}
-                                                            {{--                                                                   href="#topbar_notifications_events" role="tab">--}}
-                                                            {{--                                                                    Events--}}
-                                                            {{--                                                                </a>--}}
-                                                            {{--                                                            </li>--}}
-                                                            {{--                                                            <li class="nav-item m-tabs__item">--}}
-                                                            {{--                                                                <a class="nav-link m-tabs__link" data-toggle="tab"--}}
-                                                            {{--                                                                   href="#topbar_notifications_logs" role="tab">--}}
-                                                            {{--                                                                    Logs--}}
-                                                            {{--                                                                </a>--}}
-                                                            {{--                                                            </li>--}}
+
                                                         </ul>
                                                         <div class="tab-content">
                                                             <div class="tab-pane active"
@@ -366,8 +408,10 @@
                                                                 <div class="m-scrollable" data-scrollable="true"
                                                                      data-max-height="250" data-mobile-max-height="200">
                                                                     <div
-                                                                        class="m-list-timeline m-list-timeline--skin-light">
-                                                                        <div class="m-list-timeline__items">
+                                                                        class="m-list-timeline m-list-timeline--skin-light"
+                                                                        id="notification">
+                                                                        <div
+                                                                            class="m-list-timeline__items notification">
                                                                             @if(count(auth()->user()->unreadNotifications) > 0)
                                                                                 @foreach(auth()->user()->unreadNotifications as $notification)
                                                                                     <div class="m-list-timeline__item">
@@ -526,7 +570,8 @@
                                                              data-max-height="380" data-mobile-max-height="200">
                                                             <div class="m-nav-grid m-nav-grid--skin-light">
                                                                 <div class="m-nav-grid__row">
-                                                                    <a href="{{route('course_lecture.index')}}" class="m-nav-grid__item">
+                                                                    <a href="{{route('course_lecture.index')}}"
+                                                                       class="m-nav-grid__item">
                                                                         <i class="m-nav-grid__icon flaticon-folder"></i>
                                                                         <span class="m-nav-grid__text">
 																													@lang('course.course_management')

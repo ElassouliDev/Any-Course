@@ -13,15 +13,15 @@ use Illuminate\Notifications\Messages\MailMessage;
 class QuestionLectureNotification extends Notification
 {
     use Queueable;
-    public $lesson;
+    public $data;
     /**
      * Create a new notification instance.
      *
      * @return void
      */
-    public function __construct(Lesson $lesson)
+    public function __construct( $data)
     {
-        $lesson = $this->lesson;
+      $this->data = $data;
     }
 
     /**
@@ -57,15 +57,7 @@ class QuestionLectureNotification extends Notification
      */
     public function toArray($notifiable)
     {
-        $course = Course::find($this->lesson->course_id);
-        return [
-            'url_en'=>'course/'.$course->slug_en.'/lesson/'.$this->lesson->slug_en.'/question',
-            'url_ar'=>'course/'.$course->slug_ar.'/lesson/'.$this->lesson->slug_ar.'/question',
-            'user_id'=>auth()->user()->id,
-            'title_en'=>$this->lesson->title_en,
-            'title_ar'=>$this->lesson->title_ar,
-            'message_en' => 'Question has been added to Lesson'.$this->lesson->title_en.'By '.auth()->user()->full_name(),
-            'message_ar' => 'تمت اضافة سؤال الى الدرس  '.$this->lesson->title_ar.'من قبل '.auth()->user()->full_name(),
-        ];
+
+        return $this->data;
     }
 }

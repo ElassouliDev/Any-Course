@@ -388,7 +388,7 @@
                                             <div class="card-body">
                                                 <h4 class="card-title">
                                                     <b>{{$course->category['title_'.app()->getLocale()]}}</b></h4>
-                                                <p class="card-text description">{{$course->is_paid?'<b> lang('admin.price') : </b> 55$':'' }}</p>
+                                                <p class="card-text description">{!! $course->is_paid?'<b> '.__('admin.price').' : </b>'.$course->price.' $' :'<b> '.__('admin.free').' </b>' !!}</p>
                                                 <form method="post"
                                                       action="{{route('user.course_enroll',$course['slug_'.app()->getLocale()])}}">
                                                     @csrf

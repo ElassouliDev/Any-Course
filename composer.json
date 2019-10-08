@@ -20,11 +20,7 @@
         "santigarcor/laratrust": "5.2.*",
         "yajra/laravel-datatables": "^1.5",
         "yajra/laravel-datatables-oracle": "^9.4",
-<<<<<<< Updated upstream
-        "zgabievi/promocodes": "^2.2"
-=======
         "zgabievi/promocodes": "^2.3"
->>>>>>> Stashed changes
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.2",

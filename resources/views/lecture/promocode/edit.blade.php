@@ -84,7 +84,7 @@
 
                                                                     <div class="input-group">
                                                                         <span class="input-group-addon">$</span>
-                                                                        <input type="number" name="price" value="{{$course->price}}"
+                                                                        <input type="number" value="{{$course->price}}"
                                                                                min="0"
                                                                                class="form-control">
                                                                     </div>

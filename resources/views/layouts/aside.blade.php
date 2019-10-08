@@ -57,6 +57,18 @@
                     </a>
                 </li>
             @endrole
+            @role('lecture')
+
+                <li class="m-menu__item">
+                    <a href="{{route('promocode.index')}}" class="m-menu__link">
+                        <i class="m-menu__link-icon fa fa-file-video-o"></i>
+                        <span class="m-menu__link-text">
+										@lang('admin.promocode')
+									</span>
+                    </a>
+                </li>
+
+            @endrole
 
 {{--            <li class="m-menu__item">--}}
 {{--                <a href="create_course.html" class="m-menu__link">--}}

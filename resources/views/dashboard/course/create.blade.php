@@ -32,7 +32,7 @@
 
                     @include('partials._errors')
 
-                    <form action="{{ route('dashboard.course.store') }}" method="post" enctype="multipart/form-data">
+                    <form data-parsley-validate action="{{ route('dashboard.course.store') }}" method="post" enctype="multipart/form-data" id="course_form">
 
                         @csrf
 
@@ -41,7 +41,7 @@
                                 <div class="form-group">
                                     <label>@lang('admin.title_ar')</label>
                                     <input type="text" name="title_ar" class="form-control"
-                                           value="{{ old('title_ar') }}">
+                                           value="{{ old('title_ar') }}" required>
                                 </div>
 
                             </div>
@@ -49,7 +49,7 @@
                                 <div class="form-group">
                                     <label>@lang('admin.title_en')</label>
                                     <input type="text" name="title_en" class="form-control"
-                                           value="{{ old('title_en') }}">
+                                           value="{{ old('title_en') }}" required>
                                 </div>
 
                             </div>
@@ -135,13 +135,10 @@
                             <div class="col-md-6">
                                 <div class="form-group" required>
                                     <label>@lang('admin.image')</label>
-                                    <input type="file" class="form-control" name="image">
+                                    <input type="file" class="form-control" name="image" accept="image/*">
                                 </div>
-
                             </div>
-
                         </div>
-
 
                         <div class="form-group">
                             <button type="submit" class="btn btn-primary"><i class="fa fa-plus"></i> @lang('admin.add')
@@ -156,7 +153,7 @@
 
         </section><!-- end of content -->
 
-    </div><!-- end of content wrapper -->
+        </div><!-- end of content wrapper -->
 
 @endsection
 @push('js')
@@ -164,6 +161,7 @@
     <script>
         $(document).ready(function() {
             $('.js-example-basic-multiple').select2();
+            $('#course_form').validate()/*	.parsley()*/;
         });
     </script>
 @endpush

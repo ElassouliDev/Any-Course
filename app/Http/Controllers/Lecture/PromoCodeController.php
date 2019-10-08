@@ -30,13 +30,13 @@ class PromoCodeController extends BaseController
     }
 
 
-    public function UsePromocode_to_pay_course($course_slug,$promocode)
+    public function UsePromocode_to_pay_course(Request $request)
     {
-        $course = Course::where('slug_ar',$course_slug)->orWhere('slug_en',$course_slug)->first();
+        $course = Course::find($request->course_id);
 
-        if(Promocodes::check($promocode)){
+        if(Promocodes::check($request->promocode)){
 
-            $remain = $promocode->data['amount_remain'] ??$promocode->data['amount']?? 0 ;
+            $remain = $promocode->data['amount_remain']??$promocode->data['amount']?? 0 ;
             if($remain >= $course->price){
                 $promocode->data['amount_remain']-=$course->price;
                 $promocode->data['amount_demand'][]=['cost' =>$course->price ,'user_id'=>auth()->id()];

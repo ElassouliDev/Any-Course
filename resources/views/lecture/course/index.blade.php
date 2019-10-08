@@ -157,7 +157,7 @@
 
                                                                         <div class="input-group">
                                                                             <span class="input-group-addon">$</span>
-                                                                            <input type="number" min="0"
+                                                                            <input type="number" name="price" min="0"
                                                                                    class="form-control">
                                                                         </div>
                                                                     </div>

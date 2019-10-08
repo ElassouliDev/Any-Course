@@ -395,7 +395,7 @@
     });//end of ready
 
 </script>
-
+<script src="//parsleyjs.org/dist/parsley.js"></script>
 @stack('js')
 </body>
 </html>

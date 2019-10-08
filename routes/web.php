@@ -79,6 +79,7 @@ Route::group(
             Route::resource('lecture/course/{course_slug}/exam', 'Lecture\ExamController');
             Route::resource('lecture/course/{course_slug}/lesson', 'Lecture\LessonController');
             Route::resource('lecture/promocode', 'Lecture\PromoCodeController');
+            Route::post('lecture/promocode/course/pay', 'Lecture\PromoCodeController@UsePromocode_to_pay_course')->name('promocode.paycourse');
 
         });
 

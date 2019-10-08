@@ -111,10 +111,7 @@ return [
     'View all'=>'View all',
     'notifications'=>'Notifications',
     'message'=>'Message',
-    'message_en'=>'Message Arabic',
-    'message_ar'=>'Message English',
     'it_is_read'=>'Readable',
     'reading'=>'Reading',
-    'add_lesson'=>'Add Lesson',
 
 ];

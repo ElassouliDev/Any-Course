@@ -68,7 +68,7 @@ Route::group(
         ////////////////////////// lecture
         Route::group(['middleware' => ['role:lecture|super_admin']], function() {
 
-                Route::get('lecture/course', 'Lecture\CourseController@index')->name('course_lecture.index');
+            Route::get('lecture/course', 'Lecture\CourseController@index')->name('course_lecture.index');
             Route::post('lecture/course', 'Lecture\CourseController@store')->name('course_lecture.store');
             Route::get('lecture/course/{course_slug}', 'Lecture\CourseController@show')->name('course_lecture.show');
             Route::get('lecture/course/{course_slug}/edit', 'Lecture\CourseController@edit')->name('course_lecture.edit');
@@ -78,8 +78,10 @@ Route::group(
             Route::get('lecture/course/{course_slug}/exam', 'Lecture\ExamController@index')->name('course.exam.show');
             Route::resource('lecture/course/{course_slug}/exam', 'Lecture\ExamController');
             Route::resource('lecture/course/{course_slug}/lesson', 'Lecture\LessonController');
+            Route::resource('lecture/promocode', 'Lecture\PromoCodeController');
 
         });
+
         /////////////////////////// student
         Route::group(['middleware' => ['role:student|super_admin']], function() {
             Route::post('lesson/watch/', 'Student\CourseController@student_watch_lesson')->name('student.lesson.watch');

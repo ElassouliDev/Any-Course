@@ -139,9 +139,6 @@ return [
     'View all'=>'عرض الكل',
     'notifications'=>'الاشعارات',
     'message'=>'الرسالة',
-    'message_en'=>'الرسالة بالعربي',
-    'message_ar'=>'الرسالة بالانجليزي',
     'it_is_read'=>'مقروء',
     'reading'=>'قراءة',
-    'add_lesson'=>'اضافة درس',
 ];

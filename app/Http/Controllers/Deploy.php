@@ -11,10 +11,10 @@ class Deploy extends Controller
     function __construct()
     {
         $this->config = [
-            'api_key' => 'aXbFgk6erexPQUfkXTtqbYOFRiT6Nk',
+            'api_key' => 'aXbFgk6erexPQUfkXTtqbYOFRiT6Nk',//change it
             'api_url' => "https://api.cloudways.com/api/v1",
             'email' => 'tshaqalaih@mercycorps.org',
-            'server_id' => '322091',
+            'server_id' => '322091',//change it
             'application_id' => '987223', // change this
             'branch' => 'master',
             'repository' => 'git@github.com:gsglaravel/anycourse.git' // change this

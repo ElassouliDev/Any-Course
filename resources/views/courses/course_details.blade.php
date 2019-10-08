@@ -491,6 +491,7 @@
 
     </div>
 
+{{--
     <div class="modal fade slide-up new" id="new" role="dialog" aria-hidden="false">
         <div class="modal-dialog modal-lg">
             <div class="modal-content-wrapper">
@@ -698,6 +699,7 @@
             </div>
         </div>
     </div>
+--}}
 
 
 @endsection

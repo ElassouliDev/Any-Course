@@ -556,6 +556,7 @@
 
         });
     </script>
+    @if($course->is_paid)
     <script>
 
         $(document).on('click', '#enrrlor_paid_course', function (event) {
@@ -577,4 +578,5 @@
         });
 
     </script>
+    @endif
 @endpush

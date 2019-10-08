@@ -49,5 +49,6 @@ return [
     'new'=>'New',
     'ByAdmin'=>'By Admin',
     'not_notification'=>'No notifications',
+    'MyProfile'=>'Profile',
 
 ];

@@ -19,6 +19,6 @@ class StudentRole
 
             return $next($request);
         }
-        return redirect('/404');
+        return abort('404');
     }
 }

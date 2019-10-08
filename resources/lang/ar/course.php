@@ -56,6 +56,7 @@ return [
     'not_notification'=>'لا يوجد اشعارات',
     'new'=>'جديد',
     'ByAdmin'=>'من الادمن',
+    'MyProfile'=>'حسابي',
 
 
 ];

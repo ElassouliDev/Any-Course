@@ -53,7 +53,9 @@ class NotificationsController extends BaseController
 //    dd($request->all());
         Notification::send($users, new SendNotificationToAllUser($request->all()));
 
+        session()->flash('success', __('error.added_successfully'));
 
+        return back();
 
     }
 }

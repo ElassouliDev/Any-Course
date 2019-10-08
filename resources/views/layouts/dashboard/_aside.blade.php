@@ -39,6 +39,9 @@
                         @if (auth()->user()->hasPermission('read_tags'))
                 <li><a href="{{ route('dashboard.tag.index') }}"><i class="fa fa-tag"></i><span>@lang('admin.tags')</span></a></li>
             @endif
+            @if (auth()->user()->hasPermission('create_notifications'))
+                <li><a href="{{ rroute('dashboard.notifications.create') }}"><i class="fa fa-tag"></i><span>@lang('admin.notifications')</span></a></li>
+            @endif
 
             @if (auth()->user()->hasPermission('read_settings'))
                 <li><a href="{{ route('dashboard.settings.index') }}"><i class="fa fa-opencart"></i><span>@lang('admin.settings')</span></a></li>

@@ -13,6 +13,7 @@ return [
             'questions' => 'c,r,u,d',
             'exams' => 'c,r,u,d',
             'certificate' => 'c,r,u,d',
+            'notifications' => 'c,r,u,d',
         ],
         'admin' =>[
             'users' => 'c,r',
@@ -23,6 +24,7 @@ return [
             'questions' => 'r,u,d',
             'exams' => 'r,u,d',
             'certificate' => 'c,r,u,d',
+            'notifications' => 'c,r,u,d',
 
         ],
         'lecture' =>[

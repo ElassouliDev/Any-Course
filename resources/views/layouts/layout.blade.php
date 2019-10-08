@@ -96,7 +96,7 @@
                                 <a href="{{url('/')}}" class="m-brand__logo-wrapper">
                                     <img alt="" src="{{url('course_assets/img/logo/logo.png')}}" width="50"
                                          height="40"/>
-                                    <span class="text-dark">Any Course</span>
+                                    <span class="text-dark">{{$site_title}}</span>
                                 </a>
                             </div>
 
@@ -114,7 +114,7 @@
                     <div id="m_header_menu"
                          class="m-header-menu m-aside-header-menu-mobile m-aside-header-menu-mobile--offcanvas  m-header-menu--skin-light m-header-menu--submenu-skin-light m-aside-header-menu-mobile--skin-dark m-aside-header-menu-mobile--submenu-skin-dark ">
                         <ul class="m-menu__nav  m-menu__nav--submenu-arrow ">
-                            <li class="m-menu__item">Home</li>
+                            <li class="m-menu__item">@lang('admin.home')</li>
                             <li class="m-menu__item  m-menu__item--submenu m-menu__item--rel"
                                 data-menu-submenu-toggle="click" data-redirect="true" aria-haspopup="true">
                                 <a href="#" class="m-menu__link m-menu__toggle">
@@ -318,42 +318,6 @@
                     <div id="m_header_topbar" class="m-topbar  m-stack m-stack--ver m-stack--general">
                         <div class="m-stack__item m-topbar__nav-wrapper">
                             <ul class="m-topbar__nav m-nav m-nav--inline">
-                                <li class="m-nav__item m-dropdown m-dropdown--large m-dropdown--arrow m-dropdown--align-center m-dropdown--mobile-full-width m-dropdown--skin-light	m-list-search m-list-search--skin-light"
-                                    data-dropdown-toggle="click" data-dropdown-persistent="true" id="m_quicksearch"
-                                    data-search-type="dropdown">
-                                    <a href="#" class="m-nav__link m-dropdown__toggle">
-												<span class="m-nav__link-icon">
-													<i class="flaticon-search-1"></i>
-												</span>
-                                    </a>
-                                    <div class="m-dropdown__wrapper">
-                                        <span class="m-dropdown__arrow m-dropdown__arrow--center"></span>
-                                        <div class="m-dropdown__inner ">
-                                            <div class="m-dropdown__header">
-                                                <form class="m-list-search__form">
-                                                    <div class="m-list-search__form-wrapper">
-																<span class="m-list-search__form-input-wrapper">
-																	<input id="m_quicksearch_input" autocomplete="off"
-                                                                           type="text" name="q"
-                                                                           class="m-list-search__form-input" value=""
-                                                                           placeholder="Search...">
-																</span>
-                                                        <span class="m-list-search__form-icon-close"
-                                                              id="m_quicksearch_close">
-																	<i class="la la-remove"></i>
-																</span>
-                                                    </div>
-                                                </form>
-                                            </div>
-                                            <div class="m-dropdown__body">
-                                                <div class="m-dropdown__scrollable m-scrollable" data-scrollable="true"
-                                                     data-max-height="300" data-mobile-max-height="200">
-                                                    <div class="m-dropdown__content"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
 
                                 @if(auth()->user())
                                     <li class="m-nav__item m-topbar__notifications m-topbar__notifications--img m-dropdown m-dropdown--large m-dropdown--header-bg-fill m-dropdown--arrow m-dropdown--align-center 	m-dropdown--mobile-full-width"
@@ -382,18 +346,18 @@
                                                                     @lang('admin.notifications')
                                                                 </a>
                                                             </li>
-{{--                                                            <li class="nav-item m-tabs__item">--}}
-{{--                                                                <a class="nav-link m-tabs__link" data-toggle="tab"--}}
-{{--                                                                   href="#topbar_notifications_events" role="tab">--}}
-{{--                                                                    Events--}}
-{{--                                                                </a>--}}
-{{--                                                            </li>--}}
-{{--                                                            <li class="nav-item m-tabs__item">--}}
-{{--                                                                <a class="nav-link m-tabs__link" data-toggle="tab"--}}
-{{--                                                                   href="#topbar_notifications_logs" role="tab">--}}
-{{--                                                                    Logs--}}
-{{--                                                                </a>--}}
-{{--                                                            </li>--}}
+                                                            {{--                                                            <li class="nav-item m-tabs__item">--}}
+                                                            {{--                                                                <a class="nav-link m-tabs__link" data-toggle="tab"--}}
+                                                            {{--                                                                   href="#topbar_notifications_events" role="tab">--}}
+                                                            {{--                                                                    Events--}}
+                                                            {{--                                                                </a>--}}
+                                                            {{--                                                            </li>--}}
+                                                            {{--                                                            <li class="nav-item m-tabs__item">--}}
+                                                            {{--                                                                <a class="nav-link m-tabs__link" data-toggle="tab"--}}
+                                                            {{--                                                                   href="#topbar_notifications_logs" role="tab">--}}
+                                                            {{--                                                                    Logs--}}
+                                                            {{--                                                                </a>--}}
+                                                            {{--                                                            </li>--}}
                                                         </ul>
                                                         <div class="tab-content">
                                                             <div class="tab-pane active"
@@ -410,18 +374,18 @@
                                                                                 <span
                                                                                     class="m-list-timeline__badge m-list-timeline__badge--state1-success"></span>
 
-                                                                                            <a href="{{ $notification->data['url_en'] === '#' ? '#' : url($notification->data['url_'.app()->getLocale()].'?read='.$notification->id)}}"
-                                                                                               class="m-list-timeline__text">
-                                                                                                {{$notification->data['message_'.app()->getLocale()]}}
-                                                                                                <span warning
-                                                                                                    class="m-badge m-badge--{{ $notification->data['url_en'] === '#' ? 'warning' : 'success'}} m-badge--wide">
+                                                                                        <a href="{{ $notification->data['url_en'] === '#' ? '#' : url($notification->data['url_'.app()->getLocale()].'?read='.$notification->id)}}"
+                                                                                           class="m-list-timeline__text">
+                                                                                            {{$notification->data['message_'.app()->getLocale()]}}
+                                                                                            <span warning
+                                                                                                  class="m-badge m-badge--{{ $notification->data['url_en'] === '#' ? 'warning' : 'success'}} m-badge--wide">
                                                                                                     @if($notification->data['url_en'] === '#')
-                                                                                                        @lang('course.ByAdmin')
-                                                                                                        @else
-                                                                                                        @lang('course.new')
-                                                                                                    @endif
+                                                                                                    @lang('course.ByAdmin')
+                                                                                                @else
+                                                                                                    @lang('course.new')
+                                                                                                @endif
 																						</span>
-                                                                                            </a>
+                                                                                        </a>
 
                                                                                         <span
                                                                                             class="m-list-timeline__time">
@@ -434,7 +398,7 @@
                                                                                 <span
                                                                                     class="m-list-timeline__badge m-list-timeline__badge--state1-success"></span>
                                                                                     <span
-                                                                                       class="m-list-timeline__text">
+                                                                                        class="m-list-timeline__text">
                                                                                       @lang('course.not_notification')
 
                                                                                     </span>
@@ -556,45 +520,24 @@
                                             <span
                                                 class="m-dropdown__arrow m-dropdown__arrow--right m-dropdown__arrow--adjust"></span>
                                             <div class="m-dropdown__inner">
-                                                <div class="m-dropdown__header m--align-center"
-                                                     style="background: url(assets/app/media/img/misc/quick_actions_bg.jpg); background-size: cover;">
-														<span class="m-dropdown__header-title">
-															Quick Actions
-														</span>
-                                                    <span class="m-dropdown__header-subtitle">
-															Shortcuts
-														</span>
-                                                </div>
                                                 <div class="m-dropdown__body m-dropdown__body--paddingless">
                                                     <div class="m-dropdown__content">
                                                         <div class="m-scrollable" data-scrollable="false"
                                                              data-max-height="380" data-mobile-max-height="200">
                                                             <div class="m-nav-grid m-nav-grid--skin-light">
                                                                 <div class="m-nav-grid__row">
-                                                                    <a href="#" class="m-nav-grid__item">
-                                                                        <i class="m-nav-grid__icon flaticon-file"></i>
-                                                                        <span class="m-nav-grid__text">
-																				Generate Report
-																			</span>
-                                                                    </a>
-                                                                    <a href="#" class="m-nav-grid__item">
-                                                                        <i class="m-nav-grid__icon flaticon-time"></i>
-                                                                        <span class="m-nav-grid__text">
-																				Add New Event
-																			</span>
-                                                                    </a>
-                                                                </div>
-                                                                <div class="m-nav-grid__row">
-                                                                    <a href="#" class="m-nav-grid__item">
+                                                                    <a href="{{route('course_lecture.index')}}" class="m-nav-grid__item">
                                                                         <i class="m-nav-grid__icon flaticon-folder"></i>
                                                                         <span class="m-nav-grid__text">
-																				Create New Task
+																													@lang('course.course_management')
+
 																			</span>
                                                                     </a>
-                                                                    <a href="#" class="m-nav-grid__item">
+                                                                    <a href="{{route('index')}}"
+                                                                       class="m-nav-grid__item">
                                                                         <i class="m-nav-grid__icon flaticon-clipboard"></i>
                                                                         <span class="m-nav-grid__text">
-																			الشهادات
+																			@lang('course.certificate')
 																			</span>
                                                                     </a>
                                                                 </div>

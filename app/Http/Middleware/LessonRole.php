@@ -19,16 +19,16 @@ class LessonRole
     {
         if (auth()->user()) {
 
-            $course_id = Course::where('slug_en', $request->route()->parameters())->orWhere('slug_ar', $request->route()->parameters())->first()->id;
-            $course = Course::with(['students' => function ($q) use ($course_id) {
+            $courses = Course::where('slug_en', $request->route()->parameters())->orWhere('slug_ar', $request->route()->parameters())->first();
+            $course = Course::with(['students' => function ($q)  {
                 $q->where('course_student.user_id', Auth::id());
-            }])->find($course_id);
+            }])->find($courses->id);
             $course['is_enroll'] = (count($course->students) > 0) ? true : false;
-            if ($course['is_enroll']) {
+            if ($course['is_enroll'] || $courses->user_id === \auth()->id()) {
                 return $next($request);
 
             }
-            return redirect('/404');
+            return abort('404');
         }
     }
 }

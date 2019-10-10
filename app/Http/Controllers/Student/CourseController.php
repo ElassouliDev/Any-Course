@@ -73,10 +73,10 @@ class CourseController extends BaseController
 //        $pdf = App::make('dompdf.wrapper');
 
 
-        $pdf=PDF::loadView('certification.index');
-        $path = $pdf->save('/path/preject.pdf');
+//        $pdf=PDF::loadView('certification.index');
+//        $path = $pdf->save('/path/preject.pdf');
 
-        return url('/').'/'.$path;
+//        return url('/').'/'.$path;
 //        return $data;
 //        return PDF::loadFile($data)->save('/path-to/my_stored_file.pdf')->stream('download.pdf');
 
@@ -91,10 +91,10 @@ class CourseController extends BaseController
             /*$data = Cache::remember('certification_'.\auth()->id().'_'.$course->id,330, function () use($certification) {
                 return  View::make('certification.index')->with('certificate',$certification)->render();
             });*/
-/*
-            $pdf = PDF::loadView('home');
 
-            dd(   $pdf->download('home.pdf')); */
+            $pdf = PDF::loadView('certification.index');
+
+            return $pdf->download('home.pdf');
 //            PDF::setOptions(['dpi' => 150, 'defaultFont' => 'sans-serif']);
             // pass view file
 

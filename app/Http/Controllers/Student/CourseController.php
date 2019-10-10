@@ -69,40 +69,12 @@ class CourseController extends BaseController
         View::share('certificate', $certification);
 
         if (\request()->has('download')) {
-            // Set extra option
-//        $pdf = App::make('dompdf.wrapper');
 
-
-//        $pdf=PDF::loadView('certification.index');
-//        $path = $pdf->save('/path/preject.pdf');
-
-//        return url('/').'/'.$path;
-//        return $data;
-//        return PDF::loadFile($data)->save('/path-to/my_stored_file.pdf')->stream('download.pdf');
-
-//            $data=view('certification.index');
-//        $pdf->loadHTML($data);
-
-            //        $pdf = PDF::loadView('certification.index',['certificate'=>$certification]);
-            // download pdf
-//        return $pdf->stream(); // download('home.pdf');
-            /**/
-//        return $pdf->stream();
-            /*$data = Cache::remember('certification_'.\auth()->id().'_'.$course->id,330, function () use($certification) {
-                return  View::make('certification.index')->with('certificate',$certification)->render();
-            });*/
-
+            PDF::setOptions(['dpi' => 150, 'defaultFont' => 'sans-serif']);
             $pdf = PDF::loadView('certification.index');
 
             return $pdf->download('home.pdf');
-//            PDF::setOptions(['dpi' => 150, 'defaultFont' => 'sans-serif']);
-            // pass view file
 
-
-//            $pdf = PDF::loadView('certification.index');
-            // download pdf
-//            $data = view('certification.index')->render();
-//            return /*response(['status'=>true,'data'=>$data]);//*/$pdf->download('certification.pdf');
         }
 
         return view('certification.index');

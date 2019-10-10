@@ -57,7 +57,7 @@
                     </a>
                 </li>
             @endrole
-            @role('lecture')
+            @role('lecture|super_admin')
 
                 <li class="m-menu__item">
                     <a href="{{route('promocode.index')}}" class="m-menu__link">

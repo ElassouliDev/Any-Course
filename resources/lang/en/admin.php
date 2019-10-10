@@ -121,5 +121,5 @@ return [
     'numbers'=>'#',
     'description'=>'Description',
     'isPaid'=>'Status: Paid / Free',
-
+    'dashboard_webSite'=>'View Web Site',
 ];

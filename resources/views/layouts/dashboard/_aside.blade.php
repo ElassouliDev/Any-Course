@@ -40,7 +40,7 @@
                 <li><a href="{{ route('dashboard.tag.index') }}"><i class="fa fa-tag"></i><span>@lang('admin.tags')</span></a></li>
             @endif
             @if (auth()->user()->hasPermission('create_notifications'))
-                <li><a href="{{ rroute('dashboard.notifications.create') }}"><i class="fa fa-tag"></i><span>@lang('admin.notifications')</span></a></li>
+                <li><a href="{{ route('dashboard.notifications.create') }}"><i class="fa fa-tag"></i><span>@lang('admin.notifications')</span></a></li>
             @endif
 
             @if (auth()->user()->hasPermission('read_settings'))

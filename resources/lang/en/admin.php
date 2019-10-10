@@ -123,5 +123,6 @@ return [
     'isPaid'=>'Status: Paid / Free',
     'dashboard_webSite'=>'View Web Site',
     'SelectCategory' => 'Select Category',
+    'confirm_delete_exam' => 'Are you want to delete this exam ?',
 
 ];

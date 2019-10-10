@@ -52,6 +52,10 @@
                     + "</span>" +
                     +"</div>");
             });
+            $('.notifications-logo-status').attr('id','m_topbar_notification_icon')
+            // $('.notifications-logo-status').find('span.m-nav__link-badge.m-badge.m-badge--dot.m-badge--dot-small.m-badge--danger').removeClass('');
+            // $('.notifications-logo-status').find('span.m-nav__link-icon').removeClass('');
+
         });
         channel2.bind('my-event2', function (data) {
             var result = JSON.parse(JSON.stringify(data));
@@ -73,6 +77,8 @@
                     result.data.created_at
                     + "</span>" +
                     +"</div>");
+                // id="m_topbar_notification_icon"
+                $('.notifications-logo-status').attr('id','m_topbar_notification_icon')
             });
         });
     </script>
@@ -375,8 +381,12 @@
                                 @if(auth()->user())
                                     <li class="m-nav__item m-topbar__notifications m-topbar__notifications--img m-dropdown m-dropdown--large m-dropdown--header-bg-fill m-dropdown--arrow m-dropdown--align-center 	m-dropdown--mobile-full-width"
                                         data-dropdown-toggle="click" data-dropdown-persistent="true">
-                                        <a href="#" class="m-nav__link m-dropdown__toggle"
-                                           id="m_topbar_notification_icon">
+                                        <a href="#" class="m-nav__link m-dropdown__toggle notifications-logo-status"
+
+                                           @if(count(auth()->user()->unreadNotifications) > 0)
+                                           id="m_topbar_notification_icon"
+                                           @endif
+                                        >
                                             <span
                                                 class="m-nav__link-badge m-badge m-badge--dot m-badge--dot-small m-badge--danger"></span>
                                             <span class="m-nav__link-icon ">
@@ -878,6 +888,9 @@
 <script src="{{asset('plugins/lib/')}}/js/util.js"></script>
 <script src="{{asset('plugins/lib/')}}/js/jquery.emojiarea.js"></script>
 <script src="{{asset('plugins/lib/')}}/js/emoji-picker.js"></script>
+<script>
+
+</script>
 </body>
 <!-- end::Body -->
 </html>

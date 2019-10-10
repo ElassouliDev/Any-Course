@@ -71,6 +71,11 @@
             });
 
 
+            newcount= parseInt($('#notif-count1').text())+1;
+            $('#notif-count1,#notif-count2').text(newcount);
+
+
+
             // alert(JSON.stringify(data));
         });
     </script>
@@ -195,11 +200,11 @@
                         <a href="#notifications-panel" class="dropdown-toggle" data-toggle="dropdown">
                             <i data-count="0" class="glyphicon glyphicon-bell notification-icon fa fa-bell-o"></i>
                             <span class="label label-warning"><span
-                                    class="notif-count">{{count(auth()->user()->unreadNotifications)}}</span></span>
+                                    class="notif-count " id="notif-count1">{{count(auth()->user()->unreadNotifications)}}</span></span>
                         </a>
                         <ul class="dropdown-menu ">
                             <li class="header">@lang('admin.You have') (<span
-                                    class="notif-count">{{count(auth()->user()->unreadNotifications)}}</span>)
+                                    class="notif-count" id="notif-count2">{{count(auth()->user()->unreadNotifications)}}</span>)
                                 notifications
                             </li>
                             <li>

@@ -252,6 +252,10 @@
             $('#new').modal('show');
         });
 
+        $(document).on('click', '[data-action="delete-action"]', function () {
+            $(this).find('form').submit();
+        });
+
         $(document).on('click', '#customFile', function () {
             $('#image-course').click();
         });
@@ -295,7 +299,6 @@
             event.preventDefault();
             // notifications.loading.show();
             $('#show').remove();
-            alert();
             var url = $(this).attr('data-link'),
                 request = $.ajax({
                     url: url,
@@ -321,8 +324,9 @@
         });
         $(document).on('submit', '[data-action="delete"]', function (event) {
             event.preventDefault();
+            $this= $(this);
             swal({
-                title: "@lang('admin.confirm_delete_notifications')",
+                title: "@lang('admin.confirm_delete_exam')",
                 icon: "warning",
                 dangerMode: true,
                 buttons: ["@lang('admin.cancel')", "@lang('admin.delete')"]
@@ -334,9 +338,10 @@
                         return;
                     }
 
-                    data = $(this).serialize();
-                    url = $(this).attr('action');
+                    data = $($this).serialize();
+                    url = $($this).attr('action');
                     $.post(url, data, function (response) {
+                        $('#dataTableBuilder').DataTable().ajax.reload();
 
                         $('html').append(response.show);
                     });

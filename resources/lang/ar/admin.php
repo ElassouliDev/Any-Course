@@ -150,5 +150,6 @@ return [
     'isPaid'=>'الحالة:مدفوع\مجاني',
     'dashboard_webSite'=>'مشاهدة الموقع',
     'SelectCategory'=>'اختر التصنيف',
+    'confirm_delete_exam' => 'هل أنت متأكد من أنك تريد حذف هذا السؤال ؟ ',
 
 ];

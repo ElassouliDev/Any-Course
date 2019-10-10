@@ -15,18 +15,25 @@
             </li>
             <li class="divider"></li>
             <li>
-                <a data-action="show" data-link="{{ route('exam.edit',['exam_id'=>$id,'course_id'=>$course_id])}}"><i
+                <a data-action="show" data-link="{{ route('exam.edit',[$course_id,$id])}}"><i
                             class="fa fa-pencil-square-o"></i> {{trans('admin.edit')}}</a>
             </li>
             <li class="divider"></li>
 
             <li>
-                <a data-toggle="modal" data-target="#delete_record{{$id}}" href="#">
-                    <i class="fa fa-trash"></i> {{trans('admin.delete')}}</a>
+                <a  href="#" data-action='delete-action' >
+                    <i class="fa fa-trash" ></i>
+                    {{trans('admin.delete')}}
+                    <form class="hidden" method="post" data-action="delete" action="{{route('exam.destroy', [$course_id,$id])}}">
+                        @csrf
+                        @method('delete')
+                    </form>
+                </a>
             </li>
         </ul>
     </div>
 </div>
+{{--
 <div class="modal fade" id="delete_record{{$id}}">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -41,10 +48,10 @@
                 <form method="post" data-action="delete" action="{{route('exam.destroy', ['exam_id'=>$id,'course_id'=>$course_id])}}">
                     @csrf
                     @method('delete')
-                    <input type="submit" class="btn btn-danger" value="{{trans('admin.approval')}}">
                 </form>
                 <a class="btn btn-default" data-dismiss="modal">{{trans('admin.cancel')}}</a>
             </div>
         </div>
     </div>
 </div>
+--}}

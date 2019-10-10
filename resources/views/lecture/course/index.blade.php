@@ -90,7 +90,7 @@
                         </h5>
                     </div>
                     <div class="modal-body">
-                        <form role="form" method="post" action="{{route('course_lecture.store')}}" autocomplete="off"
+                        <form id="demo-form" data-parsley-validate="" role="form" method="post" action="{{route('course_lecture.store')}}" autocomplete="off"
                               enctype="multipart/form-data">
                             @csrf
                             <div class="form-group-attached">
@@ -109,11 +109,11 @@
                                                     <div class="row">
                                                         <div class="col-md-6 col-sm-12">
                                                             <label>@lang('admin.title_ar'):</label>
-                                                            <input name="title_ar" type="text" class="form-control" required>
+                                                            <input name="title_ar" data-parsley-palindrome="" type="text" class="form-control" required>
                                                         </div>
                                                         <div class="col-md-6  col-sm-12">
                                                             <label>@lang('admin.title_en'):</label>
-                                                            <input name="title_en" type="text" class="form-control" required>
+                                                            <input name="title_en" data-parsley-palindrome=""  type="text" class="form-control" required>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -125,9 +125,8 @@
                                                     <div class="row">
                                                         <div class="col-md-6  col-sm-12">
                                                             <label>@lang('admin.category'):</label>
-                                                            <select name="category_id" class="form-control"
-                                                                    required>
-                                                                <option value="-1">-- @lang('admin.SelectCategory') --</option>
+                                                            <select  id="heard"  data-parsley-palindrome=""  name="category_id" class="form-control" required>
+                                                                <option value="">-- @lang('admin.SelectCategory') --</option>
                                                                 @foreach($categories as $category)
                                                                     <option value="{{ $category->id }}"
                                                                             disabled="disabled">{{ $category['title_'.app()->getLocale()] }}</option>
@@ -140,13 +139,13 @@
                                                             </select>
                                                         </div>
                                                         <div class="col-md-6  col-sm-12">
-                                                            <div class="form-group"><label>@lang('admin.isPaid')</label>
+                                                            <div class="form-group"><label for="isPaid">@lang('admin.isPaid')</label>
                                                                 <div class="row">
                                                                     <div class="col-md-8">
-                                                                        <select class="form-control" required
+                                                                        <select id="isPaid" data-parsley-palindrome=""  data-parsley-trigger="change"  class="form-control" required
                                                                                 value='{{old('is_paid')}}'
                                                                                 name="is_paid">
-                                                                            <option value="-1">
+                                                                            <option value="">
                                                                                 -- @lang('admin.selectPaid')--
                                                                             </option>
                                                                             <option value="0">@lang('admin.free')</option>
@@ -194,7 +193,7 @@
                                             <div class="col-md-12 clear">
                                                 <div class="row px-3">
                                                     <div class="col-md-l2 image-div w-100">
-                                                        <input type="file"
+                                                        <input type="file" required="" data-parsley-palindrome=""
                                                                onchange="this.form.filename.value = this.files.length ? this.files[0].name : ''"
                                                                class="custom-file-input bg-secondary hide"
                                                                name="image" id="image-course">
@@ -202,7 +201,7 @@
                                                                placeholder="No file selected" readonly>
                                                         <label id="customFile"
                                                                class="custom-file-label float-left btn btn-outline-primary w-25"
-                                                               for="customFile">Choose file</label>
+                                                               for="customFile">@lang('course.Choose image')</label>
                                                     </div>
                                                 </div>
                                             </div>
@@ -367,7 +366,16 @@
                  http.fail(JSON.parse(response.responseText), true);
             });
         });
-
+        $(function () {
+            $('#demo-form').parsley().on('field:validated', function() {
+                var ok = $('.parsley-error').length === 0;
+                $('.bs-callout-info').toggleClass('hidden', !ok);
+                $('.bs-callout-warning').toggleClass('hidden', ok);
+            })
+                .on('form:submit', function() {
+                    return false; // Don't submit form for this demo
+                });
+        });
     </script>
 
 

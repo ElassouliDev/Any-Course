@@ -21,7 +21,7 @@
         "santigarcor/laratrust": "5.2.*",
         "yajra/laravel-datatables": "^1.5",
         "yajra/laravel-datatables-oracle": "^9.4",
-        "zgabievi/promocodes": "^2.3"
+        "zgabievi/promocodes": "2.3.*"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.2",

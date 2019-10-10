@@ -93,7 +93,7 @@
                         </h5>
                     </div>
                     <div class="modal-body">
-                        <form role="form" method="post" action="{{route('promocode.store')}}" autocomplete="off"
+                        <form  id="demo-form" data-parsley-validate="" role="form" method="post" action="{{route('promocode.store')}}" autocomplete="off"
                               enctype="multipart/form-data">
                             @csrf
                             <div class="form-group-attached">
@@ -112,7 +112,7 @@
                                                         <div class="col-md-12  col-sm-12">
                                                             <label>@lang('admin.description'):</label>
                                                             <textarea name="description"
-                                                                      class="form-control" rows="4"></textarea>
+                                                                      class="form-control" rows="4" ></textarea>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -189,7 +189,18 @@
 
     </script>
 
-
+    <script type="text/javascript">
+        $(function () {
+            $('#demo-form').parsley().on('field:validated', function() {
+                var ok = $('.parsley-error').length === 0;
+                $('.bs-callout-info').toggleClass('hidden', !ok);
+                $('.bs-callout-warning').toggleClass('hidden', ok);
+            })
+                .on('form:submit', function() {
+                    return false; // Don't submit form for this demo
+                });
+        });
+    </script>
     <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.0.3/css/buttons.dataTables.min.css">
     <script src="https://cdn.datatables.net/buttons/1.0.3/js/dataTables.buttons.min.js"></script>
     <script src="/vendor/datatables/buttons.server-side.js"></script>

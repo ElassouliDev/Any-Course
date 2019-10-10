@@ -122,4 +122,6 @@ return [
     'description'=>'Description',
     'isPaid'=>'Status: Paid / Free',
     'dashboard_webSite'=>'View Web Site',
+    'SelectCategory' => 'Select Category',
+
 ];

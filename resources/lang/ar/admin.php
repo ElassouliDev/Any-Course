@@ -149,4 +149,6 @@ return [
     'numbers'=>'#',
     'isPaid'=>'الحالة:مدفوع\مجاني',
     'dashboard_webSite'=>'مشاهدة الموقع',
+    'SelectCategory'=>'اختر التصنيف',
+
 ];

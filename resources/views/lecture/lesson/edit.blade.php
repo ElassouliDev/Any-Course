@@ -7,7 +7,7 @@
                 <h4 class="modal-title">@lang('course.edit_lesson')</h4>
             </div>
             <div class="modal-body">
-                <form action="{{route('lesson.update',[$lesson->course['slug_'.app()->getLocale()],$lesson['slug_'.app()->getLocale()]])}}" method="post">
+                <form id="demo-form" data-parsley-validate="" action="{{route('lesson.update',[$lesson->course['slug_'.app()->getLocale()],$lesson['slug_'.app()->getLocale()]])}}" method="post">
                     @csrf
                     @method('put')
 
@@ -55,3 +55,16 @@
     </div>
     <!-- /.modal-dialog -->
 </div>
+
+<script type="text/javascript">
+    $(function () {
+        $('#demo-form').parsley().on('field:validated', function() {
+            var ok = $('.parsley-error').length === 0;
+            $('.bs-callout-info').toggleClass('hidden', !ok);
+            $('.bs-callout-warning').toggleClass('hidden', ok);
+        })
+            .on('form:submit', function() {
+                return false; // Don't submit form for this demo
+            });
+    });
+</script>

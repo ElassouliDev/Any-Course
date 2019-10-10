@@ -219,7 +219,7 @@
                     <h4 class="modal-title">@lang('course.add_lesson')</h4>
                 </div>
                 <div class="modal-body">
-                    <form action="{{route('lesson.store',$course['slug_'.app()->getLocale()])}}" method="post">
+                    <form id="demo-form" data-parsley-validate="" action="{{route('lesson.store',$course['slug_'.app()->getLocale()])}}" method="post">
                         @csrf
                         @method('post')
                         <input type="hidden" name="course_id" value="{{$course->id}}">
@@ -271,6 +271,18 @@
 
 @stop
 @push('js')
+    <script type="text/javascript">
+        $(function () {
+            $('#demo-form').parsley().on('field:validated', function() {
+                var ok = $('.parsley-error').length === 0;
+                $('.bs-callout-info').toggleClass('hidden', !ok);
+                $('.bs-callout-warning').toggleClass('hidden', ok);
+            })
+                .on('form:submit', function() {
+                    return false; // Don't submit form for this demo
+                });
+        });
+    </script>
     <script>
         $(document).on('click', '[data-action=delete]', function () {
             swal({
@@ -299,5 +311,8 @@
 
             })
         });
+
     </script>
+
+
 @endpush

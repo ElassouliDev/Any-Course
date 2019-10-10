@@ -58,7 +58,8 @@ return [
     'ByAdmin'=>'من الادمن',
     'MyProfile'=>'حسابي',
     'view_lessons'=>'استعراض الفيديوهات',
-    'new_review'=>'تقيم الكورس'
+    'new_review'=>'تقيم الكورس',
+    'Choose image'=>'اختر الصورة',
 
 
 ];

@@ -87,7 +87,7 @@
                         </h5>
                     </div>
                     <div class="modal-body">
-                        <form role="form" method="post" action="{{route('exam.store',['slug'=>$slug])}}"
+                        <form role="form" id="demo-form" data-parsley-validate="" method="post" action="{{route('exam.store',['slug'=>$slug])}}"
                               autocomplete="off"
                               enctype="multipart/form-data">
                             @csrf
@@ -122,7 +122,7 @@
 
                                               <input type="radio" name="is_correct" value="0">
                                                           </span>
-                                                        <input type="text" name="value_ar[]" class="form-control">
+                                                        <input type="text" name="value_ar[]" class="form-control" required>
                                                     </div>
                                                     <!-- /input-group -->
                                                 </div>
@@ -132,7 +132,7 @@
                                                     <div class="input-group">
                                              <span class="input-group-addon">
                                                           </span>
-                                                        <input type="text" name="value_en[]" class="form-control">
+                                                        <input type="text" name="value_en[]" class="form-control" required>
                                                     </div>
                                                     <!-- /input-group -->
                                                 </div>
@@ -147,7 +147,7 @@
 
                                               <input type="radio" name="is_correct" value="1">
                                                           </span>
-                                                        <input type="text" name="value_ar[]" class="form-control">
+                                                        <input type="text" name="value_ar[]" class="form-control" required>
                                                     </div>
                                                     <!-- /input-group -->
                                                 </div>
@@ -155,7 +155,7 @@
                                                     <div class="input-group">
                                              <span class="input-group-addon">
                                                           </span>
-                                                        <input type="text" name="value_en[]" class="form-control">
+                                                        <input type="text" name="value_en[]" class="form-control" required>
                                                     </div>
                                                     <!-- /input-group -->
                                                 </div>
@@ -170,7 +170,7 @@
 
                                               <input type="radio" name="is_correct" value="2">
                                                           </span>
-                                                        <input type="text" name="value_ar[]" class="form-control">
+                                                        <input type="text" name="value_ar[]" class="form-control" required>
                                                     </div>
                                                     <!-- /input-group -->
                                                 </div>
@@ -178,7 +178,7 @@
                                                     <div class="input-group">
                                              <span class="input-group-addon">
                                                           </span>
-                                                        <input type="text" name="value_en[]" class="form-control">
+                                                        <input type="text" name="value_en[]" class="form-control" required>
                                                     </div>
                                                     <!-- /input-group -->
                                                 </div>
@@ -193,7 +193,7 @@
 
                                               <input type="radio" name="is_correct" value="3">
                                                           </span>
-                                                        <input type="text" name="value_ar[]" class="form-control">
+                                                        <input type="text" name="value_ar[]" class="form-control" required>
                                                     </div>
                                                     <!-- /input-group -->
                                                 </div>
@@ -201,7 +201,7 @@
                                                     <div class="input-group">
                                              <span class="input-group-addon">
                                                           </span>
-                                                        <input type="text" name="value_en[]" class="form-control">
+                                                        <input type="text" name="value_en[]" class="form-control" required>
                                                     </div>
                                                     <!-- /input-group -->
                                                 </div>
@@ -344,5 +344,16 @@
         });
 
     </script>
-
+    <script type="text/javascript">
+        $(function () {
+            $('#demo-form').parsley().on('field:validated', function() {
+                var ok = $('.parsley-error').length === 0;
+                $('.bs-callout-info').toggleClass('hidden', !ok);
+                $('.bs-callout-warning').toggleClass('hidden', ok);
+            })
+                .on('form:submit', function() {
+                    return false; // Don't submit form for this demo
+                });
+        });
+    </script>
 @endpush

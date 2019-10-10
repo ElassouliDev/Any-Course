@@ -9,7 +9,7 @@
                     </h5>
                 </div>
                 <div class="modal-body">
-                    <form role="form" method="post" action="{{route('exam.update',[$exam->course_id,$exam->id])}}"
+                    <form role="form" id="demo-form" data-parsley-validate="" method="post" action="{{route('exam.update',[$exam->course_id,$exam->id])}}"
                           autocomplete="off"
                           enctype="multipart/form-data">
                         @csrf
@@ -22,12 +22,12 @@
                                             <div class="col-md-6 col-sm-12">
                                                 <label>@lang('course.title_ar'):</label>
                                                 <input name="title_ar" type="text" class="form-control"
-                                                       value="{{$exam->title_ar}}" required>
+                                                       value="{{$exam->title_ar}}" required data-parsley-validate="">
                                             </div>
                                             <div class="col-md-6 col-sm-12">
                                                 <label>@lang('course.title_en'):</label>
                                                 <input name="title_en" type="text" class="form-control"
-                                                       value="{{$exam->title_en}}" required>
+                                                       value="{{$exam->title_en}}" required data-parsley-validate="">
                                             </div>
                                         </div>
                                     </div>
@@ -49,10 +49,10 @@
                                              <span class="input-group-addon">
 
                                               <input type="radio" name="is_correct"
-                                                     {{$option->is_correct?'checked':''}} value="{{$loop->index}}">
+                                                     {{$option->is_correct?'checked':''}} value="{{$loop->index}}" required>
                                                           </span>
                                                         <input type="text" name="value_ar[]"
-                                                               value="{{$option->value_ar}}" class="form-control">
+                                                               value="{{$option->value_ar}}" class="form-control" required>
                                                     </div>
                                                     <!-- /input-group -->
                                                 </div>
@@ -64,7 +64,7 @@
                                              <span class="input-group-addon">
                                                           </span>
                                                         <input type="text" name="value_en[]"
-                                                               value="{{$option->value_en}}" class="form-control">
+                                                               value="{{$option->value_en}}" class="form-control" required>
                                                     </div>
                                                     <!-- /input-group -->
                                                 </div>
@@ -90,3 +90,16 @@
         </div>
     </div>
 </div>
+
+<script type="text/javascript">
+    $(function () {
+        $('#demo-form').parsley().on('field:validated', function() {
+            var ok = $('.parsley-error').length === 0;
+            $('.bs-callout-info').toggleClass('hidden', !ok);
+            $('.bs-callout-warning').toggleClass('hidden', ok);
+        })
+            .on('form:submit', function() {
+                return false; // Don't submit form for this demo
+            });
+    });
+</script>

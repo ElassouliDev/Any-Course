@@ -9,7 +9,7 @@
                     </h5>
                 </div>
                 <div class="modal-body">
-                    <form role="form" method="post" action="{{route('course_lecture.update')}}" autocomplete="off"
+                    <form id="demo-form" data-parsley-validate="" role="form" method="post" action="{{route('course_lecture.update')}}" autocomplete="off"
                           enctype="multipart/form-data">
                         @csrf
                         @method('put')
@@ -31,12 +31,12 @@
                                                     <div class="col-md-6 col-sm-12">
                                                         <label>@lang('admin.title_ar'):</label>
                                                         <input name="title_ar" type="text" value="{{$course->title_ar}}"
-                                                               class="form-control">
+                                                               required  class="form-control">
                                                     </div>
                                                     <div class="col-md-6  col-sm-12">
                                                         <label>@lang('admin.title_en'):</label>
                                                         <input name="title_en" value="{{$course->title_en}}" type="text"
-                                                               class="form-control">
+                                                               required class="form-control">
                                                     </div>
                                                 </div>
                                             </div>
@@ -49,9 +49,9 @@
                                                 <div class="row">
                                                     <div class="col-md-6  col-sm-12">
                                                         <label>@lang('admin.category'):</label>
-                                                        <select name="category_id" class="form-control"
+                                                        <select name="category_id" class="form-control" required
                                                         >
-                                                            <option value="-1">-- @lang('admin.SelectCategory') --</option>
+                                                            <option value="">-- @lang('admin.SelectCategory') --</option>
                                                             @foreach($categories as $category)
                                                                 <option value="{{ $category->id }}"
                                                                 >{{ $category['title_'.app()->getLocale()] }}</option>
@@ -69,9 +69,9 @@
                                                         <div class="form-group"><label>@lang('admin.isPaid')</label>
                                                             <div class="row">
                                                                 <div class="col-md-8">
-                                                                    <select class="form-control"
+                                                                    <select class="form-control" required
                                                                             name="is_paid">
-                                                                        <option value="-1">
+                                                                        <option value="">
                                                                             -- @lang('admin.selectPaid')--
                                                                         </option>
                                                                         <option value="0"
@@ -126,8 +126,8 @@
                                                                 class="text-danger">@lang('course.blocked')</span> @endif
                                                         </label>
                                                         <select @if($course->status != "blocked")name="status" @else disabled
-                                                                @endif class="form-control">
-                                                            <option></option>
+                                                                @endif class="form-control" required>
+                                                            <option value=""></option>
                                                             <option value="in-progress"
                                                                     @if($course->status == "in-progress") selected="selected" @endif> @lang('admin.in-progress') </option>
                                                             <option value="completed"
@@ -201,15 +201,14 @@
     new FroalaEditor('#example_en');
     new FroalaEditor('#example_ar');
 
-{{--new FroalaEditor('#example_en', {toolbarInline:false}, function () {--}}
-{{--        // Call the method inside the initialized event.--}}
-{{--        editor.html.insert('{!! $course->description_en !!}');--}}
-
-{{--    });--}}
-{{--new FroalaEditor('#example_ar', {toolbarInline:false}, function () {--}}
-{{--        // Call the method inside the initialized event.--}}
-{{--        editor.html.insert('{!! $course->description_ar !!}');--}}
-{{--    })--}}
-
-
+    $(function () {
+        $('#demo-form').parsley().on('field:validated', function() {
+            var ok = $('.parsley-error').length === 0;
+            $('.bs-callout-info').toggleClass('hidden', !ok);
+            $('.bs-callout-warning').toggleClass('hidden', ok);
+        })
+            .on('form:submit', function() {
+                return false; // Don't submit form for this demo
+            });
+    });
 </script>

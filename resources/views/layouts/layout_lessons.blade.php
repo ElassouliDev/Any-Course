@@ -98,5 +98,8 @@
 <script src="{{asset('plugins/lib/')}}/js/util.js"></script>
 <script src="{{asset('plugins/lib/')}}/js/jquery.emojiarea.js"></script>
 <script src="{{asset('plugins/lib/')}}/js/emoji-picker.js"></script>
+<script src="jquery.js"></script>
+<script src="parsley.min.js"></script>
+
 </body>
 </html>

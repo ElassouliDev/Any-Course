@@ -621,7 +621,9 @@
                                                         <div class="m-card-user__details">
 																<span class="m-card-user__email m--font-weight-500">
 																	{{auth()->user()->full_name()}}
+
 																</span>
+                                                            <br>
                                                             <a href=""
                                                                class="m-card-user__email m--font-weight-300 m-link">
                                                                 {{auth()->user()->email}}

@@ -67,31 +67,32 @@ class CourseController extends BaseController
         $course = Course::where('slug_ar', $course_slug)->orWhere('slug_en', $course_slug)->first();
         $certification = Certificate::where('course_id', $course->id)->where('user_id', \auth()->id())->first();
         View::share('certificate', $certification);
-        // Set extra option
+
+        if (\request()->has('download')) {
+            // Set extra option
 //        $pdf = App::make('dompdf.wrapper');
 
 
-//        $pdf=PDF::loadView('certification.index',['certificate'=>$certification]);
-//        $pdf->save('/path');
+        $pdf=PDF::loadView('certification.index');
+        $path = $pdf->save('/path/preject.pdf');
 
+        return url('/').'/'.$path;
 //        return $data;
 //        return PDF::loadFile($data)->save('/path-to/my_stored_file.pdf')->stream('download.pdf');
 
+//            $data=view('certification.index');
 //        $pdf->loadHTML($data);
 
-        //        $pdf = PDF::loadView('certification.index',['certificate'=>$certification]);
-        // download pdf
+            //        $pdf = PDF::loadView('certification.index',['certificate'=>$certification]);
+            // download pdf
 //        return $pdf->stream(); // download('home.pdf');
-        /**/
+            /**/
 //        return $pdf->stream();
-        if (\request()->has('download')) {
-
             /*$data = Cache::remember('certification_'.\auth()->id().'_'.$course->id,330, function () use($certification) {
                 return  View::make('certification.index')->with('certificate',$certification)->render();
             });*/
-                $pdf = PDF::loadView('home');
-
-            /*
+/*
+            $pdf = PDF::loadView('home');
 
             dd(   $pdf->download('home.pdf')); */
 //            PDF::setOptions(['dpi' => 150, 'defaultFont' => 'sans-serif']);
@@ -101,7 +102,7 @@ class CourseController extends BaseController
 //            $pdf = PDF::loadView('certification.index');
             // download pdf
 //            $data = view('certification.index')->render();
-            return /*response(['status'=>true,'data'=>$data]);//*/$pdf->download('certification.pdf');
+//            return /*response(['status'=>true,'data'=>$data]);//*/$pdf->download('certification.pdf');
         }
 
         return view('certification.index');

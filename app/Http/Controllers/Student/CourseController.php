@@ -96,9 +96,9 @@ class CourseController extends BaseController
             // pass view file
 
 
-            $pdf = PDF::loadView('home');
+            $pdf = PDF::loadView('certification.index');
             // download pdf
-            return $pdf->download('home.pdf');
+            return $pdf->download('certification.pdf');
         }
 
         return view('certification.index');

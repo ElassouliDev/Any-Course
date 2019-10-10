@@ -120,5 +120,6 @@ return [
     'promocode'=>'Promocode',
     'numbers'=>'#',
     'description'=>'Description',
+    'isPaid'=>'Status: Paid / Free',
 
 ];

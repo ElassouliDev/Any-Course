@@ -67,7 +67,7 @@
                         <a href="{{route('course.certification',[
                 'course_slug'=>$certification->course['slug_'.app()->getLocale()],
                 'download'=>'PDF'
-                ])}}" download="{{$certification->course['title_'.app()->getLocale()].'.pdf'}}"> <i
+                ])}}" id="download_PDF" > <i
                                     class="fa fa-download" style="font-size: 24px;"></i> </a>
                     </div>
 
@@ -85,5 +85,21 @@
     </div>
     {{--</div>--}}
 @endsection
+@push('js')
+  {{--  <script>
+        $(document).on('click','.download_PDF',function (event) {
+            event.preventDefault();
+            url = $(this).attr('href');
+
+            $.get(url,function (response) {
+                doc.fromHTML($('#content').html(), 15, 15, {
+                    'width': 170,
+                    'elementHandlers': specialElementHandlers
+                });
+                doc.save('sample-file.pdf');
+            });
+        })
+    </script>--}}
+@endpush
 {{--@stop--}}
 

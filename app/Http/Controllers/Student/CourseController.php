@@ -9,6 +9,7 @@ use App\Http\Controllers\BaseController;
 use App\Notifications\Enroll_course;
 use App\User;
 use Barryvdh\DomPDF\Facade as PDF;
+use http\Env\Response;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Auth;
@@ -88,17 +89,19 @@ class CourseController extends BaseController
             /*$data = Cache::remember('certification_'.\auth()->id().'_'.$course->id,330, function () use($certification) {
                 return  View::make('certification.index')->with('certificate',$certification)->render();
             });*/
-/*
-            $pdf = PDF::loadView('home');
+                $pdf = PDF::loadView('home');
+
+            /*
 
             dd(   $pdf->download('home.pdf')); */
-            PDF::setOptions(['dpi' => 150, 'defaultFont' => 'sans-serif']);
+//            PDF::setOptions(['dpi' => 150, 'defaultFont' => 'sans-serif']);
             // pass view file
 
 
-            $pdf = PDF::loadView('certification.index');
+//            $pdf = PDF::loadView('certification.index');
             // download pdf
-            return $pdf->download('certification.pdf');
+//            $data = view('certification.index')->render();
+            return /*response(['status'=>true,'data'=>$data]);//*/$pdf->download('certification.pdf');
         }
 
         return view('certification.index');

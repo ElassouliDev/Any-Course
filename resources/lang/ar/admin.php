@@ -148,4 +148,5 @@ return [
     'promocode'=>'البروموكود',
     'numbers'=>'#',
     'isPaid'=>'الحالة:مدفوع\مجاني',
+    'dashboard_webSite'=>'مشاهدة الموقع',
 ];

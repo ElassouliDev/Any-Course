@@ -41,7 +41,7 @@
 
     </style>
 @endpush
-
+@section('title',ucfirst($course['title_'.app()->getLocale()]))
 @section('content')
     <style>
         .form-control {

@@ -50,5 +50,6 @@ return [
     'ByAdmin'=>'By Admin',
     'not_notification'=>'No notifications',
     'MyProfile'=>'Profile',
-    'view_lessons'=>'View Lessons'
+    'view_lessons'=>'View Lessons',
+    'new_review'=>'New Review'
 ];

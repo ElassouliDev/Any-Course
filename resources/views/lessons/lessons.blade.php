@@ -208,14 +208,14 @@
                             </button>
                         </div>
                         <div class="modal-body">
-                            <form method="post" action="{{route('new_comment')}}">
+                            <form method="post" action="{{route('new_comment',['course_slug'=>request('course_slug'),'lesson_slug'=>request('lesson_slug')])}}">
                                 @csrf
                                 <div class="form-group">
                                     <label for="content" class="col-form-label">@lang('course.content'):</label>
                                     <p class="lead emoji-picker-container">
                                         <textarea class="form-control textarea-control" rows="5"
                                                   placeholder="{{trans('course.content')}}" data-emojiable="true"
-                                                  data-emoji-input="unicode"></textarea>
+                                                  data-emoji-input="unicode" name="content"></textarea>
                                     </p>
 
                                     <input type="hidden" name='lesson_id'

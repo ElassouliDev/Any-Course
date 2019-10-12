@@ -28,8 +28,6 @@ class CourseController extends BaseController
     {
         $courseData = $courseRequest->all();
         $courseData['user_id'] = auth()->id();
-
-
         $course = Course::create($courseData);
         $course->tags()->attach($courseRequest->tags);
         if ($courseRequest->file('image')) {

@@ -69,11 +69,12 @@ class CourseController extends BaseController
         View::share('certificate', $certification);
 
         if (\request()->has('download')) {
+            View::share('print', true);
 
             PDF::setOptions(['dpi' => 150, 'defaultFont' => 'sans-serif']);
             $pdf = PDF::loadView('certification.index');
 
-            return $pdf->download('home.pdf');
+            return $pdf->download($course->title_en.'_course.pdf');
 
         }
 

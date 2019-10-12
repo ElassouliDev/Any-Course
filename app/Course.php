@@ -74,5 +74,10 @@ class Course extends Model
         return $this->morphMany(Comment::class, 'commentable');
     }
 
+  public function certifications()
+    {
+        return $this->belongsToMany(User::class,'certificates');
+    }
+
 
 }

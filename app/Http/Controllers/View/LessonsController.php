@@ -24,7 +24,20 @@ class LessonsController extends BaseController
         } else {
             $lesson_watching = Lesson::where('slug_ar', $lesson_slug)->orWhere('slug_en', $lesson_slug)->first();
         }
-        return view('lessons.lessons', compact('lessons', 'lesson_watching', 'course'));
+
+        /////////////// check if user complete watch all lesson
+
+        $GLOBALS['course_watching_completed'] = true;
+        $lessons->each(function ($lesson) {
+            if($lesson->student_watch_lesson()->where('user_id',auth()->id())->where('is_completed',true)->count()==0){
+                $GLOBALS['course_watching_completed']=false;
+                return;
+            };
+        });
+        $user_has_certification= $course->certifications->where('id',1)->count()==1;
+        $course_watching_completed= $GLOBALS['course_watching_completed'] ;
+
+        return view('lessons.lessons', compact('lessons', 'lesson_watching', 'course','user_has_certification','course_watching_completed'));
 
     }
 
@@ -60,7 +73,7 @@ class LessonsController extends BaseController
                 $degree+=$option->is_correct?1:0;
             }
         }
-        $degreee= $degree*(count($data)/2)*(100/100);
+        $degreee= ($degree/(count($data)/2))*100;
 
         Certificate::updateOrCreate(['user_id'=>auth()->id(),'course_id'=>$course->id],['degree'=>$degreee]);
         return back();

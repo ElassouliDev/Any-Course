@@ -101,32 +101,25 @@
         </ul>
         <ul class="list-unstyled">
             @if (count($lessons) > 0)
-                <li style="float: none">
+                <li style="float: none"  @if(!$course_watching_completed) disabled @endif>
                     <a href="{{route('course.exam',$course['slug_'.app()->getLocale()])}}">
                         <div class="radio">
                             <label>
                                 {{__('course.exam')}}
-
                             </label>
-
-
                         </div>
                     </a>
                 </li>
-                <li style="float: none">
-                    <a href="{{route('course.certification',$course['slug_'.app()->getLocale()])}}">
+                <li style="float: none" @if(!$user_has_certification) disabled @endif>
+                    <a href="{{route('course.certification',$course['slug_'.app()->getLocale()])}}" >
                         <div class="radio">
                             <label>
-
                                 {{__('course.certificate')}}
                             </label>
                         </div>
                     </a>
                 </li>
-
-
             @endif
-
         </ul>
 
     </div>

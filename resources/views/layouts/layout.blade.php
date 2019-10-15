@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8"/>
     <title>
-        {{$site_title}} | Home
+        {{$site_title}} | @yield('title')
     </title>
 
     <link href="{{asset('plugins/lib/')}}/css/emoji.css" rel="stylesheet">

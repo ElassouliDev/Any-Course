@@ -129,20 +129,20 @@
                                                         <select id="heard" required=""  @if($course->status != "blocked")name="status" @else disabled
                                                                 @endif class="form-control">
                                                             <option value="">Choose..</option>
-                                                            <option value="in-progress"
-                                                                    @if($course->status == "in-progress") selected="selected" @endif> @lang('admin.in-progress') </option>
+                                                            <option value="published"
+                                                                    @if($course->status == "published") selected="selected" @endif> @lang('admin.published') </option>
                                                             <option value="completed"
-                                                                    @if($course->status =="completed") selected="selected" @endif> @lang('admin.completed') </option>
-                                                            @if($course->status != "blocked" && $course->status != "in-progress")
+                                                                    @if($course->status =="un-publish") selected="selected" @endif> @lang('admin.un-publish') </option>
+{{--                                                            @if($course->status != "blocked" && $course->status != "in-progress")--}}
 
-                                                                {{--@if($course->status != "published")--}}
-                                                                <option value="published"
-                                                                        @if($course->status == "published") selected="selected" @endif>@lang('admin.published') </option>
-                                                                {{--@else--}}
-                                                                <option value="un-publish"
-                                                                        @if($course->status =="un-publish") selected="selected" @endif> @lang('admin.un-publish') </option>
-                                                                {{--@endif--}}
-                                                            @endif
+{{--                                                                --}}{{--@if($course->status != "published")--}}
+{{--                                                                <option value="published"--}}
+{{--                                                                        @if($course->status == "published") selected="selected" @endif>@lang('admin.published') </option>--}}
+{{--                                                                --}}{{--@else--}}
+{{--                                                                <option value="un-publish"--}}
+{{--                                                                        @if($course->status =="un-publish") selected="selected" @endif> @lang('admin.un-publish') </option>--}}
+{{--                                                                --}}{{--@endif--}}
+{{--                                                            @endif--}}
                                                         </select>
                                                     </div>
                                                 </div>

@@ -12,7 +12,7 @@ class CourseController extends BaseController
 {
     function course_list()
     {
-        $courses = \App\Course::latest()->get();
+        $courses = \App\Course::where('status','published')->latest()->get();
         $courses_latest = $courses->take(6);
         $courses_all = $courses->take(12);
         return view('courses.all_courses', compact('courses', 'courses_all', 'courses_latest'));

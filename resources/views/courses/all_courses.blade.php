@@ -1,5 +1,5 @@
 @extends('layouts.layout')
-@section('title', 'courses')
+@section('title', trans('course.allCourses'))
 @section('content')
     <div class="m-content">
         <div class="m-portlet">

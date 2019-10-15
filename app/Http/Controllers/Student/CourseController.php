@@ -74,7 +74,7 @@ class CourseController extends BaseController
             PDF::setOptions(['dpi' => 150, 'defaultFont' => 'sans-serif']);
             $pdf = PDF::loadView('certification.index');
 
-            return $pdf->download('home.pdf');
+            return $pdf->download($course->title_en.'.pdf');
 
         }
 

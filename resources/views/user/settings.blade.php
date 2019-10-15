@@ -1,5 +1,5 @@
 @extends('layouts.layout')
-@section('title', __('admin.setting'))
+@section('title', __('course.setting'))
 @section('content')
     <!-- END: Subheader -->
     <div class="m-content">

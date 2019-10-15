@@ -47,6 +47,7 @@
 <!-- end::Head -->
 <!-- begin::Body -->
 
+@section('title',$course['title_'.app()->getLocale()])
 @section('content')
     <style>
         .carousel-control.left, .carousel-control.right {

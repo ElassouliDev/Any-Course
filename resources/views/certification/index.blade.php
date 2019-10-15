@@ -14,8 +14,8 @@
     <link rel="stylesheet" href="{{asset('course_assets/assets/css/normalize.css')}}">
 
     <!-- Fontawesome CSS -->
-    {{--<link rel="stylesheet" href="{{asset('course_assets/assets/css/fontawesome.min.css')}}">--}}
-    <link rel="stylesheet" href="{{ asset('dashboard_files/css/font-awesome-rtl.min.css') }}">
+    <link rel="stylesheet" href="{{asset('course_assets/assets/css/fontawesome.min.css')}}">
+    {{--<link rel="stylesheet" href="{{ asset('dashboard_files/css/font-awesome-rtl.min.css') }}">--}}
 
     <!--begin::Web font -->
 {{--    <script src="{{asset('course_assets/js/webfontloader.js')}}"></script>--}}
@@ -26,13 +26,14 @@
 
 
     <title>Certification </title>
+{{--
+    <style>
+        html, body {
+            padding: 0;
+            margin: 0;
+        }
+    </style>--}}
 </head>
-<style>
-    html, body {
-        padding: 0;
-        margin: 0;
-    }
-</style>
 <body>
 
 <div class="container-fluid">
@@ -78,7 +79,7 @@
                             <p style="font-size:25px"><i>has completed the course</i></p>
                         </div>
                         <div class="col-sm-12">
-                            <p style="font-size:30px">{{$certificate->course['title_en']??'Java Course'}} Course</p>
+                            <p style="font-size:30px">{{$certificate->course['title_en']??'Java Course'}}</p>
                         </div>
                         @if(isset($certificate->degree))
                             <div class="col-sm-12">

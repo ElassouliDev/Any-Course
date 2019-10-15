@@ -88,7 +88,7 @@ Route::group(
 
 
         /////////////////////////// student
-        Route::group(['middleware' => ['role:student|super_admin']], function() {
+        Route::group(['middleware' => ['role:student|super_admin|lecture']], function() {
             Route::post('lesson/watch/', 'Student\CourseController@student_watch_lesson')->name('student.lesson.watch');
             Route::post('lesson/complete/', 'Student\CourseController@complete_watch_lesson')->name('student.lesson.complete');
             Route::resource('student/certificate/', 'Student\CertificateController');///->middleware('lesson');

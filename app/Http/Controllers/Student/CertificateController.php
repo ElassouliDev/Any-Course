@@ -17,9 +17,9 @@ class CertificateController extends BaseController
 {
 
  function index(){
-
+        $title = trans('course.certificate');
      $certifications = Certificate::where('user_id',\auth()->id())->get();
 
-     return view('certification.user_certification_list',compact('certifications'));
+     return view('certification.user_certification_list',compact('certifications','title'));
  }
 }

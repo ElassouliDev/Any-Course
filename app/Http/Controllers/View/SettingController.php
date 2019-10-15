@@ -18,7 +18,8 @@ class SettingController extends BaseController
 
     function index()
     {
-        return view('user.settings');
+        $title = trans('course.setting');
+        return view('user.settings',compact('title'));
     }
 
 

@@ -521,30 +521,7 @@
                         </a>
                     </li>
                 @endforeach
-               {{-- <li class="active" style="float: none">
-                    <a href="{{route('course.exam',$course['slug_'.app()->getLocale()])}}">
-                        <div class="radio">
-                            <label>
-                                <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1"
-                                       checked>
-                                {{1 + count($lessons)}}
-                                .{{__('course.exam')}}
-                            </label>
-                        </div>
-                    </a>
-                </li>
-                <li style="float: none">
-                    <a href="{{route('course.certification',$course['slug_'.app()->getLocale()])}}">
-                        <div class="radio">
-                            <label>
-                                <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1"
-                                       checked>
-                                {{1 + count($lessons)}}
-                                .{{__('course.certificate')}}
-                            </label>
-                        </div>
-                    </a>
-                </li>--}}
+
             @else
                 <li style="float: none">
 
@@ -562,7 +539,7 @@
         @if (count($lessons) > 0)
             <ul class="list-unstyled">
                 @if (count($lessons) > 0)
-                    <li style="float: none"  class="active">
+                    <li style="float: none" class="active">
                         <a href="{{route('course.exam',$course['slug_'.app()->getLocale()])}}">
                             <div class="radio">
                                 <label>
@@ -574,7 +551,8 @@
                             </div>
                         </a>
                     </li>
-                    <li style="float: none">
+                    <li class="course-certification-link"
+                        style="float: none; @if(!$user_has_certification) display: none;  @endif ">
                         <a href="{{route('course.certification',$course['slug_'.app()->getLocale()])}}">
                             <div class="radio">
                                 <label>
@@ -802,8 +780,8 @@
             $this = $(this);
             url = $(this).attr('action');
             $.post(url, $(this).serialize(), function (response) {
-
-            })
+                $('.course-certification-link').show();
+            });
         });
 
         $(function () {

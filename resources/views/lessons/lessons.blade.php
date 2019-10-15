@@ -101,7 +101,8 @@
         </ul>
         <ul class="list-unstyled">
             @if (count($lessons) > 0)
-                <li style="float: none"  @if(!$course_watching_completed) disabled @endif>
+                <li class="course-exam-link"
+                    style="float: none; @if(!$course_watching_completed)  display: none @endif">
                     <a href="{{route('course.exam',$course['slug_'.app()->getLocale()])}}">
                         <div class="radio">
                             <label>
@@ -110,8 +111,9 @@
                         </div>
                     </a>
                 </li>
-                <li style="float: none" @if(!$user_has_certification) disabled @endif>
-                    <a href="{{route('course.certification',$course['slug_'.app()->getLocale()])}}" >
+                <li class="course-certification-link"
+                    style="float: none; @if(!$user_has_certification) display: none;  @endif ">
+                    <a href="{{route('course.certification',$course['slug_'.app()->getLocale()])}}">
                         <div class="radio">
                             <label>
                                 {{__('course.certificate')}}
@@ -201,7 +203,8 @@
                             </button>
                         </div>
                         <div class="modal-body">
-                            <form method="post" action="{{route('new_comment',['course_slug'=>request('course_slug'),'lesson_slug'=>request('lesson_slug')])}}">
+                            <form method="post"
+                                  action="{{route('new_comment',['course_slug'=>request('course_slug'),'lesson_slug'=>request('lesson_slug')])}}">
                                 @csrf
                                 <div class="form-group">
                                     <label for="content" class="col-form-label">@lang('course.content'):</label>
@@ -291,6 +294,14 @@
             BASE_URL = "{{route('student.lesson.complete')}}";
             $.post(BASE_URL, posted_data,
                 function (response, status) {
+                    if (response.course_watching_completed) {
+
+                        $('.course-exam-link').show();
+                    }
+                    if (response.user_has_certification) {
+
+                        $('.course-certification-link').show();
+                    }
                 })
         }
 

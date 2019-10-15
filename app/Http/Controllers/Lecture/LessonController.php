@@ -71,6 +71,7 @@ class LessonController extends BaseController
         return back();
     }
 
+
     public function destroy($slug_course, $slug)
     {
         Lesson::where('slug_ar' , $slug)->orWhere('slug_en',$slug)->delete();

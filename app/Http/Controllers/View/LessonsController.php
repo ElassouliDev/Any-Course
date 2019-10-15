@@ -37,7 +37,7 @@ class LessonsController extends BaseController
                 return;
             };
         });
-        $user_has_certification= $course->certifications->where('id',1)->count()==1;
+        $user_has_certification= $course->certifications->where('id',auth()->id())->count()==1;
         $course_watching_completed= $GLOBALS['course_watching_completed'] ;
 
         return view('lessons.lessons', compact('lessons', 'lesson_watching', 'course','user_has_certification','course_watching_completed'));
@@ -56,7 +56,9 @@ class LessonsController extends BaseController
 
         $user_review = $course->ratings()->where('author_id', \auth()->id())->first();
         $user_comment_review = $course->comments()->where('user_id', \auth()->id())->first();
-        return view('lessons.exam', compact('lessons', 'course', 'user_comment_review', 'user_review'));
+        $user_has_certification= $course->certifications->where('id',auth()->id())->count()==1;
+
+        return view('lessons.exam', compact('user_has_certification','lessons', 'course', 'user_comment_review', 'user_review'));
 
     }
 

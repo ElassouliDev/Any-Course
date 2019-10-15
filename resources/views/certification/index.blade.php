@@ -15,10 +15,7 @@
 
     <!-- Fontawesome CSS -->
     <link rel="stylesheet" href="{{asset('course_assets/assets/css/fontawesome.min.css')}}">
-    {{--<link rel="stylesheet" href="{{ asset('dashboard_files/css/font-awesome-rtl.min.css') }}">--}}
 
-    <!--begin::Web font -->
-{{--    <script src="{{asset('course_assets/js/webfontloader.js')}}"></script>--}}
     <!-- Main Style Css -->
     <link rel="stylesheet" href="{{asset('course_assets/assets/css/sign.css')}}">
 
@@ -26,26 +23,15 @@
 
 
     <title>Certification </title>
-{{--
-    <style>
-        html, body {
-            padding: 0;
-            margin: 0;
-        }
-    </style>--}}
 </head>
 <body>
 
 <div class="container-fluid">
 
     <div class="row">
-        @if (!isset($print))
-            <div class="col-sm-12 text-center " style="padding: 10px">
-                <a class="btn btn-info border border-primary"
-                   href="{{ route('course.certification',['course_slug'=>$certificate->course['slug_'.app()->getLocale()],'download'=>'pdf']) }}">Download
-                    PDF <i class="fa fa-download"></i></a>
-            </div>
-        @endif
+        {{-- <a href="{{ route('course.certification',['course_slug'=>$certificate->course['slug_'.app()->getLocale()],'download'=>'pdf']) }}">Download
+             PDF</a>--}}
+
         <div class="col-sm-12 text-center" style=" padding:7px 20px; border: 10px solid #787878">
             <div class="row  h-100">
                 <div class="col-sm-12 h-100" style="padding:20px; text-align:center; border: 5px solid #787878">
@@ -72,20 +58,18 @@
                         </div>
                         <div class="col-sm-12">
                             <p class="h1" {{--style="font-size:30px"--}}><b
-                                        class="">{{($certificate->user->first_name.' '.$certificate->user->last_name)??'Yehia Elassouli'}}</b>
+                                        class="">{{($certificate->user->first_name.' '.$certificate->user->lasr_name)??'Yehia Elassouli'}}</b>
                             </p>
                         </div>
                         <div class="col-sm-12">
                             <p style="font-size:25px"><i>has completed the course</i></p>
                         </div>
                         <div class="col-sm-12">
-                            <p style="font-size:30px">{{$certificate->course['title_en']??'Java Course'}}</p>
+                            <p style="font-size:30px">{{$certificate->course['name_'.app()->getLocale()]??'Java Course'}}</p>
                         </div>
-                        @if(isset($certificate->degree))
-                            <div class="col-sm-12">
-                                <p style="font-size:20px">with score of <b>{{$certificate->degree??'80'}}%</b></p>
-                            </div>
-                        @endif
+                        <div class="col-sm-12">
+                            <p style="font-size:20px">with score of <b>{{$certificate->degree??'80'}}%</b></p>
+                        </div>
                         <div class="col-sm-12">
                             <p style="font-size:25px"><i>dated</i></p>
                             {{$certificate->created_at}}

@@ -13,6 +13,9 @@ class LessonsController extends BaseController
 {
     function lessons_list($slug, $lesson_slug = '')
     {
+        if(request('read') != null)
+            \auth()->user()->unreadNotifications()->where('read_at',null)->where('id',\request('read'))->update(['read_at' => now()]);
+
 
         $course = Course::where('slug_ar', $slug)->orWhere('slug_en', $slug)->first();
         $course_id = $course->id;

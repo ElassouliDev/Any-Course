@@ -60,6 +60,11 @@ return [
     'view_lessons'=>'استعراض الفيديوهات',
     'new_review'=>'تقيم الكورس',
     'Choose image'=>'اختر الصورة',
+    'Question No.' => 'رقم السؤال',
+    'Our answer' => 'جوابنا',
+    'Your answer' => 'اجابتك',
+    'Result' => 'نتيجة',
+    'edit_review' => 'تعديل التقيم',
 
 
 ];

@@ -53,5 +53,10 @@ return [
     'view_lessons' => 'View Lessons',
     'new_review' => 'New Review',
     'Choose image' => 'Choose file',
+    'Question No.' => 'Question No.',
+    'Our answer' => 'Our answer',
+    'Your answer' => 'Your answer',
+    'Result' => 'Result',
+    'edit_review' => 'Edit review',
 
 ];

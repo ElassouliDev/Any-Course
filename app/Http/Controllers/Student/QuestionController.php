@@ -16,6 +16,9 @@ class QuestionController extends BaseController
 
     function lesson_question($slug_course, $slug_lesson)
     {
+        if(request('read') != null)
+            \auth()->user()->unreadNotifications()->where('read_at',null)->where('id',\request('read'))->update(['read_at' => now()]);
+
         $lesson = Lesson::where('slug_en', $slug_lesson)->orWhere('slug_ar', $slug_lesson)->first();
         $course = Course::where('slug_en', $slug_course)->orWhere('slug_ar', $slug_course)->first();
         $questions = Question::where('lesson_id', $lesson->id)->paginate(30);

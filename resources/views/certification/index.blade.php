@@ -62,19 +62,20 @@
                         </div>
                         <div class="col-sm-12">
                             <p class="h1" {{--style="font-size:30px"--}}><b
-                                        class="">{{($certificate->user->first_name.' '.$certificate->user->lasr_name)??'Yehia Elassouli'}}</b>
+                                        class="">{{($certificate->user->first_name.' '.$certificate->user->last_name)??'Yehia Elassouli'}}</b>
                             </p>
                         </div>
                         <div class="col-sm-12">
                             <p style="font-size:25px"><i>has completed the course</i></p>
                         </div>
                         <div class="col-sm-12">
-                            <p style="font-size:30px">{{$certificate->course['title_en']??'Java Course'}} Course</p>
+                            <p style="font-size:30px">{{$certificate->course['title_en']??'Java Course'}}</p>
                         </div>
-                        <div class="col-sm-12">
-
-                            <p style="font-size:20px">with score of <b>{{$certificate->degree??'80'}}%</b></p>
-                        </div>
+                        @if(isset($certificate->degree))
+                            <div class="col-sm-12">
+                                <p style="font-size:20px">with score of <b>{{$certificate->degree??'80'}}%</b></p>
+                            </div>
+                        @endif
                         <div class="col-sm-12">
                             <p style="font-size:25px"><i>dated</i></p>
                             {{$certificate->created_at}}

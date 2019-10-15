@@ -32,7 +32,7 @@ class LessonController extends BaseController
     public function create()
     {
         $title = trans('admin.add');
-       $courses = Course::where('user_id',auth()->id())->get();
+       $courses = Course::get();
         return view('dashboard.lesson.create',compact('title','courses'));
     }
 

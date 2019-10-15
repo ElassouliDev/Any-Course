@@ -33,10 +33,10 @@
             </div>
             <div class="row px-5 py-2 pb-5">
 
-                <div class="col-md-4">
-                    <input type="text" name="search" id="search" class="form-control"
-                           placeholder="@lang('admin.search')">
-                </div>
+{{--                <div class="col-md-4">--}}
+{{--                    <input type="text" name="search" id="search" class="form-control"--}}
+{{--                           placeholder="@lang('admin.search')">--}}
+{{--                </div>--}}
 
                 <div class="col-md-4">
 

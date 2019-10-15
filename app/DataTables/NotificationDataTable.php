@@ -53,12 +53,13 @@ class NotificationDataTable extends DataTable
                 "bFilter"=> false,
                 "bLengthChange"=> false,
                 'buttons' => [
-                    ['extend' => 'print', 'className' => 'btn bg-dark btn-outline', 'text' => '<i class="fa fa-print"></i> ' . trans('datatables.print')],
-                    ['extend' => 'excel', 'className' => 'btn bg-green btn-outline', 'text' => '<i class="fa fa-file-excel-o"> </i> ' . trans('datatables.export_excel')],
-                    /*['extend' => 'pdf', 'className' => 'btn red btn-outline', 'text' => '<i class="fa fa-file-pdf-o"> </i> '.trans('datatables.export_pdf')],*/
-                    ['extend' => 'csv', 'className' => 'btn bg-purple btn-outline', 'text' => '<i class="fa fa-file-excel-o"> </i> ' . trans('datatables.export_csv')],
-                    ['extend' => 'reload', 'className' => 'btn bg-blue btn-outline', 'text' => '<i class="fa fa fa-refresh"></i> ' . trans('datatables.reload')],
-                  [
+//                    ['extend' => 'print', 'className' => 'btn bg-dark btn-outline', 'text' => '<i class="fa fa-print"></i> ' . trans('datatables.print')],
+//                    ['extend' => 'excel', 'className' => 'btn bg-green btn-outline', 'text' => '<i class="fa fa-file-excel-o"> </i> ' . trans('datatables.export_excel')],
+//                    /*['extend' => 'pdf', 'className' => 'btn red btn-outline', 'text' => '<i class="fa fa-file-pdf-o"> </i> '.trans('datatables.export_pdf')],*/
+//                    ['extend' => 'csv', 'className' => 'btn bg-purple btn-outline', 'text' => '<i class="fa fa-file-excel-o"> </i> ' . trans('datatables.export_csv')],
+//                    ['extend' => 'reload', 'className' => 'btn bg-blue btn-outline', 'text' => '<i class="fa fa fa-refresh"></i> ' . trans('datatables.reload')],
+//
+                    [
                         'text' => '<i class="fa fa-plus"></i> ' . trans('datatables.add'),
                         'className' => 'btn btn-primary',
                         'action' => 'function(){

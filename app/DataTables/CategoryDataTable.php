@@ -48,15 +48,16 @@ class CategoryDataTable extends DataTable
                 'dom' => 'Blfrtip',
                 "lengthMenu" => [[10, 25, 50,100, -1], [10, 25, 50,100, trans('datatables.all_records')]],
                 'buttons' => [
-                    ['extend' => 'print', 'className' => 'btn bg-dark btn-outline', 'text' => '<i class="fa fa-print"></i> ' . trans('datatables.print')],
-                    ['extend' => 'excel', 'className' => 'btn bg-green btn-outline', 'text' => '<i class="fa fa-file-excel-o"> </i> ' . trans('datatables.export_excel')],
+//                    ['extend' => 'print', 'className' => 'btn bg-dark btn-outline', 'text' => '<i class="fa fa-print"></i> ' . trans('datatables.print')],
+//                    ['extend' => 'excel', 'className' => 'btn bg-green btn-outline', 'text' => '<i class="fa fa-file-excel-o"> </i> ' . trans('datatables.export_excel')],
                     /*['extend' => 'pdf', 'className' => 'btn red btn-outline', 'text' => '<i class="fa fa-file-pdf-o"> </i> '.trans('datatables.export_pdf')],*/
-                    ['extend' => 'csv', 'className' => 'btn bg-purple btn-outline', 'text' => '<i class="fa fa-file-excel-o"> </i> ' . trans('datatables.export_csv')],
-                    ['extend' => 'reload', 'className' => 'btn bg-blue btn-outline', 'text' => '<i class="fa fa fa-refresh"></i> ' . trans('datatables.reload')],
+//                    ['extend' => 'csv', 'className' => 'btn bg-purple btn-outline', 'text' => '<i class="fa fa-file-excel-o"> </i> ' . trans('datatables.export_csv')],
+//                    ['extend' => 'reload', 'className' => 'btn bg-blue btn-outline', 'text' => '<i class="fa fa fa-refresh"></i> ' . trans('datatables.reload')],
+//                    [
+//                        'text' => '<i class="fa fa-trash"></i> ' . trans('datatables.delete'),
+//                        'className' => 'btn bg-red btn-outline deleteBtn',
+//                    ],
                     [
-                        'text' => '<i class="fa fa-trash"></i> ' . trans('datatables.delete'),
-                        'className' => 'btn bg-red btn-outline deleteBtn',
-                    ], [
                         'text' => '<i class="fa fa-plus"></i> ' . trans('datatables.add'),
                         'className' => 'btn btn-primary',
                         'action' => 'function(){

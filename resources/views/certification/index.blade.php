@@ -14,11 +14,11 @@
     <link rel="stylesheet" href="{{asset('course_assets/assets/css/normalize.css')}}">
 
     <!-- Fontawesome CSS -->
-    {{--<link rel="stylesheet" href="{{asset('course_assets/assets/css/fontawesome.min.css')}}">--}}
+    <link rel="stylesheet" href="{{asset('course_assets/assets/css/fontawesome.min.css')}}">
     {{--<link rel="stylesheet" href="{{ asset('dashboard_files/css/font-awesome-rtl.min.css') }}">--}}
 
     <!--begin::Web font -->
-    <script src="{{asset('course_assets/js/webfontloader.js')}}"></script>
+{{--    <script src="{{asset('course_assets/js/webfontloader.js')}}"></script>--}}
     <!-- Main Style Css -->
     <link rel="stylesheet" href="{{asset('course_assets/assets/css/sign.css')}}">
 
@@ -26,13 +26,13 @@
 
 
     <title>Certification </title>
-
+{{--
     <style>
         html, body {
             padding: 0;
             margin: 0;
         }
-    </style>
+    </style>--}}
 </head>
 <body>
 

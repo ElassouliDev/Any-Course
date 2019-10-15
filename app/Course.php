@@ -17,6 +17,9 @@ class Course extends Model
     protected $fillable = ['user_id', 'title_ar', 'title_en', 'description_en', 'description_ar', 'category_id',
         'status', 'is_paid', 'price'];
 
+    protected $attributes = [
+        'price' => 0
+    ];
     public function sluggable()
     {
         return [

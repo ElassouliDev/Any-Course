@@ -27,7 +27,9 @@ class CourseController extends BaseController
     public function store(Request $courseRequest)
     {
         $courseData = $courseRequest->all();
+
         $courseData['user_id'] = auth()->id();
+        if(empty($courseData['price']))$courseData['price']=0;
         $course = Course::create($courseData);
         $course->tags()->attach($courseRequest->tags);
         if ($courseRequest->file('image')) {
@@ -81,6 +83,7 @@ class CourseController extends BaseController
     {
         $id = Course::where('slug_en',$courseRequest->slug)->orWhere('slug_ar',$courseRequest->slug)->first()->id;
         $course = Course::find($id);
+        if(empty($courseRequest['price']))$courseRequest['price']=0;
         $course->update($courseRequest->all());
         if($courseRequest->hasFile('image')){
             $course->image()->update([

@@ -55,6 +55,7 @@ class CourseController extends BaseController
         $courseData= $courseRequest->all();
         $courseData['user_id']=auth()->id();
 
+        if(empty($courseRequest['price']))$courseRequest['price']=0;
 
         $course= Course::create($courseData);
         $course->tags()->attach($courseRequest->tags);
@@ -115,6 +116,8 @@ class CourseController extends BaseController
      */
     public function update(CourseRequest $courseRequest, Course $course)
     {
+        if(empty($courseRequest['price']))$courseRequest['price']=0;
+
         $course->update($courseRequest->all());
           if($courseRequest->hasFile('image')){
               $image = $course->image()->update([

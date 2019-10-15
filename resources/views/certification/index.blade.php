@@ -38,13 +38,6 @@
 <div class="container-fluid">
 
     <div class="row">
-        @if (!isset($print))
-            <div class="col-sm-12 text-center " style="padding: 10px">
-                <a class="btn btn-info border border-primary"
-                   href="{{ route('course.certification',['course_slug'=>$certificate->course['slug_'.app()->getLocale()],'download'=>'pdf']) }}">Download
-                    PDF <i class="fa fa-download"></i></a>
-            </div>
-        @endif
         <div class="col-sm-12 text-center" style=" padding:7px 20px; border: 10px solid #787878">
             <div class="row  h-100">
                 <div class="col-sm-12 h-100" style="padding:20px; text-align:center; border: 5px solid #787878">

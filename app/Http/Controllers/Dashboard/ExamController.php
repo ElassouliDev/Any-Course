@@ -33,7 +33,7 @@ class ExamController extends BaseController
     public function create()
     {
         $title = trans('admin.add');
-        $courses = Course::where('user_id',auth()->user()->id)->get();
+        $courses = Course::get();
         return view('dashboard.exam.create',compact('title','courses'));
     }
 

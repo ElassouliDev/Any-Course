@@ -69,12 +69,12 @@ class ExamController extends BaseController
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Exam $Exam)
+    public function edit(Exam $exam)
     {
         $title = trans('admin.edit');
 
-
-        return view('dashboard.exam.edit',compact('title','Exam'));
+         $courses = Course::get();
+        return view('dashboard.exam.edit',compact('title','courses','exam'));
     }
 
     /**

@@ -7,10 +7,10 @@
 								<i class="fa fa-angle-down"></i>
 						</a>
 						<ul class="dropdown-menu pull-right">
-								<li>
+							{{--	<li>
 										<a href="{{ route('dashboard.exam.edit',$id)}}"><i class="fa fa-pencil-square-o"></i> {{trans('admin.edit')}}</a>
 								</li>
-								<li class="divider"> </li>
+								<li class="divider"> </li>--}}
 
 								<li>
 										<a data-toggle="modal" data-target="#delete_record{{$id}}" href="#">

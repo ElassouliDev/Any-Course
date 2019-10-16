@@ -61,13 +61,13 @@ class ExamDataTable extends DataTable
 //                        'text' => '<i class="fa fa-trash"></i> ' . trans('datatables.delete'),
 //                        'className' => 'btn bg-red btn-outline deleteBtn',
 //                    ],
-                    [
+                    /*[
                         'text' => '<i class="fa fa-plus"></i> ' . trans('datatables.add'),
                         'className' => 'btn btn-primary',
                         'action' => 'function(){
                         	window.location.href =  "' . \URL::current() . '/create";
                         }',
-                    ],
+                    ],*/
                 ],
                 'initComplete' => "function () {
                 this.api().columns([0]).every(function () {
